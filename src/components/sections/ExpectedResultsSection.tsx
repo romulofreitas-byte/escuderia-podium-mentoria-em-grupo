@@ -1,8 +1,10 @@
 import React from 'react';
-import { Section, Heading, Text } from '@/components/ui/Section';
-import { FeatureCard } from '@/components/ui/Card';
+import { motion } from 'framer-motion';
+import { AnimatedCard } from '@/components/ui/AnimatedCard';
+import { TestimonialCard } from '@/components/ui/TestimonialCard';
+import { Badge } from '@/components/ui/Badge';
 import { expectedResults } from '@/data/benefits';
-import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3 } from 'lucide-react';
+import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3, Star, Award } from 'lucide-react';
 
 export const ExpectedResultsSection: React.FC = () => {
   const icons = {
@@ -16,137 +18,196 @@ export const ExpectedResultsSection: React.FC = () => {
     BarChart3: BarChart3
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const testimonials = [
+    {
+      name: "Ana Silva",
+      role: "Designer",
+      content: "Em 4 semanas já tinha fechado meu primeiro contrato de R$ 3.500. O Método Pódium realmente funciona!",
+      rating: 5
+    },
+    {
+      name: "Carlos Mendes", 
+      role: "Consultor",
+      content: "A Sala de Ligação foi fundamental para eu perder o medo de ligar. Hoje faço 10+ ligações por dia com confiança total.",
+      rating: 5
+    },
+    {
+      name: "Marina Costa",
+      role: "Marketing",
+      content: "O Agente Pódium me economiza horas de trabalho. Scripts personalizados em minutos!",
+      rating: 5
+    }
+  ];
+
   return (
-    <Section id="resultados-esperados">
-      <div className="text-center mb-16">
-        <Heading level={2} center className="mb-6">
-          Resultados Esperados
-        </Heading>
-        <Text size="xl" center className="max-w-3xl mx-auto">
-          Ao final das 10 semanas, você terá transformado completamente seu processo comercial
-        </Text>
-      </div>
-
-      {/* Results Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-        {expectedResults.map((result, index) => {
-          const IconComponent = icons[result.icon as keyof typeof icons];
-          return (
-            <FeatureCard
-              key={index}
-              icon={<IconComponent className="w-8 h-8" />}
-              title={result.title}
-              description={result.description}
-            />
-          );
-        })}
-      </div>
-
-      {/* Timeline */}
-      <div className="bg-podium-dark border border-podium-yellow/20 rounded-xl p-8">
-        <h3 className="text-2xl font-bold text-podium-text-primary text-center mb-8">
-          Cronograma de Resultados
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* 6 Weeks */}
-          <div className="text-center">
-            <div className="w-16 h-16 bg-podium-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-podium-yellow">6</span>
-            </div>
-            <h4 className="text-xl font-semibold text-podium-text-primary mb-3">
-              Após 6 Semanas Intensivas
-            </h4>
-            <ul className="space-y-2 text-left">
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Primeiro contrato fechado (ou muito perto)</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Processo comercial estruturado</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Scripts validados e funcionando</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Confiança para fazer ligações</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* 10 Weeks */}
-          <div className="text-center">
-            <div className="w-16 h-16 bg-podium-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-podium-yellow">10</span>
-            </div>
-            <h4 className="text-xl font-semibold text-podium-text-primary mb-3">
-              Após 10 Semanas Completas
-            </h4>
-            <ul className="space-y-2 text-left">
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">2-3 contratos fechados</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Pipeline estruturado</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Processo replicável</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-podium-text-secondary text-sm">Pronto para escalar</span>
-              </li>
-            </ul>
-          </div>
+    <section id="resultados-esperados" className="section-padding">
+      <motion.div 
+        className="container-custom"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <div className="text-center mb-16">
+          <motion.div variants={itemVariants} className="mb-8">
+            <Badge variant="success" size="lg">
+              Hall of Fame
+            </Badge>
+          </motion.div>
+          
+          <motion.h2 
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl font-black text-white mb-8"
+          >
+            Resultados Esperados
+          </motion.h2>
+          
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            Ao final das 10 semanas, você terá transformado completamente seu processo comercial
+          </motion.p>
         </div>
-      </div>
 
-      {/* Success Stories Placeholder */}
-      <div className="mt-16">
-        <Heading level={3} center className="mb-8">
-          Depoimentos de Pilotos
-        </Heading>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-podium-dark border border-podium-yellow/15 rounded-xl p-6">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-podium-yellow/20 rounded-full flex items-center justify-center mr-4">
-                <span className="text-podium-yellow font-bold">A</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-podium-text-primary">Ana Silva</h4>
-                <p className="text-sm text-podium-text-secondary">Designer</p>
-              </div>
-            </div>
-            <p className="text-podium-text-secondary italic">
-              &ldquo;Em 4 semanas já tinha fechado meu primeiro contrato de R$ 3.500. 
-              O Método Pódium realmente funciona!&rdquo;
-            </p>
-          </div>
+        {/* Results Grid */}
+        <motion.div 
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+        >
+          {expectedResults.map((result, index) => {
+            const IconComponent = icons[result.icon as keyof typeof icons];
+            return (
+              <AnimatedCard 
+                key={index} 
+                variant="gradient"
+                delay={index * 0.1}
+                className="text-center group"
+              >
+                <div className="icon-container mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent className="w-8 h-8 text-yellow-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{result.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{result.description}</p>
+              </AnimatedCard>
+            );
+          })}
+        </motion.div>
 
-          <div className="bg-podium-dark border border-podium-yellow/15 rounded-xl p-6">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-podium-yellow/20 rounded-full flex items-center justify-center mr-4">
-                <span className="text-podium-yellow font-bold">C</span>
+        {/* Timeline */}
+        <motion.div 
+          variants={itemVariants}
+          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-12 mb-16 card-hover"
+        >
+          <h3 className="text-3xl font-bold text-white text-center mb-12">
+            Cronograma de Resultados
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* 6 Weeks */}
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-yellow-400/30">
+                <span className="text-3xl font-bold text-yellow-400">6</span>
               </div>
-              <div>
-                <h4 className="font-semibold text-podium-text-primary">Carlos Mendes</h4>
-                <p className="text-sm text-podium-text-secondary">Consultor</p>
+              <h4 className="text-2xl font-bold text-white mb-6">
+                Após 6 Semanas Intensivas
+              </h4>
+              <ul className="space-y-3 text-left">
+                {[
+                  "Primeiro contrato fechado (ou muito perto)",
+                  "Processo comercial estruturado", 
+                  "Scripts validados e funcionando",
+                  "Confiança para fazer ligações"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* 10 Weeks */}
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-yellow-400/30">
+                <span className="text-3xl font-bold text-yellow-400">10</span>
               </div>
-            </div>
-            <p className="text-podium-text-secondary italic">
-              &ldquo;A Sala de Ligação foi fundamental para eu perder o medo de ligar. 
-              Hoje faço 10+ ligações por dia com confiança total.&rdquo;
-            </p>
+              <h4 className="text-2xl font-bold text-white mb-6">
+                Após 10 Semanas Completas
+              </h4>
+              <ul className="space-y-3 text-left">
+                {[
+                  "2-3 contratos fechados",
+                  "Pipeline estruturado",
+                  "Processo replicável", 
+                  "Pronto para escalar"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
-        </div>
-      </div>
-    </Section>
+        </motion.div>
+
+        {/* Success Stories */}
+        <motion.div 
+          variants={itemVariants}
+          className="mt-16"
+        >
+          <h3 className="text-3xl font-bold text-white text-center mb-12">
+            Depoimentos de Pilotos
+          </h3>
+          
+          <motion.div 
+            variants={containerVariants}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                name={testimonial.name}
+                role={testimonial.role}
+                content={testimonial.content}
+                rating={testimonial.rating}
+                delay={index * 0.1}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
