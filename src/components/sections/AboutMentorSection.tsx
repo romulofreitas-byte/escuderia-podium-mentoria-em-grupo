@@ -20,8 +20,12 @@ export const AboutMentorSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Photo and Basic Info */}
           <div className="text-center lg:text-left">
-            <div className="w-48 h-48 bg-podium-yellow/10 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-6">
-              <span className="text-6xl font-bold text-podium-yellow">RF</span>
+            <div className="w-48 h-48 rounded-full overflow-hidden mx-auto lg:mx-0 mb-6 border-4 border-podium-yellow/20">
+              <img 
+                src="/romulo-foto.jpg" 
+                alt="Rômulo Freitas" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <h3 className="text-3xl font-bold text-podium-text-primary mb-2">
               Rômulo Freitas

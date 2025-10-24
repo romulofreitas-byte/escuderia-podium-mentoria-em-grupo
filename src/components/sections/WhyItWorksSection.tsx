@@ -14,13 +14,12 @@ export const WhyItWorksSection: React.FC = () => {
 
   return (
     <Section id="por-que-funciona" className="bg-podium-dark-secondary">
-      <div className="text-center mb-16">
-        <Heading level={2} center className="mb-6">
-          Por Que Funciona Tanto?
+      <div className="text-center mb-20">
+        <Heading level={2} center className="mb-8">
+          Por Que Funciona?
         </Heading>
-        <Text size="xl" center className="max-w-3xl mx-auto">
-          A Escuderia Pódium combina metodologia comprovada com ferramentas de IA 
-          e comunidade ativa para acelerar seu aprendizado em vendas
+        <Text size="xl" center className="max-w-2xl mx-auto text-podium-text-secondary">
+          Metodologia comprovada + IA + Comunidade ativa
         </Text>
       </div>
 

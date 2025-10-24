@@ -140,7 +140,7 @@ export const Footer: React.FC = () => {
           
           <div className="mt-4 text-center">
             <p className="text-podium-text-muted text-xs">
-              CNPJ: 24.286.053/0001-89 | Belo Horizonte - MG
+              CNPJ: 43.393.622/0001-30 | Belo Horizonte - MG
             </p>
           </div>
         </div>

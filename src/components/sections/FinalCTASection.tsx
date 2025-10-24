@@ -81,7 +81,7 @@ export const FinalCTASection: React.FC = () => {
           <Button 
             size="lg" 
             className="text-2xl px-16 py-8 mb-6"
-            href="https://wa.me/5531994293099"
+            href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
           >
             Entrar na Escuderia Pódium Agora
           </Button>

@@ -16,17 +16,14 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-podium-text-primary mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-podium-text-primary mb-8 leading-tight tracking-tight">
             Do Zero ao Primeiro{' '}
             <span className="text-podium-yellow">Contrato Fechado</span>
-            <br />
-            <span className="text-3xl sm:text-4xl lg:text-5xl">Juntos no Pódium</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-podium-text-secondary mb-8 max-w-3xl mx-auto">
-            6 semanas intensivas + 4 encontros mensais para estruturar seu processo comercial 
-            e fechar seu primeiro contrato usando o Método Pódium
+          <p className="text-2xl sm:text-3xl text-podium-text-secondary mb-12 max-w-2xl mx-auto font-light">
+            Método Pódium em 6 Semanas Intensivas
           </p>
 
           {/* Pricing */}
@@ -41,7 +38,7 @@ export const HeroSection: React.FC = () => {
             <Button 
               size="lg" 
               className="text-xl px-12 py-6"
-              href="#investimento"
+              href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
             >
               Entrar na Escuderia Pódium
             </Button>
@@ -51,30 +48,30 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Results Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Primeiro contrato fechado (ou muito perto)</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Primeiro contrato fechado</span>
             </div>
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Processo comercial estruturado e validado</span>
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Processo comercial estruturado</span>
             </div>
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Scripts de ligação testados e funcionando</span>
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Scripts validados</span>
             </div>
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Confiança para fazer ligações estratégicas</span>
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Confiança em ligações</span>
             </div>
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Habilidade para conduzir reuniões e negociações</span>
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Habilidade em reuniões</span>
             </div>
-            <div className="flex items-center space-x-3 text-left">
-              <CheckCircle className="w-6 h-6 text-podium-yellow flex-shrink-0" />
-              <span className="text-podium-text-secondary">Comunidade de pilotos para suporte contínuo</span>
+            <div className="flex items-center space-x-4 text-left">
+              <CheckCircle className="w-8 h-8 text-podium-yellow flex-shrink-0" />
+              <span className="text-lg text-podium-text-secondary font-medium">Comunidade de suporte</span>
             </div>
           </div>
 

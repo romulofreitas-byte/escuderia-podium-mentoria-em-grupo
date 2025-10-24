@@ -153,7 +153,7 @@ export const InvestmentSection: React.FC = () => {
         <Button 
           size="lg" 
           className="text-xl px-12 py-6"
-          href="#cta-final"
+          href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
         >
           Garantir Minha Vaga na Escuderia
         </Button>
