@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Section, Heading, Text } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -21,9 +22,11 @@ export const AboutMentorSection: React.FC = () => {
           {/* Photo and Basic Info */}
           <div className="text-center lg:text-left">
             <div className="w-48 h-48 rounded-full overflow-hidden mx-auto lg:mx-0 mb-6 border-4 border-podium-yellow/20">
-              <img 
+              <Image 
                 src="/romulo-foto.jpg" 
                 alt="Rômulo Freitas" 
+                width={192}
+                height={192}
                 className="w-full h-full object-cover"
               />
             </div>

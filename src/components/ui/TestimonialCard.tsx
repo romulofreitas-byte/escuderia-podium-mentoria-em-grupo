@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Star, Quote } from 'lucide-react';
 
 interface TestimonialCardProps {
@@ -39,9 +40,11 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     >
       <div className="flex items-start space-x-4">
         {avatar ? (
-          <img 
+          <Image 
             src={avatar} 
             alt={name}
+            width={48}
+            height={48}
             className="w-12 h-12 rounded-full object-cover"
           />
         ) : (
@@ -61,7 +64,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
           
           <blockquote className="text-gray-300 mb-4 relative">
             <Quote className="absolute -top-2 -left-2 w-6 h-6 text-yellow-400/30" />
-            "{content}"
+            &ldquo;{content}&rdquo;
           </blockquote>
           
           <div>
