@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Heading, Text, FeatureCard } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
 import { bonuses } from '@/data/benefits';
 import { Bot, Phone, Users, Award } from 'lucide-react';
 
