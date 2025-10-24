@@ -10,28 +10,38 @@
   }
   
   body {
-    @apply bg-podium-black text-podium-text-primary font-sans;
+    @apply bg-black text-white font-sans;
+    background-image: radial-gradient(circle at 20% 50%, rgba(242, 183, 5, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(242, 183, 5, 0.05) 0%, transparent 50%);
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-podium-yellow text-podium-black font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold px-8 py-4 rounded-lg hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply border-2 border-podium-yellow text-podium-yellow font-semibold px-8 py-4 rounded-lg hover:bg-podium-yellow hover:text-podium-black transition-all duration-300;
+    @apply border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300;
   }
   
   .card {
-    @apply bg-podium-dark border border-podium-yellow/15 rounded-xl p-6 hover:border-podium-yellow/30 transition-all duration-300;
+    @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   .section-padding {
-    @apply py-24 px-4 sm:px-6 lg:px-8;
+    @apply py-32 px-4 sm:px-6 lg:px-8;
   }
   
   .container-custom {
     @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   }
 }
