@@ -36,13 +36,13 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const getSizeClasses = () => {
     switch (size) {
       case 'sm':
-        return 'px-4 py-2 text-sm';
+        return 'px-4 py-2 text-sm rounded-sm';
       case 'lg':
-        return 'px-12 py-5 text-lg';
+        return 'px-8 py-4 text-base rounded-sm';
       case 'xl':
-        return 'px-16 py-6 text-xl';
+        return 'px-10 py-5 text-lg rounded-sm';
       default:
-        return 'px-8 py-4';
+        return 'px-6 py-3 text-sm rounded-sm';
     }
   };
 
@@ -50,11 +50,11 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 
   const buttonProps = {
     whileHover: disabled ? {} : { 
-      scale: 1.05,
+      scale: 1.02,
       transition: { duration: 0.2 }
     },
     whileTap: disabled ? {} : { 
-      scale: 0.95,
+      scale: 0.98,
       transition: { duration: 0.1 }
     },
     initial: { opacity: 0, y: 10 },

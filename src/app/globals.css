@@ -17,65 +17,65 @@
 }
 
 @layer components {
-  /* Enhanced Button Styles */
+  /* Minimalist Button Styles */
   .btn-primary {
-    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold px-8 py-4 rounded-xl hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105;
+    @apply bg-black text-white border border-yellow-400/30 px-6 py-3 rounded-sm hover:border-yellow-400 transition-all duration-300 font-medium text-sm;
   }
   
   .btn-secondary {
-    @apply border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:-translate-y-1;
+    @apply border border-gray-600 text-gray-300 px-6 py-3 rounded-sm hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300 font-medium text-sm;
   }
   
   .btn-ghost {
-    @apply text-gray-300 hover:text-white transition-colors duration-300 font-medium;
+    @apply text-gray-400 hover:text-white transition-colors duration-300 font-normal text-sm;
   }
   
-  /* Enhanced Card Styles */
+  /* Minimalist Card Styles */
   .card {
-    @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/10;
+    @apply bg-transparent border border-gray-800/30 rounded-sm p-6 hover:border-yellow-400/50 transition-all duration-300;
   }
   
   .card-hover {
-    @apply transform hover:-translate-y-2 hover:scale-105 transition-all duration-300;
+    @apply hover:border-yellow-400/50 transition-all duration-300;
   }
   
   .card-gradient {
-    @apply bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-yellow-400/50 transition-all duration-300;
+    @apply bg-gray-900/20 border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Layout Components */
   .section-padding {
-    @apply py-32 px-4 sm:px-6 lg:px-8;
+    @apply py-24 px-4 sm:px-6 lg:px-8;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-6xl mx-auto;
   }
   
   /* Text Styles */
   .gradient-text {
-    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent;
+    @apply text-yellow-400;
   }
   
   .gradient-text-purple {
-    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+    @apply text-gray-300;
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent;
+    @apply text-gray-200;
   }
   
   /* Background Styles */
   .hero-gradient {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: #000000;
   }
   
   .section-gradient {
-    background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: #000000;
   }
   
   .card-gradient-bg {
-    background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(31, 41, 55, 0.6) 100%);
+    background: rgba(0, 0, 0, 0.5);
   }
   
   /* Animation Classes */
@@ -93,44 +93,44 @@
   
   /* Icon Containers */
   .icon-container {
-    @apply w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center border border-yellow-400/20;
+    @apply w-8 h-8 bg-transparent rounded-sm flex items-center justify-center border border-yellow-400/20;
   }
   
   .icon-container-purple {
-    @apply w-16 h-16 bg-purple-400/10 rounded-2xl flex items-center justify-center border border-purple-400/20;
+    @apply w-8 h-8 bg-transparent rounded-sm flex items-center justify-center border border-gray-600/20;
   }
   
   /* Badge Styles */
   .badge {
-    @apply inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full text-yellow-400 font-semibold text-sm;
+    @apply inline-flex items-center px-3 py-1 bg-transparent border border-yellow-400/30 rounded-sm text-yellow-400 font-normal text-xs;
   }
   
   .badge-purple {
-    @apply inline-flex items-center px-4 py-2 bg-purple-400/10 border border-purple-400/20 rounded-full text-purple-400 font-semibold text-sm;
+    @apply inline-flex items-center px-3 py-1 bg-transparent border border-gray-600/30 rounded-sm text-gray-400 font-normal text-xs;
   }
   
   /* Stats Counter */
   .stat-number {
-    @apply text-4xl sm:text-5xl font-black gradient-text;
+    @apply text-2xl font-medium text-yellow-400;
   }
   
   /* Testimonial Card */
   .testimonial-card {
-    @apply bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/20 rounded-sm p-4 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Process Step */
   .process-step {
-    @apply relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Pricing Card */
   .pricing-card {
-    @apply bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 hover:border-yellow-400/50 transition-all duration-300 transform hover:-translate-y-2;
+    @apply bg-transparent border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   .pricing-card-featured {
-    @apply bg-gradient-to-br from-yellow-400/10 to-yellow-500/5 border-2 border-yellow-400/50 transform scale-105;
+    @apply border-yellow-400/50;
   }
 }
 

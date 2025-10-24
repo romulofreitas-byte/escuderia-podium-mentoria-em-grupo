@@ -30,7 +30,7 @@ export const WhyItWorksSection: React.FC = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -39,7 +39,7 @@ export const WhyItWorksSection: React.FC = () => {
   };
 
   return (
-    <section id="por-que-funciona" className="section-padding section-gradient">
+    <section id="por-que-funciona" className="section-padding bg-black">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
@@ -47,24 +47,24 @@ export const WhyItWorksSection: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className="text-center mb-20">
-          <motion.div variants={itemVariants} className="mb-8">
-            <Badge variant="default" size="lg">
+        <div className="text-center mb-16">
+          <motion.div variants={itemVariants} className="mb-6">
+            <Badge variant="default" size="sm">
               Por Que Funciona
             </Badge>
           </motion.div>
           
           <motion.h2 
             variants={itemVariants}
-            className="text-5xl sm:text-6xl font-black text-white mb-8"
+            className="text-3xl sm:text-4xl font-light text-white mb-6"
           >
             A Combinação Perfeita para{' '}
-            <span className="gradient-text">Sucesso</span>
+            <span className="gradient-text font-medium">Sucesso</span>
           </motion.h2>
           
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
             Metodologia comprovada + IA + Comunidade ativa = Resultados garantidos
           </motion.p>
@@ -72,7 +72,7 @@ export const WhyItWorksSection: React.FC = () => {
 
         <motion.div 
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
           {benefits.map((benefit, index) => {
             const IconComponent = icons[benefit.icon as keyof typeof icons];
@@ -81,13 +81,13 @@ export const WhyItWorksSection: React.FC = () => {
                 key={index} 
                 variant="gradient"
                 delay={index * 0.1}
-                className="text-center group"
+                className="text-center"
               >
-                <div className="icon-container mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-8 h-8 text-yellow-400" />
+                <div className="icon-container mx-auto mb-4">
+                  <IconComponent className="w-4 h-4 text-yellow-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-lg font-medium text-white mb-3">{benefit.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{benefit.description}</p>
               </AnimatedCard>
             );
           })}
@@ -96,15 +96,15 @@ export const WhyItWorksSection: React.FC = () => {
         {/* Additional explanation */}
         <motion.div 
           variants={itemVariants}
-          className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-12 max-w-5xl mx-auto card-hover"
+          className="bg-transparent border border-gray-800/20 rounded-sm p-8 max-w-4xl mx-auto"
         >
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">
+            <h3 className="text-xl font-medium text-white mb-4">
               Não é apenas teoria
             </h3>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Você vai praticar com outros pilotos na Sala de Ligação, usar o Agente Pódium para gerar scripts personalizados, 
-              e ter o suporte contínuo da comunidade. É a <span className="text-yellow-400 font-semibold">fórmula completa</span> para acelerar sua jornada de vendas.
+              e ter o suporte contínuo da comunidade. É a <span className="text-yellow-400">fórmula completa</span> para acelerar sua jornada de vendas.
             </p>
           </div>
         </motion.div>
