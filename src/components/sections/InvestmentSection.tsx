@@ -26,141 +26,100 @@ export const InvestmentSection: React.FC = () => {
   const totalValue = 18000;
 
   return (
-    <Section id="investimento" className="bg-podium-dark-secondary">
-      <div className="text-center mb-16">
-        <Heading level={2} center className="mb-6">
-          Investimento e Oferta
+    <Section id="investimento" className="bg-gray-950">
+      <div className="text-center mb-20">
+        <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full mb-8">
+          <span className="text-yellow-400 font-semibold text-sm tracking-wide uppercase">Investimento</span>
+        </div>
+        <Heading level={2} center className="mb-8 text-white">
+          Oferta Especial{' '}
+          <span className="gradient-text">Black Friday</span>
         </Heading>
-        <Text size="xl" center className="max-w-3xl mx-auto">
-          Promoção Black Friday Antecipada - Primeira turma com condições especiais
+        <Text size="xl" center className="max-w-3xl mx-auto text-gray-300">
+          Apenas para pilotos da Comunidade Pódium • Vagas limitadas
         </Text>
       </div>
 
       {/* Pricing Card */}
-      <div className="max-w-2xl mx-auto mb-16">
-        <PricingCard
-          title="Escuderia Pódium"
-          price="R$ 1.850"
-          originalPrice="R$ 10.000"
-          features={includedFeatures}
-          ctaText="Entrar na Escuderia Pódium"
-          ctaHref="#cta-final"
-          highlight={true}
-        />
-      </div>
-
-      {/* Value Breakdown */}
-      <div className="mb-16">
-        <Heading level={3} center className="mb-8">
-          Breakdown de Valor
-        </Heading>
-        
-        <div className="bg-podium-dark border border-podium-yellow/20 rounded-xl p-8 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {valueBreakdown.map((item, index) => (
-              <div key={index} className="flex justify-between items-center py-3 border-b border-podium-yellow/10">
-                <span className="text-podium-text-secondary">{item.item}</span>
-                <span className="text-podium-text-primary font-semibold">{item.value}</span>
+      <div className="max-w-4xl mx-auto mb-20">
+        <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-12 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400/5 rounded-full blur-3xl"></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-12">
+              <p className="text-gray-400 text-lg mb-4">De <span className="line-through text-gray-500">R$ 10.000</span></p>
+              <p className="text-7xl sm:text-8xl font-black gradient-text mb-4">R$ 1.850</p>
+              <p className="text-gray-300 text-xl mb-8">81% de desconto • Promoção limitada</p>
+              
+              <div className="inline-flex items-center px-6 py-3 bg-red-500/10 border border-red-500/20 rounded-full mb-8">
+                <Clock className="w-5 h-5 text-red-400 mr-2" />
+                <span className="text-red-400 font-semibold">Apenas 5-10 vagas disponíveis</span>
               </div>
-            ))}
-          </div>
-          
-          <div className="text-center pt-6 border-t border-podium-yellow/20">
-            <p className="text-podium-text-muted mb-2">Valor Total:</p>
-            <p className="text-3xl font-bold text-podium-yellow">R$ 18.000</p>
-            <p className="text-podium-text-secondary mt-2">
-              Seu investimento: <span className="text-podium-yellow font-bold">R$ 1.850</span> 
-              <span className="text-podium-text-muted"> (90% de desconto)</span>
-            </p>
+            </div>
+
+            {/* What's Included */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">O que está incluído:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {includedFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0" />
+                    <span className="text-gray-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Value Breakdown */}
+            <div className="bg-gray-800/30 rounded-2xl p-8 mb-12">
+              <h4 className="text-xl font-bold text-white mb-6 text-center">Valor entregue:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Conhecimento Método Pódium:</span>
+                  <span className="text-yellow-400 font-bold">R$ 5.000+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Ferramentas e Agente Pódium:</span>
+                  <span className="text-yellow-400 font-bold">R$ 2.000+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Mentoria (16 horas):</span>
+                  <span className="text-yellow-400 font-bold">R$ 8.000+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Comunidade:</span>
+                  <span className="text-yellow-400 font-bold">R$ 3.000+</span>
+                </div>
+              </div>
+              <div className="border-t border-gray-700 mt-6 pt-6">
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold text-white">Total:</span>
+                  <span className="text-2xl font-black gradient-text">R$ 18.000+</span>
+                </div>
+                <div className="flex justify-between items-center mt-2">
+                  <span className="text-lg text-gray-300">Seu investimento:</span>
+                  <span className="text-3xl font-black text-yellow-400">R$ 1.850</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <a 
+                href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+                className="btn-primary text-2xl px-20 py-8 inline-block"
+              >
+                Garantir Minha Vaga na Escuderia
+              </a>
+              <p className="text-gray-400 mt-6 text-sm">
+                ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Why This Price */}
-      <div className="mb-16">
-        <Heading level={3} center className="mb-8">
-          Por Que Esse Preço?
-        </Heading>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-podium-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-8 h-8 text-podium-yellow" />
-            </div>
-            <h4 className="text-lg font-semibold text-podium-text-primary mb-2">
-              Promoção Black Friday Antecipada
-            </h4>
-            <p className="text-podium-text-secondary">
-              Condições especiais para a primeira turma da Escuderia Pódium
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-16 h-16 bg-podium-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-podium-yellow" />
-            </div>
-            <h4 className="text-lg font-semibold text-podium-text-primary mb-2">
-              Apenas para Pilotos da Comunidade Pódium
-            </h4>
-            <p className="text-podium-text-secondary">
-              Oferta exclusiva para membros da nossa comunidade
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-16 h-16 bg-podium-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-podium-yellow" />
-            </div>
-            <h4 className="text-lg font-semibold text-podium-text-primary mb-2">
-              Primeira Turma Especial
-            </h4>
-            <p className="text-podium-text-secondary">
-              Vagas limitadas com acompanhamento especial do mentor
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Payment Options */}
-      <div className="bg-podium-dark border border-podium-yellow/20 rounded-xl p-8 max-w-3xl mx-auto">
-        <h3 className="text-2xl font-bold text-podium-text-primary text-center mb-6">
-          Formas de Pagamento
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-4 bg-podium-dark-secondary rounded-lg">
-            <h4 className="font-semibold text-podium-text-primary mb-2">À Vista</h4>
-            <p className="text-2xl font-bold text-podium-yellow mb-2">R$ 1.850</p>
-            <p className="text-sm text-podium-text-secondary">PIX ou Boleto</p>
-          </div>
-          
-          <div className="text-center p-4 bg-podium-dark-secondary rounded-lg">
-            <h4 className="font-semibold text-podium-text-primary mb-2">Cartão de Crédito</h4>
-            <p className="text-2xl font-bold text-podium-yellow mb-2">12x R$ 185</p>
-            <p className="text-sm text-podium-text-secondary">Sem juros</p>
-          </div>
-          
-          <div className="text-center p-4 bg-podium-dark-secondary rounded-lg">
-            <h4 className="font-semibold text-podium-text-primary mb-2">Parcelado</h4>
-            <p className="text-2xl font-bold text-podium-yellow mb-2">6x R$ 350</p>
-            <p className="text-sm text-podium-text-secondary">Cartão ou PIX</p>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div className="text-center mt-16">
-        <Button 
-          size="lg" 
-          className="text-xl px-12 py-6"
-          href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
-        >
-          Garantir Minha Vaga na Escuderia
-        </Button>
-        <p className="text-podium-text-muted mt-4 text-sm">
-          Vagas limitadas • Garantia de 7 dias
-        </p>
-      </div>
     </Section>
   );
 };
