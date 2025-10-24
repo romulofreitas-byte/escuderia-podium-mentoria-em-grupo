@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-podium-black text-podium-text-primary font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-podium-yellow text-podium-black font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-podium-yellow text-podium-yellow font-semibold px-8 py-4 rounded-lg hover:bg-podium-yellow hover:text-podium-black transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-podium-dark border border-podium-yellow/15 rounded-xl p-6 hover:border-podium-yellow/30 transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
