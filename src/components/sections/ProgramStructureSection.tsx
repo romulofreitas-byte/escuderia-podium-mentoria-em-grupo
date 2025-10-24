@@ -51,20 +51,20 @@ export const ProgramStructureSection: React.FC = () => {
             </Badge>
           </motion.div>
           
-          <motion.h2 
-            variants={itemVariants}
-            className="text-5xl sm:text-6xl font-black text-white mb-8"
-          >
-            6 Semanas Intensivas + 4 Encontros Mensais
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            Transformação completa do seu processo comercial usando o Método Pódium, 
-            com suporte de IA e comunidade ativa
-          </motion.p>
+              <motion.h2 
+                variants={itemVariants}
+                className="heading-1"
+              >
+                6 Semanas Intensivas + 4 Encontros Mensais
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="body-text-lg max-w-3xl mx-auto"
+              >
+                Transformação completa do seu processo comercial usando o Método Pódium, 
+                com suporte de IA e comunidade ativa
+              </motion.p>
         </div>
 
         {/* Phases Overview */}
@@ -79,16 +79,16 @@ export const ProgramStructureSection: React.FC = () => {
               delay={index * 0.1}
               className="text-center"
             >
-              <div className={`w-16 h-16 ${phaseColors[phase.name as keyof typeof phaseColors]} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                  <div className={`w-16 h-16 ${phaseColors[phase.name as keyof typeof phaseColors]} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                 <span className="text-white font-bold text-xl">{index + 1}</span>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="heading-3 mb-2">
                 {phase.name}
               </h3>
-              <p className="text-gray-400 text-sm mb-2">
+              <p className="small-text mb-2">
                 Semanas {phase.weeks}
               </p>
-              <p className="text-gray-300 text-sm">
+              <p className="small-text">
                 {phase.description}
               </p>
             </AnimatedCard>
@@ -100,9 +100,9 @@ export const ProgramStructureSection: React.FC = () => {
           variants={itemVariants}
           className="space-y-8"
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">
-            Cronograma Detalhado
-          </h3>
+              <h3 className="heading-2 text-center mb-12">
+                Cronograma Detalhado
+              </h3>
 
           {programWeeks.map((week, index) => (
             <AnimatedCard 
@@ -123,9 +123,9 @@ export const ProgramStructureSection: React.FC = () => {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-4 mb-4">
-                    <h3 className="text-xl font-semibold text-white">
-                      {week.title}
-                    </h3>
+                        <h3 className="heading-3">
+                          {week.title}
+                        </h3>
                     <div className="flex items-center gap-2 text-gray-400">
                       {week.format === 'Grupo' ? (
                         <Users className="w-4 h-4" />
@@ -140,20 +140,20 @@ export const ProgramStructureSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-300 mb-6 italic text-lg">
-                    {week.theme}
-                  </p>
+                      <p className="body-text-lg mb-6 italic">
+                        {week.theme}
+                      </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Content */}
                     <div>
-                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                      <h4 className="heading-3 mb-3 flex items-center">
                         <ArrowRight className="w-4 h-4 mr-2 text-yellow-400" />
                         Conteúdo:
                       </h4>
                       <ul className="space-y-2">
                         {week.content.map((item, idx) => (
-                          <li key={idx} className="text-sm text-gray-300 flex items-start">
+                          <li key={idx} className="small-text flex items-start">
                             <span className="text-yellow-400 mr-2 mt-1">•</span>
                             {item}
                           </li>
@@ -163,13 +163,13 @@ export const ProgramStructureSection: React.FC = () => {
 
                     {/* Deliverables */}
                     <div>
-                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                      <h4 className="heading-3 mb-3 flex items-center">
                         <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
                         Entregas:
                       </h4>
                       <ul className="space-y-2">
                         {week.deliverables.map((item, idx) => (
-                          <li key={idx} className="text-sm text-gray-300 flex items-start">
+                          <li key={idx} className="small-text flex items-start">
                             <span className="text-green-400 mr-2 mt-1">✓</span>
                             {item}
                           </li>
@@ -179,13 +179,13 @@ export const ProgramStructureSection: React.FC = () => {
 
                     {/* Tools */}
                     <div>
-                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                      <h4 className="heading-3 mb-3 flex items-center">
                         <span className="text-yellow-400 mr-2">🔧</span>
                         Ferramentas:
                       </h4>
                       <ul className="space-y-2">
                         {week.tools.map((item, idx) => (
-                          <li key={idx} className="text-sm text-gray-300 flex items-start">
+                          <li key={idx} className="small-text flex items-start">
                             <span className="text-yellow-400 mr-2 mt-1">•</span>
                             {item}
                           </li>
@@ -209,21 +209,21 @@ export const ProgramStructureSection: React.FC = () => {
             className="bg-gradient-to-r from-yellow-400/10 to-yellow-500/5 border-yellow-400/30"
           >
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Resumo do Programa
-              </h3>
+                  <h3 className="heading-2 mb-6">
+                    Resumo do Programa
+                  </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex items-center justify-center space-x-2">
                   <Calendar className="w-6 h-6 text-yellow-400" />
-                  <span className="text-gray-300">10 semanas de duração</span>
+                  <span className="body-text">10 semanas de duração</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Clock className="w-6 h-6 text-yellow-400" />
-                  <span className="text-gray-300">16 horas de mentoria</span>
+                  <span className="body-text">16 horas de mentoria</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Users className="w-6 h-6 text-yellow-400" />
-                  <span className="text-gray-300">Turma limitada (5-10 pilotos)</span>
+                  <span className="body-text">Turma limitada (5-10 pilotos)</span>
                 </div>
               </div>
             </div>

@@ -31,16 +31,16 @@ export const Badge: React.FC<BadgeProps> = ({
     }
   };
 
-  const getSizeClasses = () => {
-    switch (size) {
-      case 'sm':
-        return 'px-3 py-1 text-xs rounded-sm';
-      case 'lg':
-        return 'px-5 py-2 text-base rounded-sm';
-      default:
-        return 'px-4 py-2 text-sm rounded-sm';
-    }
-  };
+      const getSizeClasses = () => {
+        switch (size) {
+          case 'sm':
+            return 'px-3 py-1 text-xs rounded-full';
+          case 'lg':
+            return 'px-5 py-2 text-base rounded-full';
+          default:
+            return 'px-4 py-2 text-sm rounded-full';
+        }
+      };
 
   const badgeClasses = `${getVariantClasses()} ${getSizeClasses()} ${className}`;
 

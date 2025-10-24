@@ -45,19 +45,19 @@ export const FAQSection: React.FC = () => {
             </Badge>
           </motion.div>
           
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl font-light text-white mb-6"
-          >
-            Perguntas Frequentes
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Esclarecemos as principais dúvidas sobre a Escuderia Pódium
-          </motion.p>
+              <motion.h2 
+                variants={itemVariants}
+                className="heading-2"
+              >
+                Perguntas Frequentes
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="body-text-lg max-w-2xl mx-auto"
+              >
+                Esclarecemos as principais dúvidas sobre a Escuderia Pódium
+              </motion.p>
         </div>
 
         <motion.div 
@@ -76,12 +76,12 @@ export const FAQSection: React.FC = () => {
             variant="gradient"
             className="bg-transparent border border-gray-800/20 max-w-2xl mx-auto"
           >
-            <h3 className="text-xl font-medium text-white mb-4">
-              Ainda Tem Dúvidas?
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Nossa equipe está à disposição para esclarecer qualquer dúvida sobre o programa
-            </p>
+                <h3 className="heading-3 mb-4">
+                  Ainda Tem Dúvidas?
+                </h3>
+                <p className="body-text mb-6">
+                  Nossa equipe está à disposição para esclarecer qualquer dúvida sobre o programa
+                </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <AnimatedButton 
                 href="https://wa.me/5531994293099"
@@ -125,7 +125,7 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          className="bg-transparent border border-gray-800/20 rounded-sm overflow-hidden hover:border-yellow-400/30 transition-all duration-300"
+              className="bg-transparent border border-gray-800/20 rounded-lg overflow-hidden hover:border-yellow-400/30 transition-all duration-300"
         >
           <motion.button
             onClick={() => toggleItem(index)}
@@ -133,9 +133,9 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
-            <h3 className="text-base font-medium text-white pr-4">
-              {item.question}
-            </h3>
+                <h3 className="heading-3 pr-4">
+                  {item.question}
+                </h3>
             <motion.div
               animate={{ rotate: openIndex === index ? 180 : 0 }}
               transition={{ duration: 0.2 }}
@@ -166,9 +166,9 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
             className="overflow-hidden"
           >
             <div className="px-6 pb-4">
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {item.answer}
-              </p>
+                  <p className="small-text">
+                    {item.answer}
+                  </p>
             </div>
           </motion.div>
         </motion.div>

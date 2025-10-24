@@ -42,13 +42,13 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     >
       <div className="flex items-start space-x-4">
         {avatar ? (
-          <Image 
-            src={avatar} 
-            alt={name}
-            width={48}
-            height={48}
-            className="w-12 h-12 rounded-full object-cover"
-          />
+              <Image 
+                src={avatar} 
+                alt={name}
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-xl object-cover"
+              />
         ) : (
           <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
             <span className="text-black font-bold text-lg">

@@ -55,20 +55,20 @@ export const InvestmentSection: React.FC = () => {
             </Badge>
           </motion.div>
           
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl font-light text-white mb-6"
-          >
-            Oferta Especial{' '}
-            <span className="gradient-text font-medium">Black Friday</span>
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Apenas para pilotos da Comunidade Pódium • Vagas limitadas
-          </motion.p>
+              <motion.h2 
+                variants={itemVariants}
+                className="heading-2"
+              >
+                Oferta Especial{' '}
+                <span className="gradient-text font-medium">Black Friday</span>
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="body-text-lg max-w-2xl mx-auto"
+              >
+                Apenas para pilotos da Comunidade Pódium • Vagas limitadas
+              </motion.p>
         </div>
 
         {/* Pricing Card */}
@@ -98,7 +98,7 @@ export const InvestmentSection: React.FC = () => {
               variants={itemVariants}
               className="mb-8"
             >
-              <h3 className="text-lg font-medium text-white mb-6 text-center">O que está incluído:</h3>
+                  <h3 className="heading-3 mb-6 text-center">O que está incluído:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {includedFeatures.map((feature, index) => (
                   <motion.div 
@@ -109,7 +109,7 @@ export const InvestmentSection: React.FC = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">{feature}</span>
+                        <span className="small-text">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -128,9 +128,9 @@ export const InvestmentSection: React.FC = () => {
               >
                 Garantir Minha Vaga na Escuderia
               </AnimatedButton>
-              <p className="text-gray-400 text-xs">
-                ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
-              </p>
+                  <p className="small-text">
+                    ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+                  </p>
             </motion.div>
           </AnimatedCard>
         </motion.div>
@@ -144,24 +144,24 @@ export const InvestmentSection: React.FC = () => {
             <div className="icon-container mx-auto mb-3">
               <Zap className="w-4 h-4 text-yellow-400" />
             </div>
-            <h3 className="text-lg font-medium text-white mb-2">Acesso Imediato</h3>
-            <p className="text-gray-400 text-sm">Comece hoje mesmo com acesso completo ao programa</p>
-          </AnimatedCard>
+                <h3 className="heading-3 mb-2">Acesso Imediato</h3>
+                <p className="small-text">Comece hoje mesmo com acesso completo ao programa</p>
+              </AnimatedCard>
 
-          <AnimatedCard variant="gradient" className="text-center">
-            <div className="icon-container mx-auto mb-3">
-              <Shield className="w-4 h-4 text-yellow-400" />
-            </div>
-            <h3 className="text-lg font-medium text-white mb-2">Garantia Total</h3>
-            <p className="text-gray-400 text-sm">7 dias para testar sem compromisso</p>
-          </AnimatedCard>
+              <AnimatedCard variant="gradient" className="text-center">
+                <div className="icon-container mx-auto mb-3">
+                  <Shield className="w-4 h-4 text-yellow-400" />
+                </div>
+                <h3 className="heading-3 mb-2">Garantia Total</h3>
+                <p className="small-text">7 dias para testar sem compromisso</p>
+              </AnimatedCard>
 
-          <AnimatedCard variant="gradient" className="text-center">
-            <div className="icon-container mx-auto mb-3">
-              <Users className="w-4 h-4 text-yellow-400" />
-            </div>
-            <h3 className="text-lg font-medium text-white mb-2">Comunidade Exclusiva</h3>
-            <p className="text-gray-400 text-sm">Acesso vitalício ao grupo de pilotos</p>
+              <AnimatedCard variant="gradient" className="text-center">
+                <div className="icon-container mx-auto mb-3">
+                  <Users className="w-4 h-4 text-yellow-400" />
+                </div>
+                <h3 className="heading-3 mb-2">Comunidade Exclusiva</h3>
+                <p className="small-text">Acesso vitalício ao grupo de pilotos</p>
           </AnimatedCard>
         </motion.div>
       </motion.div>

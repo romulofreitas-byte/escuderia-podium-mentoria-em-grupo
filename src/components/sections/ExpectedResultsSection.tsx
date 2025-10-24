@@ -77,19 +77,19 @@ export const ExpectedResultsSection: React.FC = () => {
             </Badge>
           </motion.div>
           
-          <motion.h2 
-            variants={itemVariants}
-            className="text-5xl sm:text-6xl font-black text-white mb-8"
-          >
-            Resultados Esperados
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            Ao final das 10 semanas, você terá transformado completamente seu processo comercial
-          </motion.p>
+              <motion.h2 
+                variants={itemVariants}
+                className="heading-1"
+              >
+                Resultados Esperados
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="body-text-lg max-w-3xl mx-auto"
+              >
+                Ao final das 10 semanas, você terá transformado completamente seu processo comercial
+              </motion.p>
         </div>
 
         {/* Results Grid */}
@@ -109,21 +109,21 @@ export const ExpectedResultsSection: React.FC = () => {
                 <div className="icon-container mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-8 h-8 text-yellow-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{result.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{result.description}</p>
+                    <h3 className="heading-3 mb-4">{result.title}</h3>
+                    <p className="body-text">{result.description}</p>
               </AnimatedCard>
             );
           })}
         </motion.div>
 
-        {/* Timeline */}
-        <motion.div 
-          variants={itemVariants}
-          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-12 mb-16 card-hover"
-        >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">
-            Cronograma de Resultados
-          </h3>
+            {/* Timeline */}
+            <motion.div 
+              variants={itemVariants}
+              className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-12 mb-16 card-hover"
+            >
+              <h3 className="heading-2 text-center mb-12">
+                Cronograma de Resultados
+              </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* 6 Weeks */}

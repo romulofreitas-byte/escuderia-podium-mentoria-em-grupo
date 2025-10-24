@@ -54,20 +54,20 @@ export const WhyItWorksSection: React.FC = () => {
             </Badge>
           </motion.div>
           
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl font-light text-white mb-6"
-          >
-            A Combinação Perfeita para{' '}
-            <span className="gradient-text font-medium">Sucesso</span>
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Metodologia comprovada + IA + Comunidade ativa = Resultados garantidos
-          </motion.p>
+              <motion.h2 
+                variants={itemVariants}
+                className="heading-2"
+              >
+                A Combinação Perfeita para{' '}
+                <span className="gradient-text font-medium">Sucesso</span>
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="body-text-lg max-w-2xl mx-auto"
+              >
+                Metodologia comprovada + IA + Comunidade ativa = Resultados garantidos
+              </motion.p>
         </div>
 
         <motion.div 
@@ -86,8 +86,8 @@ export const WhyItWorksSection: React.FC = () => {
                 <div className="icon-container mx-auto mb-4">
                   <IconComponent className="w-4 h-4 text-yellow-400" />
                 </div>
-                <h3 className="text-lg font-medium text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{benefit.description}</p>
+                    <h3 className="heading-3 mb-3">{benefit.title}</h3>
+                    <p className="small-text">{benefit.description}</p>
               </AnimatedCard>
             );
           })}
@@ -99,13 +99,13 @@ export const WhyItWorksSection: React.FC = () => {
           className="bg-transparent border border-gray-800/20 rounded-sm p-8 max-w-4xl mx-auto"
         >
           <div className="text-center">
-            <h3 className="text-xl font-medium text-white mb-4">
-              Não é apenas teoria
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              Você vai praticar com outros pilotos na Sala de Ligação, usar o Agente Pódium para gerar scripts personalizados, 
-              e ter o suporte contínuo da comunidade. É a <span className="text-yellow-400">fórmula completa</span> para acelerar sua jornada de vendas.
-            </p>
+                <h3 className="heading-3 mb-4">
+                  Não é apenas teoria
+                </h3>
+                <p className="body-text">
+                  Você vai praticar com outros pilotos na Sala de Ligação, usar o Agente Pódium para gerar scripts personalizados, 
+                  e ter o suporte contínuo da comunidade. É a <span className="text-yellow-400">fórmula completa</span> para acelerar sua jornada de vendas.
+                </p>
           </div>
         </motion.div>
       </motion.div>

@@ -49,24 +49,24 @@ export const HeroSection: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Main Headline */}
-            <motion.h1 
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl font-light text-white leading-tight"
-            >
-              Do Zero ao Primeiro{' '}
-              <span className="gradient-text font-medium">Contrato</span>
-              <br />
-              <span className="gradient-text font-medium">Fechado</span>
-            </motion.h1>
+                {/* Main Headline */}
+                <motion.h1 
+                  variants={itemVariants}
+                  className="heading-1"
+                >
+                  Do Zero ao Primeiro{' '}
+                  <span className="gradient-text font-medium">Contrato</span>
+                  <br />
+                  <span className="gradient-text font-medium">Fechado</span>
+                </motion.h1>
 
-            {/* Subheadline */}
-            <motion.p 
-              variants={itemVariants}
-              className="text-lg text-gray-300 leading-relaxed max-w-md"
-            >
-              Método Pódium completo em <span className="text-yellow-400">6 semanas intensivas</span> com suporte de IA e comunidade ativa
-            </motion.p>
+                {/* Subheadline */}
+                <motion.p 
+                  variants={itemVariants}
+                  className="body-text-lg max-w-md"
+                >
+                  Método Pódium completo em <span className="text-yellow-400">6 semanas intensivas</span> com suporte de IA e comunidade ativa
+                </motion.p>
 
             {/* CTA */}
             <motion.div 
@@ -80,9 +80,9 @@ export const HeroSection: React.FC = () => {
               >
                 Entrar na Escuderia Pódium
               </AnimatedButton>
-              <p className="text-sm text-gray-400">
-                ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
-              </p>
+                  <p className="small-text">
+                    ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+                  </p>
             </motion.div>
           </motion.div>
 
@@ -95,13 +95,13 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative h-[600px] lg:h-[700px]">
-              <Image 
-                src="/romulo-foto.jpg" 
-                alt="Rômulo Freitas - Criador do Método Pódium"
-                fill
-                className="object-cover object-center"
-                priority
-              />
+                  <Image 
+                    src="/romulo-foto.jpg" 
+                    alt="Rômulo Freitas - Criador do Método Pódium"
+                    fill
+                    className="object-cover object-center rounded-xl"
+                    priority
+                  />
               {/* Subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent"></div>
             </div>
@@ -116,19 +116,19 @@ export const HeroSection: React.FC = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-2xl font-medium text-yellow-400 mb-2">5-10</div>
-              <p className="text-sm text-gray-400">Pilotos por turma</p>
+                  <p className="small-text">Pilotos por turma</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-medium text-yellow-400 mb-2">16h</div>
-              <p className="text-sm text-gray-400">De mentoria</p>
+              <p className="small-text">De mentoria</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-medium text-yellow-400 mb-2">100%</div>
-              <p className="text-sm text-gray-400">Método Pódium</p>
+              <p className="small-text">Método Pódium</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-medium text-yellow-400 mb-2">R$ 0</div>
-              <p className="text-sm text-gray-400">Para R$ 10k+</p>
+              <p className="small-text">Para R$ 10k+</p>
             </div>
           </div>
         </motion.div>

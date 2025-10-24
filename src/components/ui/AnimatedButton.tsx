@@ -33,18 +33,18 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     }
   };
 
-  const getSizeClasses = () => {
-    switch (size) {
-      case 'sm':
-        return 'px-4 py-2 text-sm rounded-sm';
-      case 'lg':
-        return 'px-8 py-4 text-base rounded-sm';
-      case 'xl':
-        return 'px-10 py-5 text-lg rounded-sm';
-      default:
-        return 'px-6 py-3 text-sm rounded-sm';
-    }
-  };
+      const getSizeClasses = () => {
+        switch (size) {
+          case 'sm':
+            return 'px-4 py-2 text-sm rounded-lg';
+          case 'lg':
+            return 'px-8 py-4 text-base rounded-lg';
+          case 'xl':
+            return 'px-10 py-5 text-lg rounded-lg';
+          default:
+            return 'px-6 py-3 text-sm rounded-lg';
+        }
+      };
 
   const buttonClasses = `${getVariantClasses()} ${getSizeClasses()} ${className}`;
 

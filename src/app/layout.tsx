@@ -1,8 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Georgia } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const georgia = Georgia({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-georgia',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Escuderia Pódium - Mentoria em Grupo | Do Zero ao Primeiro Contrato',
@@ -29,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${georgia.variable} font-sans`}>{children}</body>
     </html>
   )
 }

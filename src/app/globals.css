@@ -17,22 +17,47 @@
 }
 
 @layer components {
-  /* Minimalist Button Styles */
+  /* Premium Typography System */
+  .heading-1 {
+    @apply text-5xl lg:text-6xl font-light font-sans text-white leading-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl lg:text-4xl font-light font-sans text-white leading-tight;
+  }
+  
+  .heading-3 {
+    @apply text-xl lg:text-2xl font-medium font-sans text-white leading-snug;
+  }
+  
+  .body-text {
+    @apply text-base font-serif text-gray-300 leading-relaxed;
+  }
+  
+  .body-text-lg {
+    @apply text-lg font-serif text-gray-300 leading-relaxed;
+  }
+  
+  .small-text {
+    @apply text-sm font-sans text-gray-400 leading-normal;
+  }
+
+  /* Premium Button Styles */
   .btn-primary {
-    @apply bg-black text-white border border-yellow-400/30 px-6 py-3 rounded-sm hover:border-yellow-400 transition-all duration-300 font-medium text-sm;
+    @apply bg-black text-white border border-yellow-400/30 px-6 py-3 rounded-lg hover:border-yellow-400 transition-all duration-300 font-medium text-sm font-sans;
   }
   
   .btn-secondary {
-    @apply border border-gray-600 text-gray-300 px-6 py-3 rounded-sm hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300 font-medium text-sm;
+    @apply border border-gray-600 text-gray-300 px-6 py-3 rounded-lg hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300 font-medium text-sm font-sans;
   }
   
   .btn-ghost {
-    @apply text-gray-400 hover:text-white transition-colors duration-300 font-normal text-sm;
+    @apply text-gray-400 hover:text-white transition-colors duration-300 font-normal text-sm font-sans;
   }
   
-  /* Minimalist Card Styles */
+  /* Premium Card Styles */
   .card {
-    @apply bg-transparent border border-gray-800/30 rounded-sm p-6 hover:border-yellow-400/50 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300;
   }
   
   .card-hover {
@@ -40,7 +65,7 @@
   }
   
   .card-gradient {
-    @apply bg-gray-900/20 border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-gray-900/20 border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Layout Components */
@@ -93,20 +118,20 @@
   
   /* Icon Containers */
   .icon-container {
-    @apply w-8 h-8 bg-transparent rounded-sm flex items-center justify-center border border-yellow-400/20;
+    @apply w-8 h-8 bg-transparent rounded-lg flex items-center justify-center border border-yellow-400/20;
   }
   
   .icon-container-purple {
-    @apply w-8 h-8 bg-transparent rounded-sm flex items-center justify-center border border-gray-600/20;
+    @apply w-8 h-8 bg-transparent rounded-lg flex items-center justify-center border border-gray-600/20;
   }
   
   /* Badge Styles */
   .badge {
-    @apply inline-flex items-center px-3 py-1 bg-transparent border border-yellow-400/30 rounded-sm text-yellow-400 font-normal text-xs;
+    @apply inline-flex items-center px-3 py-1 bg-transparent border border-yellow-400/30 rounded-full text-yellow-400 font-normal text-xs font-sans;
   }
   
   .badge-purple {
-    @apply inline-flex items-center px-3 py-1 bg-transparent border border-gray-600/30 rounded-sm text-gray-400 font-normal text-xs;
+    @apply inline-flex items-center px-3 py-1 bg-transparent border border-gray-600/30 rounded-full text-gray-400 font-normal text-xs font-sans;
   }
   
   /* Stats Counter */
@@ -116,17 +141,17 @@
   
   /* Testimonial Card */
   .testimonial-card {
-    @apply bg-transparent border border-gray-800/20 rounded-sm p-4 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/20 rounded-lg p-4 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Process Step */
   .process-step {
-    @apply bg-transparent border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   /* Pricing Card */
   .pricing-card {
-    @apply bg-transparent border border-gray-800/20 rounded-sm p-6 hover:border-yellow-400/30 transition-all duration-300;
+    @apply bg-transparent border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
   }
   
   .pricing-card-featured {

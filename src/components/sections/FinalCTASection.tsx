@@ -51,15 +51,15 @@ export const FinalCTASection: React.FC = () => {
               Última Chance
             </Badge>
             
-            <h2 className="text-3xl sm:text-4xl font-light text-white mb-6">
-              Sua Jornada Para o Primeiro{' '}
-              <span className="gradient-text font-medium">Contrato</span> Começa Agora
-            </h2>
-            
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Junte-se à primeira turma da Escuderia Pódium e transforme seu processo comercial 
-              em apenas 6 semanas intensivas + 4 encontros mensais
-            </p>
+                <h2 className="heading-2">
+                  Sua Jornada Para o Primeiro{' '}
+                  <span className="gradient-text font-medium">Contrato</span> Começa Agora
+                </h2>
+                
+                <p className="body-text-lg mb-8">
+                  Junte-se à primeira turma da Escuderia Pódium e transforme seu processo comercial 
+                  em apenas 6 semanas intensivas + 4 encontros mensais
+                </p>
           </motion.div>
 
           {/* Value Recap */}
@@ -79,8 +79,8 @@ export const FinalCTASection: React.FC = () => {
                   <div className="icon-container mx-auto mb-3">
                     <IconComponent className="w-4 h-4 text-yellow-400" />
                   </div>
-                  <h3 className="text-base font-medium text-white mb-1">{card.title}</h3>
-                  <p className="text-gray-400 text-xs">{card.subtitle}</p>
+                      <h3 className="heading-3 mb-1">{card.title}</h3>
+                      <p className="small-text">{card.subtitle}</p>
                 </AnimatedCard>
               );
             })}
@@ -120,9 +120,9 @@ export const FinalCTASection: React.FC = () => {
             >
               Entrar na Escuderia Pódium Agora
             </AnimatedButton>
-            <p className="text-gray-400 text-sm">
-              Vagas limitadas • Garantia de 7 dias • Cancelamento gratuito
-            </p>
+                <p className="small-text">
+                  Vagas limitadas • Garantia de 7 dias • Cancelamento gratuito
+                </p>
           </motion.div>
 
           {/* Urgency */}
@@ -137,15 +137,15 @@ export const FinalCTASection: React.FC = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center mb-3">
                   <AlertTriangle className="w-5 h-5 text-yellow-400 mr-2" />
-                  <h3 className="text-lg font-medium text-yellow-400">
-                    Últimas Vagas Disponíveis
-                  </h3>
-                </div>
-                <p className="text-gray-300 text-sm mb-4">
-                  Esta é a primeira turma da Escuderia Pódium com condições especiais. 
-                  As próximas turmas terão preço normal.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center space-y-1 sm:space-y-0 sm:space-x-6 text-xs text-gray-400">
+                      <h3 className="heading-3">
+                        Últimas Vagas Disponíveis
+                      </h3>
+                    </div>
+                    <p className="small-text mb-4">
+                      Esta é a primeira turma da Escuderia Pódium com condições especiais. 
+                      As próximas turmas terão preço normal.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center space-y-1 sm:space-y-0 sm:space-x-6 text-xs text-gray-400">
                   <span className="flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-yellow-400 mr-1" />
                     Apenas para Pilotos da Comunidade Pódium
@@ -164,9 +164,9 @@ export const FinalCTASection: React.FC = () => {
             variants={itemVariants}
             className="mt-12"
           >
-            <p className="text-gray-300 mb-4">
-              Prefere falar diretamente conosco?
-            </p>
+                <p className="body-text mb-4">
+                  Prefere falar diretamente conosco?
+                </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <AnimatedButton 
                 href="https://wa.me/5531994293099"
