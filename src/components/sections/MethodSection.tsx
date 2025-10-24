@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, FeatureCard } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { FeatureCard } from '@/components/ui/Card';
 import { methodSteps } from '@/data/comparison';
 import { Target, Users, Phone, MessageCircle, Presentation, Handshake } from 'lucide-react';
 

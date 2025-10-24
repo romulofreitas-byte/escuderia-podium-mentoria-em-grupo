@@ -102,7 +102,7 @@ export const BonusesSection: React.FC = () => {
               Gera Credibilidade
             </h4>
             <p className="text-podium-text-secondary">
-              A certificação oficial "Piloto Pódium - Escuderia" adiciona credibilidade 
+              A certificação oficial &ldquo;Piloto Pódium - Escuderia&rdquo; adiciona credibilidade 
               ao seu perfil profissional e diferencia você no mercado.
             </p>
           </div>

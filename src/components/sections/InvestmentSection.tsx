@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, PricingCard } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { PricingCard } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { CheckCircle, Clock, Users, Award, Bot } from 'lucide-react';
 

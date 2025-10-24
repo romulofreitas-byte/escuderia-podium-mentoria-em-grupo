@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, Card } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Linkedin, Instagram, Youtube, Mail, Phone } from 'lucide-react';
 
@@ -109,12 +110,12 @@ export const AboutMentorSection: React.FC = () => {
               <h4 className="text-xl font-semibold text-podium-text-primary mb-4">
                 Filosofia de Ensino
               </h4>
-              <p className="text-podium-text-secondary">
-                "Acredito que vendas é uma habilidade que pode ser aprendida e dominada por qualquer pessoa. 
-                O Método Pódium foi criado para democratizar o acesso a técnicas de vendas de alta performance, 
-                permitindo que profissionais de qualquer área possam estruturar seu processo comercial e 
-                alcançar resultados consistentes."
-              </p>
+            <p className="text-podium-text-secondary">
+              &ldquo;Acredito que vendas é uma habilidade que pode ser aprendida e dominada por qualquer pessoa. 
+              O Método Pódium foi criado para democratizar o acesso a técnicas de vendas de alta performance, 
+              permitindo que profissionais de qualquer área possam estruturar seu processo comercial e 
+              alcançar resultados consistentes.&rdquo;
+            </p>
             </Card>
           </div>
         </div>

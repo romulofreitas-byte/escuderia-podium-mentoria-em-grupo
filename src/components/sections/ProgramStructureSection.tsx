@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, Card } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 import { programWeeks, phases } from '@/data/program';
 import { Calendar, Clock, Users, User } from 'lucide-react';
 

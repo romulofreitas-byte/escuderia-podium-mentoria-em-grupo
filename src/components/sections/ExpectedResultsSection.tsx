@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, FeatureCard } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { FeatureCard } from '@/components/ui/Card';
 import { expectedResults } from '@/data/benefits';
 import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3 } from 'lucide-react';
 
@@ -124,8 +125,8 @@ export const ExpectedResultsSection: React.FC = () => {
               </div>
             </div>
             <p className="text-podium-text-secondary italic">
-              "Em 4 semanas já tinha fechado meu primeiro contrato de R$ 3.500. 
-              O Método Pódium realmente funciona!"
+              &ldquo;Em 4 semanas já tinha fechado meu primeiro contrato de R$ 3.500. 
+              O Método Pódium realmente funciona!&rdquo;
             </p>
           </div>
 
@@ -140,8 +141,8 @@ export const ExpectedResultsSection: React.FC = () => {
               </div>
             </div>
             <p className="text-podium-text-secondary italic">
-              "A Sala de Ligação foi fundamental para eu perder o medo de ligar. 
-              Hoje faço 10+ ligações por dia com confiança total."
+              &ldquo;A Sala de Ligação foi fundamental para eu perder o medo de ligar. 
+              Hoje faço 10+ ligações por dia com confiança total.&rdquo;
             </p>
           </div>
         </div>

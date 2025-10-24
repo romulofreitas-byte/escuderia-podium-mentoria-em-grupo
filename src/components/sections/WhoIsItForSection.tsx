@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, Card } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 export const WhoIsItForSection: React.FC = () => {

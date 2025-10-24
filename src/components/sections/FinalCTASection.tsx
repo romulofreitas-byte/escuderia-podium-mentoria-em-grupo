@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading, Text, Button } from '@/components/ui/Section';
+import { Section, Heading, Text } from '@/components/ui/Section';
+import { Button } from '@/components/ui/Button';
 import { CheckCircle, Clock, Users, Shield } from 'lucide-react';
 
 export const FinalCTASection: React.FC = () => {
