@@ -5,6 +5,18 @@ export interface Bonus {
   details: string[];
 }
 
+export interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Result {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export const bonuses: Bonus[] = [
   {
     title: "Agente Pódium",
