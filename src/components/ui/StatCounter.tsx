@@ -1,6 +1,7 @@
+'use client';
+
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 interface StatCounterProps {
