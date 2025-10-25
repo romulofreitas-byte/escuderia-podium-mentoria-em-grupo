@@ -69,7 +69,7 @@ export const ColdCallSection: React.FC = () => {
           <motion.div variants={itemVariants} className="mb-8">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-full backdrop-blur-sm shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
               <Zap className="w-5 h-5 text-orange-400 mr-2" />
-              <span className="text-orange-400 font-bold text-sm tracking-wide drop-shadow-sm">Cerne do Método Pódium</span>
+              <span className="text-orange-400 font-bold text-sm tracking-wide drop-shadow-sm">Aprenda a Ligar</span>
             </div>
           </motion.div>
 
@@ -137,7 +137,7 @@ export const ColdCallSection: React.FC = () => {
                 <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300">
                   {/* Video Thumbnail Image */}
                   <Image
-                    src="/Compilado.png"
+                    src="/background-podium-hero.jpg"
                     alt="Compilado de Cold Calls - Método Pódium"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

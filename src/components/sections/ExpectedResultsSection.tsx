@@ -1,21 +1,16 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';
 import { Badge } from '@/components/ui/Badge';
 import { FlipCard } from '@/components/ui/FlipCard';
-import { TimelineModal } from '@/components/ui/TimelineModal';
-import { TestimonialCarousel } from '@/components/ui/TestimonialCarousel';
 import { expectedResults } from '@/data/benefits';
-import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3, Star, Award, Calendar, MessageCircle } from 'lucide-react';
+import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3, Star, Award } from 'lucide-react';
 
 export const ExpectedResultsSection: React.FC = () => {
-  const [isTimelineModalOpen, setIsTimelineModalOpen] = useState(false);
-  const [isTestimonialCarouselOpen, setIsTestimonialCarouselOpen] = useState(false);
-
   const icons = {
     CheckCircle: CheckCircle,
     Workflow: Workflow,
@@ -121,26 +116,6 @@ export const ExpectedResultsSection: React.FC = () => {
           })}
         </motion.div>
 
-        {/* Action Buttons */}
-        <motion.div 
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-        >
-          <button
-            onClick={() => setIsTimelineModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 hover:scale-105 active:scale-95 flex items-center justify-center space-x-3"
-          >
-            <Calendar className="w-5 h-5" />
-            <span>Ver Cronograma de Resultados</span>
-          </button>
-          <button
-            onClick={() => setIsTestimonialCarouselOpen(true)}
-            className="w-full sm:w-auto px-8 py-4 bg-gray-800/50 border border-yellow-400/50 text-yellow-400 font-bold rounded-xl hover:bg-yellow-400/10 hover:border-yellow-400 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 hover:scale-105 active:scale-95 flex items-center justify-center space-x-3"
-          >
-            <MessageCircle className="w-5 h-5" />
-            <span>Ver Todos os Depoimentos</span>
-          </button>
-        </motion.div>
 
         {/* Success Stories */}
         <motion.div 
@@ -179,17 +154,6 @@ export const ExpectedResultsSection: React.FC = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-
-      {/* Modals */}
-      <TimelineModal
-        isOpen={isTimelineModalOpen}
-        onClose={() => setIsTimelineModalOpen(false)}
-      />
-
-      <TestimonialCarousel
-        isOpen={isTestimonialCarouselOpen}
-        onClose={() => setIsTestimonialCarouselOpen(false)}
-      />
     </section>
   );
 };

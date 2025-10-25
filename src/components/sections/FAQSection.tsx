@@ -87,7 +87,7 @@ export const FAQSection: React.FC = () => {
                 href="https://wa.me/5531994293099"
                 variant="secondary"
                 size="sm"
-                className="bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600 text-sm sm:text-base"
+                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 border-yellow-400 hover:border-yellow-500 text-sm sm:text-base"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 <span className="hidden sm:inline">WhatsApp: (31) 99429-3099</span>

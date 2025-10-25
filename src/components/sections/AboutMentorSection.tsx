@@ -128,7 +128,7 @@ export const AboutMentorSection: React.FC = () => {
 
           {/* Credentials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="card">
+            <div className="card min-h-[400px]">
               <h4 className="text-2xl font-bold text-white mb-6">
                 Credenciais
               </h4>
@@ -147,14 +147,6 @@ export const AboutMentorSection: React.FC = () => {
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
-                  <span className="text-gray-300">Palestrante</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
-                  <span className="text-gray-300">Host do Podcast Combustível</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
                   <span className="text-gray-300">Especialista em Cold Call e Prospecção</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -163,25 +155,52 @@ export const AboutMentorSection: React.FC = () => {
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
-                  <span className="text-gray-300">Mentor de Vendas Digitais</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
                   <span className="text-gray-300">Fundador da Comunidade Pódium</span>
                 </li>
               </ul>
             </div>
 
-            <div className="card">
+            <div className="card min-h-[400px]">
               <h4 className="text-2xl font-bold text-white mb-6">
                 Filosofia
               </h4>
-              <p className="text-gray-300 leading-relaxed italic">
-                &ldquo;Acredito que vendas é uma habilidade que pode ser aprendida e dominada por qualquer pessoa. 
-                O Método Pódium foi criado para democratizar o acesso a técnicas de vendas de alta performance, 
-                permitindo que profissionais de qualquer área possam estruturar seu processo comercial e 
-                alcançar resultados consistentes.&rdquo;
-              </p>
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-lg font-semibold text-yellow-400 mb-3">Missão</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Democratizar o acesso a técnicas de vendas de alta performance, 
+                    permitindo que profissionais de qualquer área possam estruturar 
+                    seu processo comercial e alcançar resultados consistentes.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-lg font-semibold text-yellow-400 mb-3">Valores</h5>
+                  <ul className="space-y-2">
+                    <li className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2"></div>
+                      <span className="text-gray-300 text-sm">Transparência e honestidade</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2"></div>
+                      <span className="text-gray-300 text-sm">Resultados práticos e mensuráveis</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2"></div>
+                      <span className="text-gray-300 text-sm">Suporte contínuo aos pilotos</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 className="text-lg font-semibold text-yellow-400 mb-3">Abordagem</h5>
+                  <p className="text-gray-300 leading-relaxed italic">
+                    &ldquo;Acredito que vendas é uma habilidade que pode ser aprendida e dominada 
+                    por qualquer pessoa. O Método Pódium foi criado para acelerar esse processo 
+                    de aprendizado com técnicas comprovadas e suporte prático.&rdquo;
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
