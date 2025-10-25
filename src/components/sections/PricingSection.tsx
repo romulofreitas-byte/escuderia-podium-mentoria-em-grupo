@@ -16,6 +16,8 @@ export const PricingSection: React.FC = () => {
             
             <a 
               href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3"
             >
               Entrar na Escuderia Pódium

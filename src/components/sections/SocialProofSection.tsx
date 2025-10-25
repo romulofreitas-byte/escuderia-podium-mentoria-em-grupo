@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
+import { ProtectedImage } from '@/components/ui/ProtectedImage';
 import { Play, Users, Award, MessageCircle } from 'lucide-react';
 import { VideoModal } from '@/components/ui/VideoModal';
 
@@ -102,7 +102,7 @@ export const SocialProofSection: React.FC = () => {
                   {/* Video Thumbnail */}
                   <div className="relative flex-shrink-0">
                     <div className="relative w-full lg:w-48 h-32 bg-gray-700 rounded-lg overflow-hidden">
-                      <Image 
+                      <ProtectedImage 
                         src={video.thumbnail}
                         alt={video.title}
                         width={192}
@@ -157,6 +157,8 @@ export const SocialProofSection: React.FC = () => {
             </p>
             <a 
               href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 hover:scale-105"
             >
               Entrar na Escuderia Pódium

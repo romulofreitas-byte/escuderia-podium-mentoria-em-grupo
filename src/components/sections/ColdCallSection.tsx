@@ -243,6 +243,8 @@ export const ColdCallSection: React.FC = () => {
           >
             <a 
               href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-xl rounded-full transition-all duration-300 hover:from-orange-600 hover:to-red-600 shadow-2xl hover:shadow-orange-500/30 hover:scale-105"
             >
               <span className="relative drop-shadow-sm">Domine o Cold Call Agora</span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
-import Image from 'next/image';
+import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const Footer: React.FC = () => {
   return (
@@ -76,6 +76,8 @@ export const Footer: React.FC = () => {
             <div className="space-y-3">
               <a 
                 href="https://linkedin.com/in/romulocsfreitas" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-podium-text-secondary hover:text-podium-yellow transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
@@ -83,6 +85,8 @@ export const Footer: React.FC = () => {
               </a>
               <a 
                 href="https://instagram.com/romulocsfreitas" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-podium-text-secondary hover:text-podium-yellow transition-colors"
               >
                 <Instagram className="w-5 h-5" />
@@ -90,6 +94,8 @@ export const Footer: React.FC = () => {
               </a>
               <a 
                 href="https://youtube.com/@combustivelmv" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-podium-text-secondary hover:text-podium-yellow transition-colors"
               >
                 <Youtube className="w-5 h-5" />
@@ -104,12 +110,16 @@ export const Footer: React.FC = () => {
               <div className="space-y-2">
                 <a 
                   href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600 transition-colors"
                 >
                   WhatsApp
                 </a>
                 <a 
                   href="mailto:romulo.freitas@combustivelmv.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block border border-podium-yellow text-podium-yellow px-4 py-2 rounded-lg text-center hover:bg-podium-yellow hover:text-podium-black transition-colors"
                 >
                   Email
@@ -124,7 +134,7 @@ export const Footer: React.FC = () => {
           <div className="flex justify-center items-center space-x-8 mb-8">
             <div className="flex items-center space-x-6">
               <div className="w-28 h-28 relative flex items-center">
-                <Image 
+                <ProtectedImage 
                   src="/logos/Escuderia Branco.png"
                   alt="Escuderia Pódium"
                   width={112}
@@ -134,7 +144,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="w-px h-20 bg-gray-600"></div>
               <div className="w-24 h-12 relative">
-                <Image 
+                <ProtectedImage 
                   src="/logos/logo-metodo.png"
                   alt="Método Pódium"
                   width={96}
@@ -154,13 +164,13 @@ export const Footer: React.FC = () => {
             </div>
             
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
+              <a href="/privacidade" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
                 Política de Privacidade
               </a>
-              <a href="#" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
+              <a href="/termos" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
                 Termos de Uso
               </a>
-              <a href="#" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
+              <a href="mailto:romulo.freitas@combustivelmv.com" className="text-podium-text-muted hover:text-podium-yellow transition-colors">
                 Contato
               </a>
             </div>

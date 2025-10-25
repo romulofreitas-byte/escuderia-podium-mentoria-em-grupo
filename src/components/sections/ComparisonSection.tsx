@@ -135,10 +135,12 @@ export const ComparisonSection: React.FC = () => {
               é ideal para seus objetivos
             </p>
             <div className="flex justify-center">
-              <a 
-                href="https://wa.me/5531994293099" 
-                className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
-              >
+                <a 
+                  href="https://wa.me/5531994293099" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
+                >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 Falar com Consultor no WhatsApp
               </a>

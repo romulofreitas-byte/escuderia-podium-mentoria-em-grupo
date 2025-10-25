@@ -1,12 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
+import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden flex flex-col bg-gray-900" style={{height: 'calc(100vh - 64px)'}}>
       {/* Background with blur */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <ProtectedImage 
           src="/background-podium-hero.jpg"
           alt="Background"
           fill
@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="w-6 h-6 sm:w-8 sm:h-8 relative flex-shrink-0">
-                <Image 
+                <ProtectedImage 
                   src="/icon-escuderia.png"
                   alt="Escuderia Pódium"
                   width={32}
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
           <div className="hidden lg:flex justify-end items-center">
             <div className="relative w-full max-w-lg">
               <div className="relative overflow-hidden rounded-2xl">
-                <Image 
+                <ProtectedImage 
                   src="/romulo-hero-2.png"
                   alt="Rômulo Freitas"
                   width={600}

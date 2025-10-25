@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Linkedin, Instagram, Youtube, Mail, Phone, Award, Users, TrendingUp } from 'lucide-react';
-import Image from 'next/image';
+import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const AboutMentorSection: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ export const AboutMentorSection: React.FC = () => {
                 <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 mb-8">
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-3xl blur-2xl"></div>
                   <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-gray-800">
-                    <Image 
+                    <ProtectedImage 
                       src="/mentor.jpg" 
                       alt="Rômulo Freitas" 
                       width={320}

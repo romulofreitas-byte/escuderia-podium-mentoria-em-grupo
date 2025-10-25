@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Ubuntu, Montserrat } from 'next/font/google'
 import './globals.css'
+import { CookieConsent } from '@/components/CookieConsent'
 
 const ubuntu = Ubuntu({ 
   subsets: ['latin'],
@@ -31,6 +32,14 @@ export const metadata: Metadata = {
     description: 'Do Zero ao Primeiro Contrato Fechado - Juntos no Pódium',
     type: 'website',
     locale: 'pt_BR',
+    images: [
+      {
+        url: '/romulo-hero-2.png',
+        width: 1200,
+        height: 630,
+        alt: 'Escuderia Pódium - Mentoria em Grupo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -46,7 +55,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${ubuntu.variable} ${montserrat.variable} font-body`}>{children}</body>
+      <body className={`${ubuntu.variable} ${montserrat.variable} font-body`}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   )
 }

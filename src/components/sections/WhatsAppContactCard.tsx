@@ -14,6 +14,8 @@ export const WhatsAppContactCard: React.FC = () => {
           </p>
           <a 
             href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-12 py-6 bg-green-500 text-white font-bold text-xl rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
           >
             <MessageCircle className="w-6 h-6 mr-3" />

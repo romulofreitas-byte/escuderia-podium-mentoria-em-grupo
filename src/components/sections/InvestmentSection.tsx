@@ -120,8 +120,10 @@ export const InvestmentSection: React.FC = () => {
               variants={itemVariants}
               className="text-center"
             >
-              <AnimatedButton 
+              <AnimatedButton
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+                target="_blank"
+                rel="noopener noreferrer"
                 size="md"
                 variant="primary"
                 className="mb-4"

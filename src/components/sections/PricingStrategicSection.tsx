@@ -162,6 +162,8 @@ export const PricingStrategicSection: React.FC = () => {
               <div className="text-center mb-8">
                 <a 
                   href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-black text-xl rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
                 >
                   <Zap className="w-6 h-6 mr-3" />
@@ -268,6 +270,8 @@ export const PricingStrategicSection: React.FC = () => {
             </p>
             <a 
               href="https://wa.me/5531994293099"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
             >
               <MessageCircle className="w-5 h-5 mr-3" />
