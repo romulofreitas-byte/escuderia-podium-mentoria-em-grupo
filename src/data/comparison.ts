@@ -75,13 +75,13 @@ export const methodSteps: MethodStep[] = [
   },
   {
     step: 4,
-    title: "R1",
+    title: "Reunião de Levantamento",
     description: "Entender a necessidade",
     icon: "MessageCircle"
   },
   {
     step: 5,
-    title: "R2",
+    title: "Reunião de Proposta",
     description: "Apresentar solução",
     icon: "Presentation"
   },

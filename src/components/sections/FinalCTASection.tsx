@@ -61,14 +61,6 @@ export const FinalCTASection: React.FC = () => {
             <span className="text-yellow-400 drop-shadow-md animate-pulse">transforma</span> como pessoa
           </motion.h2>
           
-          <motion.h3 
-            variants={itemVariants}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
-          >
-            Sua Jornada Para o Primeiro{' '}
-            <span className="text-yellow-400 drop-shadow-md animate-pulse">Contrato</span> Começa Agora
-          </motion.h3>
-          
           <motion.p 
             variants={itemVariants}
             className="text-lg text-gray-300 mb-12 leading-relaxed drop-shadow-md"
