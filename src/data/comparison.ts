@@ -41,9 +41,9 @@ export const comparison: Comparison[] = [
     escuderia: "Trajetória ascendente"
   },
   {
-    feature: "Investimento",
-    atual: "Sem investimento em capacitação",
-    escuderia: "R$ 1.850 (promoção)"
+    feature: "Certificação",
+    atual: false,
+    escuderia: "Piloto Pódium - Escuderia"
   }
 ];
 

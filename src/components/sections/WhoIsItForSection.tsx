@@ -12,10 +12,10 @@ export const WhoIsItForSection: React.FC = () => {
   ];
 
   const notForYou = [
-    'Quer ultrapersonalização total',
-    'Quer mentoria semanal individual',
-    'Não tem tempo para dedicar',
-    'Não quer sair da zona de conforto'
+    'Não está disposto a agir e sair da zona de conforto',
+    'Quer apenas consumir conteúdo sem aplicar',
+    'Está confortável sendo funcionário',
+    'Não quer transformar sua situação atual'
   ];
 
   return (

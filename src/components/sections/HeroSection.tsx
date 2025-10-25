@@ -77,7 +77,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+                href="#investimento-estrategico"
                 className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
                 <span className="relative drop-shadow-sm text-sm sm:text-base">Entrar na Escuderia Pódium</span>

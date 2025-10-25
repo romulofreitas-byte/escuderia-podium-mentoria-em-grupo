@@ -15,7 +15,7 @@ import { AboutMentorSection } from '@/components/sections/AboutMentorSection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
 import { ColdCallSection } from '@/components/sections/ColdCallSection';
-import { Footer } from '@/components/sections/Footer';
+import { WhatsAppContactCard } from '@/components/sections/WhatsAppContactCard';
 
 export default function HomePage() {
   return (
@@ -24,6 +24,7 @@ export default function HomePage() {
       <BenefitsMarquee />
       <WhyItWorksSection />
       <WhoIsItForSection />
+      <WhatsAppContactCard />
       <SocialProofSection />
       <ColdCallSection />
       <ProgramStructureSection />
