@@ -150,7 +150,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-podium-yellow/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-podium-text-muted text-sm">
-              © 2025 Escuderia Pódium. Todos os direitos reservados.
+              © 2025 Escuderia Pódium. Todos os direitos reservados. | CNPJ: 43.393.622/0001-30 | Belo Horizonte - MG
             </div>
             
             <div className="flex space-x-6 text-sm">
@@ -164,12 +164,6 @@ export const Footer: React.FC = () => {
                 Contato
               </a>
             </div>
-          </div>
-          
-          <div className="mt-4 text-center">
-            <p className="text-podium-text-muted text-xs">
-              CNPJ: 43.393.622/0001-30 | Belo Horizonte - MG
-            </p>
           </div>
         </div>
       </div>

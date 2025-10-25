@@ -164,23 +164,101 @@ export const ProgramStructureSection: React.FC = () => {
           ) : (
             // Individual sessions for Consolidação tab
             <div className="animate-fade-in">
-              <h4 className="text-lg font-bold text-white text-center mb-8">Sessões Individuais (Mensais)</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {tabs[activeTab].sessions!.map((session, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-gradient-to-br from-gray-800/40 to-gray-700/30 border border-yellow-400/20 rounded-xl p-6 hover:border-yellow-400/50 hover:shadow-yellow-400/20 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <User className="w-8 h-8 text-yellow-400" />
-                      </div>
-                      <h5 className="text-base font-bold text-white mb-2">{session.title}</h5>
-                      <p className="text-sm text-yellow-400 mb-3 font-semibold">{session.duration}</p>
-                      <p className="text-sm text-gray-300 leading-relaxed">{session.theme}</p>
+              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+                  {/* Module Badge */}
+                  <div className="flex-shrink-0">
+                    <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px] shadow-lg">
+                      <div className="text-lg font-bold">Consolidação</div>
+                      <div className="text-sm font-medium">Semanas 7-10</div>
+                      <div className="text-xs mt-1">4 sessões individuais</div>
                     </div>
                   </div>
-                ))}
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    {/* Title and Format Info */}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                      <h3 className="text-xl font-bold text-white">
+                        Sessões Individuais (Mensais)
+                      </h3>
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <User className="w-4 h-4" />
+                          <span className="text-sm">Individual</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <Clock className="w-4 h-4" />
+                          <span className="text-sm">1h cada sessão</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Theme */}
+                    <p className="text-lg text-yellow-400 mb-4 font-medium">
+                      Consolidação e escalonamento dos resultados
+                    </p>
+
+                    {/* Sessions Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2">Sessões:</h4>
+                        <div className="space-y-1">
+                          {tabs[activeTab].sessions!.map((session, idx) => (
+                            <div key={idx} className="text-sm text-gray-300 flex items-start">
+                              <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
+                              <div>
+                                <span className="font-medium">{session.title}</span>
+                                <span className="text-gray-400 ml-2">({session.duration})</span>
+                                <div className="text-xs text-gray-400 mt-1">{session.theme}</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2">Entregáveis:</h4>
+                        <div className="space-y-1">
+                          <div className="text-sm text-gray-300 flex items-start">
+                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
+                            <span className="leading-tight">Plano de ação personalizado</span>
+                          </div>
+                          <div className="text-sm text-gray-300 flex items-start">
+                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
+                            <span className="leading-tight">Processo otimizado</span>
+                          </div>
+                          <div className="text-sm text-gray-300 flex items-start">
+                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
+                            <span className="leading-tight">Estratégia de escalonamento</span>
+                          </div>
+                          <div className="text-sm text-gray-300 flex items-start">
+                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
+                            <span className="leading-tight">Certificação Piloto Pódium</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Tools */}
+                    <div>
+                      <h4 className="text-sm font-semibold text-white mb-2">Ferramentas:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
+                          Acompanhamento individual
+                        </span>
+                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
+                          Estratégias personalizadas
+                        </span>
+                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
+                          Análise de performance
+                        </span>
+                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
+                          Certificação oficial
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
