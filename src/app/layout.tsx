@@ -1,17 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter, Georgia } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-})
-
-const georgia = Georgia({ 
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-georgia',
   display: 'swap',
 })
 
@@ -40,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${georgia.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} font-sans`}>{children}</body>
     </html>
   )
 }
