@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Phone, AlertTriangle, CheckCircle, Zap } from 'lucide-react';
+import Image from 'next/image';
 import { VideoModal } from '@/components/ui/VideoModal';
 
 export const ColdCallSection: React.FC = () => {
@@ -133,9 +134,18 @@ export const ColdCallSection: React.FC = () => {
 
               {/* Video Thumbnail */}
               <div className="relative group cursor-pointer" onClick={() => setIsVideoOpen(true)}>
-                <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300">
-                  {/* Video Thumbnail Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10"></div>
+                <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300">
+                  {/* Video Thumbnail Image */}
+                  <Image
+                    src="/Compilado.png"
+                    alt="Compilado de Cold Calls - Método Pódium"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    priority
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
                   
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
