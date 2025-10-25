@@ -18,12 +18,12 @@ export const ComparisonSection: React.FC = () => {
           </div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            Escuderia Pódium vs{' '}
-            <span className="text-yellow-400 drop-shadow-md animate-pulse">Elite Pódium</span>
+            Seu Estado Atual vs{' '}
+            <span className="text-yellow-400 drop-shadow-md animate-pulse">Com a Escuderia</span>
           </h2>
           
           <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-            Escolha o programa ideal para seu nível de experiência e objetivos
+            Veja a transformação que a Escuderia Pódium pode fazer na sua carreira comercial
           </p>
         </div>
 
@@ -35,13 +35,13 @@ export const ComparisonSection: React.FC = () => {
               <div className="p-6 text-center border-r border-gray-600">
                 <h3 className="text-lg font-semibold text-white">Característica</h3>
               </div>
-              <div className="p-6 text-center border-r border-gray-600 bg-yellow-400/10 border-yellow-400/30">
-                <h3 className="text-lg font-semibold text-yellow-400">Escuderia Pódium</h3>
-                <p className="text-sm text-gray-300 mt-1">Para Iniciantes</p>
+              <div className="p-6 text-center border-r border-gray-600">
+                <h3 className="text-lg font-semibold text-white">Seu Estado Atual</h3>
+                <p className="text-sm text-gray-300 mt-1">Funcionário de agência</p>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-white">Elite Pódium</h3>
-                <p className="text-sm text-gray-300 mt-1">Para Avançados</p>
+              <div className="p-6 text-center bg-yellow-400/10 border-yellow-400/30">
+                <h3 className="text-lg font-semibold text-yellow-400">Com a Escuderia</h3>
+                <p className="text-sm text-gray-300 mt-1">Empreendedor independente</p>
               </div>
             </div>
 
@@ -53,6 +53,19 @@ export const ComparisonSection: React.FC = () => {
                 </div>
                 <div className="p-6 border-r border-gray-600 text-center">
                   <span className="text-white">
+                    {typeof item.atual === 'boolean' ? (
+                      item.atual ? (
+                        <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-gray-500 mx-auto" />
+                      )
+                    ) : (
+                      item.atual
+                    )}
+                  </span>
+                </div>
+                <div className="p-6 text-center">
+                  <span className="text-white">
                     {typeof item.escuderia === 'boolean' ? (
                       item.escuderia ? (
                         <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
@@ -61,19 +74,6 @@ export const ComparisonSection: React.FC = () => {
                       )
                     ) : (
                       item.escuderia
-                    )}
-                  </span>
-                </div>
-                <div className="p-6 text-center">
-                  <span className="text-white">
-                    {typeof item.elite === 'boolean' ? (
-                      item.elite ? (
-                        <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-gray-500 mx-auto" />
-                      )
-                    ) : (
-                      item.elite
                     )}
                   </span>
                 </div>
@@ -88,9 +88,24 @@ export const ComparisonSection: React.FC = () => {
             <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-4 animate-fade-in-up backdrop-blur-sm" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
               <h4 className="text-base font-semibold text-white mb-4">{item.feature}</h4>
               <div className="space-y-3">
-                {/* Escuderia */}
+                {/* Estado Atual */}
+                <div className="flex items-center justify-between p-3 bg-gray-700/50 border border-gray-600 rounded-lg">
+                  <span className="text-sm font-medium text-white">Seu Estado Atual</span>
+                  <span className="text-white">
+                    {typeof item.atual === 'boolean' ? (
+                      item.atual ? (
+                        <CheckCircle className="w-5 h-5 text-green-400" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-gray-500" />
+                      )
+                    ) : (
+                      <span className="text-sm">{item.atual}</span>
+                    )}
+                  </span>
+                </div>
+                {/* Com a Escuderia */}
                 <div className="flex items-center justify-between p-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg">
-                  <span className="text-sm font-medium text-white">Escuderia Pódium</span>
+                  <span className="text-sm font-medium text-white">Com a Escuderia</span>
                   <span className="text-white">
                     {typeof item.escuderia === 'boolean' ? (
                       item.escuderia ? (
@@ -103,105 +118,53 @@ export const ComparisonSection: React.FC = () => {
                     )}
                   </span>
                 </div>
-                {/* Elite */}
-                <div className="flex items-center justify-between p-3 bg-gray-700/50 border border-gray-600 rounded-lg">
-                  <span className="text-sm font-medium text-white">Elite Pódium</span>
-                  <span className="text-white">
-                    {typeof item.elite === 'boolean' ? (
-                      item.elite ? (
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-gray-500" />
-                      )
-                    ) : (
-                      <span className="text-sm">{item.elite}</span>
-                    )}
-                  </span>
-                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Recommendation Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        {/* Recommendation Card */}
+        <div className="max-w-4xl mx-auto mb-20">
           {/* Escuderia Recommendation */}
           <div className="bg-gray-800/30 border border-yellow-400/50 rounded-2xl p-8 shadow-2xl hover:shadow-yellow-400/20 hover:border-yellow-400/70 transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.5s'}}>
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏁</span>
+                <span className="text-2xl">🚀</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                Escolha a Escuderia Se:
+                Transforme Sua Carreira Comercial
               </h3>
+              <p className="text-gray-300">
+                Saia do estado atual e alcance autonomia comercial completa
+              </p>
             </div>
 
             <ul className="space-y-3 mb-6">
               <li className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Você está começando em vendas</span>
+                <span className="text-gray-300">De funcionário para empreendedor independente</span>
               </li>
               <li className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Quer aprender o Método Pódium do zero</span>
+                <span className="text-gray-300">Processo comercial estruturado e validado</span>
               </li>
               <li className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Prefere aprender em grupo</span>
+                <span className="text-gray-300">Primeiro contrato fechado em 6 semanas</span>
               </li>
               <li className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Tem orçamento limitado</span>
+                <span className="text-gray-300">Comunidade de pilotos para networking</span>
               </li>
               <li className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Quer networking com outros pilotos</span>
+                <span className="text-gray-300">Método Pódium completo e testado</span>
               </li>
             </ul>
 
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-2">R$ 1.850</div>
-              <p className="text-gray-400 text-sm">Promoção Black Friday</p>
-            </div>
-          </div>
-
-          {/* Elite Recommendation */}
-          <div className="bg-gray-800/30 border border-gray-600 rounded-2xl p-8 shadow-2xl hover:shadow-yellow-400/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-gray-700/50 border border-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">👑</span>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Escolha a Elite Se:
-              </h3>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Já tem experiência em vendas</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Quer ultrapersonalização</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Prefere mentoria 1:1</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Tem orçamento maior</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Quer role play individual</span>
-              </li>
-            </ul>
-
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">R$ 10.000</div>
-              <p className="text-gray-400 text-sm">Investimento completo</p>
+              <p className="text-gray-400 text-sm">Promoção Black Friday Antecipada</p>
             </div>
           </div>
         </div>

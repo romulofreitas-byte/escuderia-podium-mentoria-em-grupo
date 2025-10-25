@@ -1,49 +1,49 @@
 export interface Comparison {
   feature: string;
+  atual: string | boolean;
   escuderia: string | boolean;
-  elite: string | boolean;
 }
 
 export const comparison: Comparison[] = [
   {
-    feature: "Formato",
-    escuderia: "Grupo + Individual",
-    elite: "100% Individual"
+    feature: "Situação Atual",
+    atual: "Funcionário de agência",
+    escuderia: "Empreendedor independente"
   },
   {
-    feature: "Encontros em Grupo",
-    escuderia: "6 encontros (2h cada)",
-    elite: "Nenhum"
+    feature: "Processo Comercial",
+    atual: "Sem processo estruturado",
+    escuderia: "Método Pódium completo"
   },
   {
-    feature: "Sessões Individuais",
-    escuderia: "4 (1/mês)",
-    elite: "12+ (1/semana)"
+    feature: "Controle sobre Vendas",
+    atual: "Dependente de terceiros",
+    escuderia: "Autonomia total"
   },
   {
-    feature: "Role Play de Vendas",
-    escuderia: "Sala de Ligação",
-    elite: "Sessões 1:1"
+    feature: "Renda",
+    atual: "Salário fixo limitado",
+    escuderia: "Primeiro contrato fechado"
   },
   {
-    feature: "Personalização",
-    escuderia: "Média",
-    elite: "Ultra-personalizada"
+    feature: "Conhecimento",
+    atual: "Sem metodologia própria",
+    escuderia: "Método validado e testado"
   },
   {
-    feature: "Preço",
-    escuderia: "R$ 1.850",
-    elite: "R$ 10.000"
+    feature: "Networking",
+    atual: "Limitado ao ambiente atual",
+    escuderia: "Comunidade de pilotos"
   },
   {
-    feature: "Duração",
-    escuderia: "10 semanas",
-    elite: "12+ semanas"
+    feature: "Crescimento",
+    atual: "Estagnado na posição atual",
+    escuderia: "Trajetória ascendente"
   },
   {
-    feature: "Ideal Para",
-    escuderia: "Iniciantes",
-    elite: "Avançados"
+    feature: "Investimento",
+    atual: "Sem investimento em capacitação",
+    escuderia: "R$ 1.850 (promoção)"
   }
 ];
 

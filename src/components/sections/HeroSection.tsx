@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
                   alt="Escuderia Pódium"
                   width={32}
                   height={32}
-                  className="object-contain"
+                  className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
                 />
               </div>
               <span className="text-white text-xs sm:text-sm font-light tracking-wide">

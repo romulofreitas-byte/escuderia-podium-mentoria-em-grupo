@@ -36,7 +36,7 @@ export const FinalCTASection: React.FC = () => {
   ];
 
   return (
-    <section id="cta-final" className="section-padding bg-black">
+    <section id="cta-final" className="section-padding bg-gray-900">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
@@ -132,7 +132,7 @@ export const FinalCTASection: React.FC = () => {
           >
             <AnimatedCard 
               variant="gradient"
-              className="bg-transparent border border-gray-800/30 max-w-xl mx-auto"
+              className="bg-gray-800/30 border border-gray-700 max-w-xl mx-auto"
             >
               <div className="text-center">
                 <div className="flex items-center justify-center mb-3">

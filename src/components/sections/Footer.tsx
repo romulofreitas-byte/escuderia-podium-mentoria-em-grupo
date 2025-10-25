@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 export const Footer: React.FC = () => {
   return (
@@ -118,11 +119,37 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Logos Section */}
         <div className="border-t border-podium-yellow/10 mt-12 pt-8">
+          <div className="flex justify-center items-center space-x-8 mb-8">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 relative">
+                <Image 
+                  src="/logos/Escuderia Branco.png"
+                  alt="Escuderia Pódium"
+                  width={48}
+                  height={48}
+                  className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
+                />
+              </div>
+              <div className="w-16 h-8 relative">
+                <Image 
+                  src="/logos/logo-metodo.png"
+                  alt="Método Pódium"
+                  width={64}
+                  height={32}
+                  className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-podium-yellow/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-podium-text-muted text-sm">
-              © 2024 Escuderia Pódium. Todos os direitos reservados.
+              © 2025 Escuderia Pódium. Todos os direitos reservados.
             </div>
             
             <div className="flex space-x-6 text-sm">
