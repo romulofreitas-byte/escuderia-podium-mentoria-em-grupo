@@ -63,7 +63,7 @@ export const ProgramStructureSection: React.FC = () => {
         </div>
 
         {/* Detailed Program */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           <h3 className="text-xl font-bold text-white text-center mb-12 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             Cronograma Detalhado
           </h3>
@@ -71,57 +71,52 @@ export const ProgramStructureSection: React.FC = () => {
           {programWeeks.map((week, index) => (
             <div 
               key={index} 
-              className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-2xl p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+              className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
               style={{animationDelay: `${0.9 + index * 0.05}s`}}
             >
-              <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                {/* Week Badge */}
+              <div className="flex items-center gap-6">
+                {/* Week Badge - Compact */}
                 <div className="flex-shrink-0">
-                  <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px]">
-                    <div className="text-2xl font-bold">Semana {week.week}</div>
-                    <div className="text-sm font-medium">{week.phase}</div>
+                  <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-lg p-3 text-center min-w-[100px]">
+                    <div className="text-lg font-bold">Semana {week.week}</div>
+                    <div className="text-xs font-medium">{week.phase}</div>
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Content - Horizontal Layout */}
                 <div className="flex-1">
                   {/* Title and Format Info */}
-                  <div className="flex flex-wrap items-center gap-4 mb-4">
-                    <h3 className="text-xl font-bold text-white">
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <h3 className="text-lg font-bold text-white">
                       {week.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-gray-400">
+                    <div className="flex items-center gap-1 text-gray-400">
                       {week.format === 'Grupo' ? (
-                        <Users className="w-4 h-4" />
+                        <Users className="w-3 h-3" />
                       ) : (
-                        <User className="w-4 h-4" />
+                        <User className="w-3 h-3" />
                       )}
-                      <span className="text-sm">{week.format}</span>
+                      <span className="text-xs">{week.format}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm">{week.duration}</span>
+                    <div className="flex items-center gap-1 text-gray-400">
+                      <Clock className="w-3 h-3" />
+                      <span className="text-xs">{week.duration}</span>
                     </div>
                   </div>
 
                   {/* Theme */}
-                  <p className="text-lg text-gray-300 mb-6 italic">
+                  <p className="text-sm text-gray-300 mb-3 italic">
                     {week.theme}
                   </p>
 
-                  {/* Content List */}
-                  <div className="space-y-3">
-                    <h4 className="text-lg font-semibold text-yellow-400 mb-3">
-                      O que você vai aprender:
-                    </h4>
-                    <ul className="space-y-2">
-                      {week.content.map((item, idx) => (
-                        <li key={idx} className="text-gray-300 flex items-start">
-                          <span className="text-yellow-400 mr-3 mt-1">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Content List - Compact */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {week.content.slice(0, 4).map((item, idx) => (
+                      <div key={idx} className="text-sm text-gray-300 flex items-start">
+                        <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
+                        <span className="leading-tight">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
