@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
 import { WhyItWorksSection } from '@/components/sections/WhyItWorksSection';
 import { WhoIsItForSection } from '@/components/sections/WhoIsItForSection';
 import { ProgramStructureSection } from '@/components/sections/ProgramStructureSection';
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-900">
       <HeroSection />
+      <BenefitsMarquee />
       <WhyItWorksSection />
       <WhoIsItForSection />
       <ProgramStructureSection />
