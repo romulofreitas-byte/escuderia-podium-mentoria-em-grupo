@@ -23,12 +23,12 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 relative flex-shrink-0">
+              <div className="w-11 h-11 relative flex-shrink-0">
                 <Image 
                   src="/icon-escuderia.png"
                   alt="Escuderia Pódium"
-                  width={64}
-                  height={64}
+                  width={45}
+                  height={45}
                   className="object-contain"
                 />
               </div>
