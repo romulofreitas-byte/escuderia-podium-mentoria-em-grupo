@@ -2,192 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @layer base {
+  :root {
+    --font-heading: var(--font-ubuntu);
+    --font-body: var(--font-montserrat);
+  }
+  
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-black text-white font-sans;
-    background-image: radial-gradient(circle at 20% 50%, rgba(242, 183, 5, 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(242, 183, 5, 0.05) 0%, transparent 50%);
+    @apply bg-white text-gray-900;
+    font-family: var(--font-montserrat), sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-ubuntu), sans-serif;
+    font-weight: 700;
   }
 }
 
 @layer components {
-  /* Premium Typography System */
-  .heading-1 {
-    @apply text-5xl lg:text-6xl font-light font-sans text-white leading-tight;
-  }
-  
-  .heading-2 {
-    @apply text-3xl lg:text-4xl font-light font-sans text-white leading-tight;
-  }
-  
-  .heading-3 {
-    @apply text-xl lg:text-2xl font-medium font-sans text-white leading-snug;
-  }
-  
-  .body-text {
-    @apply text-base font-serif text-gray-300 leading-relaxed;
-  }
-  
-  .body-text-lg {
-    @apply text-lg font-serif text-gray-300 leading-relaxed;
-  }
-  
-  .small-text {
-    @apply text-sm font-sans text-gray-400 leading-normal;
-  }
-
-  /* Premium Button Styles */
+  /* Buttons - Minimalista */
   .btn-primary {
-    @apply bg-black text-white border border-yellow-400/30 px-6 py-3 rounded-lg hover:border-yellow-400 transition-all duration-300 font-medium text-sm font-sans;
+    @apply bg-yellow-400 text-gray-900 font-semibold px-10 py-4 rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-sm hover:shadow-md;
+    font-family: var(--font-ubuntu), sans-serif;
   }
   
   .btn-secondary {
-    @apply border border-gray-600 text-gray-300 px-6 py-3 rounded-lg hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300 font-medium text-sm font-sans;
+    @apply border-2 border-gray-900 text-gray-900 font-semibold px-10 py-4 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300;
+    font-family: var(--font-ubuntu), sans-serif;
   }
   
-  .btn-ghost {
-    @apply text-gray-400 hover:text-white transition-colors duration-300 font-normal text-sm font-sans;
-  }
-  
-  /* Premium Card Styles */
+  /* Cards - Minimalista com respiro */
   .card {
-    @apply bg-transparent border border-gray-800/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300;
+    @apply bg-white border border-gray-200 rounded-3xl p-12 hover:shadow-lg transition-all duration-300;
   }
   
-  .card-hover {
-    @apply hover:border-yellow-400/50 transition-all duration-300;
-  }
-  
-  .card-gradient {
-    @apply bg-gray-900/20 border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
-  }
-  
-  /* Layout Components */
+  /* Spacing - Muito respiro */
   .section-padding {
-    @apply py-24 px-4 sm:px-6 lg:px-8;
+    @apply py-40 px-6 sm:px-8 lg:px-12;
   }
   
   .container-custom {
     @apply max-w-6xl mx-auto;
   }
   
-  /* Text Styles */
+  /* Typography */
   .gradient-text {
     @apply text-yellow-400;
   }
   
-  .gradient-text-purple {
-    @apply text-gray-300;
-  }
-  
-  .text-gradient {
-    @apply text-gray-200;
-  }
-  
-  /* Background Styles */
+  /* Backgrounds */
   .hero-gradient {
-    background: #000000;
-  }
-  
-  .section-gradient {
-    background: #000000;
-  }
-  
-  .card-gradient-bg {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Animation Classes */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-  
-  /* Icon Containers */
-  .icon-container {
-    @apply w-8 h-8 bg-transparent rounded-lg flex items-center justify-center border border-yellow-400/20;
-  }
-  
-  .icon-container-purple {
-    @apply w-8 h-8 bg-transparent rounded-lg flex items-center justify-center border border-gray-600/20;
-  }
-  
-  /* Badge Styles */
-  .badge {
-    @apply inline-flex items-center px-3 py-1 bg-transparent border border-yellow-400/30 rounded-full text-yellow-400 font-normal text-xs font-sans;
-  }
-  
-  .badge-purple {
-    @apply inline-flex items-center px-3 py-1 bg-transparent border border-gray-600/30 rounded-full text-gray-400 font-normal text-xs font-sans;
-  }
-  
-  /* Stats Counter */
-  .stat-number {
-    @apply text-2xl font-medium text-yellow-400;
-  }
-  
-  /* Testimonial Card */
-  .testimonial-card {
-    @apply bg-transparent border border-gray-800/20 rounded-lg p-4 hover:border-yellow-400/30 transition-all duration-300;
-  }
-  
-  /* Process Step */
-  .process-step {
-    @apply bg-transparent border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
-  }
-  
-  /* Pricing Card */
-  .pricing-card {
-    @apply bg-transparent border border-gray-800/20 rounded-lg p-6 hover:border-yellow-400/30 transition-all duration-300;
-  }
-  
-  .pricing-card-featured {
-    @apply border-yellow-400/50;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
   }
 }

@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Ubuntu, Montserrat } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const ubuntu = Ubuntu({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu',
+  display: 'swap',
+})
+
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-montserrat',
   display: 'swap',
 })
 
@@ -33,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${ubuntu.variable} ${montserrat.variable} font-body`}>{children}</body>
     </html>
   )
 }
