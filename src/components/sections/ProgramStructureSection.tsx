@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { programWeeks, phases, programModules } from '@/data/program';
 import { Calendar, Clock, Users, User } from 'lucide-react';
 import Image from 'next/image';
 
 export const ProgramStructureSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    { id: 'fundacao', name: 'Fundação', module: programModules[0] },
+    { id: 'execucao', name: 'Execução', module: programModules[1] },
+    { id: 'fechamento', name: 'Fechamento', module: programModules[2] },
+    { id: 'consolidacao', name: 'Consolidação', sessions: programWeeks.slice(6, 10) }
+  ];
+
   return (
     <section id="estrutura-programa" className="relative overflow-hidden py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
@@ -45,151 +54,134 @@ export const ProgramStructureSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Phases Overview - Redesign com 3D */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {phases.map((phase, index) => (
-            <div 
-              key={index} 
-              className="relative bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up shadow-2xl hover:shadow-yellow-400/20 hover:scale-105"
-              style={{animationDelay: `${0.4 + index * 0.1}s`}}
-            >
-              {/* Iluminação lateral */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              
-              {/* Emoji grande tipo pódio */}
-              <div className="relative w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-4xl">{phase.icon}</span>
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-2 relative z-10">
-                {phase.name}
-              </h3>
-              <p className="text-sm text-yellow-400 mb-2 font-semibold relative z-10">
-                {phase.subtitle}
-              </p>
-              <p className="text-sm text-gray-300 relative z-10">
-                {phase.description}
-              </p>
-            </div>
-          ))}
+        {/* Tab Navigation */}
+        <div className="mb-12">
+          <div className="flex flex-wrap justify-center gap-2 bg-gray-800/30 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(index)}
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base ${
+                  activeTab === index
+                    ? 'bg-yellow-400 text-black shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                }`}
+              >
+                {tab.name}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Detailed Program - Módulos Agrupados */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-bold text-white text-center mb-12 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
-            Cronograma Detalhado
-          </h3>
-
-          {/* Módulos Principais */}
-          {programModules.map((module, index) => (
-            <div 
-              key={module.id}
-              className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up shadow-2xl hover:shadow-yellow-400/20"
-              style={{animationDelay: `${0.9 + index * 0.1}s`}}
-            >
-              <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                {/* Module Badge */}
-                <div className="flex-shrink-0">
-                  <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px] shadow-lg">
-                    <div className="text-lg font-bold">{module.title}</div>
-                    <div className="text-sm font-medium">{module.weeks}</div>
-                    <div className="text-xs mt-1">{module.duration}</div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1">
-                  {/* Title and Format Info */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                    <h3 className="text-xl font-bold text-white">
-                      {module.title}
-                    </h3>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2 text-gray-400">
-                        <Users className="w-4 h-4" />
-                        <span className="text-sm">{module.format}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-400">
-                        <Clock className="w-4 h-4" />
-                        <span className="text-sm">{module.duration}</span>
-                      </div>
+        {/* Tab Content */}
+        <div className="min-h-[600px]">
+          {tabs[activeTab].module ? (
+            // Module content for first 3 tabs
+            <div className="animate-fade-in">
+              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+                  {/* Module Badge */}
+                  <div className="flex-shrink-0">
+                    <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px] shadow-lg">
+                      <div className="text-lg font-bold">{tabs[activeTab].module!.title}</div>
+                      <div className="text-sm font-medium">{tabs[activeTab].module!.weeks}</div>
+                      <div className="text-xs mt-1">{tabs[activeTab].module!.duration}</div>
                     </div>
                   </div>
 
-                  {/* Theme */}
-                  <p className="text-lg text-yellow-400 mb-4 font-medium">
-                    {module.theme}
-                  </p>
+                  {/* Content */}
+                  <div className="flex-1">
+                    {/* Title and Format Info */}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                      <h3 className="text-xl font-bold text-white">
+                        {tabs[activeTab].module!.title}
+                      </h3>
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <Users className="w-4 h-4" />
+                          <span className="text-sm">{tabs[activeTab].module!.format}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <Clock className="w-4 h-4" />
+                          <span className="text-sm">{tabs[activeTab].module!.duration}</span>
+                        </div>
+                      </div>
+                    </div>
 
-                  {/* Content Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    {/* Theme */}
+                    <p className="text-lg text-yellow-400 mb-4 font-medium">
+                      {tabs[activeTab].module!.theme}
+                    </p>
+
+                    {/* Content Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2">Conteúdo:</h4>
+                        <div className="space-y-1">
+                          {tabs[activeTab].module!.content.slice(0, 6).map((item, idx) => (
+                            <div key={idx} className="text-sm text-gray-300 flex items-start">
+                              <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
+                              <span className="leading-tight">{item}</span>
+                            </div>
+                          ))}
+                          {tabs[activeTab].module!.content.length > 6 && (
+                            <div className="text-xs text-gray-400 italic">
+                              +{tabs[activeTab].module!.content.length - 6} itens adicionais...
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2">Entregáveis:</h4>
+                        <div className="space-y-1">
+                          {tabs[activeTab].module!.deliverables.map((item, idx) => (
+                            <div key={idx} className="text-sm text-gray-300 flex items-start">
+                              <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
+                              <span className="leading-tight">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Tools */}
                     <div>
-                      <h4 className="text-sm font-semibold text-white mb-2">Conteúdo:</h4>
-                      <div className="space-y-1">
-                        {module.content.slice(0, 6).map((item, idx) => (
-                          <div key={idx} className="text-sm text-gray-300 flex items-start">
-                            <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
-                            <span className="leading-tight">{item}</span>
-                          </div>
-                        ))}
-                        {module.content.length > 6 && (
-                          <div className="text-xs text-gray-400 italic">
-                            +{module.content.length - 6} itens adicionais...
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-2">Entregáveis:</h4>
-                      <div className="space-y-1">
-                        {module.deliverables.map((item, idx) => (
-                          <div key={idx} className="text-sm text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                            <span className="leading-tight">{item}</span>
-                          </div>
+                      <h4 className="text-sm font-semibold text-white mb-2">Ferramentas:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {tabs[activeTab].module!.tools.map((tool, idx) => (
+                          <span key={idx} className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
+                            {tool}
+                          </span>
                         ))}
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Tools */}
-                  <div>
-                    <h4 className="text-sm font-semibold text-white mb-2">Ferramentas:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {module.tools.map((tool, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                          {tool}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-
-          {/* Sessões Individuais */}
-          <div className="mt-12">
-            <h4 className="text-lg font-bold text-white text-center mb-8">Sessões Individuais (Mensais)</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {programWeeks.slice(6, 10).map((week, index) => (
-                <div 
-                  key={index} 
-                  className="bg-gradient-to-br from-gray-800/40 to-gray-700/30 border border-yellow-400/20 rounded-xl p-6 hover:border-yellow-400/50 hover:shadow-yellow-400/20 transition-all duration-300 backdrop-blur-sm animate-fade-in-up shadow-lg hover:shadow-xl hover:scale-105"
-                  style={{animationDelay: `${1.2 + index * 0.05}s`}}
-                >
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <User className="w-8 h-8 text-yellow-400" />
+          ) : (
+            // Individual sessions for Consolidação tab
+            <div className="animate-fade-in">
+              <h4 className="text-lg font-bold text-white text-center mb-8">Sessões Individuais (Mensais)</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {tabs[activeTab].sessions!.map((session, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-gradient-to-br from-gray-800/40 to-gray-700/30 border border-yellow-400/20 rounded-xl p-6 hover:border-yellow-400/50 hover:shadow-yellow-400/20 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <User className="w-8 h-8 text-yellow-400" />
+                      </div>
+                      <h5 className="text-base font-bold text-white mb-2">{session.title}</h5>
+                      <p className="text-sm text-yellow-400 mb-3 font-semibold">{session.duration}</p>
+                      <p className="text-sm text-gray-300 leading-relaxed">{session.theme}</p>
                     </div>
-                    <h5 className="text-base font-bold text-white mb-2">{week.title}</h5>
-                    <p className="text-sm text-yellow-400 mb-3 font-semibold">{week.duration}</p>
-                    <p className="text-sm text-gray-300 leading-relaxed">{week.theme}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Summary */}
