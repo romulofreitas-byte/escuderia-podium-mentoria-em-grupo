@@ -21,7 +21,7 @@ export const SocialProofSection: React.FC = () => {
   const videos = [
     {
       id: 'marina',
-      title: 'Depoimento Marina Marchiolli',
+      title: 'Marina Marchiolli',
       description: 'Contratos em uma mentoria fechada pra ela mesma, em apenas 2 meses',
       thumbnail: '/depoimentos/depoimento-marina.jpg',
       url: 'https://youtu.be/0YivtKp9Sw4',
@@ -30,10 +30,10 @@ export const SocialProofSection: React.FC = () => {
     },
     {
       id: 'vinicius',
-      title: 'Depoimento Vinicius Nascimento',
+      title: 'Vinicius Nascimento',
       description: '+ R$50.000,00 em contratos após a Mentoria',
       thumbnail: '/depoimentos/depoimento-vinicius.jpg',
-      url: 'https://youtu.be/0YivtKp9Sw4',
+      url: 'https://youtu.be/PhYcN3vaSr8',
       icon: Award,
       type: 'Depoimento'
     },
