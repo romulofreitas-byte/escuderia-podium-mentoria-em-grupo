@@ -48,7 +48,7 @@ export const ColdCallSection: React.FC = () => {
   ];
 
   return (
-    <section id="cold-call" className="relative overflow-hidden py-[250px] bg-gray-900">
+    <section id="cold-call" className="relative overflow-hidden py-[75px] bg-gray-900">
       {/* Background with orange/red gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>

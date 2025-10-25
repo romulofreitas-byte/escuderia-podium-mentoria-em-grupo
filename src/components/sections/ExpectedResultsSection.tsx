@@ -66,7 +66,7 @@ export const ExpectedResultsSection: React.FC = () => {
   ];
 
   return (
-    <section id="resultados-esperados" className="py-[250px]">
+    <section id="resultados-esperados" className="py-[75px]">
       <motion.div 
         className="container-custom"
         variants={containerVariants}

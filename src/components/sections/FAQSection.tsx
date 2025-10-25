@@ -30,7 +30,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-[250px] bg-gray-800">
+    <section id="faq" className="py-[75px] bg-gray-800">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
