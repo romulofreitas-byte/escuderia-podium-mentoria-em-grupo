@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   description: 'Transforme-se em um piloto de vendas de alta performance. 6 semanas intensivas + 4 encontros mensais para estruturar seu processo comercial e fechar seu primeiro contrato.',
   keywords: 'mentoria vendas, processo comercial, cold call, fechamento vendas, método pódium',
   authors: [{ name: 'Rômulo Freitas' }],
+  icons: {
+    icon: '/icon-escuderia.png',
+    shortcut: '/icon-escuderia.png',
+    apple: '/icon-escuderia.png',
+  },
   openGraph: {
     title: 'Escuderia Pódium - Mentoria em Grupo',
     description: 'Do Zero ao Primeiro Contrato Fechado - Juntos no Pódium',
