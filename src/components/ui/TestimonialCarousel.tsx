@@ -94,7 +94,7 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ isOpen
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, nextTestimonial, prevTestimonial]);
 
   // Close modal on escape key
   useEffect(() => {

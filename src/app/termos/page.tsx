@@ -83,7 +83,7 @@ export default function TermosPage() {
                   <li>Sala de Ligação para prática</li>
                   <li>Materiais e templates do Método Pódium</li>
                   <li>Comunidade exclusiva de pilotos</li>
-                  <li>Certificação "Piloto Pódium - Escuderia"</li>
+                  <li>Certificação &quot;Piloto Pódium - Escuderia&quot;</li>
                 </ul>
               </div>
             </div>

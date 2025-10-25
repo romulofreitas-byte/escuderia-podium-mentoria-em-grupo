@@ -6,6 +6,7 @@ import Image, { ImageProps } from 'next/image';
 interface ProtectedImageProps extends Omit<ImageProps, 'onContextMenu' | 'onDragStart' | 'onSelectStart'> {
   className?: string;
   overlay?: boolean;
+  alt: string; // Explicitly require alt prop
 }
 
 export const ProtectedImage: React.FC<ProtectedImageProps> = ({ 
