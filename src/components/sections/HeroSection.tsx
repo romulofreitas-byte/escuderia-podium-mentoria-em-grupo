@@ -23,12 +23,12 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-4">
-              <div className="w-11 h-11 relative flex-shrink-0">
+              <div className="w-8 h-8 relative flex-shrink-0">
                 <Image 
                   src="/icon-escuderia.png"
                   alt="Escuderia Pódium"
-                  width={45}
-                  height={45}
+                  width={32}
+                  height={32}
                   className="object-contain"
                 />
               </div>
@@ -53,20 +53,20 @@ export const HeroSection: React.FC = () => {
           {/* Left - Text Content */}
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4">
-              <span className="text-yellow-400 font-semibold text-xs tracking-wide">1ª Turma • Black Friday Antecipada • 7 vagas</span>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
+              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
               Uma mentoria em grupo{' '}
-              <span className="text-yellow-400">híbrida</span>
+              <span className="text-yellow-400 drop-shadow-md">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
-              <span className="text-yellow-400">empresário</span>
+              <span className="text-yellow-400 drop-shadow-md">empresário</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm text-gray-300 font-light leading-relaxed mb-6">
+            <p className="text-sm text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md">
               6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
             </p>
 
@@ -74,19 +74,19 @@ export const HeroSection: React.FC = () => {
             <div className="inline-flex flex-col space-y-3">
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
-                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900"
+                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105"
               >
-                <span className="relative">Entrar na Escuderia Pódium</span>
+                <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium</span>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-2 w-full">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-300">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold">29%</span>
+                  <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm">29%</span>
                 </div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden relative">
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse" style={{width: '29%'}}></div>
+                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
+                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg" style={{width: '29%'}}></div>
                   {/* Loading shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent animate-shimmer"></div>
                 </div>
@@ -97,14 +97,17 @@ export const HeroSection: React.FC = () => {
           {/* Right - Image */}
           <div className="hidden lg:flex justify-end items-center">
             <div className="relative w-full max-w-lg">
-              <Image 
-                src="/romulo-hero-2.png"
-                alt="Rômulo Freitas"
-                width={600}
-                height={600}
-                className="w-full h-auto object-contain"
-                priority
-              />
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 hover:scale-105">
+                <Image 
+                  src="/romulo-hero-2.png"
+                  alt="Rômulo Freitas"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-contain drop-shadow-xl"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent pointer-events-none"></div>
+              </div>
             </div>
           </div>
         </div>
