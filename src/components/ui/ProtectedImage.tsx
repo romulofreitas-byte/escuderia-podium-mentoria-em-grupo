@@ -104,7 +104,6 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
           }}
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
-          onSelectStart={(e) => e.preventDefault()}
         />
       )}
     </div>
