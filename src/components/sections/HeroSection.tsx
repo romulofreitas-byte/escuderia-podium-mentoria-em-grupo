@@ -83,10 +83,10 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-2 w-full">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-300">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold">20%</span>
+                  <span className="text-yellow-400 font-semibold">29%</span>
                 </div>
                 <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden relative">
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse" style={{width: '20%'}}></div>
+                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse" style={{width: '29%'}}></div>
                   {/* Loading shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent animate-shimmer"></div>
                 </div>
