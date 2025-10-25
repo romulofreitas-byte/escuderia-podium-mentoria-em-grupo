@@ -7,8 +7,8 @@ export const SocialProofSection: React.FC = () => {
     {
       id: 'marina',
       title: 'Depoimento Marina Marchiolli',
-      description: 'Como fechei meu primeiro contrato de R$ 4.500 em apenas 3 semanas',
-      thumbnail: '/logos/icon-escuderia.png',
+      description: '2 Contratos e uma Mentoria pra ela mesmo foi fechada',
+      thumbnail: '/depoimentos/depoimento-marina.jpg',
       url: 'https://youtu.be/0YivtKp9Sw4',
       icon: Users,
       type: 'Depoimento'
@@ -16,8 +16,8 @@ export const SocialProofSection: React.FC = () => {
     {
       id: 'vinicius',
       title: 'Depoimento Vinicius Nascimento',
-      description: 'Transformação completa: de freelancer para empresário',
-      thumbnail: '/logos/icon-escuderia.png',
+      description: '+ R$50.000,00 em contratos após a Mentoria',
+      thumbnail: '/depoimentos/depoimento-vinicius.jpg',
       url: 'https://youtu.be/0YivtKp9Sw4',
       icon: Award,
       type: 'Depoimento'
@@ -26,7 +26,7 @@ export const SocialProofSection: React.FC = () => {
       id: 'thiago',
       title: 'Mentoria ao Vivo - Thiago Rosa',
       description: 'Revisão real de processo comercial com sugestões práticas',
-      thumbnail: '/logos/icon-escuderia.png',
+      thumbnail: '/depoimentos/mentoria-thiago-rosa-live.jpg',
       url: 'https://youtube.com/live/RNsPan7I3F0?feature=share',
       icon: MessageCircle,
       type: 'Mentoria'
@@ -35,7 +35,7 @@ export const SocialProofSection: React.FC = () => {
       id: 'dores',
       title: 'Dores do Piloto',
       description: 'Os erros que todo freelancer comete e como evitá-los',
-      thumbnail: '/logos/icon-escuderia.png',
+      thumbnail: '/depoimentos/dores-piloto.jpg',
       url: 'https://youtu.be/nCakQ1HvhnI',
       icon: Play,
       type: 'Educativo'
@@ -88,9 +88,12 @@ export const SocialProofSection: React.FC = () => {
           {videos.map((video, index) => {
             const IconComponent = video.icon;
             return (
-              <div 
+              <a 
                 key={video.id}
-                className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up group"
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-800/30 border border-gray-700 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up group cursor-pointer"
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
               >
                 <div className="flex flex-col lg:flex-row gap-6">
@@ -102,9 +105,9 @@ export const SocialProofSection: React.FC = () => {
                         alt={video.title}
                         width={192}
                         height={128}
-                        className="w-full h-full object-cover opacity-50"
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                       />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors duration-300">
                         <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Play className="w-6 h-6 text-gray-900 ml-1" />
                         </div>
@@ -130,18 +133,13 @@ export const SocialProofSection: React.FC = () => {
                       {video.description}
                     </p>
 
-                    <a 
-                      href={video.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 text-sm font-medium"
-                    >
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full group-hover:bg-yellow-400 group-hover:text-gray-900 transition-all duration-300 text-sm font-medium">
                       <Play className="w-4 h-4" />
                       Assistir Agora
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

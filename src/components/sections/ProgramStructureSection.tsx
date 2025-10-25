@@ -56,12 +56,9 @@ export const ProgramStructureSection: React.FC = () => {
               {/* Iluminação lateral */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               
-              {/* Número grande tipo pódio */}
+              {/* Emoji grande tipo pódio */}
               <div className="relative w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-3xl font-black">{index + 1}</span>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center">
-                  <span className="text-xs font-bold">{phase.icon}</span>
-                </div>
+                <span className="text-4xl">{phase.icon}</span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2 relative z-10">
@@ -174,20 +171,20 @@ export const ProgramStructureSection: React.FC = () => {
           {/* Sessões Individuais */}
           <div className="mt-12">
             <h4 className="text-lg font-bold text-white text-center mb-8">Sessões Individuais (Mensais)</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {programWeeks.slice(6, 10).map((week, index) => (
                 <div 
                   key={index} 
-                  className="bg-gray-800/20 border border-gray-600 rounded-lg p-4 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+                  className="bg-gradient-to-br from-gray-800/40 to-gray-700/30 border border-yellow-400/20 rounded-xl p-6 hover:border-yellow-400/50 hover:shadow-yellow-400/20 transition-all duration-300 backdrop-blur-sm animate-fade-in-up shadow-lg hover:shadow-xl hover:scale-105"
                   style={{animationDelay: `${1.2 + index * 0.05}s`}}
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border border-yellow-400/30 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <User className="w-6 h-6 text-yellow-400" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                      <User className="w-8 h-8 text-yellow-400" />
                     </div>
-                    <h5 className="text-sm font-bold text-white mb-1">{week.title}</h5>
-                    <p className="text-xs text-gray-400 mb-2">{week.duration}</p>
-                    <p className="text-xs text-gray-300">{week.theme}</p>
+                    <h5 className="text-base font-bold text-white mb-2">{week.title}</h5>
+                    <p className="text-sm text-yellow-400 mb-3 font-semibold">{week.duration}</p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{week.theme}</p>
                   </div>
                 </div>
               ))}

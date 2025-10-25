@@ -71,7 +71,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              Pare de trocar horas por dinheiro. Aprenda a vender como CEO e construa sua própria operação comercial com o Método Pódium.
+              Transforme-se de funcionário para empresário. Aprenda a vender como CEO com nossa mentoria híbrida: sessões em grupo para acelerar resultados + individuais para personalização total.
             </p>
 
             {/* CTA Button with Progress */}
@@ -85,7 +85,7 @@ export const HeroSection: React.FC = () => {
               </a>
 
               {/* Progress Bar */}
-              <div className="space-y-1 w-full max-w-xs sm:max-w-sm animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
                   <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>

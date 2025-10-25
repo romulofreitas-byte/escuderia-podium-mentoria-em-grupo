@@ -30,7 +30,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="section-padding bg-black">
+    <section id="faq" className="section-padding bg-gray-800">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
@@ -74,7 +74,7 @@ export const FAQSection: React.FC = () => {
         >
           <AnimatedCard 
             variant="gradient"
-            className="bg-transparent border border-gray-800/20 max-w-2xl mx-auto"
+            className="bg-gray-700/20 border border-gray-600 max-w-2xl mx-auto"
           >
                 <h3 className="heading-3 mb-4">
                   Ainda Tem Dúvidas?
@@ -118,7 +118,7 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-              className="bg-transparent border border-gray-800/20 rounded-lg overflow-hidden hover:border-yellow-400/30 transition-all duration-300"
+              className="bg-gray-700/30 border border-gray-600 rounded-lg overflow-hidden hover:border-yellow-400/30 transition-all duration-300"
         >
           <motion.button
             onClick={() => toggleItem(index)}

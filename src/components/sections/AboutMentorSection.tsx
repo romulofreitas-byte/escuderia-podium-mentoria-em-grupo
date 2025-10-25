@@ -86,10 +86,10 @@ export const AboutMentorSection: React.FC = () => {
                     Rômulo Freitas
                   </h3>
                   <p className="text-xl text-yellow-400 mb-6">
-                    Criador do Método Pódium
+                    Criador do Método Pódium • Fundador e CEO da Combustível Marketing e Vendas
                   </p>
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                    Especialista em vendas digitais com mais de 8 anos de experiência em processos comerciais estruturados. 
+                    Especialista em vendas digitais com mais de 12 anos de experiência em processos comerciais estruturados. 
                     Criador do Método Pódium, uma metodologia comprovada para acelerar vendas em qualquer nicho.
                   </p>
                   <p className="text-lg text-gray-300 leading-relaxed">
@@ -111,8 +111,8 @@ export const AboutMentorSection: React.FC = () => {
                     <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
                       <Users className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold text-white">500+</p>
-                    <p className="text-xs sm:text-sm text-gray-400">Alunos</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white">100+</p>
+                    <p className="text-xs sm:text-sm text-gray-400">Pilotos</p>
                   </div>
                   <div className="text-center">
                     <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">

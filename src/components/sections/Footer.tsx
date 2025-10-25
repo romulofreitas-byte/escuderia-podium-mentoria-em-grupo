@@ -122,22 +122,23 @@ export const Footer: React.FC = () => {
         {/* Logos Section */}
         <div className="border-t border-podium-yellow/10 mt-12 pt-8">
           <div className="flex justify-center items-center space-x-8 mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 relative">
+            <div className="flex items-center space-x-6">
+              <div className="w-16 h-16 relative">
                 <Image 
                   src="/logos/Escuderia Branco.png"
                   alt="Escuderia Pódium"
-                  width={48}
-                  height={48}
+                  width={64}
+                  height={64}
                   className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
                 />
               </div>
-              <div className="w-16 h-8 relative">
+              <div className="w-px h-12 bg-gray-600"></div>
+              <div className="w-20 h-10 relative">
                 <Image 
                   src="/logos/logo-metodo.png"
                   alt="Método Pódium"
-                  width={64}
-                  height={32}
+                  width={80}
+                  height={40}
                   className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
                 />
               </div>

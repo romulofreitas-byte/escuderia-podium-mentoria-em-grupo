@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
 import { WhyItWorksSection } from '@/components/sections/WhyItWorksSection';
 import { WhoIsItForSection } from '@/components/sections/WhoIsItForSection';
+import { LogoSeparator } from '@/components/sections/LogoSeparator';
 import { ProgramStructureSection } from '@/components/sections/ProgramStructureSection';
 import { MethodSection } from '@/components/sections/MethodSection';
 import { SocialProofSection } from '@/components/sections/SocialProofSection';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <BenefitsMarquee />
       <WhyItWorksSection />
       <WhoIsItForSection />
+      <LogoSeparator />
       <SocialProofSection />
       <ProgramStructureSection />
       <MethodSection />

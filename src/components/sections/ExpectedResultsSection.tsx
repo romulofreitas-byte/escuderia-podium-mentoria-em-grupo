@@ -42,21 +42,21 @@ export const ExpectedResultsSection: React.FC = () => {
 
   const testimonials = [
     {
-      name: "Ana Silva",
-      role: "Designer",
-      content: "Em 4 semanas já tinha fechado meu primeiro contrato de R$ 3.500. O Método Pódium realmente funciona!",
+      name: "Thiago Rosa",
+      role: "Gestor de Tráfego",
+      content: "A mentoria é muito melhor que os vídeos do Youtube, muito diferente, sinto que o Rômulo pega na mão da gente mesmo",
       rating: 5
     },
     {
-      name: "Carlos Mendes", 
-      role: "Consultor",
-      content: "A Sala de Ligação foi fundamental para eu perder o medo de ligar. Hoje faço 10+ ligações por dia com confiança total.",
+      name: "Vinícius Nascimento", 
+      role: "Piloto Pódium",
+      content: "Mestre, olha só o tanto de problema que você me arrumou",
       rating: 5
     },
     {
-      name: "Marina Costa",
-      role: "Marketing",
-      content: "O Agente Pódium me economiza horas de trabalho. Scripts personalizados em minutos!",
+      name: "Marina Marchiolli",
+      role: "Piloto Pódium",
+      content: "Hoje eu me sinto Empresária. Com sinceridade, eu nunca achei que eu iria conseguir fechar um contrato sozinha, e eu consegui!",
       rating: 5
     }
   ];
@@ -73,7 +73,7 @@ export const ExpectedResultsSection: React.FC = () => {
         <div className="text-center mb-16">
           <motion.div variants={itemVariants} className="mb-8">
             <Badge variant="success" size="lg">
-              Hall of Fame
+              Como vou me sentir no final
             </Badge>
           </motion.div>
           
@@ -81,14 +81,14 @@ export const ExpectedResultsSection: React.FC = () => {
                 variants={itemVariants}
                 className="heading-1"
               >
-                Resultados Esperados
+                Como vou me sentir no final
               </motion.h2>
               
               <motion.p 
                 variants={itemVariants}
                 className="body-text-lg max-w-3xl mx-auto"
               >
-                Ao final das 10 semanas, você terá transformado completamente seu processo comercial
+                De funcionário inseguro para empresário confiante em suas vendas
               </motion.p>
         </div>
 

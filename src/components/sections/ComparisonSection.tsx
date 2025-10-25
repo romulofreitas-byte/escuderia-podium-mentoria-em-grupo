@@ -19,7 +19,7 @@ export const ComparisonSection: React.FC = () => {
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Seu Estado Atual vs{' '}
-            <span className="text-yellow-400 drop-shadow-md animate-pulse">Com a Escuderia</span>
+            <span className="text-yellow-400 drop-shadow-md animate-pulse">Escuderia Pódium</span>
           </h2>
           
           <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
@@ -40,7 +40,7 @@ export const ComparisonSection: React.FC = () => {
                 <p className="text-sm text-gray-300 mt-1">Funcionário de agência</p>
               </div>
               <div className="p-6 text-center bg-yellow-400/10 border-yellow-400/30">
-                <h3 className="text-lg font-semibold text-yellow-400">Com a Escuderia</h3>
+                <h3 className="text-lg font-semibold text-yellow-400">Escuderia Pódium</h3>
                 <p className="text-sm text-gray-300 mt-1">Empreendedor independente</p>
               </div>
             </div>
@@ -103,9 +103,9 @@ export const ComparisonSection: React.FC = () => {
                     )}
                   </span>
                 </div>
-                {/* Com a Escuderia */}
+                {/* Escuderia Pódium */}
                 <div className="flex items-center justify-between p-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg">
-                  <span className="text-sm font-medium text-white">Com a Escuderia</span>
+                  <span className="text-sm font-medium text-white">Escuderia Pódium</span>
                   <span className="text-white">
                     {typeof item.escuderia === 'boolean' ? (
                       item.escuderia ? (
@@ -139,28 +139,28 @@ export const ComparisonSection: React.FC = () => {
               </p>
             </div>
 
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+            <div className="text-center space-y-4 mb-6">
+              <div className="flex items-center justify-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">De funcionário para empreendedor independente</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">Processo comercial estruturado e validado</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">Primeiro contrato fechado em 6 semanas</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">Comunidade de pilotos para networking</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">Método Pódium completo e testado</span>
-              </li>
-            </ul>
+              </div>
+            </div>
 
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-2">R$ 1.850</div>
