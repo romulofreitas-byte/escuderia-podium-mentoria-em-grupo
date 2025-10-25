@@ -116,7 +116,7 @@ export const TimelineSection: React.FC = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="w-full md:w-5/12 md:pr-8 md:text-right">
+                <div className={`w-full md:w-5/12 ${index === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left md:ml-auto'}`}>
                   <div className={`bg-gray-800/30 border border-gray-700 rounded-xl p-4 md:p-6 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 ${
                     animatedItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   } transition-all duration-500`}>
