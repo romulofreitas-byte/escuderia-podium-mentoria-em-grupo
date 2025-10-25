@@ -82,7 +82,6 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
-        onSelectStart={(e) => e.preventDefault()}
       style={{
         userSelect: 'none',
         WebkitUserSelect: 'none',
