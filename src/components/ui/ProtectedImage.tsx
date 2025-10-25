@@ -3,15 +3,16 @@
 import React, { useRef, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
 
-interface ProtectedImageProps extends Omit<ImageProps, 'onContextMenu' | 'onDragStart' | 'onSelectStart'> {
+interface ProtectedImageProps extends Omit<ImageProps, 'onContextMenu' | 'onDragStart' | 'onSelectStart' | 'alt'> {
   className?: string;
   overlay?: boolean;
-  alt?: string; // Make alt optional with default
+  alt: string; // Required alt prop
 }
 
 export const ProtectedImage: React.FC<ProtectedImageProps> = ({ 
   className = '', 
   overlay = true,
+  alt,
   ...props 
 }) => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -77,6 +78,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
     >
       <Image
         {...props}
+        alt={alt}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
