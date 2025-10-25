@@ -85,7 +85,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 18s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 /* Hero Animations */
@@ -190,4 +190,18 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

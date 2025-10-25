@@ -131,9 +131,9 @@ export const Footer: React.FC = () => {
 
         {/* Logos Section */}
         <div className="border-t border-podium-yellow/10 mt-12 pt-8">
-          <div className="flex justify-center items-center space-x-8 mb-8">
-            <div className="flex items-center space-x-6">
-              <div className="w-28 h-28 relative flex items-center">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 relative flex items-center">
                 <ProtectedImage 
                   src="/logos/Escuderia Branco.png"
                   alt="Escuderia Pódium"
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
                   className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
                 />
               </div>
-              <div className="w-px h-20 bg-gray-600"></div>
+              <div className="hidden sm:block w-px h-20 bg-gray-600"></div>
               <div className="w-24 h-12 relative">
                 <ProtectedImage 
                   src="/logos/logo-metodo.png"

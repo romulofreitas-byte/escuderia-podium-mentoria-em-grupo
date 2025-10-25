@@ -85,36 +85,36 @@ export const ComparisonSection: React.FC = () => {
         {/* Comparison Cards - Mobile */}
         <div className="lg:hidden space-y-6 mb-20">
           {comparison.map((item, index) => (
-            <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-4 animate-fade-in-up backdrop-blur-sm" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
-              <h4 className="text-base font-semibold text-white mb-4">{item.feature}</h4>
+            <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-4 sm:p-6 animate-fade-in-up backdrop-blur-sm" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
+              <h4 className="text-lg font-semibold text-white mb-4">{item.feature}</h4>
               <div className="space-y-3">
                 {/* Estado Atual */}
                 <div className="flex items-center justify-between p-3 bg-gray-700/50 border border-gray-600 rounded-lg">
-                  <span className="text-sm font-medium text-white">Seu Estado Atual</span>
+                  <span className="text-base font-medium text-white">Seu Estado Atual</span>
                   <span className="text-white">
                     {typeof item.atual === 'boolean' ? (
                       item.atual ? (
-                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <CheckCircle className="w-6 h-6 text-green-400" />
                       ) : (
-                        <XCircle className="w-5 h-5 text-gray-500" />
+                        <XCircle className="w-6 h-6 text-gray-500" />
                       )
                     ) : (
-                      <span className="text-sm">{item.atual}</span>
+                      <span className="text-base">{item.atual}</span>
                     )}
                   </span>
                 </div>
                 {/* Escuderia Pódium */}
                 <div className="flex items-center justify-between p-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg">
-                  <span className="text-sm font-medium text-white">Escuderia Pódium</span>
+                  <span className="text-base font-medium text-white">Escuderia Pódium</span>
                   <span className="text-white">
                     {typeof item.escuderia === 'boolean' ? (
                       item.escuderia ? (
-                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <CheckCircle className="w-6 h-6 text-green-400" />
                       ) : (
-                        <XCircle className="w-5 h-5 text-gray-500" />
+                        <XCircle className="w-6 h-6 text-gray-500" />
                       )
                     ) : (
-                      <span className="text-sm">{item.escuderia}</span>
+                      <span className="text-base">{item.escuderia}</span>
                     )}
                   </span>
                 </div>

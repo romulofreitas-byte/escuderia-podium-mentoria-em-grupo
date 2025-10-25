@@ -101,12 +101,12 @@ export const SocialProofSection: React.FC = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   {/* Video Thumbnail */}
                   <div className="relative flex-shrink-0">
-                    <div className="relative w-full lg:w-48 h-32 bg-gray-700 rounded-lg overflow-hidden">
+                    <div className="relative w-full lg:w-48 h-40 sm:h-48 bg-gray-700 rounded-lg overflow-hidden">
                       <ProtectedImage 
                         src={video.thumbnail}
                         alt={video.title}
                         width={192}
-                        height={128}
+                        height={192}
                         className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors duration-300">
@@ -127,11 +127,11 @@ export const SocialProofSection: React.FC = () => {
                       <span className="text-yellow-400 text-sm font-medium">{video.type}</span>
                     </div>
                     
-                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
                       {video.title}
                     </h3>
                     
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
                       {video.description}
                     </p>
 

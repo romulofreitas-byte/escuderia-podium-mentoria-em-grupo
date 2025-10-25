@@ -3,7 +3,7 @@ import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden flex flex-col bg-gray-900" style={{height: 'calc(100vh - 64px)'}}>
+    <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[calc(100vh-64px)]" style={{minHeight: 'calc(100vh - 64px)'}}>
       {/* Background with blur */}
       <div className="absolute inset-0 z-0">
         <ProtectedImage 
@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400 drop-shadow-md animate-pulse">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -78,9 +78,9 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
                 href="#investimento-estrategico"
-                className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
-                <span className="relative drop-shadow-sm text-sm sm:text-base">Entrar na Escuderia Pódium</span>
+                <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Escuderia Pódium</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 

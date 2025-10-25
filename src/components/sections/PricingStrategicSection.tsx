@@ -128,7 +128,7 @@ export const PricingStrategicSection: React.FC = () => {
               </div>
 
               {/* Grid de Benefícios Visuais */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div className="text-center p-4 bg-gray-700/30 rounded-xl">
                   <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
                   <p className="text-white font-bold text-lg">16h</p>
@@ -164,12 +164,13 @@ export const PricingStrategicSection: React.FC = () => {
                   href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-black text-xl rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
+                  className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-black text-base sm:text-xl rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
                 >
-                  <Zap className="w-6 h-6 mr-3" />
-                  Garantir Minha Vaga na Escuderia - R$ 1.850
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
+                  <span className="hidden sm:inline">Garantir Minha Vaga na Escuderia - </span>
+                  <span>R$ 1.850</span>
                 </a>
-                <p className="text-gray-400 text-sm mt-4">
+                <p className="text-gray-400 text-xs sm:text-sm mt-4">
                   ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
                 </p>
               </div>
@@ -180,7 +181,7 @@ export const PricingStrategicSection: React.FC = () => {
         {/* Garantias e Redutores de Risco */}
         <motion.div 
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           <div className="text-center p-6 bg-gray-800/30 border border-gray-700 rounded-xl backdrop-blur-sm">
             <Shield className="w-8 h-8 text-green-400 mx-auto mb-3" />
@@ -244,7 +245,7 @@ export const PricingStrategicSection: React.FC = () => {
           className="mb-16"
         >
           <h3 className="text-2xl font-bold text-white text-center mb-8">Resultados Reais de Pilotos</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
                 <div className="text-4xl mb-3">{testimonial.avatar}</div>
