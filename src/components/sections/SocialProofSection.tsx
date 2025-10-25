@@ -1,8 +1,23 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Play, Users, Award, MessageCircle } from 'lucide-react';
+import { VideoModal } from '@/components/ui/VideoModal';
 
 export const SocialProofSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
+
+  const openModal = (url: string, title: string) => {
+    setSelectedVideo({ url, title });
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedVideo(null);
+  };
   const videos = [
     {
       id: 'marina',
@@ -77,12 +92,10 @@ export const SocialProofSection: React.FC = () => {
           {videos.map((video, index) => {
             const IconComponent = video.icon;
             return (
-              <a 
+              <button
                 key={video.id}
-                href={video.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-800/30 border border-gray-700 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up group cursor-pointer"
+                onClick={() => openModal(video.url, video.title)}
+                className="w-full text-left bg-gray-800/30 border border-gray-700 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up group cursor-pointer"
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
               >
                 <div className="flex flex-col lg:flex-row gap-6">
@@ -128,7 +141,7 @@ export const SocialProofSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </button>
             );
           })}
         </div>
@@ -151,6 +164,16 @@ export const SocialProofSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <VideoModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          videoUrl={selectedVideo.url}
+          title={selectedVideo.title}
+        />
+      )}
     </section>
   );
 };
