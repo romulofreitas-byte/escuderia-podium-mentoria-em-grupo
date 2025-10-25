@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Section, Heading, Text } from '@/components/ui/Section';
 import { bonuses } from '@/data/benefits';
