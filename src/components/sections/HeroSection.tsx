@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="h-screen relative overflow-hidden flex flex-col bg-gray-900">
+    <section className="relative overflow-hidden flex flex-col bg-gray-900" style={{height: 'calc(100vh - 64px)'}}>
       {/* Background with blur */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -19,7 +19,7 @@ export const HeroSection: React.FC = () => {
 
       {/* Header */}
       <div className="relative z-10 border-b border-gray-800">
-        <div className="container-custom py-6">
+        <div className="container-custom py-4">
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-3">
@@ -48,17 +48,17 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="container-custom relative z-10 py-8 flex-1 flex items-center">
+      <div className="container-custom relative z-10 py-4 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text Content */}
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4">
               <span className="text-yellow-400 font-semibold text-xs tracking-wide">1ª Turma • Black Friday Antecipada</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -66,12 +66,12 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm text-gray-300 font-light leading-relaxed mb-8">
+            <p className="text-sm text-gray-300 font-light leading-relaxed mb-6">
               6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
             </p>
 
             {/* CTA Button with Progress */}
-            <div className="inline-flex flex-col space-y-4">
+            <div className="inline-flex flex-col space-y-3">
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
                 className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900"
