@@ -210,34 +210,6 @@ export const AboutMentorSection: React.FC = () => {
               <h3 className="text-3xl font-bold text-white mb-8">
                 Entre em Contato Direto
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <a 
-                  href="https://wa.me/5531994293099"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-4 p-6 bg-gray-900/50 rounded-2xl hover:bg-gray-900 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-yellow-400/10 rounded-full flex items-center justify-center group-hover:bg-yellow-400/20 transition-all">
-                    <Phone className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white font-semibold">WhatsApp</p>
-                    <p className="text-gray-400">(31) 99429-3099</p>
-                  </div>
-                </a>
-                <a 
-                  href="mailto:romulo.freitas@combustivelmv.com"
-                  className="flex items-center justify-center space-x-4 p-6 bg-gray-900/50 rounded-2xl hover:bg-gray-900 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-yellow-400/10 rounded-full flex items-center justify-center group-hover:bg-yellow-400/20 transition-all">
-                    <Mail className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-400">romulo.freitas@combustivelmv.com</p>
-                  </div>
-                </a>
-              </div>
               <a 
                 href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!"
                 target="_blank"

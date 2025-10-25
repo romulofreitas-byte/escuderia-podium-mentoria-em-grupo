@@ -45,9 +45,9 @@ export const PricingStrategicSection: React.FC = () => {
   ];
 
   const testimonials = [
-    { name: "Marina Marchiolli", result: "R$ 4.500", period: "Branding Specialist", avatar: "👩‍💼" },
-    { name: "Vinícius Nascimento", result: "Perdeu medo", period: "Web Development", avatar: "👨‍💻" },
-    { name: "Lucas Ribeiro", result: "Método funciona", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
+    { name: "Marina Marchiolli", result: "Fechou Mentoria", period: "Branding Specialist", avatar: "👩‍💼" },
+    { name: "Vinícius Nascimento", result: "Está contratando", period: "Web Development", avatar: "👨‍💻" },
+    { name: "Lucas Ribeiro", result: "Agendou de 1ª", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
   ];
 
   return (
