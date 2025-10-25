@@ -23,12 +23,12 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 relative flex-shrink-0">
+              <div className="h-8 relative flex-shrink-0" style={{width: '120px'}}>
                 <Image 
-                  src="/Escuderia Branco.png"
-                  alt="Escuderia Pódium"
-                  width={48}
-                  height={48}
+                  src="/Logo Método Pódium horizontal branco cheio.png"
+                  alt="Método Pódium"
+                  width={120}
+                  height={32}
                   className="object-contain"
                 />
               </div>
@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Right - Date */}
-            <div className="flex items-center gap-2 text-yellow-400">
+            <div className="flex items-center gap-2 text-white">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -48,13 +48,13 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="container-custom relative z-10 py-4 flex-1 flex items-center">
+      <div className="container-custom relative z-10 flex-1 flex items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text Content */}
           <div className="max-w-2xl">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4">
-              <span className="text-yellow-400 font-semibold text-xs tracking-wide">1ª Turma • Black Friday Antecipada</span>
+              <span className="text-yellow-400 font-semibold text-xs tracking-wide">1ª Turma • Black Friday Antecipada • 7 vagas</span>
             </div>
 
             {/* Main Headline */}
