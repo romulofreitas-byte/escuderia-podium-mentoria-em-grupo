@@ -57,19 +57,6 @@ export const PricingStrategicSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
       </div>
 
-      {/* Floating Logo */}
-      <div className="absolute top-8 right-8 z-10 hidden lg:block">
-        <div className="w-20 h-20 relative">
-          <Image 
-            src="/logos/Escuderia Branco.png"
-            alt="Escuderia Pódium"
-            width={80}
-            height={80}
-            className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-          />
-        </div>
-      </div>
-
       <motion.div 
         className="container-custom relative z-10"
         variants={containerVariants}
