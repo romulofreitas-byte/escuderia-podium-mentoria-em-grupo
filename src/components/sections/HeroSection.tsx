@@ -20,8 +20,8 @@ export const HeroSection: React.FC = () => {
       {/* Header */}
       <div className="relative z-10 border-b border-gray-800">
         <div className="container-custom py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            {/* Left - Logo + Title */}
+          <div className="flex items-center justify-center lg:justify-between">
+            {/* Logo + Title - Centered on mobile, left on desktop */}
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="w-6 h-6 sm:w-8 sm:h-8 relative flex-shrink-0">
                 <ProtectedImage 
@@ -38,31 +38,45 @@ export const HeroSection: React.FC = () => {
               </span>
             </div>
 
-            {/* Right - Date */}
-            <div className="flex items-center gap-1 sm:gap-2 text-white">
+            {/* Right - Date - Hidden on mobile */}
+            <div className="hidden lg:flex items-center gap-1 sm:gap-2 text-white">
               <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span className="text-xs sm:text-sm font-bold" style={{fontFamily: 'var(--font-ubuntu), sans-serif'}}>
-                <span className="hidden sm:inline">1º encontro 30/10</span>
-                <span className="sm:hidden">30/10</span>
+                1º encontro 30/10
               </span>
             </div>
           </div>
         </div>
       </div>
       
+      {/* Mobile Mentor Photo - Only visible on mobile */}
+      <div className="lg:hidden relative z-10">
+        <div className="relative h-80 sm:h-96 overflow-hidden">
+          <ProtectedImage 
+            src="/romulo-hero-2.png"
+            alt="Rômulo Freitas"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/60 to-gray-900/90"></div>
+        </div>
+      </div>
+
       <div className="container-custom relative z-10 flex-1 flex items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text Content */}
           <div className="max-w-2xl text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-2 md:mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 sm:mb-6 lg:mb-2 lg:md:mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 lg:mb-3 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400 drop-shadow-md animate-pulse">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -70,22 +84,22 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-8 sm:mb-10 lg:mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               Transforme-se de freelancer para empresário em apenas 6 semanas com nossa mentoria híbrida: sessões em grupo + individuais.
             </p>
 
-            {/* CTA Button with Progress */}
-            <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up mt-4 md:mt-0" style={{animationDelay: '0.4s'}}>
+            {/* CTA Button */}
+            <div className="flex flex-col items-center lg:items-start space-y-4 animate-fade-in-up mb-6 lg:mb-0" style={{animationDelay: '0.4s'}}>
               <a 
                 href="#investimento-estrategico"
-                className="group relative inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-6 sm:px-8 md:px-8 py-3 md:py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
-                <span className="relative drop-shadow-sm text-xs md:text-base">Entrar na Escuderia Pódium</span>
+                <span className="relative drop-shadow-sm text-sm md:text-base">Entrar na Escuderia Pódium</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
-              {/* Progress Bar */}
-              <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              {/* Progress Bar - Centered with same width as button */}
+              <div className="space-y-2 w-full max-w-xs mx-auto lg:mx-0 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
                   <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
