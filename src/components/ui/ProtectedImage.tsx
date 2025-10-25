@@ -74,7 +74,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
         WebkitTouchCallout: 'none',
         WebkitUserDrag: 'none',
         KhtmlUserSelect: 'none',
-      }}
+      } as React.CSSProperties}
     >
       <Image
         {...props}
@@ -83,17 +83,16 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
         onSelectStart={(e) => e.preventDefault()}
-        style={{
-          ...props.style,
-          userSelect: 'none',
-          WebkitUserSelect: 'none',
-          MozUserSelect: 'none',
-          msUserSelect: 'none',
-          WebkitTouchCallout: 'none',
-          WebkitUserDrag: 'none',
-          KhtmlUserSelect: 'none',
-          pointerEvents: 'none',
-        }}
+      style={{
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none',
+        WebkitTouchCallout: 'none',
+        WebkitUserDrag: 'none',
+        KhtmlUserSelect: 'none',
+        pointerEvents: 'none',
+      } as React.CSSProperties}
       />
       
       {/* Transparent overlay to prevent direct image access */}
