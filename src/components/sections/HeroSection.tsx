@@ -23,14 +23,8 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 relative flex-shrink-0">
-                <Image 
-                  src="/Escuderia Branco.png"
-                  alt="Escuderia Pódium"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
+              <div className="w-10 h-10 relative flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center">
+                <span className="text-gray-900 font-bold text-sm">EP</span>
               </div>
               <span className="text-white text-sm font-medium tracking-wide leading-tight">
                 Escuderia Pódium | Mentoria em Grupo | 1ª Turma
