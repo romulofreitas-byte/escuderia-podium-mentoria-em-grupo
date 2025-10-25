@@ -32,7 +32,7 @@ export const HeroSection: React.FC = () => {
                   className="object-contain"
                 />
               </div>
-              <span className="text-white text-sm font-medium tracking-wide">
+              <span className="text-white text-sm font-light tracking-wide">
                 Escuderia Pódium | Mentoria em Grupo
               </span>
             </div>
