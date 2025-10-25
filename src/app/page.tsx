@@ -16,6 +16,7 @@ import { FAQSection } from '@/components/sections/FAQSection';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
 import { ColdCallSection } from '@/components/sections/ColdCallSection';
 import { WhatsAppContactCard } from '@/components/sections/WhatsAppContactCard';
+import { Footer } from '@/components/sections/Footer';
 
 export default function HomePage() {
   return (
