@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Image from 'next/image';
 
@@ -57,19 +57,19 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ isOpen
     }
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating, testimonials.length]);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating, testimonials.length]);
 
   const goToTestimonial = (index: number) => {
     if (isAnimating) return;
