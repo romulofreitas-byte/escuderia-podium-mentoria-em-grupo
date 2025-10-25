@@ -203,15 +203,17 @@ export const ExpectedResultsSection: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
-                  <img 
+                  <Image 
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    width={64}
+                    height={64}
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <h4 className="text-white font-bold mb-2">{testimonial.name}</h4>
                 <p className="text-yellow-400 text-sm mb-3">{testimonial.role}</p>
-                <p className="text-gray-300 text-sm leading-relaxed italic">"{testimonial.content}"</p>
+                <p className="text-gray-300 text-sm leading-relaxed italic">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="flex justify-center mt-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
