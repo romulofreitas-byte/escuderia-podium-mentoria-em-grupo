@@ -5,18 +5,8 @@ import Image from 'next/image';
 export const HeroSection: React.FC = () => {
   return (
     <section className="min-h-screen relative overflow-hidden flex items-center">
-      {/* Background with blur */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="/background-hero.jpg"
-          alt="Background"
-          fill
-          className="object-cover blur-sm opacity-40"
-          priority
-          quality={90}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/80"></div>
-      </div>
+      {/* Background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
       
       <div className="container-custom relative z-10 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -28,7 +18,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -36,7 +26,7 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl text-gray-300 mb-12 font-light leading-relaxed">
+            <p className="text-lg text-gray-300 mb-10 font-light leading-relaxed">
               6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
             </p>
 
@@ -90,17 +80,10 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right - Image */}
+          {/* Right - Placeholder for image */}
           <div className="hidden lg:flex justify-end items-center">
-            <div className="relative w-full max-w-lg">
-              <Image 
-                src="/romulo-hero.png"
-                alt="Rômulo Freitas"
-                width={600}
-                height={600}
-                className="w-full h-auto object-contain"
-                priority
-              />
+            <div className="relative w-full max-w-lg h-96 bg-gray-800/30 rounded-3xl border border-gray-700 flex items-center justify-center">
+              <p className="text-gray-500 text-sm">Imagem do mentor</p>
             </div>
           </div>
         </div>

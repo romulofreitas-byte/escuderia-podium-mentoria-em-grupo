@@ -1,10 +1,5 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { AnimatedCard } from '@/components/ui/AnimatedCard';
-import { Badge } from '@/components/ui/Badge';
-import { Target, Bot, Phone, Users, Zap, Shield, Clock } from 'lucide-react';
+import { Target, Bot, Phone, Users } from 'lucide-react';
 import { benefits } from '@/data/benefits';
 
 export const WhyItWorksSection: React.FC = () => {
@@ -12,103 +7,41 @@ export const WhyItWorksSection: React.FC = () => {
     Target: Target,
     Bot: Bot,
     Phone: Phone,
-    Users: Users,
-    Zap: Zap,
-    Shield: Shield,
-    Clock: Clock
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+    Users: Users
   };
 
   return (
-    <section id="por-que-funciona" className="section-padding bg-black">
-      <motion.div 
-        className="container-custom"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <div className="text-center mb-16">
-          <motion.div variants={itemVariants} className="mb-6">
-            <Badge variant="default" size="sm">
-              Por Que Funciona
-            </Badge>
-          </motion.div>
+    <section id="por-que-funciona" className="section-padding bg-gray-900">
+      <div className="container-custom">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-8">
+            <span className="text-yellow-400 font-semibold text-sm tracking-wide">Por Que Funciona</span>
+          </div>
           
-              <motion.h2 
-                variants={itemVariants}
-                className="heading-2"
-              >
-                A Combinação Perfeita para{' '}
-                <span className="gradient-text font-medium">Sucesso</span>
-              </motion.h2>
-              
-              <motion.p 
-                variants={itemVariants}
-                className="body-text-lg max-w-2xl mx-auto"
-              >
-                Metodologia comprovada + IA + Comunidade ativa = Resultados garantidos
-              </motion.p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            A Combinação Perfeita para{' '}
+            <span className="text-yellow-400">Sucesso</span>
+          </h2>
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => {
             const IconComponent = icons[benefit.icon as keyof typeof icons];
             return (
-              <AnimatedCard 
+              <div 
                 key={index} 
-                variant="gradient"
-                delay={index * 0.1}
-                className="text-center"
+                className="card text-center"
               >
-                <div className="icon-container mx-auto mb-4">
-                  <IconComponent className="w-4 h-4 text-yellow-400" />
+                <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <IconComponent className="w-8 h-8 text-yellow-400" />
                 </div>
-                    <h3 className="heading-3 mb-3">{benefit.title}</h3>
-                    <p className="small-text">{benefit.description}</p>
-              </AnimatedCard>
+                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{benefit.description}</p>
+              </div>
             );
           })}
-        </motion.div>
-
-        {/* Additional explanation */}
-        <motion.div 
-          variants={itemVariants}
-          className="bg-transparent border border-gray-800/20 rounded-sm p-8 max-w-4xl mx-auto"
-        >
-          <div className="text-center">
-                <h3 className="heading-3 mb-4">
-                  Não é apenas teoria
-                </h3>
-                <p className="body-text">
-                  Você vai praticar com outros pilotos na Sala de Ligação, usar o Agente Pódium para gerar scripts personalizados, 
-                  e ter o suporte contínuo da comunidade. É a <span className="text-yellow-400">fórmula completa</span> para acelerar sua jornada de vendas.
-                </p>
-          </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };
