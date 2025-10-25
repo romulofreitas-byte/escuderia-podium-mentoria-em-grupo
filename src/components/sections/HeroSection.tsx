@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden flex flex-col bg-gray-900">
+    <section className="h-screen relative overflow-hidden flex flex-col bg-gray-900">
       {/* Background with blur */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -23,8 +23,14 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 relative flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center">
-                <span className="text-gray-900 font-bold text-sm">EP</span>
+              <div className="w-10 h-10 relative flex-shrink-0">
+                <Image 
+                  src="/Escuderia Branco.png"
+                  alt="Escuderia Pódium"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
               <span className="text-white text-sm font-medium tracking-wide leading-tight">
                 Escuderia Pódium | Mentoria em Grupo | 1ª Turma
@@ -42,7 +48,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="container-custom relative z-10 py-12 flex-1 flex items-center">
+      <div className="container-custom relative z-10 py-8 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text Content */}
           <div className="max-w-2xl">
@@ -68,10 +74,8 @@ export const HeroSection: React.FC = () => {
             <div className="inline-flex flex-col space-y-4">
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
-                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105"
+                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900"
               >
-                {/* Shine effect on hover */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></span>
                 <span className="relative">Entrar na Escuderia Pódium</span>
               </a>
 
