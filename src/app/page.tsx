@@ -26,6 +26,7 @@ export default function HomePage() {
       <WhoIsItForSection />
       <LogoSeparator />
       <SocialProofSection />
+      <ColdCallSection />
       <ProgramStructureSection />
       <MethodSection />
       <ComparisonSection />
@@ -36,7 +37,6 @@ export default function HomePage() {
       <AboutMentorSection />
       <FAQSection />
       <FinalCTASection />
-      <ColdCallSection />
       <Footer />
     </main>
   );
