@@ -1,15 +1,21 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';
 import { Badge } from '@/components/ui/Badge';
+import { FlipCard } from '@/components/ui/FlipCard';
+import { TimelineModal } from '@/components/ui/TimelineModal';
+import { TestimonialCarousel } from '@/components/ui/TestimonialCarousel';
 import { expectedResults } from '@/data/benefits';
-import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3, Star, Award } from 'lucide-react';
+import { CheckCircle, Workflow, FileText, Phone, Users, Handshake, TrendingUp, BarChart3, Star, Award, Calendar, MessageCircle } from 'lucide-react';
 
 export const ExpectedResultsSection: React.FC = () => {
+  const [isTimelineModalOpen, setIsTimelineModalOpen] = useState(false);
+  const [isTestimonialCarouselOpen, setIsTestimonialCarouselOpen] = useState(false);
+
   const icons = {
     CheckCircle: CheckCircle,
     Workflow: Workflow,
@@ -104,88 +110,36 @@ export const ExpectedResultsSection: React.FC = () => {
           {expectedResults.map((result, index) => {
             const IconComponent = icons[result.icon as keyof typeof icons];
             return (
-              <AnimatedCard 
-                key={index} 
-                variant="gradient"
+              <FlipCard
+                key={index}
+                icon={IconComponent}
+                title={result.title}
+                description={result.description}
                 delay={index * 0.1}
-                className="text-center group"
-              >
-                <div className="icon-container mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-8 h-8 text-yellow-400" />
-                </div>
-                    <h3 className="heading-3 mb-4">{result.title}</h3>
-                    <p className="body-text">{result.description}</p>
-              </AnimatedCard>
+              />
             );
           })}
         </motion.div>
 
-            {/* Timeline */}
-            <motion.div 
-              variants={itemVariants}
-              className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-12 mb-16 card-hover"
-            >
-              <h3 className="heading-2 text-center mb-12">
-                Cronograma de Resultados
-              </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* 6 Weeks */}
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-yellow-400/30">
-                <span className="text-3xl font-bold text-yellow-400">6</span>
-              </div>
-              <h4 className="text-2xl font-bold text-white mb-6">
-                Após 6 Semanas Intensivas
-              </h4>
-              <ul className="space-y-3 text-center">
-                {[
-                  "Primeiro contrato fechado (ou muito perto)",
-                  "Processo comercial estruturado", 
-                  "Scripts validados e funcionando",
-                  "Confiança para fazer ligações"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center justify-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* 10 Weeks */}
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-yellow-400/30">
-                <span className="text-3xl font-bold text-yellow-400">10</span>
-              </div>
-              <h4 className="text-2xl font-bold text-white mb-6">
-                Após 10 Semanas Completas
-              </h4>
-              <ul className="space-y-3 text-center">
-                {[
-                  "2-3 contratos fechados",
-                  "Pipeline estruturado",
-                  "Processo replicável", 
-                  "Pronto para escalar"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center justify-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+        {/* Action Buttons */}
+        <motion.div 
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+        >
+          <button
+            onClick={() => setIsTimelineModalOpen(true)}
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 hover:scale-105 active:scale-95 flex items-center justify-center space-x-3"
+          >
+            <Calendar className="w-5 h-5" />
+            <span>Ver Cronograma de Resultados</span>
+          </button>
+          <button
+            onClick={() => setIsTestimonialCarouselOpen(true)}
+            className="w-full sm:w-auto px-8 py-4 bg-gray-800/50 border border-yellow-400/50 text-yellow-400 font-bold rounded-xl hover:bg-yellow-400/10 hover:border-yellow-400 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 hover:scale-105 active:scale-95 flex items-center justify-center space-x-3"
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>Ver Todos os Depoimentos</span>
+          </button>
         </motion.div>
 
         {/* Success Stories */}
@@ -225,6 +179,17 @@ export const ExpectedResultsSection: React.FC = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Modals */}
+      <TimelineModal
+        isOpen={isTimelineModalOpen}
+        onClose={() => setIsTimelineModalOpen(false)}
+      />
+
+      <TestimonialCarousel
+        isOpen={isTestimonialCarouselOpen}
+        onClose={() => setIsTestimonialCarouselOpen(false)}
+      />
     </section>
   );
 };
