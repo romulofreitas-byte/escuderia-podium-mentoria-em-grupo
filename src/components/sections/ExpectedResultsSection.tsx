@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';
 import { Badge } from '@/components/ui/Badge';
