@@ -103,7 +103,7 @@ export const Footer: React.FC = () => {
               </h4>
               <div className="space-y-2">
                 <a 
-                  href="https://wa.me/5531994293099" 
+                  href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!" 
                   className="block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600 transition-colors"
                 >
                   WhatsApp
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-podium-yellow/10 mt-12 pt-8">
           <div className="flex justify-center items-center space-x-8 mb-8">
             <div className="flex items-center space-x-6">
-              <div className="w-28 h-28 relative">
+              <div className="w-28 h-28 relative flex items-center">
                 <Image 
                   src="/logos/Escuderia Branco.png"
                   alt="Escuderia Pódium"

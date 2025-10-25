@@ -6,6 +6,7 @@ import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { AnimatedButton } from '@/components/ui/AnimatedButton';
 import { Badge } from '@/components/ui/Badge';
 import { CheckCircle, Clock, Users, Award, Bot, Zap, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 export const InvestmentSection: React.FC = () => {
   const includedFeatures = [
@@ -40,7 +41,19 @@ export const InvestmentSection: React.FC = () => {
   };
 
   return (
-    <section id="investimento" className="py-[75px] bg-black">
+    <section id="investimento" className="py-[75px] bg-black relative">
+      {/* Floating Escuderia Icon */}
+      <div className="absolute top-8 left-8 z-5 hidden lg:block">
+        <div className="w-12 h-12 relative opacity-40 hover:opacity-60 transition-opacity duration-300">
+          <Image 
+            src="/logos/icon-escuderia.png"
+            alt="Escuderia Pódium"
+            width={48}
+            height={48}
+            className="object-contain"
+          />
+        </div>
+      </div>
       <motion.div 
         className="container-custom"
         variants={containerVariants}

@@ -67,35 +67,6 @@ export const FAQSection: React.FC = () => {
           <AnimatedFAQ items={faqItems} />
         </motion.div>
 
-        {/* Additional Support */}
-        <motion.div 
-          variants={itemVariants}
-          className="mt-16 text-center"
-        >
-          <AnimatedCard 
-            variant="gradient"
-            className="bg-gray-700/20 border border-gray-600 max-w-2xl mx-auto"
-          >
-                <h3 className="heading-3 mb-4">
-                  Ainda Tem Dúvidas?
-                </h3>
-                <p className="body-text mb-6">
-                  Nossa equipe está à disposição para esclarecer qualquer dúvida sobre o programa
-                </p>
-            <div className="flex justify-center">
-              <AnimatedButton 
-                href="https://wa.me/5531994293099"
-                variant="secondary"
-                size="sm"
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 border-yellow-400 hover:border-yellow-500 text-sm sm:text-base"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                <span className="hidden sm:inline">WhatsApp: (31) 99429-3099</span>
-                <span className="sm:hidden">WhatsApp</span>
-              </AnimatedButton>
-            </div>
-          </AnimatedCard>
-        </motion.div>
       </motion.div>
     </section>
   );

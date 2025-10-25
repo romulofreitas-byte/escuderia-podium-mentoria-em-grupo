@@ -43,15 +43,15 @@ export const bonuses: Bonus[] = [
     ]
   },
   {
-    title: "Comunidade de Pilotos",
-    description: "Grupo exclusivo para networking e suporte contínuo",
+    title: "Comunidade Pódium Exclusiva",
+    description: "Plataforma Circle com acessos exclusivos",
     icon: "Users",
     details: [
-      "Grupo privado no WhatsApp/Telegram",
-      "Networking entre pilotos",
-      "Compartilhamento de cases de sucesso",
-      "Suporte mútuo entre participantes",
-      "Acesso vitalício à comunidade"
+      "Acesso a reuniões gravadas",
+      "Mentorias exclusivas",
+      "Networking com outros pilotos",
+      "Sessões de treinamento",
+      "Mentorias da comunidade Pódium"
     ]
   },
   {

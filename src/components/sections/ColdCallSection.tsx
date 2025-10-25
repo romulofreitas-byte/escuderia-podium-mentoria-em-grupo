@@ -89,7 +89,7 @@ export const ColdCallSection: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-300 mb-12 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
           >
-            Cold Call é o coração do Método Pódium. Enquanto outros evitam ligações, 
+            a Cold Call é o coração do Método Pódium. Enquanto outros evitam ligações, 
             você vai dominar essa habilidade e fechar contratos que outros só sonham.
           </motion.p>
 
@@ -137,7 +137,7 @@ export const ColdCallSection: React.FC = () => {
                 <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300">
                   {/* Video Thumbnail Image */}
                   <Image
-                    src="/background-podium-hero.jpg"
+                    src="/thumb-cold-call.jpg"
                     alt="Compilado de Cold Calls - Método Pódium"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -171,7 +171,7 @@ export const ColdCallSection: React.FC = () => {
               {/* Video Stats */}
               <div className="grid grid-cols-3 gap-6 mt-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">15+</div>
+                  <div className="text-2xl font-bold text-orange-400 mb-1">+100</div>
                   <div className="text-gray-300 text-sm">Ligações Reais</div>
                 </div>
                 <div className="text-center">

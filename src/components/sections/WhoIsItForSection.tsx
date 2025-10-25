@@ -3,7 +3,7 @@ import { CheckCircle, XCircle } from 'lucide-react';
 
 export const WhoIsItForSection: React.FC = () => {
   const idealProfile = [
-    'Piloto da Comunidade Pódium',
+    'Quer aprender a vender de forma consistente',
     'PJ que quer se tornar empresário',
     'Quer aprender Método Pódium',
     'Tem medo de fazer cold call',

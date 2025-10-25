@@ -39,7 +39,7 @@ export const SocialProofSection: React.FC = () => {
     },
     {
       id: 'thiago',
-      title: 'Mentoria ao Vivo - Thiago Rosa',
+      title: 'Thiago Rosa',
       description: 'Revisão real de processo comercial com sugestões práticas',
       thumbnail: '/depoimentos/mentoria-thiago-rosa-live.jpg',
       url: 'https://youtube.com/live/RNsPan7I3F0?feature=share',

@@ -82,10 +82,10 @@ export const AboutMentorSection: React.FC = () => {
               {/* Bio */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-3xl font-bold text-white mb-4">
+                  <h3 className="text-4xl font-bold text-white mb-4 leading-tight">
                     Rômulo Freitas
                   </h3>
-                  <p className="text-xl text-yellow-400 mb-6">
+                  <p className="text-xl text-yellow-400 mb-6 font-medium">
                     Criador do Método Pódium • Fundador e CEO da Combustível Marketing e Vendas
                   </p>
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
@@ -239,11 +239,12 @@ export const AboutMentorSection: React.FC = () => {
                 </a>
               </div>
               <a 
-                href="https://wa.me/5531994293099"
+                href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-xl px-12 py-6 inline-block"
+                className="inline-flex items-center px-12 py-6 bg-green-500 text-white font-bold text-xl rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
               >
+                <Phone className="w-6 h-6 mr-3" />
                 Falar no WhatsApp
               </a>
             </div>

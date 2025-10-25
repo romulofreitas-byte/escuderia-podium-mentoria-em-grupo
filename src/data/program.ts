@@ -88,7 +88,7 @@ export const programWeeks: ProgramWeek[] = [
   },
   {
     week: 4,
-    title: 'R1 - Reunião de Levantamento de Necessidades',
+    title: 'Reunião de Diagnóstico - R1',
     phase: 'Execução',
     format: 'Grupo',
     duration: '2h',
@@ -115,7 +115,7 @@ export const programWeeks: ProgramWeek[] = [
   },
   {
     week: 5,
-    title: 'R2 - Reunião de Apresentação de Projetos',
+    title: 'Reunião de Proposta - R2',
     phase: 'Execução',
     format: 'Grupo',
     duration: '2h',

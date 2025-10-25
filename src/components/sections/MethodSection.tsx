@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { methodSteps } from '@/data/comparison';
 import { Target, Users, Phone, MessageCircle, Presentation, Handshake, CheckCircle, Zap, Globe, Bot } from 'lucide-react';
 import { MethodModal } from '@/components/ui/MethodModal';
+import Image from 'next/image';
 
 export const MethodSection: React.FC = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -28,6 +29,19 @@ export const MethodSection: React.FC = () => {
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
+        
+        {/* Floating Escuderia Icon */}
+        <div className="absolute top-8 right-8 z-5 hidden lg:block">
+          <div className="w-12 h-12 relative opacity-40 hover:opacity-60 transition-opacity duration-300">
+            <Image 
+              src="/logos/icon-escuderia.png"
+              alt="Escuderia Pódium"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="container-custom relative z-10">

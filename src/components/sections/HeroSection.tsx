@@ -15,6 +15,19 @@ export const HeroSection: React.FC = () => {
           quality={90}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
+        
+        {/* Floating Escuderia Icon */}
+        <div className="absolute top-1/4 right-8 z-5 hidden lg:block">
+          <div className="w-16 h-16 relative opacity-30 hover:opacity-50 transition-opacity duration-300">
+            <Image 
+              src="/logos/icon-escuderia.png"
+              alt="Escuderia Pódium"
+              width={64}
+              height={64}
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Header */}

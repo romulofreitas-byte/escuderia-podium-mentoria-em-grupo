@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Calendar } from 'lucide-react';
+import Image from 'next/image';
 
 export const TimelineSection: React.FC = () => {
   const [animatedItems, setAnimatedItems] = useState<number[]>([]);
@@ -68,7 +69,19 @@ export const TimelineSection: React.FC = () => {
   };
 
   return (
-    <section id="cronograma-resultados" className="py-[75px] bg-gray-800">
+    <section id="cronograma-resultados" className="py-[75px] bg-gray-800 relative">
+      {/* Floating Escuderia Icon */}
+      <div className="absolute top-8 right-8 z-5 hidden lg:block">
+        <div className="w-12 h-12 relative opacity-40 hover:opacity-60 transition-opacity duration-300">
+          <Image 
+            src="/logos/icon-escuderia.png"
+            alt="Escuderia Pódium"
+            width={48}
+            height={48}
+            className="object-contain"
+          />
+        </div>
+      </div>
       <motion.div 
         className="container-custom"
         variants={containerVariants}

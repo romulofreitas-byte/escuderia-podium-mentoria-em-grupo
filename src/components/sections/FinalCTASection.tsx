@@ -57,9 +57,17 @@ export const FinalCTASection: React.FC = () => {
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
           >
+            Uma mentoria que te{' '}
+            <span className="text-yellow-400 drop-shadow-md animate-pulse">transforma</span> como pessoa
+          </motion.h2>
+          
+          <motion.h3 
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
+          >
             Sua Jornada Para o Primeiro{' '}
             <span className="text-yellow-400 drop-shadow-md animate-pulse">Contrato</span> Começa Agora
-          </motion.h2>
+          </motion.h3>
           
           <motion.p 
             variants={itemVariants}
@@ -200,7 +208,7 @@ export const FinalCTASection: React.FC = () => {
               Prefere falar diretamente conosco?
             </p>
             <a 
-              href="https://wa.me/5531994293099"
+              href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!"
               className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
             >
               <MessageCircle className="w-5 h-5 mr-3" />
