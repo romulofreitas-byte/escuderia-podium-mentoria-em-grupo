@@ -29,7 +29,7 @@ export const FinalCTASection: React.FC = () => {
   };
 
   return (
-    <section id="cta-final" className="relative overflow-hidden py-32 bg-gray-900">
+    <section id="cta-final" className="relative overflow-hidden py-[250px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>

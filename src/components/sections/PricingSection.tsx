@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export const PricingSection: React.FC = () => {
   return (
-    <section className="section-padding bg-black">
+    <section className="py-[250px] bg-black">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           {/* Pricing Card */}

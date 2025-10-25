@@ -40,7 +40,7 @@ export const InvestmentSection: React.FC = () => {
   };
 
   return (
-    <section id="investimento" className="section-padding bg-black">
+    <section id="investimento" className="py-[250px] bg-black">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
