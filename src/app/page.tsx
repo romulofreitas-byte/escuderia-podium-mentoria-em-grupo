@@ -14,6 +14,7 @@ import { ExpectedResultsSection } from '@/components/sections/ExpectedResultsSec
 import { AboutMentorSection } from '@/components/sections/AboutMentorSection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
+import { ColdCallSection } from '@/components/sections/ColdCallSection';
 import { Footer } from '@/components/sections/Footer';
 
 export default function HomePage() {
@@ -35,6 +36,7 @@ export default function HomePage() {
       <AboutMentorSection />
       <FAQSection />
       <FinalCTASection />
+      <ColdCallSection />
       <Footer />
     </main>
   );
