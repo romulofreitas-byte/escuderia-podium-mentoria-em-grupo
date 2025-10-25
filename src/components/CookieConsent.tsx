@@ -64,7 +64,7 @@ export const CookieConsent: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
-      <div className="max-w-sm w-full">
+      <div className="max-w-md w-full">
         <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
           {!showSettings ? (
             // Main consent banner
