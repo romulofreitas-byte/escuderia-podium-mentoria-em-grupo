@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const AboutMentorSection: React.FC = () => {
   return (
-    <section id="sobre-mentor" className="section-padding bg-gray-950 relative overflow-hidden">
+    <section id="sobre-mentor" className="section-padding bg-gray-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-40 left-20 w-96 h-96 bg-yellow-400/3 rounded-full blur-3xl"></div>
@@ -170,7 +170,7 @@ export const AboutMentorSection: React.FC = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-500/10 border border-yellow-400/20 rounded-3xl p-12">
+          <div className="bg-gray-800/30 border border-gray-700 rounded-3xl p-12">
             <div className="text-center">
               <h3 className="text-3xl font-bold text-white mb-8">
                 Entre em Contato Direto

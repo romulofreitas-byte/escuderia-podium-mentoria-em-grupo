@@ -22,9 +22,9 @@ export default function HomePage() {
       <BenefitsMarquee />
       <WhyItWorksSection />
       <WhoIsItForSection />
+      <SocialProofSection />
       <ProgramStructureSection />
       <MethodSection />
-      <SocialProofSection />
       <ComparisonSection />
       <BonusesSection />
       <PricingStrategicSection />
