@@ -22,13 +22,13 @@ export const HeroSection: React.FC = () => {
         <div className="container-custom py-4">
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
-            <div className="flex items-center gap-3">
-              <div className="h-8 relative flex-shrink-0" style={{width: '120px'}}>
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 relative flex-shrink-0">
                 <Image 
-                  src="/Logo Método Pódium horizontal branco cheio.png"
-                  alt="Método Pódium"
-                  width={120}
-                  height={32}
+                  src="/icon-escuderia.png"
+                  alt="Escuderia Pódium"
+                  width={64}
+                  height={64}
                   className="object-contain"
                 />
               </div>
