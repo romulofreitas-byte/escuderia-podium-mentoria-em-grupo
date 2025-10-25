@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
           src="/background-podium-hero.jpg"
           alt="Background"
           fill
-          className="object-cover opacity-100"
+          className="object-cover opacity-100 block"
           priority
           quality={90}
         />
