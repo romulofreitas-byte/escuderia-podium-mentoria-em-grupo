@@ -39,7 +39,7 @@ export const BonusesSection: React.FC = () => {
     if (!isDragging || !carouselRef.current) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1.5;
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -57,7 +57,7 @@ export const BonusesSection: React.FC = () => {
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging || !carouselRef.current) return;
     const x = e.touches[0].pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1.5;
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -90,14 +90,14 @@ export const BonusesSection: React.FC = () => {
           onTouchEnd={handleTouchEnd}
         >
           <div 
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {bonuses.map((bonus, index) => {
               const IconComponent = icons[bonus.icon as keyof typeof icons];
               return (
                 <div key={index} className="w-full flex-shrink-0">
-                  <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8 hover:border-yellow-400/50 transition-all duration-300">
+                  <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 md:p-8 hover:border-yellow-400/50 transition-all duration-300">
                     <div className="text-center">
                       <div className="w-20 h-20 bg-yellow-400/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <IconComponent className="w-10 h-10 text-yellow-400" />
@@ -155,7 +155,7 @@ export const BonusesSection: React.FC = () => {
       </div>
 
       {/* Why These Bonuses Matter */}
-      <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto mb-16">
+      <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-4 md:p-8 max-w-3xl mx-auto mb-16">
         <div className="text-center">
           <h3 className="text-xl font-bold text-white mb-6">
             Por Que Esses Bônus Fazem a Diferença?

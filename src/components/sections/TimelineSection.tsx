@@ -68,7 +68,7 @@ export const TimelineSection: React.FC = () => {
   };
 
   return (
-    <section id="cronograma-resultados" className="py-[75px] bg-gray-800">
+    <section id="cronograma-resultados" className="py-12 md:py-[75px] bg-gray-800">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
@@ -96,20 +96,18 @@ export const TimelineSection: React.FC = () => {
 
         {/* Timeline */}
         <motion.div variants={itemVariants} className="relative max-w-4xl mx-auto">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400/50 to-yellow-400/50 rounded-full"></div>
+          {/* Timeline Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400/50 to-yellow-400/50 rounded-full"></div>
           
           {/* Milestones */}
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-16">
             {milestones.map((milestone, index) => (
               <div 
                 key={index}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                }`}
+                className="relative flex flex-col md:flex-row md:items-center"
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-br ${milestone.color} border ${milestone.borderColor} rounded-full flex items-center justify-center z-10 ${
+                <div className={`md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-8 h-8 bg-gradient-to-br ${milestone.color} border ${milestone.borderColor} rounded-full flex items-center justify-center z-10 mx-auto mb-4 md:mb-0 ${
                   animatedItems.includes(index) ? 'scale-110' : 'scale-0'
                 } transition-transform duration-500`}>
                   <span className={`text-lg font-bold ${milestone.iconColor}`}>
@@ -118,15 +116,13 @@ export const TimelineSection: React.FC = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className={`w-5/12 ${
-                  index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'
-                }`}>
-                  <div className={`bg-gray-800/30 border border-gray-700 rounded-xl p-6 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 ${
+                <div className="w-full md:w-5/12 md:pr-8 md:text-right">
+                  <div className={`bg-gray-800/30 border border-gray-700 rounded-xl p-4 md:p-6 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 ${
                     animatedItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   } transition-all duration-500`}>
                     <div className="flex items-center space-x-3 mb-4">
                       <Clock className={`w-5 h-5 ${milestone.iconColor}`} />
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-lg md:text-xl font-bold text-white">
                         {milestone.title}
                       </h3>
                     </div>
@@ -136,14 +132,12 @@ export const TimelineSection: React.FC = () => {
                         <li 
                           key={itemIndex}
                           className={`flex items-center space-x-3 ${
-                            index % 2 === 0 ? 'flex-row-reverse space-x-reverse' : ''
-                          } ${
                             animatedItems.includes(index + 2 + itemIndex) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
                           } transition-all duration-300`}
                           style={{ transitionDelay: `${(index + 2 + itemIndex) * 100}ms` }}
                         >
                           <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                          <span className="text-gray-300">{item}</span>
+                          <span className="text-gray-300 text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>

@@ -3,14 +3,14 @@ import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[calc(100vh-64px)]" style={{minHeight: 'calc(100vh - 64px)'}}>
+    <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[calc(100vh-64px)] py-12 md:py-[75px]" style={{minHeight: 'calc(100vh - 64px)', backgroundImage: 'url(/background-podium-hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
       {/* Background with blur */}
       <div className="absolute inset-0 z-0">
         <ProtectedImage 
           src="/background-podium-hero.jpg"
           alt="Background"
           fill
-          className="object-cover opacity-100"
+          className="object-cover opacity-100 w-full h-full"
           priority
           quality={90}
         />
@@ -57,7 +57,7 @@ export const HeroSection: React.FC = () => {
           {/* Left - Text Content */}
           <div className="max-w-2xl text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-2 md:mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
             </div>
 
@@ -75,12 +75,12 @@ export const HeroSection: React.FC = () => {
             </p>
 
             {/* CTA Button with Progress */}
-            <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up mt-4 md:mt-0" style={{animationDelay: '0.4s'}}>
               <a 
                 href="#investimento-estrategico"
-                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
-                <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Escuderia Pódium</span>
+                <span className="relative drop-shadow-sm text-xs md:text-base">Entrar na Escuderia Pódium</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 

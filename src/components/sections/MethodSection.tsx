@@ -24,7 +24,7 @@ export const MethodSection: React.FC = () => {
   };
 
   return (
-    <section id="metodo-podium" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="metodo-podium" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -60,7 +60,7 @@ export const MethodSection: React.FC = () => {
             return (
               <div 
                 key={index} 
-                className={`bg-gray-800/30 border border-gray-700 rounded-xl p-4 sm:p-6 lg:p-8 transition-all duration-300 backdrop-blur-sm cursor-pointer animate-fade-in-up ${
+                className={`bg-gray-800/30 border border-gray-700 rounded-xl p-4 md:p-8 transition-all duration-300 backdrop-blur-sm cursor-pointer animate-fade-in-up ${
                   isExpanded 
                     ? 'border-yellow-400/70 shadow-2xl shadow-yellow-400/20 scale-105 bg-gradient-to-br from-gray-800/50 to-gray-700/30' 
                     : 'hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/10'
@@ -105,10 +105,6 @@ export const MethodSection: React.FC = () => {
                     </p>
                   </div>
                   
-                  {/* Mobile hint */}
-                  <div className="md:hidden mt-4 text-xs text-gray-400 text-center">
-                    {isExpanded ? 'Toque para fechar' : 'Toque para expandir'}
-                  </div>
                 </div>
               </div>
             );

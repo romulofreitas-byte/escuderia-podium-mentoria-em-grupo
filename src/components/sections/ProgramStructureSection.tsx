@@ -16,7 +16,7 @@ export const ProgramStructureSection: React.FC = () => {
   ];
 
   return (
-    <section id="estrutura-programa" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="estrutura-programa" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -58,20 +58,24 @@ export const ProgramStructureSection: React.FC = () => {
 
         {/* Tab Navigation */}
         <div className="mb-12">
-          <div className="flex overflow-x-auto gap-2 bg-gray-800/30 rounded-xl p-2 backdrop-blur-sm border border-gray-700 scrollbar-hide">
-            {tabs.map((tab, index) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(index)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base whitespace-nowrap flex-shrink-0 ${
-                  activeTab === index
-                    ? 'bg-yellow-400 text-black shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto gap-2 bg-gray-800/30 rounded-xl p-2 backdrop-blur-sm border border-gray-700 scrollbar-hide">
+              {tabs.map((tab, index) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base whitespace-nowrap flex-shrink-0 ${
+                    activeTab === index
+                      ? 'bg-yellow-400 text-black shadow-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+            {/* Scroll indicator for mobile */}
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-800/30 to-transparent pointer-events-none md:hidden"></div>
           </div>
         </div>
 
@@ -80,7 +84,7 @@ export const ProgramStructureSection: React.FC = () => {
           {tabs[activeTab].module ? (
             // Module content for first 3 tabs
             <div className="animate-fade-in">
-              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 sm:p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
+              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 md:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   {/* Module Badge */}
                   <div className="flex-shrink-0">
@@ -164,7 +168,7 @@ export const ProgramStructureSection: React.FC = () => {
           ) : (
             // Individual sessions for Consolidação tab
             <div className="animate-fade-in">
-              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 sm:p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
+              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 md:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   {/* Module Badge */}
                   <div className="flex-shrink-0">
@@ -266,7 +270,7 @@ export const ProgramStructureSection: React.FC = () => {
 
         {/* Summary */}
         <div className="mt-20 animate-fade-in-up" style={{animationDelay: '1.4s'}}>
-          <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-500/5 border border-yellow-400/30 rounded-2xl p-6 sm:p-12 backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-500/5 border border-yellow-400/30 rounded-2xl p-6 md:p-12 backdrop-blur-sm">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-white mb-8">
                 Resumo do Programa

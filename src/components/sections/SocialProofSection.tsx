@@ -58,7 +58,7 @@ export const SocialProofSection: React.FC = () => {
   ];
 
   return (
-    <section id="provas-sociais" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="provas-sociais" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -100,8 +100,8 @@ export const SocialProofSection: React.FC = () => {
               >
                 <div className="flex flex-col lg:flex-row gap-6">
                   {/* Video Thumbnail */}
-                  <div className="relative flex-shrink-0">
-                    <div className="relative w-full lg:w-48 h-40 sm:h-48 bg-gray-700 rounded-lg overflow-hidden">
+                  <div className="relative flex-shrink-0 flex justify-center lg:justify-start">
+                    <div className="relative w-full max-w-sm lg:w-48 h-40 sm:h-48 bg-gray-700 rounded-lg overflow-hidden">
                       <ProtectedImage 
                         src={video.thumbnail}
                         alt={video.title}
