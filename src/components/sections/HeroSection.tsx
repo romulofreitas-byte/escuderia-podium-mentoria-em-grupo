@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
           src="/background-podium-hero.jpg"
           alt="Background"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-100"
           priority
           quality={90}
         />
@@ -33,7 +33,7 @@ export const HeroSection: React.FC = () => {
                 />
               </div>
               <span className="text-white text-sm font-medium tracking-wide">
-                Escuderia Pódium | Mentoria em Grupo | 1ª Turma
+                Escuderia Pódium | Mentoria em Grupo
               </span>
             </div>
 
@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span className="text-sm font-medium">1º encontro 30/10</span>
+              <span className="text-sm font-light">1º encontro 30/10</span>
             </div>
           </div>
         </div>
