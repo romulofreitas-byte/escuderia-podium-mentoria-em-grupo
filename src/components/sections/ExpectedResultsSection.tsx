@@ -45,19 +45,22 @@ export const ExpectedResultsSection: React.FC = () => {
       name: "Thiago Rosa",
       role: "Gestor de Tráfego",
       content: "A mentoria é muito melhor que os vídeos do Youtube, muito diferente, sinto que o Rômulo pega na mão da gente mesmo",
-      rating: 5
+      rating: 5,
+      avatar: "/depoimentos/mentoria-thiago-rosa-live.jpg"
     },
     {
       name: "Vinícius Nascimento", 
-      role: "Piloto Pódium",
+      role: "Web Development",
       content: "Mestre, olha só o tanto de problema que você me arrumou",
-      rating: 5
+      rating: 5,
+      avatar: "/depoimentos/depoimento-vinicius.jpg"
     },
     {
       name: "Marina Marchiolli",
-      role: "Piloto Pódium",
+      role: "Branding Specialist",
       content: "Hoje eu me sinto Empresária. Com sinceridade, eu nunca achei que eu iria conseguir fechar um contrato sozinha, e eu consegui!",
-      rating: 5
+      rating: 5,
+      avatar: "/depoimentos/depoimento-marina.jpg"
     }
   ];
 
@@ -81,14 +84,14 @@ export const ExpectedResultsSection: React.FC = () => {
                 variants={itemVariants}
                 className="heading-1"
               >
-                Como vou me sentir no final
+                Uma mentoria que te transforma como pessoa
               </motion.h2>
               
               <motion.p 
                 variants={itemVariants}
                 className="body-text-lg max-w-3xl mx-auto"
               >
-                De funcionário inseguro para empresário confiante em suas vendas
+                De freelancer inseguro para empresário confiante em suas vendas
               </motion.p>
         </div>
 
@@ -139,15 +142,15 @@ export const ExpectedResultsSection: React.FC = () => {
               <h4 className="text-2xl font-bold text-white mb-6">
                 Após 6 Semanas Intensivas
               </h4>
-              <ul className="space-y-3 text-left">
+              <ul className="space-y-3 text-center">
                 {[
                   "Primeiro contrato fechado (ou muito perto)",
                   "Processo comercial estruturado", 
                   "Scripts validados e funcionando",
                   "Confiança para fazer ligações"
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <li key={index} className="flex items-center justify-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                     <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -167,15 +170,15 @@ export const ExpectedResultsSection: React.FC = () => {
               <h4 className="text-2xl font-bold text-white mb-6">
                 Após 10 Semanas Completas
               </h4>
-              <ul className="space-y-3 text-left">
+              <ul className="space-y-3 text-center">
                 {[
                   "2-3 contratos fechados",
                   "Pipeline estruturado",
                   "Processo replicável", 
                   "Pronto para escalar"
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <li key={index} className="flex items-center justify-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                     <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -198,14 +201,23 @@ export const ExpectedResultsSection: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                name={testimonial.name}
-                role={testimonial.role}
-                content={testimonial.content}
-                rating={testimonial.rating}
-                delay={index * 0.1}
-              />
+              <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img 
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <h4 className="text-white font-bold mb-2">{testimonial.name}</h4>
+                <p className="text-yellow-400 text-sm mb-3">{testimonial.role}</p>
+                <p className="text-gray-300 text-sm leading-relaxed italic">"{testimonial.content}"</p>
+                <div className="flex justify-center mt-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
             ))}
           </motion.div>
         </motion.div>

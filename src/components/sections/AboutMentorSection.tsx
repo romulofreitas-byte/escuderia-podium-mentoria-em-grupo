@@ -104,7 +104,7 @@ export const AboutMentorSection: React.FC = () => {
                     <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
                       <Award className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold text-white">8+</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white">12+</p>
                     <p className="text-xs sm:text-sm text-gray-400">Anos</p>
                   </div>
                   <div className="text-center">
@@ -136,6 +136,22 @@ export const AboutMentorSection: React.FC = () => {
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
                   <span className="text-gray-300">Criador do Método Pódium de Vendas</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                  <span className="text-gray-300">Founder e CEO da Combustível Marketing e Vendas</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                  <span className="text-gray-300">TEDx Organizer</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                  <span className="text-gray-300">Palestrante</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                  <span className="text-gray-300">Host do Podcast Combustível</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>

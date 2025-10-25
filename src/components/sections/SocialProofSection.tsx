@@ -7,7 +7,7 @@ export const SocialProofSection: React.FC = () => {
     {
       id: 'marina',
       title: 'Depoimento Marina Marchiolli',
-      description: '2 Contratos e uma Mentoria pra ela mesmo foi fechada',
+      description: 'Contratos em uma mentoria fechada pra ela mesma, em apenas 2 meses',
       thumbnail: '/depoimentos/depoimento-marina.jpg',
       url: 'https://youtu.be/0YivtKp9Sw4',
       icon: Users,
@@ -49,18 +49,7 @@ export const SocialProofSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
       </div>
 
-      {/* Floating Logo */}
-      <div className="absolute top-8 right-8 z-10 hidden lg:block">
-        <div className="w-16 h-16 relative">
-          <Image 
-            src="/logos/logo-metodo.png"
-            alt="Método Pódium"
-            width={64}
-            height={64}
-            className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-          />
-        </div>
-      </div>
+      {/* Floating Logo - Removed */}
 
       <div className="container-custom relative z-10">
         {/* Header Section */}
@@ -105,7 +94,7 @@ export const SocialProofSection: React.FC = () => {
                         alt={video.title}
                         width={192}
                         height={128}
-                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                        className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors duration-300">
                         <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

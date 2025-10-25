@@ -45,9 +45,9 @@ export const PricingStrategicSection: React.FC = () => {
   ];
 
   const testimonials = [
-    { name: "Ana Silva", result: "R$ 4.500", period: "3 semanas", avatar: "👩‍💼" },
-    { name: "Carlos Mendes", result: "Perdeu medo", period: "de ligar", avatar: "👨‍💻" },
-    { name: "Marina Costa", result: "Método funciona", period: "comprovado", avatar: "👩‍🎨" }
+    { name: "Marina Marchiolli", result: "R$ 4.500", period: "Branding Specialist", avatar: "👩‍💼" },
+    { name: "Vinícius Nascimento", result: "Perdeu medo", period: "Web Development", avatar: "👨‍💻" },
+    { name: "Lucas Ribeiro", result: "Método funciona", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
   ];
 
   return (
@@ -86,12 +86,14 @@ export const PricingStrategicSection: React.FC = () => {
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Sua Jornada Para o{' '}
-            <span className="text-yellow-400 animate-pulse">Primeiro Contrato</span>
-            {' '}Começa Agora
+            <span className="text-yellow-400 animate-pulse">Primeiro&nbsp;Contrato</span>
+            {' '}Começa&nbsp;Agora
           </h2>
           
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-            Apenas para pilotos da Comunidade Pódium • Vagas limitadas
+            Junte-se à primeira turma da Escuderia Pódium e transforme seu processo comercial em apenas{' '}
+            <span className="text-yellow-400 font-semibold">6&nbsp;semanas intensivas</span>
+            {' '}+ 4 encontros mensais
           </p>
 
           {/* Progress Bar */}

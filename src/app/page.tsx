@@ -29,6 +29,7 @@ export default function HomePage() {
       <MethodSection />
       <ComparisonSection />
       <BonusesSection />
+      <LogoSeparator />
       <PricingStrategicSection />
       <ExpectedResultsSection />
       <AboutMentorSection />

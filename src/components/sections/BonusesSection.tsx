@@ -1,12 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Section, Heading, Text } from '@/components/ui/Section';
 import { bonuses } from '@/data/benefits';
 import { Bot, Phone, Users, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const BonusesSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  
   const icons = {
     Bot: Bot,
     Phone: Phone,
@@ -22,6 +27,44 @@ export const BonusesSection: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + bonuses.length) % bonuses.length);
   };
 
+  // Touch/Drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!carouselRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!carouselRef.current) return;
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !carouselRef.current) return;
+    const x = e.touches[0].pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   return (
     <Section id="bonus" className="bg-gray-900">
       <div className="text-center mb-16">
@@ -34,8 +77,18 @@ export const BonusesSection: React.FC = () => {
       </div>
 
       {/* Interactive Carousel */}
-      <div className="relative max-w-4xl mx-auto mb-16">
-        <div className="overflow-hidden rounded-2xl">
+      <div className="relative max-w-4xl mx-auto mb-12">
+        <div 
+          ref={carouselRef}
+          className="overflow-hidden rounded-2xl cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div 
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -55,9 +108,9 @@ export const BonusesSection: React.FC = () => {
                       <p className="text-gray-300 mb-6 text-lg">
                         {bonus.description}
                       </p>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 justify-items-center">
                         {bonus.details.slice(0, 4).map((detail, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 text-left">
+                          <div key={idx} className="flex items-center space-x-2 text-center">
                             <div className="w-2 h-2 bg-yellow-400 rounded-full flex-shrink-0" />
                             <span className="text-gray-300 text-sm">{detail}</span>
                           </div>

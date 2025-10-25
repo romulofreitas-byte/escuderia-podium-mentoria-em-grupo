@@ -15,7 +15,7 @@ export const BenefitsMarquee: React.FC = () => {
     <div className="bg-yellow-400 py-4 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">
         {/* Duplicate for seamless loop */}
-        {[...benefits, ...benefits, ...benefits].map((benefit, index) => {
+        {[...benefits, ...benefits].map((benefit, index) => {
           const Icon = benefit.icon;
           return (
             <div key={index} className="inline-flex items-center mx-8">

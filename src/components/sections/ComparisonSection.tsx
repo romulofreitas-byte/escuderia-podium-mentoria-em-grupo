@@ -163,8 +163,12 @@ export const ComparisonSection: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">R$ 1.850</div>
-              <p className="text-gray-400 text-sm">Promoção Black Friday Antecipada</p>
+              <a 
+                href="#investimento-estrategico"
+                className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 hover:scale-105"
+              >
+                Ver Investimento
+              </a>
             </div>
           </div>
         </div>
