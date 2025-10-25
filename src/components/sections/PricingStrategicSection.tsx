@@ -51,7 +51,7 @@ export const PricingStrategicSection: React.FC = () => {
   ];
 
   return (
-    <section id="investimento-estrategico" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
+    <section id="investimento-estrategico" className="relative overflow-hidden py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -107,14 +107,14 @@ export const PricingStrategicSection: React.FC = () => {
             <div className="relative z-10">
               <div className="text-center mb-8">
                 {/* Ancoragem */}
-                <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
+                <div className="flex justify-center items-center gap-4 mb-6">
                   <div className="text-center">
                     <p className="text-gray-400 text-sm">Elite Pódium Individual</p>
                     <p className="text-xl md:text-2xl font-bold text-gray-500 line-through">R$ 10.000</p>
                   </div>
                   <div className="text-center">
                     <p className="text-yellow-400 text-sm font-semibold">Escuderia Pódium (Grupo)</p>
-                    <p className="text-3xl md:text-5xl font-black text-yellow-400">R$ 1.850</p>
+                    <p className="text-4xl sm:text-5xl font-black text-yellow-400">R$ 1.850</p>
                   </div>
                 </div>
                 
