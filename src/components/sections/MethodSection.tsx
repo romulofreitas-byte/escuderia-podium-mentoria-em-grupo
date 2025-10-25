@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { methodSteps } from '@/data/comparison';
 import { Target, Users, Phone, MessageCircle, Presentation, Handshake, CheckCircle, Zap, Globe, Bot } from 'lucide-react';
+import { MethodModal } from '@/components/ui/MethodModal';
 
 export const MethodSection: React.FC = () => {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [isWhyWorksModalOpen, setIsWhyWorksModalOpen] = useState(false);
+  const [isToolsModalOpen, setIsToolsModalOpen] = useState(false);
+
   const icons = {
     Target: Target,
     Users: Users,
@@ -10,6 +15,10 @@ export const MethodSection: React.FC = () => {
     MessageCircle: MessageCircle,
     Presentation: Presentation,
     Handshake: Handshake
+  };
+
+  const handleCardInteraction = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
   };
 
   return (
@@ -44,11 +53,30 @@ export const MethodSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {methodSteps.map((step, index) => {
             const IconComponent = icons[step.icon as keyof typeof icons];
+            const isExpanded = expandedCard === index;
+            
             return (
               <div 
                 key={index} 
-                className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+                className={`bg-gray-800/30 border border-gray-700 rounded-xl p-4 sm:p-6 lg:p-8 transition-all duration-300 backdrop-blur-sm cursor-pointer animate-fade-in-up ${
+                  isExpanded 
+                    ? 'border-yellow-400/70 shadow-2xl shadow-yellow-400/20 scale-105 bg-gradient-to-br from-gray-800/50 to-gray-700/30' 
+                    : 'hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/10'
+                }`}
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
+                onClick={() => handleCardInteraction(index)}
+                onMouseEnter={() => {
+                  // Auto-expand on desktop hover
+                  if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                    setExpandedCard(index);
+                  }
+                }}
+                onMouseLeave={() => {
+                  // Auto-collapse on desktop hover leave
+                  if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                    setExpandedCard(null);
+                  }
+                }}
               >
                 <div className="relative">
                   {/* Step Number Badge */}
@@ -57,169 +85,193 @@ export const MethodSection: React.FC = () => {
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-yellow-400" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                    <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-white mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {step.description}
-                  </p>
+                  
+                  {/* Description - only show when expanded */}
+                  <div className={`transition-all duration-300 overflow-hidden ${
+                    isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <p className="text-gray-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                  
+                  {/* Mobile hint */}
+                  <div className="md:hidden mt-4 text-xs text-gray-400 text-center">
+                    {isExpanded ? 'Toque para fechar' : 'Toque para expandir'}
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Why It Works Section */}
-        <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 sm:p-8 lg:p-12 mb-20 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '1.0s'}}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Por Que o Método Pódium Funciona?
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                <CheckCircle className="w-6 h-6 text-yellow-400" />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  Estrutura Comprovada
-                </h4>
-                <p className="text-gray-300 leading-relaxed">
-                  Cada etapa foi testada e refinada em centenas de vendas reais. 
-                  Não é teoria, é prática validada no mercado.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Zap className="w-6 h-6 text-yellow-400" />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  Acelera o Aprendizado
-                </h4>
-                <p className="text-gray-300 leading-relaxed">
-                  Em vez de aprender vendas na prática (com erros caros), você aprende 
-                  a metodologia certa desde o primeiro dia.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Globe className="w-6 h-6 text-yellow-400" />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  Adaptável a Qualquer Nicho
-                </h4>
-                <p className="text-gray-300 leading-relaxed">
-                  Funciona para serviços, produtos digitais, consultoria, 
-                  e qualquer tipo de venda B2B ou B2C.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Bot className="w-6 h-6 text-yellow-400" />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  Potencializado por IA
-                </h4>
-                <p className="text-gray-300 leading-relaxed">
-                  O Agente Pódium personaliza scripts, propostas e estratégias 
-                  específicas para seu nicho e cliente.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Tools Section */}
-        <div className="animate-fade-in-up" style={{animationDelay: '1.2s'}}>
-          <h3 className="text-2xl font-bold text-white text-center mb-12">
-            Ferramentas e Recursos Exclusivos
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
-                  <Bot className="w-6 h-6 text-yellow-400" />
-                </div>
-                <h4 className="text-xl font-semibold text-white">
-                  Agente Pódium
-                </h4>
-              </div>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Assistente de IA que ajuda em pesquisa de mercado, geração de scripts, 
-                criação de propostas e preparação de reuniões.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Scripts personalizados para seu nicho</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Pesquisa automatizada de mercado</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Propostas sob medida</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Preparação de reuniões</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
-                  <Phone className="w-6 h-6 text-yellow-400" />
-                </div>
-                <h4 className="text-xl font-semibold text-white">
-                  Sala de Ligação da Escuderia
-                </h4>
-              </div>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Espaço exclusivo para treinar ligações entre pilotos, fazer role play 
-                de reuniões e receber feedback em tempo real.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Role play entre pilotos</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Feedback em tempo real</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Simulação de reuniões R1 e R2</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-yellow-400 mr-3 mt-1">•</span>
-                  <span className="text-gray-300">Treino de técnicas de fechamento</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20 animate-fade-in-up" style={{animationDelay: '1.0s'}}>
+          <button
+            onClick={() => setIsWhyWorksModalOpen(true)}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 hover:scale-105 active:scale-95"
+          >
+            Por Que Funciona?
+          </button>
+          <button
+            onClick={() => setIsToolsModalOpen(true)}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gray-800/50 border border-yellow-400/50 text-yellow-400 font-bold rounded-xl hover:bg-yellow-400/10 hover:border-yellow-400 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 hover:scale-105 active:scale-95"
+          >
+            Ver Ferramentas
+          </button>
         </div>
       </div>
+
+      {/* Modals */}
+      <MethodModal
+        isOpen={isWhyWorksModalOpen}
+        onClose={() => setIsWhyWorksModalOpen(false)}
+        title="Por Que o Método Pódium Funciona?"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
+              <CheckCircle className="w-6 h-6 text-yellow-400" />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">
+                Estrutura Comprovada
+              </h4>
+              <p className="text-gray-300 leading-relaxed">
+                Cada etapa foi testada e refinada em centenas de vendas reais. 
+                Não é teoria, é prática validada no mercado.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Zap className="w-6 h-6 text-yellow-400" />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">
+                Acelera o Aprendizado
+              </h4>
+              <p className="text-gray-300 leading-relaxed">
+                Em vez de aprender vendas na prática (com erros caros), você aprende 
+                a metodologia certa desde o primeiro dia.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Globe className="w-6 h-6 text-yellow-400" />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">
+                Adaptável a Qualquer Nicho
+              </h4>
+              <p className="text-gray-300 leading-relaxed">
+                Funciona para serviços, produtos digitais, consultoria, 
+                e qualquer tipo de venda B2B ou B2C.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Bot className="w-6 h-6 text-yellow-400" />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">
+                Potencializado por IA
+              </h4>
+              <p className="text-gray-300 leading-relaxed">
+                O Agente Pódium personaliza scripts, propostas e estratégias 
+                específicas para seu nicho e cliente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </MethodModal>
+
+      <MethodModal
+        isOpen={isToolsModalOpen}
+        onClose={() => setIsToolsModalOpen(false)}
+        title="Ferramentas e Recursos Exclusivos"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
+                <Bot className="w-6 h-6 text-yellow-400" />
+              </div>
+              <h4 className="text-xl font-semibold text-white">
+                Agente Pódium
+              </h4>
+            </div>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Assistente de IA que ajuda em pesquisa de mercado, geração de scripts, 
+              criação de propostas e preparação de reuniões.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Scripts personalizados para seu nicho</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Pesquisa automatizada de mercado</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Propostas sob medida</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Preparação de reuniões</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
+                <Phone className="w-6 h-6 text-yellow-400" />
+              </div>
+              <h4 className="text-xl font-semibold text-white">
+                Sala de Ligação da Escuderia
+              </h4>
+            </div>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Espaço exclusivo para treinar ligações entre pilotos, fazer role play 
+              de reuniões e receber feedback em tempo real.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Role play entre pilotos</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Feedback em tempo real</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Simulação de reuniões R1 e R2</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-3 mt-1">•</span>
+                <span className="text-gray-300">Treino de técnicas de fechamento</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </MethodModal>
     </section>
   );
 };
