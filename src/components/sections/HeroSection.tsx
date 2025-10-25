@@ -85,12 +85,12 @@ export const HeroSection: React.FC = () => {
               </a>
 
               {/* Progress Bar - Same width as button */}
-              <div className="space-y-1 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                <div className="flex items-center justify-between text-xs sm:text-sm px-6 sm:px-8">
+              <div className="space-y-1 px-6 sm:px-8 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
                   <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
                 </div>
-                <div className="h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner px-6 sm:px-8">
+                <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg transition-all duration-1000" style={{width: '29%'}}></div>
                   {/* Loading shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent animate-shimmer"></div>
