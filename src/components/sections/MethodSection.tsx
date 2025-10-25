@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { methodSteps } from '@/data/comparison';
 import { Target, Users, Phone, MessageCircle, Presentation, Handshake, CheckCircle, Zap, Globe, Bot } from 'lucide-react';
