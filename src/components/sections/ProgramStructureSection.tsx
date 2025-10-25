@@ -64,36 +64,38 @@ export const ProgramStructureSection: React.FC = () => {
           {programWeeks.map((week, index) => (
             <div 
               key={index} 
-              className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+              className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 sm:p-6 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
               style={{animationDelay: `${0.9 + index * 0.05}s`}}
             >
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
                 {/* Week Badge - Compact */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 self-center lg:self-start">
                   <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-lg p-3 text-center min-w-[100px]">
-                    <div className="text-lg font-bold">Semana {week.week}</div>
+                    <div className="text-base sm:text-lg font-bold">Semana {week.week}</div>
                     <div className="text-xs font-medium">{week.phase}</div>
                   </div>
                 </div>
 
-                {/* Content - Horizontal Layout */}
+                {/* Content - Vertical Layout on Mobile */}
                 <div className="flex-1">
                   {/* Title and Format Info */}
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 className="text-lg font-bold text-white">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3 mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-white">
                       {week.title}
                     </h3>
-                    <div className="flex items-center gap-1 text-gray-400">
-                      {week.format === 'Grupo' ? (
-                        <Users className="w-3 h-3" />
-                      ) : (
-                        <User className="w-3 h-3" />
-                      )}
-                      <span className="text-xs">{week.format}</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-gray-400">
-                      <Clock className="w-3 h-3" />
-                      <span className="text-xs">{week.duration}</span>
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1 text-gray-400">
+                        {week.format === 'Grupo' ? (
+                          <Users className="w-3 h-3" />
+                        ) : (
+                          <User className="w-3 h-3" />
+                        )}
+                        <span className="text-xs">{week.format}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-gray-400">
+                        <Clock className="w-3 h-3" />
+                        <span className="text-xs">{week.duration}</span>
+                      </div>
                     </div>
                   </div>
 
@@ -102,8 +104,8 @@ export const ProgramStructureSection: React.FC = () => {
                     {week.theme}
                   </p>
 
-                  {/* Content List - Compact */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {/* Content List - Single Column on Mobile */}
+                  <div className="grid grid-cols-1 gap-2">
                     {week.content.slice(0, 4).map((item, idx) => (
                       <div key={idx} className="text-sm text-gray-300 flex items-start">
                         <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>

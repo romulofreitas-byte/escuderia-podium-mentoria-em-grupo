@@ -18,7 +18,7 @@ export const WhyItWorksSection: React.FC = () => {
             <span className="text-yellow-400 font-semibold text-sm tracking-wide">Por Que Funciona</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">
             A Combinação Perfeita para{' '}
             <span className="text-yellow-400">Sucesso</span>
           </h2>

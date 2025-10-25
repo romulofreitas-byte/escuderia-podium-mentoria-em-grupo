@@ -38,9 +38,9 @@ export const WhoIsItForSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Ideal Profile */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:border-yellow-400/50 hover:shadow-lg transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 lg:p-8 shadow-md hover:border-yellow-400/50 hover:shadow-lg transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-green-50 border border-green-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-green-600" />
@@ -61,7 +61,7 @@ export const WhoIsItForSection: React.FC = () => {
           </div>
 
           {/* Not For You */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:border-yellow-400/50 hover:shadow-lg transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 lg:p-8 shadow-md hover:border-yellow-400/50 hover:shadow-lg transition-all duration-300 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-red-50 border border-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <XCircle className="w-8 h-8 text-red-600" />

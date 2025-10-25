@@ -29,11 +29,11 @@ export const AboutMentorSection: React.FC = () => {
 
         <div className="max-w-6xl mx-auto">
           {/* Main Card */}
-          <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-12 mb-12">
+          <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-6 sm:p-8 lg:p-12 mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Photo */}
               <div className="text-center lg:text-left">
-                <div className="relative w-80 h-80 mx-auto lg:mx-0 mb-8">
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 mb-8">
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-3xl blur-2xl"></div>
                   <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-gray-800">
                     <Image 
@@ -99,27 +99,27 @@ export const AboutMentorSection: React.FC = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-3 sm:gap-6">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Award className="w-8 h-8 text-yellow-400" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <Award className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                     </div>
-                    <p className="text-2xl font-bold text-white">8+</p>
-                    <p className="text-sm text-gray-400">Anos</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white">8+</p>
+                    <p className="text-xs sm:text-sm text-gray-400">Anos</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Users className="w-8 h-8 text-yellow-400" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <Users className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                     </div>
-                    <p className="text-2xl font-bold text-white">500+</p>
-                    <p className="text-sm text-gray-400">Alunos</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white">500+</p>
+                    <p className="text-xs sm:text-sm text-gray-400">Alunos</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <TrendingUp className="w-8 h-8 text-yellow-400" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                     </div>
-                    <p className="text-2xl font-bold text-white">95%</p>
-                    <p className="text-sm text-gray-400">Sucesso</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white">95%</p>
+                    <p className="text-xs sm:text-sm text-gray-400">Sucesso</p>
                   </div>
                 </div>
               </div>

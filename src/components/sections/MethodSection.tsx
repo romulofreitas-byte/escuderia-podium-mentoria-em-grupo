@@ -41,13 +41,13 @@ export const MethodSection: React.FC = () => {
         </div>
 
         {/* Method Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {methodSteps.map((step, index) => {
             const IconComponent = icons[step.icon as keyof typeof icons];
             return (
               <div 
                 key={index} 
-                className="bg-gray-800/30 border border-gray-700 rounded-xl p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+                className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
               >
                 <div className="relative">
@@ -75,7 +75,7 @@ export const MethodSection: React.FC = () => {
         </div>
 
         {/* Why It Works Section */}
-        <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-12 mb-20 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '1.0s'}}>
+        <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 sm:p-8 lg:p-12 mb-20 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '1.0s'}}>
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-white mb-4">
               Por Que o Método Pódium Funciona?
@@ -151,8 +151,8 @@ export const MethodSection: React.FC = () => {
             Ferramentas e Recursos Exclusivos
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
                   <Bot className="w-6 h-6 text-yellow-400" />
@@ -185,7 +185,7 @@ export const MethodSection: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+            <div className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mr-4">
                   <Phone className="w-6 h-6 text-yellow-400" />

@@ -31,8 +31,8 @@ export const ComparisonSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="max-w-5xl mx-auto mb-20">
+        {/* Comparison Table - Desktop */}
+        <div className="hidden lg:block max-w-5xl mx-auto mb-20">
           <div className="bg-white border border-gray-200 shadow-lg rounded-2xl overflow-hidden animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             {/* Header */}
             <div className="grid grid-cols-3 bg-gray-50">
@@ -84,6 +84,47 @@ export const ComparisonSection: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Comparison Cards - Mobile */}
+        <div className="lg:hidden space-y-6 mb-20">
+          {comparison.map((item, index) => (
+            <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
+              <h4 className="text-base font-semibold text-gray-900 mb-4">{item.feature}</h4>
+              <div className="space-y-3">
+                {/* Escuderia */}
+                <div className="flex items-center justify-between p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                  <span className="text-sm font-medium text-gray-900">Escuderia Pódium</span>
+                  <span className="text-gray-900">
+                    {typeof item.escuderia === 'boolean' ? (
+                      item.escuderia ? (
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-gray-400" />
+                      )
+                    ) : (
+                      <span className="text-sm">{item.escuderia}</span>
+                    )}
+                  </span>
+                </div>
+                {/* Elite */}
+                <div className="flex items-center justify-between p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                  <span className="text-sm font-medium text-gray-900">Elite Pódium</span>
+                  <span className="text-gray-900">
+                    {typeof item.elite === 'boolean' ? (
+                      item.elite ? (
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-gray-400" />
+                      )
+                    ) : (
+                      <span className="text-sm">{item.elite}</span>
+                    )}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Recommendation Cards */}
