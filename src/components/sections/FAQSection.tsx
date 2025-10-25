@@ -82,7 +82,7 @@ export const FAQSection: React.FC = () => {
                 <p className="body-text mb-6">
                   Nossa equipe está à disposição para esclarecer qualquer dúvida sobre o programa
                 </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex justify-center">
               <AnimatedButton 
                 href="https://wa.me/5531994293099"
                 variant="secondary"
@@ -92,16 +92,6 @@ export const FAQSection: React.FC = () => {
                 <MessageCircle className="w-4 h-4 mr-2" />
                 <span className="hidden sm:inline">WhatsApp: (31) 99429-3099</span>
                 <span className="sm:hidden">WhatsApp</span>
-              </AnimatedButton>
-              <AnimatedButton 
-                href="mailto:romulo.freitas@combustivelmv.com"
-                variant="secondary"
-                size="sm"
-                className="text-sm sm:text-base"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                <span className="hidden sm:inline">Email: romulo.freitas@combustivelmv.com</span>
-                <span className="sm:hidden">Email</span>
               </AnimatedButton>
             </div>
           </AnimatedCard>

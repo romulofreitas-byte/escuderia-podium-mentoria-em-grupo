@@ -5,8 +5,11 @@ import { WhyItWorksSection } from '@/components/sections/WhyItWorksSection';
 import { WhoIsItForSection } from '@/components/sections/WhoIsItForSection';
 import { ProgramStructureSection } from '@/components/sections/ProgramStructureSection';
 import { MethodSection } from '@/components/sections/MethodSection';
+import { SocialProofSection } from '@/components/sections/SocialProofSection';
 import { ComparisonSection } from '@/components/sections/ComparisonSection';
 import { BonusesSection } from '@/components/sections/BonusesSection';
+import { PricingStrategicSection } from '@/components/sections/PricingStrategicSection';
+import { ExpectedResultsSection } from '@/components/sections/ExpectedResultsSection';
 import { AboutMentorSection } from '@/components/sections/AboutMentorSection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
@@ -21,8 +24,11 @@ export default function HomePage() {
       <WhoIsItForSection />
       <ProgramStructureSection />
       <MethodSection />
+      <SocialProofSection />
       <ComparisonSection />
       <BonusesSection />
+      <PricingStrategicSection />
+      <ExpectedResultsSection />
       <AboutMentorSection />
       <FAQSection />
       <FinalCTASection />

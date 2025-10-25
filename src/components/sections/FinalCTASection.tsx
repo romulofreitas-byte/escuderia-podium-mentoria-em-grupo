@@ -167,7 +167,7 @@ export const FinalCTASection: React.FC = () => {
                 <p className="body-text mb-4">
                   Prefere falar diretamente conosco?
                 </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex justify-center">
               <AnimatedButton 
                 href="https://wa.me/5531994293099"
                 variant="secondary"
@@ -176,14 +176,6 @@ export const FinalCTASection: React.FC = () => {
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 WhatsApp: (31) 99429-3099
-              </AnimatedButton>
-              <AnimatedButton 
-                href="mailto:romulo.freitas@combustivelmv.com"
-                variant="secondary"
-                size="sm"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Email: romulo.freitas@combustivelmv.com
               </AnimatedButton>
             </div>
           </motion.div>

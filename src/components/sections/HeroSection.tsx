@@ -71,11 +71,11 @@ export const HeroSection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
+              Pare de trocar horas por dinheiro. Aprenda a vender como CEO e construa sua própria operação comercial com o Método Pódium.
             </p>
 
             {/* CTA Button with Progress */}
-            <div className="flex flex-col items-center space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
                 className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"

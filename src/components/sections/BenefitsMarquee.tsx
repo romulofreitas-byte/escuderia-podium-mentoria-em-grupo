@@ -3,10 +3,12 @@ import { Phone, Users, Handshake, TrendingUp } from 'lucide-react';
 
 export const BenefitsMarquee: React.FC = () => {
   const benefits = [
-    { icon: Phone, text: 'Ligações estratégicas' },
-    { icon: Users, text: 'Reuniões de alto nível' },
-    { icon: Handshake, text: 'Negociação profissional' },
-    { icon: TrendingUp, text: 'Mentalidade de empresário' },
+    { icon: Phone, text: 'Venda como empresário' },
+    { icon: Users, text: 'Precifique seu real valor' },
+    { icon: Handshake, text: 'Domine negociações estratégicas' },
+    { icon: TrendingUp, text: 'Construa mentalidade de CEO' },
+    { icon: Phone, text: 'Pare de trocar horas por dinheiro' },
+    { icon: Users, text: 'Estruture sua operação comercial' },
   ];
 
   return (
