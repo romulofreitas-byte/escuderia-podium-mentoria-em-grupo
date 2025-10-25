@@ -63,9 +63,9 @@ export const CookieConsent: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
-      <div className="w-full px-6 sm:px-0 max-w-md sm:max-w-md">
-        <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
+    <div className="fixed bottom-0 left-0 right-0 sm:bottom-6 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
+      <div className="w-full px-4 sm:px-0 sm:max-w-md">
+        <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl">
           {!showSettings ? (
             // Main consent banner
             <div className="p-3 sm:p-5">
@@ -214,7 +214,7 @@ export const CookieConsent: React.FC = () => {
           )}
           
           {/* Footer links */}
-          <div className="px-2 sm:px-5 pb-2 sm:pb-3">
+          <div className="px-2 sm:px-5 pb-4 sm:pb-3">
             <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3 text-[10px] sm:text-xs text-gray-400">
               <a 
                 href="/privacidade" 
