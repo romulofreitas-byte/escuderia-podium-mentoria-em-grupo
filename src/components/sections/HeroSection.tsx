@@ -71,7 +71,8 @@ export const HeroSection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              Transforme-se de freelancer para empresário. Aprenda a vender com nossa mentoria híbrida: sessões em grupo para acelerar resultados + individuais para personalização total.
+              Transforme-se de freelancer para empresário em apenas 6 semanas.<br />
+              Mentoria híbrida: sessões em grupo + individuais para resultados garantidos.
             </p>
 
             {/* CTA Button with Progress */}
