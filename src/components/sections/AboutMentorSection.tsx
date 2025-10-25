@@ -37,7 +37,7 @@ export const AboutMentorSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-3xl blur-2xl"></div>
                   <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-gray-800">
                     <Image 
-                      src="/romulo-foto.jpg" 
+                      src="/mentor.jpg" 
                       alt="Rômulo Freitas" 
                       width={320}
                       height={320}

@@ -3,13 +3,6 @@ import { programWeeks, phases } from '@/data/program';
 import { Calendar, Clock, Users, User } from 'lucide-react';
 
 export const ProgramStructureSection: React.FC = () => {
-  const phaseColors = {
-    'Fundação': 'bg-blue-500',
-    'Execução': 'bg-green-500', 
-    'Fechamento': 'bg-red-500',
-    'Consolidação': 'bg-purple-500'
-  };
-
   return (
     <section id="estrutura-programa" className="relative overflow-hidden py-32 bg-gray-900">
       {/* Background with gradient similar to hero */}
@@ -43,11 +36,11 @@ export const ProgramStructureSection: React.FC = () => {
           {phases.map((phase, index) => (
             <div 
               key={index} 
-              className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8 text-center hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
+              className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm animate-fade-in-up"
               style={{animationDelay: `${0.4 + index * 0.1}s`}}
             >
-              <div className={`w-16 h-16 ${phaseColors[phase.name as keyof typeof phaseColors]} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                <span className="text-white font-bold text-xl">{index + 1}</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border border-yellow-400/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-yellow-400 font-bold text-2xl">{index + 1}</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-2">
                 {phase.name}
