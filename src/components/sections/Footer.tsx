@@ -123,16 +123,16 @@ export const Footer: React.FC = () => {
         <div className="border-t border-podium-yellow/10 mt-12 pt-8">
           <div className="flex justify-center items-center space-x-8 mb-8">
             <div className="flex items-center space-x-6">
-              <div className="w-20 h-20 relative">
+              <div className="w-28 h-28 relative">
                 <Image 
                   src="/logos/Escuderia Branco.png"
                   alt="Escuderia Pódium"
-                  width={80}
-                  height={80}
+                  width={112}
+                  height={112}
                   className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
                 />
               </div>
-              <div className="w-px h-16 bg-gray-600"></div>
+              <div className="w-px h-20 bg-gray-600"></div>
               <div className="w-24 h-12 relative">
                 <Image 
                   src="/logos/logo-metodo.png"
