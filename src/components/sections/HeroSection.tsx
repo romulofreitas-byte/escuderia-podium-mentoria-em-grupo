@@ -53,40 +53,41 @@ export const HeroSection: React.FC = () => {
           {/* Left - Text Content */}
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Uma mentoria em grupo{' '}
-              <span className="text-yellow-400 drop-shadow-md">híbrida</span>
+              <span className="text-yellow-400 drop-shadow-md animate-pulse">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
-              <span className="text-yellow-400 drop-shadow-md">empresário</span>
+              <span className="text-yellow-400 drop-shadow-md animate-pulse" style={{animationDelay: '0.5s'}}>empresário</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md">
+            <p className="text-sm text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
             </p>
 
             {/* CTA Button with Progress */}
-            <div className="inline-flex flex-col space-y-3">
+            <div className="inline-flex flex-col space-y-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
-                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105"
+                className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
                 <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium</span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
-              <div className="space-y-2 w-full">
+              <div className="space-y-2 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm">29%</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
                 </div>
                 <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg" style={{width: '29%'}}></div>
+                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg transition-all duration-1000" style={{width: '29%'}}></div>
                   {/* Loading shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent animate-shimmer"></div>
                 </div>
@@ -97,16 +98,15 @@ export const HeroSection: React.FC = () => {
           {/* Right - Image */}
           <div className="hidden lg:flex justify-end items-center">
             <div className="relative w-full max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 hover:scale-105">
+              <div className="relative overflow-hidden rounded-2xl">
                 <Image 
                   src="/romulo-hero-2.png"
                   alt="Rômulo Freitas"
                   width={600}
                   height={600}
-                  className="w-full h-auto object-contain drop-shadow-xl"
+                  className="w-full h-auto object-contain"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent pointer-events-none"></div>
               </div>
             </div>
           </div>
