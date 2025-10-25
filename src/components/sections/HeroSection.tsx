@@ -23,16 +23,16 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Left - Logo + Title */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 relative">
+              <div className="w-10 h-10 relative flex-shrink-0">
                 <Image 
                   src="/Escuderia Branco.png"
                   alt="Escuderia Pódium"
-                  width={48}
-                  height={48}
+                  width={40}
+                  height={40}
                   className="object-contain"
                 />
               </div>
-              <span className="text-white text-sm font-medium tracking-wide">
+              <span className="text-white text-sm font-medium tracking-wide leading-tight">
                 Escuderia Pódium | Mentoria em Grupo | 1ª Turma
               </span>
             </div>
@@ -53,12 +53,12 @@ export const HeroSection: React.FC = () => {
           {/* Left - Text Content */}
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-8">
-              <span className="text-yellow-400 font-semibold text-sm tracking-wide">1ª Turma • Black Friday Antecipada</span>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-6">
+              <span className="text-yellow-400 font-semibold text-xs tracking-wide">1ª Turma • Black Friday Antecipada</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -66,12 +66,12 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-gray-300 font-light leading-relaxed mb-10">
+            <p className="text-sm text-gray-300 font-light leading-relaxed mb-8">
               6 encontros em grupo e 4 encontros individuais pra você construir um processo de vendas com ligações, reuniões e fechamento de contratos estratégicos.
             </p>
 
             {/* CTA Button with Progress */}
-            <div className="space-y-4">
+            <div className="inline-flex flex-col space-y-4">
               <a 
                 href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
                 className="group relative inline-flex items-center justify-center px-12 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105"
@@ -82,7 +82,7 @@ export const HeroSection: React.FC = () => {
               </a>
 
               {/* Progress Bar */}
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-300">Vagas preenchidas</span>
                   <span className="text-yellow-400 font-semibold">20%</span>
@@ -100,7 +100,7 @@ export const HeroSection: React.FC = () => {
           <div className="hidden lg:flex justify-end items-center">
             <div className="relative w-full max-w-lg">
               <Image 
-                src="/romulo-hero.png"
+                src="/romulo-hero-2.png"
                 alt="Rômulo Freitas"
                 width={600}
                 height={600}
