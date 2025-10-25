@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { programWeeks, phases, programModules } from '@/data/program';
 import { Calendar, Clock, Users, User } from 'lucide-react';
