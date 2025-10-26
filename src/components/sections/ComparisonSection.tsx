@@ -8,6 +8,7 @@ export const ComparisonSection: React.FC = () => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [selectedRow, setSelectedRow] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -199,7 +200,7 @@ export const ComparisonSection: React.FC = () => {
         {/* Enhanced Mobile Cards */}
         <div className="lg:hidden space-y-6 mb-20">
           {comparison.map((item, index) => {
-            const [isExpanded, setIsExpanded] = useState(false);
+            const isExpanded = expandedCards.has(index);
             
             return (
               <div 
@@ -214,7 +215,15 @@ export const ComparisonSection: React.FC = () => {
                 {/* Card Header */}
                 <div 
                   className="p-6 cursor-pointer"
-                  onClick={() => setIsExpanded(!isExpanded)}
+                  onClick={() => {
+                    const newExpanded = new Set(expandedCards);
+                    if (isExpanded) {
+                      newExpanded.delete(index);
+                    } else {
+                      newExpanded.add(index);
+                    }
+                    setExpandedCards(newExpanded);
+                  }}
                 >
                   <div className="flex items-center justify-between">
                     <h4 className="text-lg font-semibold text-white">{item.feature}</h4>
