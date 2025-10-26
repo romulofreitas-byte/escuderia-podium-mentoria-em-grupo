@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-podium-text-secondary">
               <p className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>Belo Horizonte, MG - Brasil</span>
+                <span>Brasil</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
@@ -160,7 +160,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-podium-yellow/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-podium-text-muted text-sm">
-              © 2025 Escuderia Pódium. Todos os direitos reservados. | CNPJ: 43.393.622/0001-30 | Belo Horizonte - MG
+              © 2025 Escuderia Pódium. Todos os direitos reservados. | CNPJ: 43.393.622/0001-30
             </div>
             
             <div className="flex space-x-6 text-sm">

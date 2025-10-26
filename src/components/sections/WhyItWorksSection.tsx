@@ -68,7 +68,7 @@ export const WhyItWorksSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="por-que-funciona" 
-      className="relative overflow-hidden py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
@@ -90,18 +90,18 @@ export const WhyItWorksSection: React.FC = () => {
             <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Por Que Funciona</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             A Combinação Perfeita para{' '}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">Sucesso</span>
           </h2>
 
-          <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Quatro pilares que transformam profissionais de vendas em empreendedores de sucesso
           </p>
         </div>
 
         {/* Simplified Cards - All Same Size */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => {
             const IconComponent = icons[benefit.icon as keyof typeof icons];
             const isHovered = hoveredCard === index;
@@ -120,7 +120,7 @@ export const WhyItWorksSection: React.FC = () => {
               >
                 {/* Card - Uniform Size */}
                 <div
-                  className={`relative bg-gray-800/40 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-xl transition-all duration-500 cursor-pointer group overflow-hidden ${
+                  className={`relative bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 sm:p-8 backdrop-blur-xl transition-all duration-500 cursor-pointer group overflow-hidden h-full flex flex-col ${
                     isHovered ? 'scale-105 -translate-y-2 shadow-2xl ' + glowColors[color as keyof typeof glowColors] : 'hover:scale-102 shadow-lg hover:shadow-xl'
                   }`}
                   onMouseEnter={() => setHoveredCard(index)}
@@ -132,10 +132,10 @@ export const WhyItWorksSection: React.FC = () => {
                   )}
 
                   {/* Icon Container */}
-                  <div className={`relative w-20 h-20 bg-gradient-to-br ${bgGradients[color as keyof typeof bgGradients]} border ${borderColors[color as keyof typeof borderColors]} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ${
+                  <div className={`relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${bgGradients[color as keyof typeof bgGradients]} border ${borderColors[color as keyof typeof borderColors]} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ${
                     isHovered ? 'scale-110 shadow-lg' : ''
                   }`}>
-                    <IconComponent className={`w-10 h-10 ${iconColor} transition-all duration-500 ${
+                    <IconComponent className={`w-8 h-8 sm:w-10 sm:h-10 ${iconColor} transition-all duration-500 ${
                       isHovered ? 'animate-bounce-subtle' : ''
                     }`} />
                     
@@ -149,10 +149,10 @@ export const WhyItWorksSection: React.FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-3 text-center">{benefit.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 text-center">{benefit.title}</h3>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed text-center">{benefit.description}</p>
+                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center">{benefit.description}</p>
 
                   {/* Border glow on hover */}
                   <div className={`absolute inset-0 rounded-2xl border-2 transition-all duration-500 pointer-events-none ${

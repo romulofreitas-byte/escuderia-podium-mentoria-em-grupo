@@ -58,7 +58,7 @@ export const SocialProofSection: React.FC = () => {
   ];
 
   return (
-    <section id="provas-sociais" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="provas-sociais" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/90"></div>
@@ -95,14 +95,14 @@ export const SocialProofSection: React.FC = () => {
         </div>
 
         {/* Videos Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
           {videos.map((video, index) => {
             const IconComponent = video.icon;
             return (
               <button
                 key={video.id}
                 onClick={() => openModal(video.url, video.title)}
-                className="w-full text-left bg-gray-800/30 border-2 border-gray-700/50 rounded-2xl p-6 hover:border-yellow-400/60 transition-all duration-300 backdrop-blur-xl animate-fade-in-up group cursor-pointer relative overflow-hidden hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/20"
+                className="w-full text-left bg-gray-800/30 border-2 border-gray-700/50 rounded-2xl p-4 sm:p-6 hover:border-yellow-400/60 transition-all duration-300 backdrop-blur-xl animate-fade-in-up group cursor-pointer relative overflow-hidden hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/20"
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
               >
                 {/* Glassmorphism glow effect */}
@@ -114,7 +114,7 @@ export const SocialProofSection: React.FC = () => {
                 <div className="relative z-10 flex flex-col lg:flex-row gap-6">
                   {/* Video Thumbnail */}
                   <div className="relative flex-shrink-0">
-                    <div className="relative w-full lg:w-48 h-40 sm:h-48 bg-gray-700/50 rounded-xl overflow-hidden border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:shadow-yellow-400/30">
+                    <div className="relative w-full lg:w-48 h-32 sm:h-48 bg-gray-700/50 rounded-xl overflow-hidden border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:shadow-yellow-400/30">
                       <ProtectedImage 
                         src={video.thumbnail}
                         alt={video.title}
@@ -149,11 +149,11 @@ export const SocialProofSection: React.FC = () => {
                       <span className="text-yellow-400 text-sm font-semibold">{video.type}</span>
                     </div>
                     
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                    <h3 className="text-base sm:text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
                       {video.title}
                     </h3>
                     
-                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+                    <p className="text-gray-300 text-xs sm:text-base leading-relaxed mb-4">
                       {video.description}
                     </p>
 
@@ -175,7 +175,7 @@ export const SocialProofSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4">
                 Pronto para ser o próximo{' '}
                 <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">case de sucesso</span>?
               </h3>
@@ -183,12 +183,11 @@ export const SocialProofSection: React.FC = () => {
                 Junte-se aos pilotos que já transformaram seu processo comercial
               </p>
               <a 
-                href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-bold rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl shadow-yellow-400/30 hover:shadow-yellow-400/50 hover:scale-105"
+                href="#investimento-estrategico"
+                className="inline-flex items-center px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-bold rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl shadow-yellow-400/30 hover:shadow-yellow-400/50 hover:scale-105 text-sm sm:text-base"
               >
-                Entrar na Escuderia Pódium
+                <span className="hidden sm:inline">Entrar na Escuderia Pódium</span>
+                <span className="sm:hidden">Entrar na Escuderia</span>
               </a>
             </div>
           </div>

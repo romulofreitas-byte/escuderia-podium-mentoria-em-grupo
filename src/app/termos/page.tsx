@@ -62,7 +62,7 @@ export default function TermosPage() {
                 <strong className="text-white">Email:</strong> romulo.freitas@combustivelmv.com
               </p>
               <p className="text-gray-300">
-                <strong className="text-white">Endereço:</strong> Belo Horizonte, MG - Brasil
+                <strong className="text-white">Endereço:</strong> Brasil
               </p>
             </div>
           </section>
@@ -214,8 +214,7 @@ export default function TermosPage() {
             <h2 className="text-2xl font-bold text-yellow-400 mb-4">10. Resolução de Conflitos</h2>
             <div className="space-y-4">
               <p className="text-gray-300">
-                Qualquer disputa será resolvida preferencialmente por acordo amigável. 
-                Caso necessário, será submetida ao foro da comarca de Belo Horizonte/MG.
+                Qualquer disputa será resolvida preferencialmente por acordo amigável.
               </p>
             </div>
           </section>
@@ -237,7 +236,7 @@ export default function TermosPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-yellow-400" />
-                  <span className="text-gray-300">Belo Horizonte, MG - Brasil</span>
+                  <span className="text-gray-300">Brasil</span>
                 </div>
               </div>
             </div>

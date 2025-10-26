@@ -85,7 +85,7 @@ export const BonusesSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="bonus" 
-      className="relative overflow-hidden py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
@@ -107,13 +107,13 @@ export const BonusesSection: React.FC = () => {
             <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Bônus Exclusivos da Escuderia</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Ferramentas que{' '}
             <span className="bg-gradient-to-r from-green-400 via-yellow-400 to-green-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">aceleram</span>
             {' '}seus resultados
           </h2>
           
-          <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Recursos exclusivos criados para transformar sua jornada comercial
           </p>
         </div>
@@ -227,7 +227,7 @@ export const BonusesSection: React.FC = () => {
                 }}
               >
                 <div
-                  className={`relative bg-gray-800/40 border ${getBorderColor(bonus.color)} rounded-2xl p-8 backdrop-blur-xl transition-all duration-500 cursor-pointer overflow-hidden group ${
+                  className={`relative bg-gray-800/40 border ${getBorderColor(bonus.color)} rounded-2xl p-8 backdrop-blur-xl transition-all duration-500 cursor-pointer overflow-hidden group h-full flex flex-col ${
                     isHovered ? 'scale-105 -translate-y-2 shadow-2xl ' + getGlowColor(bonus.color) : 'shadow-lg'
                   }`}
                   onMouseEnter={() => setHoveredCard(actualIndex)}
@@ -252,7 +252,7 @@ export const BonusesSection: React.FC = () => {
                   <h3 className="text-xl font-bold text-white mb-3 text-center">{bonus.title}</h3>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed text-center mb-4">{bonus.description}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed text-center mb-4 flex-1">{bonus.description}</p>
 
                   {/* Stats (if available) */}
                   {bonus.stat && (

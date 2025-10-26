@@ -40,7 +40,7 @@ export default function PrivacidadePage() {
                 <strong className="text-white">Email:</strong> romulo.freitas@combustivelmv.com
               </p>
               <p className="text-gray-300">
-                <strong className="text-white">Endereço:</strong> Belo Horizonte, MG - Brasil
+                <strong className="text-white">Endereço:</strong> Brasil
               </p>
             </div>
           </section>
@@ -196,7 +196,7 @@ export default function PrivacidadePage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-yellow-400" />
-                  <span className="text-gray-300">Belo Horizonte, MG - Brasil</span>
+                  <span className="text-gray-300">Brasil</span>
                 </div>
               </div>
             </div>

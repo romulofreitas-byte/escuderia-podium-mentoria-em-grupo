@@ -208,7 +208,7 @@ export const FinalCTASection: React.FC = () => {
                 className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
               >
               <MessageCircle className="w-5 h-5 mr-3" />
-              WhatsApp: (31) 99429-3099
+              Falar no WhatsApp
             </a>
           </motion.div>
         </div>

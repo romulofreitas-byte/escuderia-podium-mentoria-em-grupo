@@ -37,9 +37,6 @@ export const FlipCard: React.FC<FlipCardProps> = ({ icon: IconComponent, title, 
             <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
               {title}
             </h3>
-            <div className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Clique para saber mais
-            </div>
           </div>
         </div>
 
@@ -66,9 +63,6 @@ export const FlipCard: React.FC<FlipCardProps> = ({ icon: IconComponent, title, 
             <p className="text-gray-300 leading-relaxed flex-1">
               {description}
             </p>
-            <div className="text-xs text-gray-400 mt-4 text-center">
-              Clique para voltar
-            </div>
           </div>
         </div>
       </div>
