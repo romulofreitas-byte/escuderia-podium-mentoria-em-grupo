@@ -113,7 +113,7 @@ export const ComparisonSection: React.FC = () => {
               return (
                 <div 
                   key={index} 
-                  ref={(el) => (rowRefs.current[index] = el)}
+                  ref={(el) => { rowRefs.current[index] = el; }}
                   className={`grid grid-cols-3 transition-all duration-500 cursor-pointer ${
                     index % 2 === 0 ? 'bg-gray-800/20' : 'bg-gray-700/10'
                   } ${
