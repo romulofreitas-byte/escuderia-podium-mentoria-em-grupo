@@ -45,8 +45,10 @@ export const programWeeks: ProgramWeek[] = [
     content: [
       'Como construir lista qualificada de 100-200 contatos',
       'Canais de prospecção por nicho',
-      'Qualificação de leads',
-      'Organização em planilha',
+      'Qualificação de leads (3 níveis)',
+      'Uso de IA para construção de listas (Gemini)',
+      'Ferramentas de extração de listas',
+      'Organização em CRM',
       'Priorização de contatos'
     ],
     deliverables: [
@@ -55,8 +57,9 @@ export const programWeeks: ProgramWeek[] = [
     ],
     tools: [
       'Agente Pódium para busca e qualificação',
-      'Planilha de prospecção',
-      'Google Maps, LinkedIn, OAB, CREA'
+      'CRM de prospecção',
+      'Google Maps, LinkedIn, OAB, CREA',
+      'IA (Gemini) e ferramentas de extração'
     ]
   },
   {
@@ -82,7 +85,7 @@ export const programWeeks: ProgramWeek[] = [
     tools: [
       'Script validado do Método Pódium',
       'Agente Pódium para gerar scripts personalizados',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia'
     ]
   },
@@ -109,7 +112,7 @@ export const programWeeks: ProgramWeek[] = [
     tools: [
       'Framework R1 do Método Pódium',
       'Agente Pódium para preparar perguntas',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia'
     ]
   },
@@ -135,7 +138,7 @@ export const programWeeks: ProgramWeek[] = [
     tools: [
       'Framework R2 do Método Pódium',
       'Agente Pódium para gerar propostas',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia'
     ]
   },
@@ -161,7 +164,7 @@ export const programWeeks: ProgramWeek[] = [
     tools: [
       'Framework de Fechamento do Método Pódium',
       'Agente Pódium para gerar argumentos',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia'
     ]
   },
@@ -313,7 +316,7 @@ export const programModules = [
       'Como construir lista qualificada de 100-200 contatos',
       'Canais de prospecção por nicho',
       'Qualificação de leads',
-      'Organização em planilha',
+      'Organização em CRM',
       'Priorização de contatos'
     ],
     deliverables: [
@@ -326,7 +329,7 @@ export const programModules = [
       'Canvas de Nicho e ICP',
       'Agente Pódium para pesquisa de mercado',
       'Agente Pódium para busca e qualificação',
-      'Planilha de prospecção',
+      'CRM de prospecção',
       'Google Maps, LinkedIn, OAB, CREA'
     ]
   },
@@ -370,7 +373,7 @@ export const programModules = [
     tools: [
       'Script validado do Método Pódium',
       'Agente Pódium para gerar scripts personalizados',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia',
       'Framework R1 do Método Pódium',
       'Agente Pódium para preparar perguntas',
@@ -400,7 +403,7 @@ export const programModules = [
     tools: [
       'Framework de Fechamento do Método Pódium',
       'Agente Pódium para gerar argumentos',
-      'Planilha de acompanhamento',
+      'CRM de acompanhamento',
       'Sala de Ligação da Escuderia'
     ]
   }

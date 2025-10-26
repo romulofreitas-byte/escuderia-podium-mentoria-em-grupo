@@ -13,6 +13,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
   className = '', 
   overlay = true,
   alt,
+  fill,
   ...props 
 }) => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -79,6 +80,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
       <Image
         {...props}
         alt={alt}
+        fill={fill}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
@@ -90,12 +92,12 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
         WebkitTouchCallout: 'none',
         WebkitUserDrag: 'none',
         KhtmlUserSelect: 'none',
-        pointerEvents: 'none',
+        ...(fill ? {} : { pointerEvents: 'none' }),
       } as React.CSSProperties}
       />
       
       {/* Transparent overlay to prevent direct image access */}
-      {overlay && (
+      {overlay && !fill && (
         <div 
           className="absolute inset-0 bg-transparent"
           style={{

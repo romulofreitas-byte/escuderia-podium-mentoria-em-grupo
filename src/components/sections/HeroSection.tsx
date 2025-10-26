@@ -1,7 +1,20 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { ProtectedImage } from '@/components/ui/ProtectedImage';
 
 export const HeroSection: React.FC = () => {
+  const [progressWidth, setProgressWidth] = useState(0);
+
+  useEffect(() => {
+    // Small delay to ensure animation is visible
+    const timer = setTimeout(() => {
+      setProgressWidth(29);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[calc(100vh-64px)]" style={{minHeight: 'calc(100vh - 64px)'}}>
       {/* Background with blur */}
@@ -71,7 +84,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              Transforme-se de freelancer para empresário em apenas 6 semanas com nossa mentoria híbrida: sessões em grupo + individuais.
+              6 semanas em grupo + 4 sessões individuais para fechar seu primeiro contrato antes do fim do ano e começar a vender como empresário.
             </p>
 
             {/* CTA Button with Progress */}
@@ -91,9 +104,10 @@ export const HeroSection: React.FC = () => {
                   <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
                 </div>
                 <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg transition-all duration-1000" style={{width: '29%'}}></div>
-                  {/* Loading shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent animate-shimmer"></div>
+                  {/* Filled portion */}
+                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+                  {/* Continuous flow animation across entire bar */}
+                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent animate-progress-flow"></div>
                 </div>
               </div>
             </div>

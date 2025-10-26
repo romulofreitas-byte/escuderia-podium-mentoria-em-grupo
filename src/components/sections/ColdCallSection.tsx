@@ -49,12 +49,15 @@ export const ColdCallSection: React.FC = () => {
 
   return (
     <section id="cold-call" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
-      {/* Background with orange/red gradient */}
+      {/* Background with purple/blue glassmorphism */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
-        <div className="absolute top-20 left-20 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-red-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-500/3 to-red-500/3 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/90"></div>
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-20 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-400/8 to-blue-400/8 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
       </div>
 
       <motion.div 
@@ -67,9 +70,9 @@ export const ColdCallSection: React.FC = () => {
         <div className="text-center max-w-5xl mx-auto">
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-full backdrop-blur-sm shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
-              <Zap className="w-5 h-5 text-orange-400 mr-2" />
-              <span className="text-orange-400 font-bold text-sm tracking-wide drop-shadow-sm">Aprenda a Ligar</span>
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-400/20 to-blue-400/10 border border-purple-400/30 rounded-full backdrop-blur-md shadow-lg shadow-purple-400/20 hover:shadow-purple-400/40 transition-all duration-300">
+              <Zap className="w-5 h-5 text-purple-400 mr-2" />
+              <span className="text-purple-400 font-bold text-sm tracking-wide drop-shadow-sm">Aprenda a Ligar</span>
             </div>
           </motion.div>
 
@@ -79,7 +82,7 @@ export const ColdCallSection: React.FC = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg"
           >
             O Segredo Que{' '}
-            <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-md">
+            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-md animate-shimmer bg-[length:200%_auto]">
               Transforma
             </span>{' '}
             Suas Ligações
@@ -104,10 +107,10 @@ export const ColdCallSection: React.FC = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8 text-center hover:border-orange-500/50 transition-all duration-300 backdrop-blur-sm hover:shadow-orange-500/10"
+                  className="bg-gray-800/30 border border-gray-700/50 rounded-2xl p-8 text-center hover:border-purple-400/50 transition-all duration-300 backdrop-blur-xl hover:shadow-lg hover:shadow-purple-400/20"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="w-8 h-8 text-orange-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400/20 to-blue-400/10 border border-purple-400/30 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <IconComponent className="w-8 h-8 text-purple-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">{point.text}</h3>
                   <p className="text-gray-300 text-sm leading-relaxed">{point.description}</p>
@@ -121,20 +124,23 @@ export const ColdCallSection: React.FC = () => {
             variants={itemVariants}
             className="mb-16"
           >
-            <div className="bg-gray-800/30 border border-orange-500/30 rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl backdrop-blur-sm hover:shadow-orange-500/20 transition-all duration-300">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  Veja Como Eu Faço{' '}
-                  <span className="text-orange-400">Cold Calls Reais</span>
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Compilado das minhas melhores ligações de vendas no YouTube
-                </p>
-              </div>
+            <div className="bg-gray-800/30 border-2 border-purple-400/30 rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl backdrop-blur-xl hover:border-purple-400/50 hover:shadow-purple-400/30 transition-all duration-300 relative overflow-hidden">
+              {/* Glassmorphism glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 via-transparent to-blue-400/5 pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl font-bold text-white mb-4">
+                    Veja Como Eu Faço{' '}
+                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Cold Calls Reais</span>
+                  </h3>
+                  <p className="text-gray-300 text-lg">
+                    Compilado das minhas melhores ligações de vendas no YouTube
+                  </p>
+                </div>
 
               {/* Video Thumbnail */}
               <div className="relative group cursor-pointer" onClick={() => setIsVideoOpen(true)}>
-                <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-purple-400/40 hover:border-purple-400/70 transition-all duration-300 shadow-xl shadow-purple-400/20">
                   {/* Video Thumbnail Image */}
                   <Image
                     src="/thumb-cold-call.jpg"
@@ -149,8 +155,10 @@ export const ColdCallSection: React.FC = () => {
                   
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300">
-                      <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 group-hover:scale-110 group-hover:shadow-purple-500/70 transition-all duration-300 relative">
+                      {/* Yellow accent ring */}
+                      <div className="absolute inset-0 rounded-full border-2 border-yellow-400/30 animate-pulse"></div>
+                      <Play className="w-8 h-8 text-white ml-1 relative z-10" fill="currentColor" />
                     </div>
                   </div>
 
@@ -171,17 +179,18 @@ export const ColdCallSection: React.FC = () => {
               {/* Video Stats */}
               <div className="grid grid-cols-3 gap-6 mt-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">+100</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">+100</div>
                   <div className="text-gray-300 text-sm">Ligações Reais</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">100%</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">100%</div>
                   <div className="text-gray-300 text-sm">Técnicas Aplicadas</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">Real</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">Real</div>
                   <div className="text-gray-300 text-sm">Sem Roteiros</div>
                 </div>
+              </div>
               </div>
             </div>
           </motion.div>
@@ -191,12 +200,15 @@ export const ColdCallSection: React.FC = () => {
             variants={itemVariants}
             className="mb-16"
           >
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-3xl p-12 max-w-4xl mx-auto backdrop-blur-sm">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-white mb-6">
-                  No Método Pódium, Você Vai{' '}
-                  <span className="text-orange-400">Dominar</span> o Cold Call
-                </h3>
+            <div className="bg-gray-800/40 border-2 border-purple-400/30 rounded-3xl p-12 max-w-4xl mx-auto backdrop-blur-xl shadow-xl hover:shadow-purple-400/20 transition-all duration-300 relative overflow-hidden">
+              {/* Glassmorphism effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 via-transparent to-blue-400/10"></div>
+              <div className="relative z-10">
+                <div className="text-center">
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    No Método Pódium, Você Vai{' '}
+                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Dominar</span> o Cold Call
+                  </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                   <div className="space-y-4">
@@ -232,6 +244,7 @@ export const ColdCallSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -245,10 +258,10 @@ export const ColdCallSection: React.FC = () => {
               href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-orange-600 hover:to-red-600 shadow-2xl hover:shadow-orange-500/30 hover:scale-105"
+              className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
             >
               <span className="relative drop-shadow-sm">Domine o Cold Call Agora</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             <p className="text-gray-400 mt-4 text-sm">

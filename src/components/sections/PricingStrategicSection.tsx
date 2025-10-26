@@ -1,11 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Users, Award, Bot, Phone, Zap, Shield, TrendingUp, Calculator, Star, AlertTriangle, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 export const PricingStrategicSection: React.FC = () => {
+  const [progressWidth, setProgressWidth] = useState(0);
+
+  useEffect(() => {
+    // Small delay to ensure animation is visible
+    const timer = setTimeout(() => {
+      setProgressWidth(29);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -89,8 +99,11 @@ export const PricingStrategicSection: React.FC = () => {
               <span className="text-gray-300">Vagas preenchidas</span>
               <span className="text-yellow-400 font-semibold animate-pulse">29%</span>
             </div>
-            <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse transition-all duration-1000" style={{width: '29%'}}></div>
+            <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
+              {/* Filled portion */}
+              <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+              {/* Continuous flow animation across entire bar */}
+              <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent animate-progress-flow"></div>
             </div>
           </div>
         </motion.div>

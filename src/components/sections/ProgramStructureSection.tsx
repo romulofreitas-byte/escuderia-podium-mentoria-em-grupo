@@ -2,18 +2,41 @@
 
 import React, { useState } from 'react';
 import { programWeeks, phases, programModules } from '@/data/program';
-import { Calendar, Clock, Users, User } from 'lucide-react';
+import { Calendar, Clock, Users, User, ChevronDown, Target, Rocket, TrendingUp, Award } from 'lucide-react';
 import Image from 'next/image';
 
 export const ProgramStructureSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [expandedWeek, setExpandedWeek] = useState<number | null>(null);
 
-  const tabs = [
-    { id: 'fundacao', name: 'Fundação', module: programModules[0] },
-    { id: 'execucao', name: 'Execução', module: programModules[1] },
-    { id: 'fechamento', name: 'Fechamento', module: programModules[2] },
-    { id: 'consolidacao', name: 'Consolidação', sessions: programWeeks.slice(6, 10) }
-  ];
+  // Get phase color and icon
+  const getPhaseConfig = (phase: string) => {
+    switch (phase) {
+      case 'Fundação':
+        return { color: 'bg-blue-500/20 border-blue-400/30 text-blue-400', icon: Target };
+      case 'Execução':
+        return { color: 'bg-green-500/20 border-green-400/30 text-green-400', icon: Rocket };
+      case 'Fechamento':
+        return { color: 'bg-red-500/20 border-red-400/30 text-red-400', icon: TrendingUp };
+      case 'Consolidação':
+        return { color: 'bg-purple-500/20 border-purple-400/30 text-purple-400', icon: Award };
+      default:
+        return { color: 'bg-gray-500/20 border-gray-400/30 text-gray-400', icon: Target };
+    }
+  };
+
+  const handleWeekToggle = (weekNumber: number) => {
+    setExpandedWeek(expandedWeek === weekNumber ? null : weekNumber);
+  };
+
+  // Group weeks by phase for separators
+  let currentPhase = '';
+  const weeksWithPhaseMarkers = programWeeks.map((week, index) => {
+    const showPhaseSeparator = week.phase !== currentPhase;
+    if (showPhaseSeparator) {
+      currentPhase = week.phase;
+    }
+    return { ...week, showPhaseSeparator, phaseIndex: index };
+  });
 
   return (
     <section id="estrutura-programa" className="relative overflow-hidden py-[75px] bg-gray-900">
@@ -56,212 +79,162 @@ export const ProgramStructureSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="mb-12">
-          <div className="flex overflow-x-auto gap-2 bg-gray-800/30 rounded-xl p-2 backdrop-blur-sm border border-gray-700 scrollbar-hide">
-            {tabs.map((tab, index) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(index)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base whitespace-nowrap flex-shrink-0 ${
-                  activeTab === index
-                    ? 'bg-yellow-400 text-black shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
+        {/* Timeline and Weeks */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-400/50 via-yellow-400/30 to-purple-400/30 hidden md:block"></div>
+
+          {/* Weeks Accordion */}
+          <div className="space-y-6">
+            {weeksWithPhaseMarkers.map((week, index) => {
+              const isExpanded = expandedWeek === week.week;
+              const phaseConfig = getPhaseConfig(week.phase);
+              const IconComponent = phaseConfig.icon;
+
+              return (
+                <React.Fragment key={week.week}>
+                  {/* Phase Separator */}
+                  {week.showPhaseSeparator && (
+                    <div className="relative animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
+                      {/* Timeline Dot */}
+                      <div className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full border-4 border-gray-900 shadow-lg hidden md:block z-10"></div>
+                      
+                      {/* Phase Badge */}
+                      <div className="ml-8 md:ml-0 md:pl-16">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-xl backdrop-blur-lg">
+                          <IconComponent className="w-4 h-4" />
+                          <span className="font-semibold text-white">{week.phase}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Week Card */}
+                  <div 
+                    className={`relative ml-8 md:ml-0 md:pl-16 animate-fade-in-up transition-all duration-500 ${
+                      isExpanded ? 'mb-8' : ''
+                    }`}
+                    style={{animationDelay: `${0.4 + index * 0.05}s`}}
+                  >
+                    {/* Timeline Dot */}
+                    <div className="absolute left-6 top-6 -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full border-4 border-gray-900 shadow-lg hidden md:block z-10"></div>
+
+                    {/* Week Card */}
+                    <div 
+                      className={`bg-gray-800/40 border border-gray-700/50 rounded-xl p-6 transition-all duration-500 backdrop-blur-lg cursor-pointer hover:bg-gray-800/60 hover:border-yellow-400/50 ${
+                        isExpanded 
+                          ? 'shadow-2xl shadow-yellow-400/20 scale-[1.02] border-yellow-400/70' 
+                          : 'hover:shadow-lg hover:shadow-yellow-400/10'
+                      }`}
+                      onClick={() => handleWeekToggle(week.week)}
+                    >
+                      {/* Card Header */}
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          {/* Week Number and Title */}
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl flex items-center justify-center font-bold text-sm shadow-lg">
+                              {week.week}
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-bold text-white">{week.title}</h3>
+                              <p className="text-xs text-gray-400">Semana {week.week} de 10</p>
+                            </div>
+                          </div>
+
+                          {/* Phase Badge and Format */}
+                          <div className="flex items-center gap-2 mt-3">
+                            <span className={`px-2 py-1 rounded-full text-xs font-semibold border ${phaseConfig.color}`}>
+                              {week.phase}
+                            </span>
+                            <span className="text-xs text-gray-400">•</span>
+                            <div className="flex items-center gap-1 text-xs text-gray-400">
+                              {week.format === 'Grupo' ? (
+                                <><Users className="w-3 h-3" /> <span>Grupo</span></>
+                              ) : (
+                                <><User className="w-3 h-3" /> <span>Individual</span></>
+                              )}
+                            </div>
+                            <span className="text-xs text-gray-400">•</span>
+                            <div className="flex items-center gap-1 text-xs text-gray-400">
+                              <Clock className="w-3 h-3" /> <span>{week.duration}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Expand/Collapse Icon */}
+                        <ChevronDown 
+                          className={`w-6 h-6 text-gray-400 transition-all duration-500 flex-shrink-0 ${
+                            isExpanded ? 'rotate-180 text-yellow-400' : ''
+                          }`}
+                        />
+                      </div>
+
+                      {/* Expanded Content */}
+                      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        isExpanded ? 'max-h-[1000px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+                      }`}>
+                        {/* Theme */}
+                        <div className="mb-4">
+                          <p className="text-yellow-400 font-medium text-sm">{week.theme}</p>
+                        </div>
+
+                        {/* Content Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                          {/* Content */}
+                          <div>
+                            <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                              <span className="w-1 h-4 bg-yellow-400 rounded-full"></span>
+                              Conteúdo
+                            </h4>
+                            <div className="space-y-2">
+                              {week.content.map((item, idx) => (
+                                <div key={idx} className="text-sm text-gray-300 flex items-start">
+                                  <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
+                                  <span className="leading-relaxed">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Deliverables */}
+                          <div>
+                            <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                              <span className="w-1 h-4 bg-green-400 rounded-full"></span>
+                              Entregáveis
+                            </h4>
+                            <div className="space-y-2">
+                              {week.deliverables.map((item, idx) => (
+                                <div key={idx} className="text-sm text-gray-300 flex items-start">
+                                  <span className="text-green-400 mr-2 mt-0.5 text-xs flex-shrink-0">✓</span>
+                                  <span className="leading-relaxed">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Tools */}
+                        <div>
+                          <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-purple-400 rounded-full"></span>
+                            Ferramentas
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {week.tools.map((tool, idx) => (
+                              <span key={idx} className="px-3 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs font-medium backdrop-blur-sm">
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </React.Fragment>
+              );
+            })}
           </div>
-        </div>
-
-        {/* Tab Content */}
-        <div className="min-h-[600px]">
-          {tabs[activeTab].module ? (
-            // Module content for first 3 tabs
-            <div className="animate-fade-in">
-              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 sm:p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  {/* Module Badge */}
-                  <div className="flex-shrink-0">
-                    <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px] shadow-lg">
-                      <div className="text-lg font-bold">{tabs[activeTab].module!.title}</div>
-                      <div className="text-sm font-medium">{tabs[activeTab].module!.weeks}</div>
-                      <div className="text-xs mt-1">{tabs[activeTab].module!.duration}</div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    {/* Title and Format Info */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                      <h3 className="text-xl font-bold text-white">
-                        {tabs[activeTab].module!.title}
-                      </h3>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2 text-gray-400">
-                          <Users className="w-4 h-4" />
-                          <span className="text-sm">{tabs[activeTab].module!.format}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400">
-                          <Clock className="w-4 h-4" />
-                          <span className="text-sm">{tabs[activeTab].module!.duration}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Theme */}
-                    <p className="text-lg text-yellow-400 mb-4 font-medium">
-                      {tabs[activeTab].module!.theme}
-                    </p>
-
-                    {/* Content Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                      <div>
-                        <h4 className="text-sm font-semibold text-white mb-2">Conteúdo:</h4>
-                        <div className="space-y-1">
-                          {tabs[activeTab].module!.content.slice(0, 6).map((item, idx) => (
-                            <div key={idx} className="text-sm text-gray-300 flex items-start">
-                              <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
-                              <span className="leading-tight">{item}</span>
-                            </div>
-                          ))}
-                          {tabs[activeTab].module!.content.length > 6 && (
-                            <div className="text-xs text-gray-400 italic">
-                              +{tabs[activeTab].module!.content.length - 6} itens adicionais...
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-white mb-2">Entregáveis:</h4>
-                        <div className="space-y-1">
-                          {tabs[activeTab].module!.deliverables.map((item, idx) => (
-                            <div key={idx} className="text-sm text-gray-300 flex items-start">
-                              <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                              <span className="leading-tight">{item}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Tools */}
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-2">Ferramentas:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {tabs[activeTab].module!.tools.map((tool, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            // Individual sessions for Consolidação tab
-            <div className="animate-fade-in">
-              <div className="bg-gray-800/30 border border-gray-700 border-l-4 border-l-yellow-400 rounded-xl p-4 sm:p-6 lg:p-8 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/20">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  {/* Module Badge */}
-                  <div className="flex-shrink-0">
-                    <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-black rounded-xl p-4 text-center min-w-[140px] shadow-lg">
-                      <div className="text-lg font-bold">Consolidação</div>
-                      <div className="text-sm font-medium">Semanas 7-10</div>
-                      <div className="text-xs mt-1">4 sessões individuais</div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    {/* Title and Format Info */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                      <h3 className="text-xl font-bold text-white">
-                        Sessões Individuais (Mensais)
-                      </h3>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2 text-gray-400">
-                          <User className="w-4 h-4" />
-                          <span className="text-sm">Individual</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400">
-                          <Clock className="w-4 h-4" />
-                          <span className="text-sm">1h cada sessão</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Theme */}
-                    <p className="text-lg text-yellow-400 mb-4 font-medium">
-                      Consolidação e escalonamento dos resultados
-                    </p>
-
-                    {/* Sessions Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                      <div>
-                        <h4 className="text-sm font-semibold text-white mb-2">Sessões:</h4>
-                        <div className="space-y-1">
-                          {tabs[activeTab].sessions!.map((session, idx) => (
-                            <div key={idx} className="text-sm text-gray-300 flex items-start">
-                              <span className="text-yellow-400 mr-2 mt-0.5 text-xs">•</span>
-                              <div>
-                                <span className="font-medium">{session.title}</span>
-                                <span className="text-gray-400 ml-2">({session.duration})</span>
-                                <div className="text-xs text-gray-400 mt-1">{session.theme}</div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-white mb-2">Entregáveis:</h4>
-                        <div className="space-y-1">
-                          <div className="text-sm text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                            <span className="leading-tight">Plano de ação personalizado</span>
-                          </div>
-                          <div className="text-sm text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                            <span className="leading-tight">Processo otimizado</span>
-                          </div>
-                          <div className="text-sm text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                            <span className="leading-tight">Estratégia de escalonamento</span>
-                          </div>
-                          <div className="text-sm text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 mt-0.5 text-xs">✓</span>
-                            <span className="leading-tight">Certificação Piloto Pódium</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Tools */}
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-2">Ferramentas:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                          Acompanhamento individual
-                        </span>
-                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                          Estratégias personalizadas
-                        </span>
-                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                          Análise de performance
-                        </span>
-                        <span className="px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 rounded-full text-xs">
-                          Certificação oficial
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Summary */}

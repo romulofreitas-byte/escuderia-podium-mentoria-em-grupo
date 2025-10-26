@@ -5,11 +5,12 @@ import { WhyItWorksSection } from '@/components/sections/WhyItWorksSection';
 import { WhoIsItForSection } from '@/components/sections/WhoIsItForSection';
 import { ProgramStructureSection } from '@/components/sections/ProgramStructureSection';
 import { MethodSection } from '@/components/sections/MethodSection';
+import { TechnologyToolsSection } from '@/components/sections/TechnologyToolsSection';
 import { SocialProofSection } from '@/components/sections/SocialProofSection';
 import { ComparisonSection } from '@/components/sections/ComparisonSection';
 import { BonusesSection } from '@/components/sections/BonusesSection';
 import { PricingStrategicSection } from '@/components/sections/PricingStrategicSection';
-import { ExpectedResultsSection } from '@/components/sections/ExpectedResultsSection';
+import { TransformationSection } from '@/components/sections/TransformationSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
 import { AboutMentorSection } from '@/components/sections/AboutMentorSection';
 import { FAQSection } from '@/components/sections/FAQSection';
@@ -30,10 +31,11 @@ export default function HomePage() {
       <ColdCallSection />
       <ProgramStructureSection />
       <MethodSection />
+      <TechnologyToolsSection />
       <ComparisonSection />
       <BonusesSection />
       <PricingStrategicSection />
-      <ExpectedResultsSection />
+      <TransformationSection />
       <TimelineSection />
       <AboutMentorSection />
       <FAQSection />
