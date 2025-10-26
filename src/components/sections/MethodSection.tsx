@@ -100,7 +100,7 @@ export const MethodSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="metodo-podium" 
-      className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
@@ -141,7 +141,7 @@ export const MethodSection: React.FC = () => {
         {/* Method Steps with Enhanced Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20 relative">
           {/* Connecting lines on desktop */}
-          <svg className="absolute top-1/2 left-0 right-0 h-2 hidden lg:block z-0 opacity-20">
+          <svg viewBox="0 0 1000 100" className="absolute top-1/2 left-0 right-0 h-2 hidden lg:block z-0 opacity-20">
             <defs>
               <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#3b82f6" />
@@ -150,7 +150,7 @@ export const MethodSection: React.FC = () => {
               </linearGradient>
             </defs>
             <path 
-              d="M 5% 50 Q 15% 45, 25% 45 T 50% 45 T 75% 45 T 95% 50" 
+              d="M 50 50 Q 150 45, 250 45 T 500 45 T 750 45 T 950 50" 
               stroke="url(#path-gradient)" 
               strokeWidth="2" 
               fill="none"
