@@ -201,7 +201,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Right - Image */}
-          <div className="hidden lg:flex justify-end items-end -mb-20" style={{marginTop: '-120px'}}>
+          <div className="hidden lg:flex justify-end items-end -mb-20" style={{marginTop: '-160px'}}>
             <div className="relative w-full max-w-lg overflow-visible">
               {/* Gradiente radial circular laranja para disfarçar recorte */}
               <div className="absolute inset-0 -z-10 overflow-visible">
