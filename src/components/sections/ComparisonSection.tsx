@@ -46,7 +46,7 @@ export const ComparisonSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="comparacao" 
-      className="relative overflow-hidden py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
@@ -69,12 +69,12 @@ export const ComparisonSection: React.FC = () => {
             <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Comparativo</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Seu Estado Atual vs{' '}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">Escuderia Pódium</span>
           </h2>
           
-          <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Veja a transformação que a Escuderia Pódium pode fazer na sua carreira comercial
           </p>
         </div>
@@ -214,7 +214,7 @@ export const ComparisonSection: React.FC = () => {
               >
                 {/* Card Header */}
                 <div 
-                  className="p-6 cursor-pointer"
+                  className="p-4 sm:p-6 cursor-pointer"
                   onClick={() => {
                     const newExpanded = new Set(expandedCards);
                     if (isExpanded) {
@@ -234,7 +234,7 @@ export const ComparisonSection: React.FC = () => {
                 </div>
                 
                 {/* Card Content */}
-                <div className={`px-6 transition-all duration-500 ${isExpanded ? 'max-h-96' : 'max-h-0'} overflow-hidden`}>
+                <div className={`px-4 sm:px-6 transition-all duration-500 ${isExpanded ? 'max-h-96' : 'max-h-0'} overflow-hidden`}>
                   {/* Estado Atual */}
                   <div className="flex items-center justify-between p-4 mb-3 bg-gray-700/30 border border-gray-600/50 rounded-xl">
                     <span className="text-sm font-medium text-gray-400">Estado Atual</span>

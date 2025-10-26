@@ -18,7 +18,7 @@ export const BenefitsMarquee: React.FC = () => {
   ];
 
   return (
-    <div className="bg-yellow-400 py-4 overflow-hidden">
+    <div className="bg-yellow-400 py-4 overflow-hidden w-full max-w-full">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes marquee-slow {
@@ -30,7 +30,7 @@ export const BenefitsMarquee: React.FC = () => {
           }
         `
       }} />
-      <div className="flex marquee-slow-animation whitespace-nowrap">
+      <div className="flex marquee-slow-animation whitespace-nowrap w-max">
         {/* Triplicate for seamless loop - ensures all 12 items are visible */}
         {[...benefits, ...benefits, ...benefits].map((benefit, index) => {
           const Icon = benefit.icon;

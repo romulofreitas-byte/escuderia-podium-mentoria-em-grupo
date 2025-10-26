@@ -39,7 +39,7 @@ export const ProgramStructureSection: React.FC = () => {
   });
 
   return (
-    <section id="estrutura-programa" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="estrutura-programa" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -54,14 +54,14 @@ export const ProgramStructureSection: React.FC = () => {
           </div>
 
           {/* Main Headline */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Saia da teoria e{' '}
             <span className="text-yellow-400 drop-shadow-md animate-pulse">feche seu primeiro contrato</span>
             {' '}em 6 semanas
           </h2>
 
           {/* Subheadline */}
-          <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             O Método Pódium é uma trilha de progressão que impulsiona a percepção de resultados (aprender efetivamente a vender) e a percepção de crescimento pessoal (começar a se ver, portar, contratar e vender como empresário).
           </p>
         </div>
@@ -121,7 +121,7 @@ export const ProgramStructureSection: React.FC = () => {
 
                     {/* Week Card */}
                     <div 
-                      className={`bg-gray-800/40 border border-gray-700/50 rounded-xl p-6 transition-all duration-500 backdrop-blur-lg cursor-pointer hover:bg-gray-800/60 hover:border-yellow-400/50 ${
+                      className={`bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 sm:p-6 transition-all duration-500 backdrop-blur-lg cursor-pointer hover:bg-gray-800/60 hover:border-yellow-400/50 ${
                         isExpanded 
                           ? 'shadow-2xl shadow-yellow-400/20 scale-[1.02] border-yellow-400/70' 
                           : 'hover:shadow-lg hover:shadow-yellow-400/10'

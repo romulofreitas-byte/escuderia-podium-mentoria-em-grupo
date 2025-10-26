@@ -44,7 +44,7 @@
   
   /* Spacing - Muito respiro */
   .section-padding {
-    @apply py-16 px-4 sm:py-24 sm:px-6 md:py-32 md:px-8 lg:py-40 lg:px-12;
+    @apply py-20 px-4 sm:py-24 sm:px-6 md:py-32 md:px-8 lg:py-40 lg:px-12;
   }
   
   .container-custom {
@@ -270,4 +270,38 @@ img {
 
 .featured-badge {
   @apply absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md;
+}
+
+/* Gradiente Radial - Para vinheta escura nas bordas */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+}
+
+/* Hero Image Blend - Natural - Preserva cores do rosto */
+.hero-image-blend-natural {
+  filter: brightness(1) contrast(1.05) saturate(1);
+  opacity: 1;
+}
+
+/* Hero Image Scale - Aumenta escala em 20% */
+.scale-120 {
+  transform: scale(1.2);
+  transform-origin: top center;
+}
+
+/* Mobile Hero Vignette - Dark gradient for bottom edge */
+.mobile-hero-vignette {
+  position: relative;
+}
+
+.mobile-hero-vignette::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to top, #111827 0%, rgba(17, 24, 39, 0.95) 40%, rgba(17, 24, 39, 0.7) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 15;
 }

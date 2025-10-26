@@ -45,7 +45,7 @@ export const WhoIsItForSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="para-quem-e" 
-      className="relative overflow-hidden py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
@@ -67,20 +67,20 @@ export const WhoIsItForSection: React.FC = () => {
             <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Para Quem É</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Perfil Ideal do{' '}
             <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">Piloto</span>
           </h2>
 
-          <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Identifique se você está pronto para essa transformação
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 max-w-5xl mx-auto">
           {/* Ideal Profile - Green Theme */}
           <div 
-            className={`bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:border-green-400/50 hover:shadow-green-400/20 ${
+            className={`bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:border-green-400/50 hover:shadow-green-400/20 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{transitionDelay: '0.3s'}}
@@ -90,10 +90,10 @@ export const WhoIsItForSection: React.FC = () => {
             
             <div className="relative z-10">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400/20 to-green-500/10 border border-green-400/30 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-green-400/30">
-                  <CheckCircle className="w-8 h-8 text-green-400" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400/20 to-green-500/10 border border-green-400/30 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-green-400/30">
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
                   É Para Você Se...
                 </h3>
               </div>
@@ -128,7 +128,7 @@ export const WhoIsItForSection: React.FC = () => {
 
           {/* Not For You - Red Theme */}
           <div 
-            className={`bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:border-red-400/50 hover:shadow-red-400/20 ${
+            className={`bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:border-red-400/50 hover:shadow-red-400/20 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{transitionDelay: '0.4s'}}
@@ -138,10 +138,10 @@ export const WhoIsItForSection: React.FC = () => {
             
             <div className="relative z-10">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-400/20 to-red-500/10 border border-red-400/30 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-red-400/30">
-                  <XCircle className="w-8 h-8 text-red-400" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-400/20 to-red-500/10 border border-red-400/30 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-red-400/30">
+                  <XCircle className="w-6 h-6 sm:w-8 sm:h-8 text-red-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
                   Não É Para Você Se...
                 </h3>
               </div>

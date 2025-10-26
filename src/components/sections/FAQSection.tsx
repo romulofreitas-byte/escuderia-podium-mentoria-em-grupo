@@ -30,7 +30,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-[75px] bg-gray-800">
+    <section id="faq" className="py-20 md:py-[75px] bg-gray-800">
       <motion.div 
         className="container-custom"
         variants={containerVariants}
@@ -47,14 +47,14 @@ export const FAQSection: React.FC = () => {
           
               <motion.h2 
                 variants={itemVariants}
-                className="heading-2"
+                className="text-xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-4"
               >
                 Perguntas Frequentes
               </motion.h2>
               
               <motion.p 
                 variants={itemVariants}
-                className="body-text-lg max-w-2xl mx-auto"
+                className="text-xs sm:text-base text-gray-300 max-w-2xl mx-auto text-center"
               >
                 Esclarecemos as principais dúvidas sobre a Escuderia Pódium
               </motion.p>
@@ -93,11 +93,11 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
         >
           <motion.button
             onClick={() => toggleItem(index)}
-            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-900/20 transition-colors duration-200"
+            className="w-full px-4 py-3 sm:px-6 sm:py-4 text-left flex justify-between items-center hover:bg-gray-900/20 transition-colors duration-200"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
-                <h3 className="heading-3 pr-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white pr-4">
                   {item.question}
                 </h3>
             <motion.div
@@ -129,8 +129,8 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-4">
-                  <p className="small-text">
+            <div className="px-4 pb-3 sm:px-6 sm:pb-4">
+                  <p className="text-sm text-gray-300 leading-relaxed">
                     {item.answer}
                   </p>
             </div>

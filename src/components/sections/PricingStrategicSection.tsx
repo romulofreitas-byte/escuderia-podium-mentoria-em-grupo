@@ -61,7 +61,7 @@ export const PricingStrategicSection: React.FC = () => {
   ];
 
   return (
-    <section id="investimento-estrategico" className="relative overflow-hidden py-[75px] bg-gray-900">
+    <section id="investimento-estrategico" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -81,13 +81,13 @@ export const PricingStrategicSection: React.FC = () => {
             <span className="text-red-400 font-semibold text-xs tracking-wide">Oferta Limitada - Black Friday Antecipada</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Sua Jornada Para o{' '}
             <span className="text-yellow-400 animate-pulse">Primeiro&nbsp;Contrato</span>
             {' '}Começa&nbsp;Agora
           </h2>
           
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-sm sm:text-lg text-gray-300 max-w-3xl mx-auto mb-8">
             Junte-se à primeira turma da Escuderia Pódium e transforme seu processo comercial em apenas{' '}
             <span className="text-yellow-400 font-semibold">6&nbsp;semanas intensivas</span>
             {' '}+ 4 encontros mensais
@@ -113,7 +113,7 @@ export const PricingStrategicSection: React.FC = () => {
           variants={itemVariants}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="bg-gray-800/30 border-2 border-yellow-400/50 rounded-3xl p-8 lg:p-12 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 relative overflow-hidden">
+          <div className="bg-gray-800/30 border-2 border-yellow-400/50 rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 relative overflow-hidden">
             {/* Borda animada */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-400/20 via-transparent to-yellow-400/20 animate-pulse"></div>
             
@@ -127,7 +127,7 @@ export const PricingStrategicSection: React.FC = () => {
                   </div>
                   <div className="text-center">
                     <p className="text-yellow-400 text-sm font-semibold">Escuderia Pódium (Grupo)</p>
-                    <p className="text-4xl sm:text-5xl font-black text-yellow-400">R$ 1.850</p>
+                    <p className="text-3xl sm:text-5xl font-black text-yellow-400">R$ 1.850</p>
                   </div>
                 </div>
                 

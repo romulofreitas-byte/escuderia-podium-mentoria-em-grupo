@@ -67,7 +67,7 @@ export const TechnologyToolsSection: React.FC = () => {
     <section 
       ref={sectionRef}
       id="tecnologia-ferramentas" 
-      className="relative overflow-hidden py-[75px] bg-gray-900"
+      className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900"
     >
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 z-0">
