@@ -83,7 +83,7 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-transparent"></div>
             
             {/* Mentor Image */}
-            <div className="absolute inset-0 flex items-start justify-center" style={{top: '-30px', transform: 'translateX(90px)'}}>
+            <div className="absolute inset-0 flex items-start justify-center" style={{top: '-10px', transform: 'translateX(90px) scale(1.1)'}}>
               <div className="relative">
                 <ProtectedImage 
                   src="/imagens/romulo-hero.png"
