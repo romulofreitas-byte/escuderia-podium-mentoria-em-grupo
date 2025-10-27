@@ -121,7 +121,7 @@ export const InvestmentSection: React.FC = () => {
               className="text-center"
             >
               <AnimatedButton
-                href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+                href="https://pay.hotmart.com/V102584138H?bid=1761323207931"
                 size="md"
                 variant="primary"
                 className="mb-4"

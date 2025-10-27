@@ -157,7 +157,7 @@ export const FinalCTASection: React.FC = () => {
             className="mb-16"
           >
             <a 
-              href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
+              href="https://pay.hotmart.com/V102584138H?bid=1761323207931"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleMainCTAClick}
