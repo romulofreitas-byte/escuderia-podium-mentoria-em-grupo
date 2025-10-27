@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Ubuntu, Montserrat } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { CookieConsent } from '@/components/CookieConsent'
 import { MetaPixel } from '@/components/MetaPixel'
@@ -60,6 +61,7 @@ export default function RootLayout({
         <MetaPixel />
         {children}
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   )
