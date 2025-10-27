@@ -4,7 +4,6 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
 
 // Lazy load below-fold sections
-const WhyItWorksSection = dynamic(() => import('@/components/sections/WhyItWorksSection').then(mod => ({ default: mod.WhyItWorksSection })), { ssr: false });
 const WhoIsItForSection = dynamic(() => import('@/components/sections/WhoIsItForSection').then(mod => ({ default: mod.WhoIsItForSection })), { ssr: false });
 const WhatsAppContactCard = dynamic(() => import('@/components/sections/WhatsAppContactCard').then(mod => ({ default: mod.WhatsAppContactCard })), { ssr: false });
 const SocialProofSection = dynamic(() => import('@/components/sections/SocialProofSection').then(mod => ({ default: mod.SocialProofSection })), { ssr: false });
@@ -15,10 +14,10 @@ const TechnologyToolsSection = dynamic(() => import('@/components/sections/Techn
 const ComparisonSection = dynamic(() => import('@/components/sections/ComparisonSection').then(mod => ({ default: mod.ComparisonSection })), { ssr: false });
 const BonusesSection = dynamic(() => import('@/components/sections/BonusesSection').then(mod => ({ default: mod.BonusesSection })), { ssr: false });
 const PricingStrategicSection = dynamic(() => import('@/components/sections/PricingStrategicSection').then(mod => ({ default: mod.PricingStrategicSection })), { ssr: false });
-const TransformationSection = dynamic(() => import('@/components/sections/TransformationSection').then(mod => ({ default: mod.TransformationSection })), { ssr: false });
 const TimelineSection = dynamic(() => import('@/components/sections/TimelineSection').then(mod => ({ default: mod.TimelineSection })), { ssr: false });
 const AboutMentorSection = dynamic(() => import('@/components/sections/AboutMentorSection').then(mod => ({ default: mod.AboutMentorSection })), { ssr: false });
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })), { ssr: false });
+const CommunitySection = dynamic(() => import('@/components/sections/CommunitySection').then(mod => ({ default: mod.CommunitySection })), { ssr: false });
 const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })), { ssr: false });
 const Footer = dynamic(() => import('@/components/sections/Footer').then(mod => ({ default: mod.Footer })), { ssr: false });
 
@@ -27,7 +26,6 @@ export default function HomePage() {
     <main className="min-h-screen bg-gray-900">
       <HeroSection />
       <BenefitsMarquee />
-      <WhyItWorksSection />
       <WhoIsItForSection />
       <WhatsAppContactCard />
       <SocialProofSection />
@@ -38,10 +36,10 @@ export default function HomePage() {
       <ComparisonSection />
       <BonusesSection />
       <PricingStrategicSection />
-      <TransformationSection />
       <TimelineSection />
       <AboutMentorSection />
       <FAQSection />
+      <CommunitySection />
       <FinalCTASection />
       <Footer />
     </main>

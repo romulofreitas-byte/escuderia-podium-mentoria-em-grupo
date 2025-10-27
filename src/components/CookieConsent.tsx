@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Cookie, X, Settings, Check } from 'lucide-react';
+import { Cookie, X, Check } from 'lucide-react';
 
 export const CookieConsent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,8 +87,7 @@ export const CookieConsent: React.FC = () => {
                     Cookies e Privacidade
                   </h3>
                   <p className="text-xs sm:text-sm leading-snug sm:leading-relaxed mb-3 sm:mb-4">
-                    Utilizamos cookies essenciais para o funcionamento do site e cookies opcionais 
-                    para melhorar sua experiência. Você pode escolher quais aceitar.
+                    Utilizamos cookies para melhorar sua experiência e garantir o funcionamento do site.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-col sm:gap-2">
@@ -96,33 +95,24 @@ export const CookieConsent: React.FC = () => {
                       onClick={handleAcceptEssential}
                       className="px-2 py-2 sm:px-4 sm:py-2 border border-gray-600/50 text-gray-300 rounded-lg hover:border-gray-500/70 hover:text-gray-200 transition-all duration-200 text-xs sm:text-sm font-medium"
                     >
-                      Apenas Essenciais
-                    </button>
-                    
-                    <button
-                      onClick={() => setShowSettings(true)}
-                      className="px-2 py-2 sm:px-4 sm:py-2 border border-amber-500/30 text-amber-400 rounded-lg hover:border-amber-500/50 hover:bg-amber-500/10 transition-all duration-200 text-xs sm:text-sm font-medium"
-                    >
-                      <Settings className="w-2.5 h-2.5 sm:w-3 sm:h-3 inline mr-1 sm:mr-2" />
-                      Personalizar
+                      Rejeitar Todos
                     </button>
                     
                     <button
                       onClick={handleAcceptAll}
-                      className="col-span-2 px-2 py-2 sm:px-4 sm:py-2 bg-amber-500/90 text-gray-900 rounded-lg hover:bg-amber-500 transition-all duration-200 text-xs sm:text-sm font-medium"
+                      className="px-2 py-2 sm:px-4 sm:py-2 bg-amber-500/90 text-gray-900 rounded-lg hover:bg-amber-500 transition-all duration-200 text-xs sm:text-sm font-medium font-semibold"
                     >
                       Aceitar Todos
                     </button>
                   </div>
+                  
+                  <button
+                    onClick={() => setShowSettings(true)}
+                    className="mt-3 mx-auto block text-[10px] sm:text-xs text-gray-400 hover:text-amber-400 transition-colors"
+                  >
+                    Personalizar cookies
+                  </button>
                 </div>
-                
-                <button
-                  onClick={handleAcceptEssential}
-                  className="flex-shrink-0 p-1.5 sm:p-1.5 text-gray-400 hover:text-gray-200 transition-colors"
-                  aria-label="Fechar"
-                >
-                  <X className="w-3 h-3 sm:w-4 sm:h-4" />
-                </button>
               </div>
             </div>
           ) : (

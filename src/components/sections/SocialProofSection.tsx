@@ -22,7 +22,7 @@ export const SocialProofSection: React.FC = () => {
     {
       id: 'marina',
       title: 'Marina Marchiolli',
-      description: 'Contratos em uma mentoria fechada pra ela mesma, em apenas 2 meses',
+      description: '2 contratos + 1 mentoria de Branding fechados após a Pódium',
       thumbnail: '/depoimentos/depoimento-marina.jpg',
       url: 'https://youtu.be/0YivtKp9Sw4',
       icon: Users,
