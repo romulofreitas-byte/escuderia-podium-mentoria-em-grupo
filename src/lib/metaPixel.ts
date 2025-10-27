@@ -1,6 +1,7 @@
 declare global {
   interface Window {
-    fbq?: (action: string, event: string, params?: Record<string, any>) => void;
+    fbq?: (...args: any[]) => void;
+    _fbq?: any;
   }
 }
 
@@ -23,7 +24,10 @@ function isPixelAvailable(): boolean {
 export function trackEvent(eventName: string, params?: Record<string, any>): void {
   if (!isPixelAvailable()) return;
   
-  window.fbq?.('track', eventName, params);
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', eventName, params);
+  }
 }
 
 /**
@@ -32,7 +36,10 @@ export function trackEvent(eventName: string, params?: Record<string, any>): voi
 export function trackWhatsAppClick(): void {
   if (!isPixelAvailable()) return;
   
-  window.fbq?.('track', 'Contact');
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'Contact');
+  }
 }
 
 /**
@@ -42,7 +49,10 @@ export function trackCTAClick(ctaName?: string): void {
   if (!isPixelAvailable()) return;
   
   const params = ctaName ? { content_name: ctaName } : undefined;
-  window.fbq?.('track', 'Lead', params);
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'Lead', params);
+  }
 }
 
 /**
@@ -54,7 +64,10 @@ export function trackInitiateCheckout(value?: number, currency: string = 'BRL'):
   const params = value
     ? { value: value, currency: currency }
     : undefined;
-  window.fbq?.('track', 'InitiateCheckout', params);
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'InitiateCheckout', params);
+  }
 }
 
 /**
@@ -67,7 +80,14 @@ export function trackViewContent(contentName?: string, contentType?: string): vo
   if (contentName) params.content_name = contentName;
   if (contentType) params.content_type = contentType;
   
-  window.fbq?.('track', 'ViewContent', Object.keys(params).length > 0 ? params : undefined);
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    if (Object.keys(params).length > 0) {
+      fbq('track', 'ViewContent', params);
+    } else {
+      fbq('track', 'ViewContent');
+    }
+  }
 }
 
 /**
@@ -76,6 +96,9 @@ export function trackViewContent(contentName?: string, contentType?: string): vo
 export function trackCustomEvent(eventName: string, params?: Record<string, any>): void {
   if (!isPixelAvailable()) return;
   
-  window.fbq?.('trackCustom', eventName, params);
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('trackCustom', eventName, params);
+  }
 }
 

@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    fbq?: (action: string, event: string, params?: Record<string, any>) => void;
+    fbq?: (...args: any[]) => void;
+    _fbq?: any;
   }
 }
 
@@ -51,8 +52,11 @@ export const MetaPixel: React.FC = () => {
       })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', null, null, null);
 
       // Initialize and track
-      window.fbq?.('init', '680318171429216');
-      window.fbq?.('track', 'PageView');
+      const fbq = (window as any).fbq as (...args: any[]) => void;
+      if (fbq) {
+        fbq('init', '680318171429216');
+        fbq('track', 'PageView');
+      }
     };
 
     // Try to initialize immediately
