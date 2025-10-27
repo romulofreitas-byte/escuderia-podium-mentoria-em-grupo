@@ -31,7 +31,7 @@ export const SocialProofSection: React.FC = () => {
     {
       id: 'vinicius',
       title: 'Vinicius Nascimento',
-      description: '+ R$50.000,00 em contratos após a Mentoria',
+      description: '+ 10 contratos fechados após a Mentoria',
       thumbnail: '/depoimentos/depoimento-vinicius.jpg',
       url: 'https://youtu.be/PhYcN3vaSr8',
       icon: Award,
