@@ -11,11 +11,38 @@ declare global {
 function isPixelAvailable(): boolean {
   if (typeof window === 'undefined') return false;
   
+  // Check if in development/test mode
+  const isDevelopment = 
+    window.location.hostname === 'localhost' ||
+    window.location.hostname.includes('vercel.app') ||
+    window.location.search.includes('test_pixel=true');
+
+  // In development, only check if fbq exists
+  if (isDevelopment) {
+    return typeof window.fbq === 'function';
+  }
+
+  // In production, check consent
   const consent = localStorage.getItem('cookie-consent');
   if (!consent) return false;
   
   const parsedConsent = JSON.parse(consent);
   return parsedConsent.marketing === true && typeof window.fbq === 'function';
+}
+
+/**
+ * Log debug information in development
+ */
+function logDebug(eventName: string, params?: Record<string, any>): void {
+  const isDevelopment = 
+    typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' ||
+     window.location.hostname.includes('vercel.app') ||
+     window.location.search.includes('test_pixel=true'));
+
+  if (isDevelopment) {
+    console.log(`🎯 Meta Pixel Event: ${eventName}`, params || '');
+  }
 }
 
 /**
@@ -27,6 +54,7 @@ export function trackEvent(eventName: string, params?: Record<string, any>): voi
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', eventName, params);
+    logDebug(eventName, params);
   }
 }
 
@@ -39,6 +67,7 @@ export function trackWhatsAppClick(): void {
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', 'Contact');
+    logDebug('Contact');
   }
 }
 
@@ -52,6 +81,7 @@ export function trackCTAClick(ctaName?: string): void {
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', 'Lead', params);
+    logDebug('Lead', params);
   }
 }
 
@@ -67,6 +97,7 @@ export function trackInitiateCheckout(value?: number, currency: string = 'BRL'):
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', 'InitiateCheckout', params);
+    logDebug('InitiateCheckout', params);
   }
 }
 
@@ -84,8 +115,10 @@ export function trackViewContent(contentName?: string, contentType?: string): vo
   if (fbq) {
     if (Object.keys(params).length > 0) {
       fbq('track', 'ViewContent', params);
+      logDebug('ViewContent', params);
     } else {
       fbq('track', 'ViewContent');
+      logDebug('ViewContent');
     }
   }
 }
@@ -99,6 +132,7 @@ export function trackCustomEvent(eventName: string, params?: Record<string, any>
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('trackCustom', eventName, params);
+    logDebug(`Custom: ${eventName}`, params);
   }
 }
 

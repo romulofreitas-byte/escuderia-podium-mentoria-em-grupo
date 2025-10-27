@@ -12,23 +12,38 @@ declare global {
 export const MetaPixel: React.FC = () => {
   useEffect(() => {
     const initializePixel = () => {
+      // Check if in development/test mode
+      const isDevelopment = 
+        window.location.hostname === 'localhost' ||
+        window.location.hostname.includes('vercel.app') ||
+        window.location.search.includes('test_pixel=true');
+
       const consent = localStorage.getItem('cookie-consent');
       
-      if (!consent) {
-        // If no consent yet, wait for it
-        return;
-      }
+      // In production, require consent. In development, skip consent check.
+      if (!isDevelopment) {
+        if (!consent) {
+          // If no consent yet, wait for it
+          return;
+        }
 
-      const parsedConsent = JSON.parse(consent);
-      
-      // Only initialize if marketing consent is granted
-      if (!parsedConsent.marketing) {
-        return;
+        const parsedConsent = JSON.parse(consent);
+        
+        // Only initialize if marketing consent is granted
+        if (!parsedConsent.marketing) {
+          return;
+        }
       }
 
       // Check if already initialized
       if (window.fbq && typeof window.fbq === 'function') {
         return;
+      }
+
+      // Log debug info in development
+      if (isDevelopment) {
+        console.log('🔥 Meta Pixel: Initializing in TEST MODE');
+        console.log('📍 Pixel ID: 680318171429216');
       }
 
       // Meta Pixel Code
@@ -56,6 +71,17 @@ export const MetaPixel: React.FC = () => {
       if (fbq) {
         fbq('init', '680318171429216');
         fbq('track', 'PageView');
+        
+        // Debug logging
+        const isDev = window.location.hostname === 'localhost' || 
+                      window.location.hostname.includes('vercel.app') ||
+                      window.location.search.includes('test_pixel=true');
+        
+        if (isDev) {
+          console.log('✅ Meta Pixel: Initialized successfully');
+          console.log('✅ PageView event tracked');
+          console.log('💡 Tip: Open Meta Pixel Helper to verify events');
+        }
       }
     };
 
