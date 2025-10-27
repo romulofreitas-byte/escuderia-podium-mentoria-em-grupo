@@ -6,7 +6,7 @@ import { trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const WhatsAppContactCard: React.FC = () => {
   const handleClick = () => {
-    trackWhatsAppClick();
+    trackWhatsAppClick('WhatsApp Card', 'Contact Section');
   };
 
   return (

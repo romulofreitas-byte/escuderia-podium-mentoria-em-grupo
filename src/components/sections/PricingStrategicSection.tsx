@@ -26,7 +26,7 @@ export const PricingStrategicSection: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasTrackedView.current) {
-            trackViewContent('Pricing Strategic Section');
+            trackViewContent('Pricing Strategic Section', 'pricing');
             hasTrackedView.current = true;
           }
         });
@@ -95,7 +95,7 @@ export const PricingStrategicSection: React.FC = () => {
   };
 
   const handleWhatsAppClick = () => {
-    trackWhatsAppClick();
+    trackWhatsAppClick('Pricing Strategic Section', 'Pricing WhatsApp');
   };
 
   return (

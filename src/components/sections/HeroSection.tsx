@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasTrackedView.current) {
-        trackViewContent('Hero Section');
+        trackViewContent('Hero Section', 'hero');
         hasTrackedView.current = true;
       }
     }, 1000);
@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   const handleCTAClick = () => {
-    trackCTAClick('Hero Section - CTA Button');
+    trackCTAClick('Hero Section - CTA Button', 'hero');
   };
 
   return (

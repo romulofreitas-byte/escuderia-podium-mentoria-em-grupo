@@ -31,7 +31,7 @@ function isPixelAvailable(): boolean {
 }
 
 /**
- * Log debug information in development
+ * Log debug information in development with enhanced formatting
  */
 function logDebug(eventName: string, params?: Record<string, any>): void {
   const isDevelopment = 
@@ -41,7 +41,11 @@ function logDebug(eventName: string, params?: Record<string, any>): void {
      window.location.search.includes('test_pixel=true'));
 
   if (isDevelopment) {
-    console.log(`🎯 Meta Pixel Event: ${eventName}`, params || '');
+    const timestamp = new Date().toLocaleTimeString('pt-BR');
+    console.log(`\n🎯 [${timestamp}] Meta Pixel Event: ${eventName}`);
+    if (params && Object.keys(params).length > 0) {
+      console.table(params);
+    }
   }
 }
 
@@ -61,23 +65,37 @@ export function trackEvent(eventName: string, params?: Record<string, any>): voi
 /**
  * Track WhatsApp button clicks (Contact event)
  */
-export function trackWhatsAppClick(): void {
+export function trackWhatsAppClick(contentName?: string, sectionName?: string): void {
   if (!isPixelAvailable()) return;
+  
+  const params: Record<string, any> = {
+    content_category: 'contact',
+    content_type: 'whatsapp-button'
+  };
+  
+  if (contentName) params.content_name = contentName;
+  if (sectionName) params.section = sectionName;
   
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
-    fbq('track', 'Contact');
-    logDebug('Contact');
+    fbq('track', 'Contact', params);
+    logDebug('Contact', params);
   }
 }
 
 /**
  * Track CTA button clicks (Lead event)
  */
-export function trackCTAClick(ctaName?: string): void {
+export function trackCTAClick(ctaName?: string, contentCategory?: string): void {
   if (!isPixelAvailable()) return;
   
-  const params = ctaName ? { content_name: ctaName } : undefined;
+  const params: Record<string, any> = {
+    content_type: 'button',
+    content_category: contentCategory || 'cta'
+  };
+  
+  if (ctaName) params.content_name = ctaName;
+  
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', 'Lead', params);
@@ -91,9 +109,15 @@ export function trackCTAClick(ctaName?: string): void {
 export function trackInitiateCheckout(value?: number, currency: string = 'BRL'): void {
   if (!isPixelAvailable()) return;
   
-  const params = value
-    ? { value: value, currency: currency }
-    : undefined;
+  const params: Record<string, any> = {
+    content_name: 'Escuderia Podium',
+    content_type: 'product',
+    num_items: 1,
+    currency: currency
+  };
+  
+  if (value) params.value = value;
+  
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
     fbq('track', 'InitiateCheckout', params);
@@ -104,22 +128,20 @@ export function trackInitiateCheckout(value?: number, currency: string = 'BRL'):
 /**
  * Track content views (ViewContent event)
  */
-export function trackViewContent(contentName?: string, contentType?: string): void {
+export function trackViewContent(contentName?: string, contentCategory?: string): void {
   if (!isPixelAvailable()) return;
   
-  const params: Record<string, any> = {};
+  const params: Record<string, any> = {
+    content_type: 'page-section'
+  };
+  
   if (contentName) params.content_name = contentName;
-  if (contentType) params.content_type = contentType;
+  if (contentCategory) params.content_category = contentCategory;
   
   const fbq = (window as any).fbq as (...args: any[]) => void;
   if (fbq) {
-    if (Object.keys(params).length > 0) {
-      fbq('track', 'ViewContent', params);
-      logDebug('ViewContent', params);
-    } else {
-      fbq('track', 'ViewContent');
-      logDebug('ViewContent');
-    }
+    fbq('track', 'ViewContent', params);
+    logDebug('ViewContent', params);
   }
 }
 

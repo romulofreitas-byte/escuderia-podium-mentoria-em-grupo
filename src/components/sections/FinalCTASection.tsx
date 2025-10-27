@@ -10,11 +10,11 @@ import { trackCTAClick, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const FinalCTASection: React.FC = () => {
   const handleMainCTAClick = () => {
-    trackCTAClick('Final CTA Section - Main Button');
+    trackCTAClick('Final CTA Section - Main Button', 'final-cta');
   };
 
   const handleWhatsAppClick = () => {
-    trackWhatsAppClick();
+    trackWhatsAppClick('Final CTA Section', 'Final WhatsApp');
   };
 
   const containerVariants = {
