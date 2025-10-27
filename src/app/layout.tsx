@@ -7,14 +7,14 @@ import { MetaPixel } from '@/components/MetaPixel'
 
 const ubuntu = Ubuntu({ 
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
+  weight: ['400', '700'],
   variable: '--font-ubuntu',
   display: 'swap',
 })
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   variable: '--font-montserrat',
   display: 'swap',
 })

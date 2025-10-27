@@ -37,14 +37,14 @@ export const HeroSection: React.FC = () => {
     <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[85vh] lg:min-h-[calc(100vh-64px)]">
       {/* Desktop Background with blur */}
       <div className="hidden lg:block absolute inset-0 z-0">
-        <ProtectedImage 
-          src="/background-podium-hero.jpg"
-          alt="Background"
-          fill
-          className="object-cover opacity-100 block"
-          priority
-          quality={90}
-        />
+            <ProtectedImage 
+              src="/background-podium-hero.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-100 block"
+              priority
+              quality={75}
+            />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-gray-900/50 to-gray-900/40"></div>
       </div>
 
@@ -61,6 +61,7 @@ export const HeroSection: React.FC = () => {
                   width={32}
                   height={32}
                   className="object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
+                  quality={90}
                 />
               </div>
               <span className="text-white text-xs sm:text-sm font-light tracking-wide">
@@ -95,7 +96,7 @@ export const HeroSection: React.FC = () => {
               fill
               className="object-cover"
               priority
-              quality={90}
+              quality={75}
             />
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-transparent"></div>
@@ -110,6 +111,8 @@ export const HeroSection: React.FC = () => {
                   height={500}
                   className="w-3/5 h-auto object-contain"
                   priority
+                  quality={80}
+                  sizes="(max-width: 768px) 50vw, 100vw"
                 />
                 {/* Gradiente aplicado diretamente na imagem */}
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
@@ -236,6 +239,8 @@ export const HeroSection: React.FC = () => {
                   height={600}
                   className="w-full h-auto object-contain hero-image-blend-natural scale-120"
                   priority
+                  quality={80}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>

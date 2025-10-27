@@ -121,6 +121,9 @@ export const SocialProofSection: React.FC = () => {
                         width={192}
                         height={192}
                         className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                        loading="lazy"
+                        quality={75}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-300"></div>
                       

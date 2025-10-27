@@ -53,7 +53,8 @@ export const AboutMentorSection: React.FC = () => {
                       width={320}
                       height={320}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      priority
+                      quality={75}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </div>

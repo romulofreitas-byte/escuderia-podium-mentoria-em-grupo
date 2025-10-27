@@ -6,11 +6,13 @@ declare global {
   interface Window {
     fbq?: (...args: any[]) => void;
     _fbq?: any;
+    requestIdleCallback?: (callback: () => void, options?: { timeout?: number }) => number;
   }
 }
 
 export const MetaPixel: React.FC = () => {
   useEffect(() => {
+    // Defer initialization using requestIdleCallback to not block rendering
     const initializePixel = () => {
       // Check if in development/test mode
       const isDevelopment = 
@@ -85,8 +87,15 @@ export const MetaPixel: React.FC = () => {
       }
     };
 
-    // Try to initialize immediately
-    initializePixel();
+    // Defer initialization to idle time to improve initial page load
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        initializePixel();
+      }, { timeout: 2000 });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(initializePixel, 2000);
+    }
 
     // Listen for consent changes
     const handleConsentChange = () => {

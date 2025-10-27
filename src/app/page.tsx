@@ -1,23 +1,26 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
-import { WhyItWorksSection } from '@/components/sections/WhyItWorksSection';
-import { WhoIsItForSection } from '@/components/sections/WhoIsItForSection';
-import { ProgramStructureSection } from '@/components/sections/ProgramStructureSection';
-import { MethodSection } from '@/components/sections/MethodSection';
-import { TechnologyToolsSection } from '@/components/sections/TechnologyToolsSection';
-import { SocialProofSection } from '@/components/sections/SocialProofSection';
-import { ComparisonSection } from '@/components/sections/ComparisonSection';
-import { BonusesSection } from '@/components/sections/BonusesSection';
-import { PricingStrategicSection } from '@/components/sections/PricingStrategicSection';
-import { TransformationSection } from '@/components/sections/TransformationSection';
-import { TimelineSection } from '@/components/sections/TimelineSection';
-import { AboutMentorSection } from '@/components/sections/AboutMentorSection';
-import { FAQSection } from '@/components/sections/FAQSection';
-import { FinalCTASection } from '@/components/sections/FinalCTASection';
-import { ColdCallSection } from '@/components/sections/ColdCallSection';
-import { WhatsAppContactCard } from '@/components/sections/WhatsAppContactCard';
-import { Footer } from '@/components/sections/Footer';
+
+// Lazy load below-fold sections
+const WhyItWorksSection = dynamic(() => import('@/components/sections/WhyItWorksSection').then(mod => ({ default: mod.WhyItWorksSection })), { ssr: false });
+const WhoIsItForSection = dynamic(() => import('@/components/sections/WhoIsItForSection').then(mod => ({ default: mod.WhoIsItForSection })), { ssr: false });
+const WhatsAppContactCard = dynamic(() => import('@/components/sections/WhatsAppContactCard').then(mod => ({ default: mod.WhatsAppContactCard })), { ssr: false });
+const SocialProofSection = dynamic(() => import('@/components/sections/SocialProofSection').then(mod => ({ default: mod.SocialProofSection })), { ssr: false });
+const ColdCallSection = dynamic(() => import('@/components/sections/ColdCallSection').then(mod => ({ default: mod.ColdCallSection })), { ssr: false });
+const ProgramStructureSection = dynamic(() => import('@/components/sections/ProgramStructureSection').then(mod => ({ default: mod.ProgramStructureSection })), { ssr: false });
+const MethodSection = dynamic(() => import('@/components/sections/MethodSection').then(mod => ({ default: mod.MethodSection })), { ssr: false });
+const TechnologyToolsSection = dynamic(() => import('@/components/sections/TechnologyToolsSection').then(mod => ({ default: mod.TechnologyToolsSection })), { ssr: false });
+const ComparisonSection = dynamic(() => import('@/components/sections/ComparisonSection').then(mod => ({ default: mod.ComparisonSection })), { ssr: false });
+const BonusesSection = dynamic(() => import('@/components/sections/BonusesSection').then(mod => ({ default: mod.BonusesSection })), { ssr: false });
+const PricingStrategicSection = dynamic(() => import('@/components/sections/PricingStrategicSection').then(mod => ({ default: mod.PricingStrategicSection })), { ssr: false });
+const TransformationSection = dynamic(() => import('@/components/sections/TransformationSection').then(mod => ({ default: mod.TransformationSection })), { ssr: false });
+const TimelineSection = dynamic(() => import('@/components/sections/TimelineSection').then(mod => ({ default: mod.TimelineSection })), { ssr: false });
+const AboutMentorSection = dynamic(() => import('@/components/sections/AboutMentorSection').then(mod => ({ default: mod.AboutMentorSection })), { ssr: false });
+const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })), { ssr: false });
+const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })), { ssr: false });
+const Footer = dynamic(() => import('@/components/sections/Footer').then(mod => ({ default: mod.Footer })), { ssr: false });
 
 export default function HomePage() {
   return (

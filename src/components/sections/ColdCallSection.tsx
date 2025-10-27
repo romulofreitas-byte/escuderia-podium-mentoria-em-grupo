@@ -147,7 +147,8 @@ export const ColdCallSection: React.FC = () => {
                     alt="Compilado de Cold Calls - Método Pódium"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    priority
+                    quality={80}
+                    sizes="(max-width: 768px) 100vw, 80vw"
                   />
                   
                   {/* Overlay */}
