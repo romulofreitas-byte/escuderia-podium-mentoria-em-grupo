@@ -36,114 +36,114 @@ export const AboutMentorSection: React.FC = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Main Card */}
-          <div className="bg-gray-800/30 border-2 border-gray-700/50 rounded-3xl p-6 sm:p-8 lg:p-12 mb-12 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            {/* Glassmorphism glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Photo */}
-              <div className="text-center lg:text-left">
-                <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 mb-8">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-3xl blur-2xl animate-pulse"></div>
-                  <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl shadow-yellow-400/20 hover:border-yellow-400/60 hover:shadow-yellow-400/40 transition-all duration-300">
-                    <ProtectedImage 
-                      src="/mentor.jpg" 
-                      alt="Rômulo Freitas" 
-                      width={320}
-                      height={320}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      quality={75}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+          {/* Hero Section - Centered Photo */}
+          <div className="text-center mb-16 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="relative w-64 h-64 sm:w-96 sm:h-96 mx-auto mb-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 rounded-3xl blur-2xl animate-pulse"></div>
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl shadow-yellow-400/20 hover:border-yellow-400/60 hover:shadow-yellow-400/40 transition-all duration-300">
+                <ProtectedImage 
+                  src="/mentor new.jpg" 
+                  alt="Rômulo Freitas" 
+                  width={384}
+                  height={384}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 384px"
+                />
+              </div>
+            </div>
+
+            <h3 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+              Rômulo Freitas
+            </h3>
+            <p className="text-xl sm:text-2xl text-yellow-400 mb-6 font-semibold">
+              Criador do Método Pódium • Fundador e CEO da Combustível Marketing e Vendas
+            </p>
+
+            {/* Social Links */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <a 
+                href="https://linkedin.com/in/romulocsfreitas" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              >
+                <Linkedin className="w-5 h-5" />
+                <span className="font-medium">LinkedIn</span>
+              </a>
+              <a 
+                href="https://instagram.com/romulocsfreitas" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              >
+                <Instagram className="w-5 h-5" />
+                <span className="font-medium">Instagram</span>
+              </a>
+              <a 
+                href="https://youtube.com/@combustivelmv" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              >
+                <Youtube className="w-5 h-5" />
+                <span className="font-medium">YouTube</span>
+              </a>
+            </div>
+
+            {/* Stats */}
+            <div className="flex justify-center gap-6 sm:gap-12 mb-12">
+              {[
+                { icon: Award, value: '12+', label: 'Anos de Experiência' },
+                { icon: Users, value: '100+', label: 'Pilotos Treinados' },
+                { icon: TrendingUp, value: '95%', label: 'Taxa de Sucesso' }
+              ].map((stat, index) => (
+                <div 
+                  key={index}
+                  className="text-center group/stat cursor-pointer"
+                  onMouseEnter={() => setHoveredStat(index)}
+                  onMouseLeave={() => setHoveredStat(null)}
+                >
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border-2 border-yellow-400/30 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover/stat:scale-125 group-hover/stat:shadow-lg group-hover/stat:shadow-yellow-400/30 transition-all duration-300">
+                    <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
                   </div>
+                  <p className="text-lg sm:text-2xl font-bold text-white group-hover/stat:text-yellow-400 transition-colors duration-300">{stat.value}</p>
+                  <p className="text-xs sm:text-sm text-gray-400">{stat.label}</p>
+                  {hoveredStat === index && (
+                    <div className="absolute inset-0 rounded-2xl border-2 border-yellow-400/50 animate-ping pointer-events-none"></div>
+                  )}
                 </div>
-
-                {/* Social Links */}
-                <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                  <a 
-                    href="https://linkedin.com/in/romulocsfreitas" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                    <span className="font-medium">LinkedIn</span>
-                  </a>
-                  <a 
-                    href="https://instagram.com/romulocsfreitas" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-                  >
-                    <Instagram className="w-5 h-5" />
-                    <span className="font-medium">Instagram</span>
-                  </a>
-                  <a 
-                    href="https://youtube.com/@combustivelmv" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-xl text-gray-300 hover:text-yellow-400 hover:border-yellow-400/50 hover:bg-yellow-400/10 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-                  >
-                    <Youtube className="w-5 h-5" />
-                    <span className="font-medium">YouTube</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Bio */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-4xl font-bold text-white mb-4 leading-tight group-hover:text-yellow-400 transition-colors duration-300">
-                    Rômulo Freitas
-                  </h3>
-                  <p className="text-xl text-yellow-400 mb-6 font-semibold">
-                    Criador do Método Pódium • Fundador e CEO da Combustível Marketing e Vendas
-                  </p>
-                  <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                    Especialista em vendas digitais com mais de 12 anos de experiência em processos comerciais estruturados. 
-                    Criador do Método Pódium, uma metodologia comprovada para acelerar vendas em qualquer nicho.
-                  </p>
-                  <p className="text-lg text-gray-300 leading-relaxed">
-                    Atua como mentor e consultor para profissionais que querem estruturar seu processo comercial 
-                    e aumentar suas vendas de forma consistente e escalável.
-                  </p>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 sm:gap-6">
-                  {[
-                    { icon: Award, value: '12+', label: 'Anos' },
-                    { icon: Users, value: '100+', label: 'Pilotos' },
-                    { icon: TrendingUp, value: '95%', label: 'Sucesso' }
-                  ].map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="text-center group/stat cursor-pointer"
-                      onMouseEnter={() => setHoveredStat(index)}
-                      onMouseLeave={() => setHoveredStat(null)}
-                    >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border-2 border-yellow-400/30 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover/stat:scale-125 group-hover/stat:shadow-lg group-hover/stat:shadow-yellow-400/30 transition-all duration-300">
-                        <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
-                      </div>
-                      <p className="text-lg sm:text-2xl font-bold text-white group-hover/stat:text-yellow-400 transition-colors duration-300">{stat.value}</p>
-                      <p className="text-xs sm:text-sm text-gray-400">{stat.label}</p>
-                      {hoveredStat === index && (
-                        <div className="absolute inset-0 rounded-2xl border-2 border-yellow-400/50 animate-ping pointer-events-none"></div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Credentials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Credentials Card */}
+          {/* Info Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Bio Card */}
             <div className="bg-gray-800/30 border-2 border-gray-700/50 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 min-h-[400px]">
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border-2 border-yellow-400/30 rounded-xl flex items-center justify-center">
+                    <Users className="w-5 h-5 text-yellow-400" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
+                    Sobre
+                  </h4>
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Especialista em vendas digitais com mais de 12 anos de experiência em processos comerciais estruturados. Criador do Método Pódium, uma metodologia comprovada para acelerar vendas em qualquer nicho.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Atua como mentor e consultor para profissionais que querem estruturar seu processo comercial e aumentar suas vendas de forma consistente e escalável.
+                </p>
+              </div>
+            </div>
+
+            {/* Credentials Card */}
+            <div className="bg-gray-800/30 border-2 border-gray-700/50 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border-2 border-yellow-400/30 rounded-xl flex items-center justify-center">
                     <Award className="w-5 h-5 text-yellow-400" />
@@ -152,7 +152,7 @@ export const AboutMentorSection: React.FC = () => {
                     Credenciais
                   </h4>
                 </div>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {[
                     'Criador do Método Pódium de Vendas',
                     'Founder e CEO da Combustível Marketing e Vendas',
@@ -163,7 +163,7 @@ export const AboutMentorSection: React.FC = () => {
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3 group/item">
                       <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5 group-hover/item:scale-125 group-hover/item:shadow-lg group-hover/item:shadow-green-400/30 transition-all duration-300" />
-                      <span className="text-gray-300 group-hover/item:text-white transition-colors duration-300">{item}</span>
+                      <span className="text-gray-300 text-sm group-hover/item:text-white transition-colors duration-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -171,37 +171,35 @@ export const AboutMentorSection: React.FC = () => {
             </div>
 
             {/* Philosophy Card */}
-            <div className="bg-gray-800/30 border-2 border-gray-700/50 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+            <div className="bg-gray-800/30 border-2 border-gray-700/50 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.7s'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 min-h-[400px]">
+              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 border-2 border-yellow-400/30 rounded-xl flex items-center justify-center">
-                    <Users className="w-5 h-5 text-yellow-400" />
+                    <TrendingUp className="w-5 h-5 text-yellow-400" />
                   </div>
                   <h4 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
                     Filosofia
                   </h4>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div>
-                    <h5 className="text-lg font-semibold text-yellow-400 mb-3">Missão</h5>
-                    <p className="text-gray-300 leading-relaxed">
-                      Democratizar o acesso a técnicas de vendas de alta performance, 
-                      permitindo que profissionais de qualquer área possam estruturar 
-                      seu processo comercial e alcançar resultados consistentes.
+                    <h5 className="text-lg font-semibold text-yellow-400 mb-2">Missão</h5>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Democratizar o acesso a técnicas de vendas de alta performance.
                     </p>
                   </div>
                   
                   <div>
-                    <h5 className="text-lg font-semibold text-yellow-400 mb-3">Valores</h5>
+                    <h5 className="text-lg font-semibold text-yellow-400 mb-2">Valores</h5>
                     <ul className="space-y-2">
                       {[
                         'Transparência e honestidade',
-                        'Resultados práticos e mensuráveis',
-                        'Suporte contínuo aos pilotos'
+                        'Resultados práticos',
+                        'Suporte contínuo'
                       ].map((value, index) => (
                         <li key={index} className="flex items-start gap-2 group/item">
-                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-1 group-hover/item:scale-125 transition-all duration-300" />
+                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5 group-hover/item:scale-125 transition-all duration-300" />
                           <span className="text-gray-300 text-sm group-hover/item:text-white transition-colors duration-300">{value}</span>
                         </li>
                       ))}
@@ -209,11 +207,8 @@ export const AboutMentorSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <h5 className="text-lg font-semibold text-yellow-400 mb-3">Abordagem</h5>
-                    <p className="text-gray-300 leading-relaxed italic">
-                      &ldquo;Acredito que vendas é uma habilidade que pode ser aprendida e dominada 
-                      por qualquer pessoa. O Método Pódium foi criado para acelerar esse processo 
-                      de aprendizado com técnicas comprovadas e suporte prático.&rdquo;
+                    <p className="text-gray-300 text-sm leading-relaxed italic">
+                      &ldquo;Vendas é uma habilidade que pode ser aprendida e dominada por qualquer pessoa.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -222,7 +217,7 @@ export const AboutMentorSection: React.FC = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="bg-gray-800/40 border-2 border-yellow-400/30 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.7s'}}>
+          <div className="bg-gray-800/40 border-2 border-yellow-400/30 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 group animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-yellow-400 transition-colors duration-300">
