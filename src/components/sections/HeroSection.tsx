@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ProtectedImage } from '@/components/ui/ProtectedImage';
+import { trackCTAClick, trackViewContent } from '@/lib/metaPixel';
 
 export const HeroSection: React.FC = () => {
   const [progressWidth, setProgressWidth] = useState(0);
+  const hasTrackedView = useRef(false);
 
   useEffect(() => {
     // Small delay to ensure animation is visible
@@ -14,6 +16,22 @@ export const HeroSection: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Track hero section view
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!hasTrackedView.current) {
+        trackViewContent('Hero Section');
+        hasTrackedView.current = true;
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleCTAClick = () => {
+    trackCTAClick('Hero Section - CTA Button');
+  };
 
   return (
     <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[85vh] lg:min-h-[calc(100vh-64px)]">
@@ -83,7 +101,7 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-transparent"></div>
             
             {/* Mentor Image */}
-            <div className="absolute inset-0 flex items-start justify-center" style={{top: '-10px', transform: 'translateX(90px) scale(1.1)'}}>
+            <div className="absolute inset-0 flex items-start justify-center animate-mentor-fade-in" style={{top: '-10px', transform: 'translateX(90px) scale(1.1)', animationDelay: '0.6s'}}>
               <div className="relative">
                 <ProtectedImage 
                   src="/imagens/romulo-hero.png"
@@ -127,6 +145,7 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col items-center space-y-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
                 href="#investimento-estrategico"
+                onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle text-xs"
               >
                 <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium</span>
@@ -152,10 +171,10 @@ export const HeroSection: React.FC = () => {
       </div>
       
       {/* Desktop Hero - Original Layout */}
-      <div className="hidden lg:flex container-custom relative z-10 flex-1 items-center justify-center">
+      <div className="hidden lg:flex container-custom relative z-30 flex-1 items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           {/* Text Content */}
-          <div className="max-w-2xl text-left">
+          <div className="max-w-2xl text-left relative z-30">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
@@ -178,6 +197,7 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
                 href="#investimento-estrategico"
+                onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
               >
                 <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Escuderia Pódium</span>
@@ -201,7 +221,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Right - Image */}
-          <div className="hidden lg:flex justify-end items-end -mb-20" style={{marginTop: '-160px'}}>
+          <div className="hidden lg:flex justify-end items-end -mb-20 animate-mentor-fade-in" style={{marginTop: '-160px', animationDelay: '0.8s'}}>
             <div className="relative w-full max-w-lg overflow-visible">
               {/* Gradiente radial circular laranja para disfarçar recorte */}
               <div className="absolute inset-0 -z-10 overflow-visible">
@@ -222,6 +242,9 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Gradiente aplicado diretamente na imagem - fora do grid */}
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-52 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent pointer-events-none z-[25]"></div>
     </section>
   );
 };

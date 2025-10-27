@@ -6,8 +6,17 @@ import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { AnimatedButton } from '@/components/ui/AnimatedButton';
 import { Badge } from '@/components/ui/Badge';
 import { CheckCircle, Clock, Users, Shield, AlertTriangle, MessageCircle, Mail } from 'lucide-react';
+import { trackCTAClick, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const FinalCTASection: React.FC = () => {
+  const handleMainCTAClick = () => {
+    trackCTAClick('Final CTA Section - Main Button');
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick();
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -151,6 +160,7 @@ export const FinalCTASection: React.FC = () => {
               href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleMainCTAClick}
               className="group relative inline-flex items-center justify-center px-12 py-6 bg-yellow-400 text-gray-900 font-bold text-xl rounded-full transition-all duration-300 hover:bg-yellow-500 shadow-2xl hover:shadow-yellow-400/30 hover:scale-105"
             >
               <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium Agora</span>
@@ -205,6 +215,7 @@ export const FinalCTASection: React.FC = () => {
                 href="https://wa.me/5531994293099?text=Rômulo,%20quero%20saber%20mais%20sobre%20a%20Escuderia%20Pódium!"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
               >
               <MessageCircle className="w-5 h-5 mr-3" />

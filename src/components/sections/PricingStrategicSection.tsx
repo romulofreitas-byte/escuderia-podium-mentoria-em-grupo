@@ -1,12 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Users, Award, Bot, Phone, Zap, Shield, TrendingUp, Calculator, Star, AlertTriangle, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import { trackInitiateCheckout, trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const PricingStrategicSection: React.FC = () => {
   const [progressWidth, setProgressWidth] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
 
   useEffect(() => {
     // Small delay to ensure animation is visible
@@ -15,6 +18,31 @@ export const PricingStrategicSection: React.FC = () => {
     }, 100);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Track section view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTrackedView.current) {
+            trackViewContent('Pricing Strategic Section');
+            hasTrackedView.current = true;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,8 +88,16 @@ export const PricingStrategicSection: React.FC = () => {
     { name: "Lucas Ribeiro", result: "Agendou de 1ª", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
   ];
 
+  const handleCheckoutClick = () => {
+    trackInitiateCheckout(1850, 'BRL');
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick();
+  };
+
   return (
-    <section id="investimento-estrategico" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
+    <section ref={sectionRef} id="investimento-estrategico" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
       {/* Background with gradient similar to hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/70"></div>
@@ -177,6 +213,7 @@ export const PricingStrategicSection: React.FC = () => {
                   href="https://pay.hotmart.com/V102584138H?off=mkmcjs52&checkoutMode=10"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleCheckoutClick}
                   className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-black text-base sm:text-xl rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
                 >
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
@@ -286,6 +323,7 @@ export const PricingStrategicSection: React.FC = () => {
               href="https://wa.me/5531994293099"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:scale-105"
             >
               <MessageCircle className="w-5 h-5 mr-3" />

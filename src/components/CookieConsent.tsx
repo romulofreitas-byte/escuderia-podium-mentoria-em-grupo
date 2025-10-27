@@ -29,6 +29,8 @@ export const CookieConsent: React.FC = () => {
     };
     localStorage.setItem('cookie-consent', JSON.stringify(allConsent));
     setIsVisible(false);
+    // Dispatch event for Meta Pixel initialization
+    window.dispatchEvent(new CustomEvent('cookieConsentChange'));
   };
 
   const handleAcceptEssential = () => {
@@ -40,6 +42,8 @@ export const CookieConsent: React.FC = () => {
     };
     localStorage.setItem('cookie-consent', JSON.stringify(essentialConsent));
     setIsVisible(false);
+    // Dispatch event for Meta Pixel initialization
+    window.dispatchEvent(new CustomEvent('cookieConsentChange'));
   };
 
   const handleSavePreferences = () => {
@@ -50,6 +54,8 @@ export const CookieConsent: React.FC = () => {
     localStorage.setItem('cookie-consent', JSON.stringify(consent));
     setIsVisible(false);
     setShowSettings(false);
+    // Dispatch event for Meta Pixel initialization
+    window.dispatchEvent(new CustomEvent('cookieConsentChange'));
   };
 
   const handlePreferenceChange = (key: keyof typeof preferences) => {
