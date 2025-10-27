@@ -142,7 +142,7 @@ export const TechnologyToolsSection: React.FC = () => {
                   </div>
                   
                   <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                    Seu assistente inteligente que automatiza prospecção, qualificação e construção de listas usando IA (Gemini).
+                    Seu assistente inteligente que automatiza prospecção, qualificação e construção de listas usando IA (ChatGPT).
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -165,7 +165,7 @@ export const TechnologyToolsSection: React.FC = () => {
                     <div className="flex items-start space-x-3 p-3 bg-gray-800/40 rounded-xl backdrop-blur-sm hover:bg-gray-800/60 transition-all">
                       <Sparkles className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-semibold text-white text-sm">Gemini Integration</div>
+                        <div className="font-semibold text-white text-sm">ChatGPT Powered</div>
                         <div className="text-xs text-gray-400">Pesquisa avançada</div>
                       </div>
                     </div>
@@ -256,12 +256,12 @@ export const TechnologyToolsSection: React.FC = () => {
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Acelere a construção de listas com IA. Use ferramentas como Gemini para pesquisa e automação de qualificação, além de extractors de dados para montar listas eficientes.
+                Acelere a construção de listas com IA. Use ferramentas como ChatGPT para pesquisa e automação de qualificação, além de extractors de dados para montar listas eficientes.
               </p>
               
               <div className="space-y-3">
                 {[
-                  'IA para pesquisa e qualificação (Gemini)',
+                  'IA para pesquisa e qualificação (ChatGPT)',
                   'Ferramentas de extração de listas profissionais',
                   'Automação na construção de databases qualificadas',
                   'Economia de tempo em prospecção'

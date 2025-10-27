@@ -62,7 +62,7 @@ export const ProgramStructureSection: React.FC = () => {
 
           {/* Subheadline */}
           <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-            O Método Pódium é uma trilha de progressão que impulsiona a percepção de resultados (aprender efetivamente a vender) e a percepção de crescimento pessoal (começar a se ver, portar, contratar e vender como empresário).
+            O Método Pódium é uma trilha de progressão para você aprender a vender e crescer como empresário.
           </p>
         </div>
 

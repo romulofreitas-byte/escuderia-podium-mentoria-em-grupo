@@ -30,9 +30,18 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-[75px] bg-gray-800">
-      <motion.div 
-        className="container-custom"
+    <section id="faq" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
+      {/* Background with pattern */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/90"></div>
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+      </div>
+
+      <motion.div className="container-custom relative z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -89,7 +98,7 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-              className="bg-gray-700/30 border border-gray-600 rounded-lg overflow-hidden hover:border-yellow-400/30 transition-all duration-300"
+              className="bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-xl overflow-hidden hover:border-yellow-400/50 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20"
         >
           <motion.button
             onClick={() => toggleItem(index)}
@@ -140,3 +149,14 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
     </div>
   );
 };
+
+<style jsx>{`
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+`}</style>

@@ -76,12 +76,6 @@ export const CookieConsent: React.FC = () => {
             // Main consent banner
             <div className="p-3 sm:p-5">
               <div className="flex items-start space-x-2 sm:space-x-3">
-                <div className="flex-shrink-0 hidden sm:block">
-                  <div className="w-8 h-8 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center">
-                    <Cookie className="w-4 h-4 text-amber-400" />
-                  </div>
-                </div>
-                
                 <div className="flex-1">
                   <h3 className="text-sm sm:text-base font-medium text-gray-200 mb-1 sm:mb-2">
                     Cookies e Privacidade
@@ -112,6 +106,12 @@ export const CookieConsent: React.FC = () => {
                   >
                     Personalizar cookies
                   </button>
+                </div>
+                
+                <div className="flex-shrink-0 hidden sm:block">
+                  <div className="w-8 h-8 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center">
+                    <Cookie className="w-4 h-4 text-amber-400" />
+                  </div>
                 </div>
               </div>
             </div>

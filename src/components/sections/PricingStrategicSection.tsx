@@ -87,7 +87,7 @@ export const PricingStrategicSection: React.FC = () => {
   const testimonials = [
     { name: "Marina Marchiolli", result: "Fechou Mentoria", period: "Branding Specialist", avatar: "👩‍💼" },
     { name: "Vinícius Nascimento", result: "Está contratando", period: "Web Development", avatar: "👨‍💻" },
-    { name: "Lucas Ribeiro", result: "Agendou de 1ª", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
+    { name: "Lucas Ribeiro", result: "2 contratos < 1 mês", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
   ];
 
   const handleCheckoutClick = () => {
@@ -223,7 +223,7 @@ export const PricingStrategicSection: React.FC = () => {
                   <span>R$ 1.850</span>
                 </a>
                 <p className="text-gray-400 text-xs sm:text-sm mt-4">
-                  ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+                  ✓ Vagas limitadas • ✓ Garantia de 7 dias
                 </p>
               </div>
             </div>
@@ -233,26 +233,21 @@ export const PricingStrategicSection: React.FC = () => {
         {/* Garantias e Redutores de Risco */}
         <motion.div 
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto"
         >
-          <div className="text-center p-6 bg-gray-800/30 border border-gray-700 rounded-xl backdrop-blur-sm">
-            <Shield className="w-8 h-8 text-green-400 mx-auto mb-3" />
-            <h3 className="text-white font-bold mb-2">Garantia 7 Dias</h3>
+          <div className="text-center p-6 bg-gray-800/40 border border-gray-700/50 rounded-xl backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20">
+            <Shield className="w-10 h-10 text-green-400 mx-auto mb-4" />
+            <h3 className="text-white font-bold text-lg mb-2">Garantia 7 Dias</h3>
             <p className="text-gray-400 text-sm">Teste sem compromisso</p>
           </div>
-          <div className="text-center p-6 bg-gray-800/30 border border-gray-700 rounded-xl backdrop-blur-sm">
-            <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-3" />
-            <h3 className="text-white font-bold mb-2">Cancelamento Gratuito</h3>
-            <p className="text-gray-400 text-sm">Sem taxas ocultas</p>
-          </div>
-          <div className="text-center p-6 bg-gray-800/30 border border-gray-700 rounded-xl backdrop-blur-sm">
-            <Award className="w-8 h-8 text-green-400 mx-auto mb-3" />
-            <h3 className="text-white font-bold mb-2">Satisfação Garantida</h3>
+          <div className="text-center p-6 bg-gray-800/40 border border-gray-700/50 rounded-xl backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20">
+            <Award className="w-10 h-10 text-green-400 mx-auto mb-4" />
+            <h3 className="text-white font-bold text-lg mb-2">Satisfação Garantida</h3>
             <p className="text-gray-400 text-sm">Ou dinheiro de volta</p>
           </div>
-          <div className="text-center p-6 bg-gray-800/30 border border-gray-700 rounded-xl backdrop-blur-sm">
-            <Users className="w-8 h-8 text-green-400 mx-auto mb-3" />
-            <h3 className="text-white font-bold mb-2">Suporte 10 Semanas</h3>
+          <div className="text-center p-6 bg-gray-800/40 border border-gray-700/50 rounded-xl backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 shadow-lg hover:shadow-yellow-400/20">
+            <Users className="w-10 h-10 text-green-400 mx-auto mb-4" />
+            <h3 className="text-white font-bold text-lg mb-2">Suporte 10 Semanas</h3>
             <p className="text-gray-400 text-sm">Acompanhamento completo</p>
           </div>
         </motion.div>
@@ -285,7 +280,7 @@ export const PricingStrategicSection: React.FC = () => {
               <p className="text-gray-300 mb-2">Se você fechar 1 contrato de R$ 3.000:</p>
               <div className="inline-flex items-center px-6 py-3 bg-green-500/10 border border-green-500/30 rounded-full">
                 <TrendingUp className="w-6 h-6 text-green-400 mr-2" />
-                <span className="text-green-400 font-bold text-xl">ROI de 162%</span>
+                <span className="text-green-400 font-bold text-xl">ROI de 62%</span>
               </div>
             </div>
           </div>

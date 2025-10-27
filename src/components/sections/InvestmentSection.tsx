@@ -129,7 +129,7 @@ export const InvestmentSection: React.FC = () => {
                 Garantir Minha Vaga na Escuderia
               </AnimatedButton>
                   <p className="small-text">
-                    ✓ Vagas limitadas • ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+                    ✓ Vagas limitadas • ✓ Garantia de 7 dias
                   </p>
             </motion.div>
           </AnimatedCard>

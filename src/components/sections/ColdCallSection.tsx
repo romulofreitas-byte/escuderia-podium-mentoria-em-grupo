@@ -92,7 +92,7 @@ export const ColdCallSection: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-300 mb-12 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
           >
-            a Cold Call é o coração do Método Pódium. Enquanto outros evitam ligações, 
+            A Cold Call é o coração do Método Pódium. Enquanto outros evitam ligações, 
             você vai dominar essa habilidade e fechar contratos que outros só sonham.
           </motion.p>
 
@@ -261,7 +261,7 @@ export const ColdCallSection: React.FC = () => {
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
             >
-              <span className="relative drop-shadow-sm">Domine o Cold Call Agora</span>
+              <span className="relative drop-shadow-sm">Dominar o Cold Call Agora</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             

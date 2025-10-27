@@ -168,7 +168,7 @@ export const FinalCTASection: React.FC = () => {
             </a>
             
             <p className="text-gray-400 mt-4 text-sm">
-              Vagas limitadas • Garantia de 7 dias • Cancelamento gratuito
+              Vagas limitadas • Garantia de 7 dias
             </p>
           </motion.div>
 

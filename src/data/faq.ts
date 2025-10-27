@@ -30,7 +30,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Quais são as formas de pagamento?",
-    answer: "Aceitamos cartão de crédito, PIX e boleto bancário. O pagamento pode ser à vista com desconto adicional ou parcelado em até 12x no cartão. Entre em contato para mais detalhes sobre as condições de pagamento."
+    answer: "O pagamento será feito pela Hotmart. Aceitamos cartão de crédito (parcelado em até 12x), PIX e boleto bancário. Cartões possuem acréscimos de juros conforme parcelamento. Consulte os acréscimos para outras formas de pagamento na página de checkout."
   },
   {
     question: "Posso cancelar minha participação?",

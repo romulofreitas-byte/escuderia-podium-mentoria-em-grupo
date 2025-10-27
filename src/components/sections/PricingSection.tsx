@@ -25,7 +25,7 @@ export const PricingSection: React.FC = () => {
             </a>
             
             <p className="text-gray-400 mt-6 text-sm">
-              ✓ Garantia de 7 dias • ✓ Cancelamento gratuito
+              ✓ Garantia de 7 dias
             </p>
 
             {/* Benefits */}
