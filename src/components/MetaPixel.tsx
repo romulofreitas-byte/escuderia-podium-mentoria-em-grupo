@@ -31,24 +31,24 @@ export const MetaPixel: React.FC = () => {
       }
 
       // Meta Pixel Code
-      !(function(f: any, b: any, e, v, n, t, s) {
+      (function(f: any, b: any, e: string, v: string, n: any, t: any, s: any) {
         if (f.fbq) return;
-        n = f.fbq = function() {
+        n = f.fbq = function(...args: any[]) {
           n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
+            ? n.callMethod.apply(n, args)
+            : n.queue.push(args);
         };
         if (!f._fbq) f._fbq = n;
         n.push = n;
-        n.loaded = !0;
+        n.loaded = true;
         n.version = '2.0';
         n.queue = [];
         t = b.createElement(e);
-        t.async = !0;
+        t.async = true;
         t.src = v;
         s = b.getElementsByTagName(e)[0];
         s.parentNode?.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', null, null, null);
 
       // Initialize and track
       window.fbq?.('init', '680318171429216');
@@ -74,6 +74,7 @@ export const MetaPixel: React.FC = () => {
     <>
       {/* Noscript tracking image */}
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           height="1"
           width="1"
