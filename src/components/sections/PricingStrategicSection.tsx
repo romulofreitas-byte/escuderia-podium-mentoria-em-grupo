@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Clock, Users, Award, Bot, Phone, Zap, Shield, TrendingUp, Calculator, Star, AlertTriangle, MessageCircle } from 'lucide-react';
+import { CheckCircle, Clock, Users, Award, Bot, Phone, Zap, Shield, TrendingUp, Calculator, Star, AlertTriangle, MessageCircle, CreditCard, Banknote } from 'lucide-react';
 import Image from 'next/image';
 import { trackInitiateCheckout, trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
 
@@ -163,6 +163,37 @@ export const PricingStrategicSection: React.FC = () => {
                   </div>
                 </div>
                 
+                {/* Payment Information */}
+                <div className="mb-6 space-y-3">
+                  <p className="text-gray-300 text-xl font-semibold">
+                    ou 12x de <span className="text-yellow-400">R$ 154,17</span> no cartão de crédito
+                  </p>
+                  
+                  {/* Payment Methods */}
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-700/40 rounded-lg border border-gray-600">
+                      <CreditCard className="w-4 h-4 text-yellow-400" />
+                      <span className="text-gray-300 text-xs">Cartão de Crédito</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-700/40 rounded-lg border border-gray-600">
+                      <Banknote className="w-4 h-4 text-yellow-400" />
+                      <span className="text-gray-300 text-xs">Cartão de Débito</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-700/40 rounded-lg border border-gray-600">
+                      <Phone className="w-4 h-4 text-yellow-400" />
+                      <span className="text-gray-300 text-xs">PIX</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-700/40 rounded-lg border border-gray-600">
+                      <Banknote className="w-4 h-4 text-yellow-400" />
+                      <span className="text-gray-300 text-xs">Boleto</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-400 text-sm">
+                    Pagamento processado pela Hotmart
+                  </p>
+                </div>
+                
                 <div className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
                   <span className="text-green-400 font-bold text-sm">Economize R$ 8.150 (81% OFF)</span>
                 </div>
@@ -216,9 +247,37 @@ export const PricingStrategicSection: React.FC = () => {
                   <span className="hidden sm:inline">Garantir Minha Vaga na Escuderia - </span>
                   <span>R$ 1.850</span>
                 </a>
-                <p className="text-gray-400 text-xs sm:text-sm mt-4">
-                  ✓ Vagas limitadas • ✓ Garantia de 7 dias
-                </p>
+                
+                {/* Payment Info Near CTA */}
+                <div className="mt-4 space-y-2">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    ou <span className="text-yellow-400 font-semibold">12x de R$ 154,17</span> no cartão de crédito
+                  </p>
+                  
+                  {/* Compact Payment Methods */}
+                  <div className="flex flex-wrap items-center justify-center gap-2">
+                    <div className="flex items-center gap-1 px-2 py-1 bg-gray-700/40 rounded border border-gray-600">
+                      <CreditCard className="w-3 h-3 text-yellow-400" />
+                      <span className="text-gray-400 text-xs">Crédito</span>
+                    </div>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-gray-700/40 rounded border border-gray-600">
+                      <Banknote className="w-3 h-3 text-yellow-400" />
+                      <span className="text-gray-400 text-xs">Débito</span>
+                    </div>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-gray-700/40 rounded border border-gray-600">
+                      <Phone className="w-3 h-3 text-yellow-400" />
+                      <span className="text-gray-400 text-xs">PIX</span>
+                    </div>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-gray-700/40 rounded border border-gray-600">
+                      <Banknote className="w-3 h-3 text-yellow-400" />
+                      <span className="text-gray-400 text-xs">Boleto</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-400 text-xs sm:text-sm">
+                    ✓ Vagas limitadas • ✓ Garantia de 7 dias • Pagamento processado pela Hotmart
+                  </p>
+                </div>
               </div>
             </div>
           </div>
