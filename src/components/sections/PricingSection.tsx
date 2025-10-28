@@ -15,7 +15,7 @@ export const PricingSection: React.FC = () => {
             <p className="text-gray-300 text-xl mb-10">ou 12x R$ 185 sem juros</p>
             
             <a 
-              href="https://pay.hotmart.com/V102584138H?bid=1761323207931"
+              href="https://go.hotmart.com/C102646862D"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3"

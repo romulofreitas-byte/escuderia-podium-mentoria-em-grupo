@@ -206,7 +206,7 @@ export const PricingStrategicSection: React.FC = () => {
               {/* CTA Principal */}
               <div className="text-center mb-8">
                 <a 
-                  href="https://pay.hotmart.com/V102584138H?bid=1761323207931"
+                  href="https://go.hotmart.com/C102646862D"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleCheckoutClick}
