@@ -14,7 +14,7 @@ export const PricingStrategicSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(29);
+      setProgressWidth(42);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -129,7 +129,7 @@ export const PricingStrategicSection: React.FC = () => {
           <div className="max-w-md mx-auto mb-8">
             <div className="flex items-center justify-between text-sm mb-2">
               <span className="text-gray-300">Vagas preenchidas</span>
-              <span className="text-yellow-400 font-semibold animate-pulse">29%</span>
+              <span className="text-yellow-400 font-semibold animate-pulse">42%</span>
             </div>
             <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
               {/* Filled portion */}

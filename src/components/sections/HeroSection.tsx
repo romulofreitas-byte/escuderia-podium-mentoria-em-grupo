@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(29);
+      setProgressWidth(42);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -159,7 +159,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">42%</span>
                 </div>
                 <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
@@ -211,7 +211,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">29%</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">42%</span>
                 </div>
                 <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
