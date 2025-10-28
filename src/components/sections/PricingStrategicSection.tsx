@@ -84,12 +84,6 @@ export const PricingStrategicSection: React.FC = () => {
     { name: 'Certificação', value: 'R$ 500', icon: Award }
   ];
 
-  const testimonials = [
-    { name: "Marina Marchiolli", result: "Fechou Mentoria", period: "Branding Specialist", avatar: "👩‍💼" },
-    { name: "Vinícius Nascimento", result: "Está contratando", period: "Web Development", avatar: "👨‍💻" },
-    { name: "Lucas Ribeiro", result: "2 contratos < 1 mês", period: "Gestor de Tráfego", avatar: "👨‍🎨" }
-  ];
-
   const handleCheckoutClick = () => {
     trackInitiateCheckout(1850, 'BRL');
   };
@@ -277,30 +271,13 @@ export const PricingStrategicSection: React.FC = () => {
             </div>
             
             <div className="mt-6 text-center">
-              <p className="text-gray-300 mb-2">Se você fechar 1 contrato de R$ 3.000:</p>
+              <p className="text-gray-300 mb-2">Se você fechar 1 contrato de R$ 5.000:</p>
               <div className="inline-flex items-center px-6 py-3 bg-green-500/10 border border-green-500/30 rounded-full">
                 <TrendingUp className="w-6 h-6 text-green-400 mr-2" />
-                <span className="text-green-400 font-bold text-xl">ROI de 62%</span>
+                <span className="text-green-400 font-bold text-xl">ROI de 170%</span>
               </div>
+              <p className="text-gray-400 text-xs mt-2">Lucro líquido de R$ 3.150</p>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Testemunhos Relâmpago */}
-        <motion.div 
-          variants={itemVariants}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Resultados Reais de Pilotos</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-xl p-6 text-center backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
-                <div className="text-4xl mb-3">{testimonial.avatar}</div>
-                <h4 className="text-white font-bold mb-2">{testimonial.name}</h4>
-                <p className="text-yellow-400 font-bold text-lg mb-1">{testimonial.result}</p>
-                <p className="text-gray-400 text-sm">{testimonial.period}</p>
-              </div>
-            ))}
           </div>
         </motion.div>
 
