@@ -146,6 +146,65 @@ export function trackViewContent(contentName?: string, contentCategory?: string)
 }
 
 /**
+ * Track FAQ expansion (Lead event)
+ */
+export function trackFAQExpansion(questionNumber?: number, questionText?: string): void {
+  if (!isPixelAvailable()) return;
+  
+  const params: Record<string, any> = {
+    content_type: 'faq',
+    content_category: 'engagement'
+  };
+  
+  if (questionNumber !== undefined) params.content_id = questionNumber;
+  if (questionText) params.content_name = questionText;
+  
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'Lead', params);
+    logDebug('FAQExpansion', params);
+  }
+}
+
+/**
+ * Track community join (Lead event)
+ */
+export function trackCommunityJoin(): void {
+  if (!isPixelAvailable()) return;
+  
+  const params: Record<string, any> = {
+    content_type: 'community',
+    content_name: 'Join WhatsApp Community',
+    content_category: 'engagement'
+  };
+  
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'Lead', params);
+    logDebug('CommunityJoin', params);
+  }
+}
+
+/**
+ * Track video modal open (Lead event)
+ */
+export function trackVideoOpen(videoName?: string, contentType?: string): void {
+  if (!isPixelAvailable()) return;
+  
+  const params: Record<string, any> = {
+    content_type: contentType || 'video'
+  };
+  
+  if (videoName) params.content_name = videoName;
+  
+  const fbq = (window as any).fbq as (...args: any[]) => void;
+  if (fbq) {
+    fbq('track', 'Lead', params);
+    logDebug('VideoOpen', params);
+  }
+}
+
+/**
  * Track custom events
  */
 export function trackCustomEvent(eventName: string, params?: Record<string, any>): void {

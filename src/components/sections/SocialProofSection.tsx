@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ProtectedImage } from '@/components/ui/ProtectedImage';
 import { Play, Users, Award, MessageCircle } from 'lucide-react';
 import { VideoModal } from '@/components/ui/VideoModal';
+import { trackVideoOpen } from '@/lib/metaPixel';
 
 export const SocialProofSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,6 +13,7 @@ export const SocialProofSection: React.FC = () => {
   const openModal = (url: string, title: string) => {
     setSelectedVideo({ url, title });
     setIsModalOpen(true);
+    trackVideoOpen(title, 'testimonial-video');
   };
 
   const closeModal = () => {

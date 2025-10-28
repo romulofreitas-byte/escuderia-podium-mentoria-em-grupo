@@ -23,29 +23,51 @@
 - **Locations**:
   - Hero Section: `src/components/sections/HeroSection.tsx`
   - Pricing Section: `src/components/sections/PricingStrategicSection.tsx`
+  - Cold Call Section: `src/components/sections/ColdCallSection.tsx`
+  - Community Section: `src/components/sections/CommunitySection.tsx`
 
 #### ViewContent Events:
 | Section | content_name | content_category |
 |---------|-------------|------------------|
 | Hero Section | Hero Section | hero |
 | Pricing Section | Pricing Strategic Section | pricing |
+| Cold Call Section | Cold Call Section | cold-call |
+| Community Section | Community Section | community |
 
 ### 3. Lead
 - **Event Type**: Standard event
-- **Purpose**: Track CTA button clicks
-- **Parameters**:
-  - `content_name`: Button/section identifier
-  - `content_category`: CTA category (hero, final-cta, etc.)
-  - `content_type`: 'button' (default)
-- **Locations**:
-  - Hero CTA: `src/components/sections/HeroSection.tsx`
-  - Final CTA: `src/components/sections/FinalCTASection.tsx`
+- **Purpose**: Track user engagement and interactions
+- **Parameters**: Varies by interaction type
+- **Locations**: Multiple sections
 
-#### Lead Events:
-| Location | content_name | content_category |
-|----------|-------------|------------------|
-| Hero CTA | Hero Section - CTA Button | hero |
-| Final CTA | Final CTA Section - Main Button | final-cta |
+#### Lead Events - CTA Buttons:
+| Location | content_name | content_category | content_type |
+|----------|-------------|------------------|--------------|
+| Hero CTA | Hero Section - CTA Button | hero | button |
+| Final CTA | Final CTA Section - Main Button | final-cta | button |
+
+#### Lead Events - FAQ Expansion:
+| Parameter | Description |
+|-----------|-------------|
+| content_type | 'faq' |
+| content_category | 'engagement' |
+| content_id | FAQ item number (1-based) |
+| content_name | FAQ question text |
+
+#### Lead Events - Community Join:
+| Parameter | Description |
+|-----------|-------------|
+| content_type | 'community' |
+| content_name | 'Join WhatsApp Community' |
+| content_category | 'engagement' |
+| Location | `src/components/sections/CommunitySection.tsx` |
+
+#### Lead Events - Video Opens:
+| Parameter | Description |
+|-----------|-------------|
+| content_type | 'video' or video category |
+| content_name | Video title (optional) |
+| Locations | Cold Call Section, Social Proof Section |
 
 ### 4. Contact
 - **Event Type**: Standard event
@@ -71,12 +93,14 @@
 - **Event Type**: Standard event
 - **Purpose**: Track when users click to purchase
 - **Parameters**:
-  - `content_name`: 'Escuderia Podium'
+  - `content_name`: 'Escuderia Pódium'
   - `content_type`: 'product'
   - `value`: 1850
   - `currency`: 'BRL'
   - `num_items`: 1
-- **Location**: `src/components/sections/PricingStrategicSection.tsx`
+- **Locations**: 
+  - `src/components/sections/PricingStrategicSection.tsx`
+  - `src/components/sections/ColdCallSection.tsx`
 
 ## Function Signatures
 
@@ -91,6 +115,15 @@ Tracks checkout initiation with product details.
 
 ### trackViewContent(contentName?, contentCategory?)
 Tracks content/section views.
+
+### trackFAQExpansion(questionNumber?, questionText?)
+Tracks FAQ item expansions as Lead events.
+
+### trackCommunityJoin()
+Tracks community join button clicks as Lead events.
+
+### trackVideoOpen(videoName?, contentType?)
+Tracks video modal opens as Lead events.
 
 ## Development Debugging
 
@@ -111,15 +144,21 @@ To test events, open browser console on localhost.
 
 ### Recommended Custom Conversions:
 - **High Intent Leads**: Contact events from pricing/final CTA
-- **Engagement**: ViewContent events from hero section
+- **Content Engagement**: ViewContent events from sections
 - **Purchase Intent**: InitiateCheckout events
+- **Video Engagement**: Lead events from video opens
+- **FAQ Engagement**: Lead events from FAQ expansions
+- **Community Interest**: Lead events from community joins
 
 ## Testing Checklist
 - [ ] PageView fires on page load
-- [ ] ViewContent fires when scrolling to sections
-- [ ] Lead fires on CTA clicks
+- [ ] ViewContent fires when scrolling to sections (Hero, Pricing, Cold Call, Community)
+- [ ] Lead fires on CTA clicks (Hero, Final CTA)
+- [ ] Lead fires on FAQ expansions
+- [ ] Lead fires on community join clicks
+- [ ] Lead fires on video modal opens (Cold Call, Social Proof)
 - [ ] Contact fires on WhatsApp clicks
-- [ ] InitiateCheckout fires on pricing button
+- [ ] InitiateCheckout fires on pricing buttons (Pricing Strategic, Cold Call)
 - [ ] All parameters visible in Meta Events Manager
 
 ## Support

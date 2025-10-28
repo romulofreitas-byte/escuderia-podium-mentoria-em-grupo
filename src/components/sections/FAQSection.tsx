@@ -7,6 +7,7 @@ import { AnimatedButton } from '@/components/ui/AnimatedButton';
 import { Badge } from '@/components/ui/Badge';
 import { faqItems } from '@/data/faq';
 import { MessageCircle, Mail, Phone } from 'lucide-react';
+import { trackFAQExpansion } from '@/lib/metaPixel';
 
 export const FAQSection: React.FC = () => {
   const containerVariants = {
@@ -86,7 +87,13 @@ const AnimatedFAQ: React.FC<{ items: typeof faqItems }> = ({ items }) => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   const toggleItem = (index: number) => {
+    const isOpening = openIndex !== index;
     setOpenIndex(openIndex === index ? null : index);
+    
+    // Track FAQ expansion (only when opening, not closing)
+    if (isOpening) {
+      trackFAQExpansion(index + 1, items[index].question);
+    }
   };
 
   return (

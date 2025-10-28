@@ -1,13 +1,48 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Phone, AlertTriangle, CheckCircle, Zap } from 'lucide-react';
 import Image from 'next/image';
 import { VideoModal } from '@/components/ui/VideoModal';
+import { trackViewContent, trackVideoOpen, trackInitiateCheckout } from '@/lib/metaPixel';
 
 export const ColdCallSection: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
+
+  // Track section view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTrackedView.current) {
+            trackViewContent('Cold Call Section', 'cold-call');
+            hasTrackedView.current = true;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const currentRef = sectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  const handleVideoOpen = () => {
+    setIsVideoOpen(true);
+    trackVideoOpen('Cold Calls que Fecham Contratos', 'cold-call-video');
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,7 +83,7 @@ export const ColdCallSection: React.FC = () => {
   ];
 
   return (
-    <section id="cold-call" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
+    <section ref={sectionRef} id="cold-call" className="relative overflow-hidden py-12 md:py-[75px] bg-gray-900">
       {/* Background with purple/blue glassmorphism */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/90"></div>
@@ -139,7 +174,7 @@ export const ColdCallSection: React.FC = () => {
                 </div>
 
               {/* Video Thumbnail */}
-              <div className="relative group cursor-pointer" onClick={() => setIsVideoOpen(true)}>
+              <div className="relative group cursor-pointer" onClick={handleVideoOpen}>
                 <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-purple-400/40 hover:border-purple-400/70 transition-all duration-300 shadow-xl shadow-purple-400/20">
                   {/* Video Thumbnail Image */}
                   <Image
@@ -259,6 +294,7 @@ export const ColdCallSection: React.FC = () => {
               href="https://go.hotmart.com/C102646862D"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackInitiateCheckout(1850, 'BRL')}
               className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
             >
               <span className="relative drop-shadow-sm">Dominar o Cold Call Agora</span>

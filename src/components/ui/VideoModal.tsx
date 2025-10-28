@@ -8,6 +8,7 @@ interface VideoModalProps {
   onClose: () => void;
   videoUrl: string;
   title?: string;
+  onOpen?: () => void;
 }
 
 export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, title }) => {

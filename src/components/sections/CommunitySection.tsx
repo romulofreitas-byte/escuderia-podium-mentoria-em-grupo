@@ -1,14 +1,42 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Users, MessageCircle, Lightbulb, Zap, CheckCircle } from 'lucide-react';
+import { trackViewContent, trackCommunityJoin } from '@/lib/metaPixel';
 
 export const CommunitySection: React.FC = () => {
-  const handleCommunityClick = () => {
-    // Track community click
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'Lead');
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
+
+  // Track section view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTrackedView.current) {
+            trackViewContent('Community Section', 'community');
+            hasTrackedView.current = true;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const currentRef = sectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  const handleCommunityClick = () => {
+    trackCommunityJoin();
   };
 
   const benefits = [
@@ -35,7 +63,7 @@ export const CommunitySection: React.FC = () => {
   ];
 
   return (
-    <section id="comunidade-podium" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
+    <section ref={sectionRef} id="comunidade-podium" className="relative overflow-hidden py-20 md:py-[75px] bg-gray-900">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/95 to-gray-900/90"></div>
@@ -137,7 +165,7 @@ export const CommunitySection: React.FC = () => {
         <div className="mt-12 text-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
           <p className="text-gray-400 text-sm">
             <CheckCircle className="w-4 h-4 inline mr-2 text-green-400" />
-            Mais de mil profissionais já fazem parte da nossa comunidade
+            Centenas de profissionais já fazem parte da nossa comunidade
           </p>
         </div>
       </div>
