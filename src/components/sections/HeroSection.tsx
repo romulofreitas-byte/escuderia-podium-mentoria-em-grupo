@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(42);
+      setProgressWidth(57);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -149,7 +149,7 @@ export const HeroSection: React.FC = () => {
               <a 
                 href="#investimento-estrategico"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle text-xs"
+                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
               >
                 <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -159,7 +159,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">42%</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">57%</span>
                 </div>
                 <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
@@ -201,7 +201,7 @@ export const HeroSection: React.FC = () => {
               <a 
                 href="#investimento-estrategico"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-105 animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-[1.01] animate-bounce-subtle"
               >
                 <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Escuderia Pódium</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -211,7 +211,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">42%</span>
+                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">57%</span>
                 </div>
                 <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
