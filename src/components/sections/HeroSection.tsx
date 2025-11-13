@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(57);
+      setProgressWidth(110);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -34,7 +34,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[85vh] lg:min-h-[calc(100vh-64px)]">
+    <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[85vh] lg:min-h-[calc(100vh-64px)] pt-10 lg:pt-0">
       {/* Desktop Background with blur */}
       <div className="hidden lg:block absolute inset-0 z-0">
             <ProtectedImage 
@@ -125,12 +125,12 @@ export const HeroSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 lg:hidden" style={{zIndex: 20, bottom: '30px'}}>
           <div className="max-w-md mx-auto text-center space-y-4">
             {/* Badge */}
-            <div className="inline-flex items-center px-2 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full backdrop-blur-sm shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-yellow-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
+            <div className="inline-flex items-center px-2 py-1 bg-red-500/10 border border-red-500/30 rounded-full backdrop-blur-sm shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <span className="text-red-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">Vagas Esgotadas • Promo BF 1ª Turma Encerrada</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-xl font-bold text-white leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <h1 className="text-[17px] sm:text-xl font-bold text-white leading-tight drop-shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Uma mentoria em grupo{' '}
               <span className="text-yellow-400 drop-shadow-md animate-pulse">híbrida</span>
               {' '}pra você vender e se sentir como um{' '}
@@ -138,7 +138,7 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xs text-gray-300 font-light leading-relaxed drop-shadow-md animate-fade-in-up mb-8" style={{animationDelay: '0.3s'}}>
+            <p className="text-[11px] text-gray-300 font-light leading-relaxed drop-shadow-md animate-fade-in-up mb-6" style={{animationDelay: '0.3s'}}>
               6 semanas em grupo + 4 sessões individuais
               <br />
               para fechar seu primeiro contrato antes do fim do ano!
@@ -147,25 +147,25 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center space-y-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="#investimento-estrategico"
+                href="https://forms.gle/G3uCBJChkXk65K8i9"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
+                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
               >
-                <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">57%</span>
+                <div className="flex items-center justify-between text-[10px] sm:text-xs">
+                  <span className="text-gray-300 drop-shadow-sm">Vagas esgotadas</span>
+                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">110%</span>
                 </div>
-                <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
+                <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+                  <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
                   {/* Continuous flow animation across entire bar */}
-                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent animate-progress-flow"></div>
+                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
                 </div>
               </div>
             </div>
@@ -179,8 +179,8 @@ export const HeroSection: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl text-left relative z-30">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">1ª Turma • Black Friday Antecipada • 7 vagas</span>
+            <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-red-500/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Esgotadas • Promo BF 1ª Turma Encerrada</span>
             </div>
 
             {/* Main Headline */}
@@ -192,32 +192,32 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+            <p className="text-[13px] sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               6 semanas em grupo + 4 sessões individuais para fechar seu primeiro contrato antes do fim do ano e começar a vender como empresário.
             </p>
 
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="#investimento-estrategico"
+                href="https://forms.gle/G3uCBJChkXk65K8i9"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/30 hover:scale-[1.01] animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle"
               >
-                <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Escuderia Pódium</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Lista de Espera</span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-gray-300 drop-shadow-sm">Vagas preenchidas</span>
-                  <span className="text-yellow-400 font-semibold drop-shadow-sm animate-pulse">57%</span>
+                <div className="flex items-center justify-between text-[11px] sm:text-sm">
+                  <span className="text-gray-300 drop-shadow-sm">Vagas esgotadas</span>
+                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">110%</span>
                 </div>
-                <div className="w-full h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
+                <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
-                  <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+                  <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
                   {/* Continuous flow animation across entire bar */}
-                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent animate-progress-flow"></div>
+                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
                 </div>
               </div>
             </div>

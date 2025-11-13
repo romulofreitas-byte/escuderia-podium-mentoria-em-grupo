@@ -7,6 +7,25 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
   },
+  async redirects() {
+    return [
+      {
+        source: '/comprar',
+        destination: 'https://forms.gle/G3uCBJChkXk65K8i9',
+        permanent: true,
+      },
+      {
+        source: '/checkout',
+        destination: 'https://forms.gle/G3uCBJChkXk65K8i9',
+        permanent: true,
+      },
+      {
+        source: '/inscricao',
+        destination: 'https://forms.gle/G3uCBJChkXk65K8i9',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
+import { SoldOutBanner } from '@/components/sections/SoldOutBanner';
 
 // Lazy load below-fold sections
 const WhoIsItForSection = dynamic(() => import('@/components/sections/WhoIsItForSection').then(mod => ({ default: mod.WhoIsItForSection })), { ssr: false });
@@ -24,6 +25,7 @@ const Footer = dynamic(() => import('@/components/sections/Footer').then(mod => 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-900">
+      <SoldOutBanner />
       <HeroSection />
       <BenefitsMarquee />
       <WhoIsItForSection />

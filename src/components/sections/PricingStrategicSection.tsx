@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Users, Award, Bot, Phone, Zap, Shield, TrendingUp, Calculator, Star, AlertTriangle, MessageCircle, CreditCard, Banknote } from 'lucide-react';
 import Image from 'next/image';
-import { trackInitiateCheckout, trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
+import { trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const PricingStrategicSection: React.FC = () => {
   const [progressWidth, setProgressWidth] = useState(0);
@@ -14,7 +14,7 @@ export const PricingStrategicSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(57);
+      setProgressWidth(110);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -84,9 +84,7 @@ export const PricingStrategicSection: React.FC = () => {
     { name: 'Certificação', value: 'R$ 500', icon: Award }
   ];
 
-  const handleCheckoutClick = () => {
-    trackInitiateCheckout(1850, 'BRL');
-  };
+  // Checkout tracking removido no estado esgotado
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('Pricing Strategic Section', 'Pricing WhatsApp');
@@ -110,7 +108,7 @@ export const PricingStrategicSection: React.FC = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-6 backdrop-blur-sm shadow-lg animate-pulse">
             <AlertTriangle className="w-4 h-4 text-red-400 mr-2" />
-            <span className="text-red-400 font-semibold text-xs tracking-wide">Oferta Limitada - Black Friday Antecipada</span>
+            <span className="text-red-400 font-semibold text-xs tracking-wide">Vagas Esgotadas — Promo BF 1ª Turma Encerrada</span>
           </div>
           
           <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -127,15 +125,15 @@ export const PricingStrategicSection: React.FC = () => {
 
           {/* Progress Bar */}
           <div className="max-w-md mx-auto mb-8">
-            <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-gray-300">Vagas preenchidas</span>
-              <span className="text-yellow-400 font-semibold animate-pulse">57%</span>
+            <div className="flex items-center justify-between text-[11px] sm:text-sm mb-2">
+              <span className="text-gray-300">Vagas esgotadas</span>
+              <span className="text-red-400 font-semibold animate-pulse">110%</span>
             </div>
-            <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
+            <div className="w-full h-[6px] sm:h-2 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
               {/* Filled portion */}
-              <div className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+              <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
               {/* Continuous flow animation across entire bar */}
-              <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent animate-progress-flow"></div>
+              <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
             </div>
           </div>
         </motion.div>
@@ -234,28 +232,26 @@ export const PricingStrategicSection: React.FC = () => {
                 <p className="text-gray-400 text-sm">Inclusos gratuitamente</p>
               </div>
 
-              {/* CTA Principal */}
+              {/* CTA Principal - Lista de Espera */}
               <div className="text-center mb-8">
                 <a 
-                  href="https://go.hotmart.com/C102646862D"
+                  href="https://forms.gle/G3uCBJChkXk65K8i9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleCheckoutClick}
-                  className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-black text-base sm:text-xl rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
+                  className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-red-500 to-red-600 text-white font-black text-base sm:text-xl rounded-full hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-red-500/40 hover:scale-105"
                 >
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-                  <span className="hidden sm:inline">Garantir Minha Vaga na Escuderia - </span>
-                  <span>R$ 1.850</span>
+                  <span>Entrar na Lista de Espera</span>
                 </a>
                 
                 {/* Payment Info Near CTA */}
                 <div className="mt-4 space-y-2">
-                  <p className="text-gray-300 text-sm sm:text-base">
-                    ou <span className="text-yellow-400 font-semibold">12x de R$ 154,17</span> no cartão de crédito
+                  <p className="text-gray-400 text-xs sm:text-base">
+                    Promoção da 1ª turma encerrada • Preço exibido para referência
                   </p>
                   
                   {/* Compact Payment Methods */}
-                  <div className="flex flex-wrap items-center justify-center gap-2">
+                  <div className="hidden sm:flex flex-wrap items-center justify-center gap-2">
                     <div className="flex items-center gap-1 px-2 py-1 bg-gray-700/40 rounded border border-gray-600">
                       <CreditCard className="w-3 h-3 text-yellow-400" />
                       <span className="text-gray-400 text-xs">Crédito</span>

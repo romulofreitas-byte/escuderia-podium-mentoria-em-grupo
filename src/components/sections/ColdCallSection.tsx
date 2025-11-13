@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Play, Phone, AlertTriangle, CheckCircle, Zap } from 'lucide-react';
 import Image from 'next/image';
 import { VideoModal } from '@/components/ui/VideoModal';
-import { trackViewContent, trackVideoOpen, trackInitiateCheckout } from '@/lib/metaPixel';
+import { trackViewContent, trackVideoOpen } from '@/lib/metaPixel';
 
 export const ColdCallSection: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -291,18 +291,17 @@ export const ColdCallSection: React.FC = () => {
             className="mb-12"
           >
             <a 
-              href="https://go.hotmart.com/C102646862D"
+              href="https://forms.gle/G3uCBJChkXk65K8i9"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackInitiateCheckout(1850, 'BRL')}
-              className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
+              className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-lg md:shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
             >
-              <span className="relative drop-shadow-sm">Dominar o Cold Call Agora</span>
+              <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             <p className="text-gray-400 mt-4 text-sm">
-              Junte-se aos pilotos que já transformaram suas ligações
+              Vagas esgotadas — entre na lista e seja avisado da próxima
             </p>
           </motion.div>
         </div>

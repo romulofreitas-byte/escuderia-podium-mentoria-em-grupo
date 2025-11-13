@@ -139,12 +139,12 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-2px);
+    transform: translateY(-0.3px);
   }
 }
 
 .animate-bounce-subtle {
-  animation: bounce-subtle 2s ease-in-out infinite;
+  animation: bounce-subtle 3s ease-in-out infinite;
 }
 
 /* 3D Flip Card Styles */

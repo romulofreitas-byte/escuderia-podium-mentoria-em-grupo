@@ -94,6 +94,11 @@ export const CommunitySection: React.FC = () => {
           <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Conecte-se com outros pilotos e receba conteúdos exclusivos gratuitamente no WhatsApp
           </p>
+
+          {/* Sold-out notice */}
+          <p className="text-sm text-red-300 mt-3 animate-fade-in-up" style={{animationDelay: '0.35s'}}>
+            Perdeu a Promo BF da 1ª turma? Entre na comunidade para ser avisado das próximas.
+          </p>
         </div>
 
         {/* Main Card */}
@@ -153,8 +158,19 @@ export const CommunitySection: React.FC = () => {
                   <MessageCircle className="w-6 h-6 mr-3" />
                   <span>Entrar na Comunidade Gratuita</span>
                 </a>
-                <p className="text-gray-400 text-sm mt-4">
+                <p className="text-gray-400 text-sm mt-3 sm:mt-4">
                   100% gratuito • 100% exclusivo
+                </p>
+                <p className="text-gray-400 text-[11px] sm:text-xs mt-2">
+                  Preferir lista de espera?{' '}
+                  <a
+                    href="https://forms.gle/G3uCBJChkXk65K8i9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-red-400 underline hover:text-red-300"
+                  >
+                    Entrar na Lista de Espera
+                  </a>
                 </p>
               </div>
             </div>

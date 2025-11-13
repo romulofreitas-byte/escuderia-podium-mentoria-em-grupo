@@ -15,12 +15,12 @@ export const PricingSection: React.FC = () => {
             <p className="text-gray-300 text-xl mb-10">ou 12x R$ 185 sem juros</p>
             
             <a 
-              href="https://go.hotmart.com/C102646862D"
+              href="https://forms.gle/G3uCBJChkXk65K8i9"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3"
+              className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3 bg-red-600 hover:bg-red-700"
             >
-              Entrar na Escuderia Pódium
+              Entrar na Lista de Espera
               <ArrowRight className="w-5 h-5" />
             </a>
             

@@ -56,8 +56,8 @@ export const FinalCTASection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full backdrop-blur-sm shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
-              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Última Chance</span>
+            <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full backdrop-blur-sm shadow-lg transition-all duration-300">
+              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Esgotadas</span>
             </div>
           </motion.div>
 
@@ -114,7 +114,7 @@ export const FinalCTASection: React.FC = () => {
             <div className="bg-gray-800/30 border border-yellow-400/50 rounded-3xl p-12 max-w-2xl mx-auto shadow-2xl backdrop-blur-sm hover:shadow-yellow-400/20 transition-all duration-300">
               <div className="text-center">
                 <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-6">
-                  <span className="text-red-400 font-semibold text-sm">Oferta Limitada</span>
+                  <span className="text-red-400 font-semibold text-sm">Promo BF 1ª Turma Encerrada</span>
                 </div>
                 
                 <div className="mb-6">
@@ -126,7 +126,7 @@ export const FinalCTASection: React.FC = () => {
                   {/* Payment Information */}
                   <div className="mb-4 space-y-3">
                     <p className="text-gray-300 text-xl font-semibold">
-                      ou 12x de <span className="text-yellow-400">R$ 154,17</span> no cartão de crédito
+                      Promoção encerrada — valor exibido para referência
                     </p>
                     
                     {/* Payment Methods */}
@@ -189,20 +189,20 @@ export const FinalCTASection: React.FC = () => {
             className="mb-16"
           >
             <a 
-              href="https://go.hotmart.com/C102646862D"
+              href="https://forms.gle/G3uCBJChkXk65K8i9"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleMainCTAClick}
-              className="group relative inline-flex items-center justify-center px-12 py-6 bg-yellow-400 text-gray-900 font-bold text-xl rounded-full transition-all duration-300 hover:bg-yellow-500 shadow-2xl hover:shadow-yellow-400/30 hover:scale-105"
+              className="group relative inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-red-500 text-white font-bold text-lg sm:text-xl rounded-full transition-all duration-300 hover:bg-red-600 shadow-lg sm:shadow-2xl hover:shadow-red-500/30 hover:scale-105"
             >
-              <span className="relative drop-shadow-sm">Entrar na Escuderia Pódium Agora</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             {/* Payment Info Near CTA */}
             <div className="mt-4 space-y-2">
               <p className="text-gray-300 text-sm sm:text-base">
-                ou <span className="text-yellow-400 font-semibold">12x de R$ 154,17</span> no cartão de crédito
+                Vagas esgotadas — inscreva-se na lista para próxima turma
               </p>
               
               {/* Compact Payment Methods */}
@@ -239,14 +239,14 @@ export const FinalCTASection: React.FC = () => {
             <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8 max-w-3xl mx-auto backdrop-blur-sm">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-yellow-400 mr-3" />
+                  <AlertTriangle className="w-6 h-6 text-red-400 mr-3" />
                   <h3 className="text-2xl font-bold text-white">
-                    Últimas Vagas Disponíveis
+                    Vagas Esgotadas
                   </h3>
                 </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Esta é a primeira turma da Escuderia Pódium com condições especiais. 
-                  As próximas turmas terão preço normal de R$ 10.000.
+                  A promoção da 1ª turma (Black Friday Antecipada) foi encerrada. 
+                  Entre na lista de espera para ser avisado das próximas turmas.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-gray-400">
                   <span className="flex items-center justify-center">
@@ -255,7 +255,7 @@ export const FinalCTASection: React.FC = () => {
                   </span>
                   <span className="flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-yellow-400 mr-2" />
-                    Promoção Black Friday Antecipada
+                    Promoção Black Friday Antecipada Encerrada
                   </span>
                 </div>
               </div>
