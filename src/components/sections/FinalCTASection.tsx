@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { AnimatedButton } from '@/components/ui/AnimatedButton';
@@ -9,6 +9,34 @@ import { CheckCircle, Clock, Users, Shield, AlertTriangle, MessageCircle, Mail, 
 import { trackCTAClick, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const FinalCTASection: React.FC = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isPromoActive, setIsPromoActive] = useState(true);
+
+  // Verificar se já passou 26/11/2025 às 13h (horário de Brasília) e 28/11 para promoção
+  useEffect(() => {
+    const checkDates = () => {
+      const now = new Date();
+      
+      // Data alvo: 26 de novembro de 2025, 13:00 (horário de Brasília) - abertura do carrinho
+      const cartOpenDate = new Date('2025-11-26T13:00:00-03:00');
+      
+      // Data alvo: 28 de novembro de 2025 - fim da promoção (valor volta a R$ 10.000)
+      const promoEndDate = new Date('2025-11-28T00:00:00-03:00');
+      
+      // Verificar se já passou a data/hora de abertura do carrinho
+      setIsCartOpen(now >= cartOpenDate);
+      
+      // Verificar se a promoção ainda está ativa (antes de 28/11)
+      setIsPromoActive(now < promoEndDate);
+    };
+
+    checkDates();
+    // Verificar a cada minuto para atualizar quando chegar a hora
+    const interval = setInterval(checkDates, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleMainCTAClick = () => {
     trackCTAClick('Final CTA Section - Main Button', 'final-cta');
   };
@@ -56,8 +84,8 @@ export const FinalCTASection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full backdrop-blur-sm shadow-lg transition-all duration-300">
-              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Esgotadas</span>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full backdrop-blur-sm shadow-lg transition-all duration-300">
+              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Lista de Espera</span>
             </div>
           </motion.div>
 
@@ -113,20 +141,28 @@ export const FinalCTASection: React.FC = () => {
           >
             <div className="bg-gray-800/30 border border-yellow-400/50 rounded-3xl p-12 max-w-2xl mx-auto shadow-2xl backdrop-blur-sm hover:shadow-yellow-400/20 transition-all duration-300">
               <div className="text-center">
-                <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-6">
-                  <span className="text-red-400 font-semibold text-sm">Promo BF 1ª Turma Encerrada</span>
+                <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-6">
+                  <span className="text-yellow-400 font-semibold text-sm">Lista de Espera — Vagas em Breve</span>
                 </div>
                 
                 <div className="mb-6">
-                  <p className="text-gray-400 text-lg mb-2">De <span className="line-through text-xl">R$ 10.000</span></p>
-                  <div className="text-5xl sm:text-6xl font-bold text-yellow-400 mb-2 drop-shadow-lg">
-                    R$ 1.850
-                  </div>
+                  {isPromoActive ? (
+                    <>
+                      <p className="text-gray-400 text-lg mb-2">De <span className="line-through text-xl">R$ 10.000</span></p>
+                      <div className="text-5xl sm:text-6xl font-bold text-yellow-400 mb-2 drop-shadow-lg">
+                        R$ 8.400
+                      </div>
+                    </>
+                  ) : (
+                    <div className="text-5xl sm:text-6xl font-bold text-yellow-400 mb-2 drop-shadow-lg">
+                      R$ 10.000
+                    </div>
+                  )}
                   
                   {/* Payment Information */}
                   <div className="mb-4 space-y-3">
                     <p className="text-gray-300 text-xl font-semibold">
-                      Promoção encerrada — valor exibido para referência
+                      ou <span className="text-yellow-400">até 18x</span> no cartão de crédito <span className="text-gray-400 text-sm">(com juros)</span>
                     </p>
                     
                     {/* Payment Methods */}
@@ -150,13 +186,15 @@ export const FinalCTASection: React.FC = () => {
                     </div>
                     
                     <p className="text-gray-400 text-sm">
-                      Pagamento processado pela Hotmart
+                      Pagamento processado pelo PagBank
                     </p>
                   </div>
                   
-                  <p className="text-gray-300 text-lg">
-                    Promoção Black Friday Antecipada • 81% de desconto
-                  </p>
+                  {isPromoActive && (
+                    <p className="text-gray-300 text-lg">
+                      Promoção Especial • 16% de desconto
+                    </p>
+                  )}
                 </div>
 
                 <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-2xl p-6 mb-8">
@@ -189,20 +227,20 @@ export const FinalCTASection: React.FC = () => {
             className="mb-16"
           >
             <a 
-              href="https://forms.gle/G3uCBJChkXk65K8i9"
+              href={isCartOpen ? "https://pag.ae/81eYf7osM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleMainCTAClick}
               className="group relative inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-red-500 text-white font-bold text-lg sm:text-xl rounded-full transition-all duration-300 hover:bg-red-600 shadow-lg sm:shadow-2xl hover:shadow-red-500/30 hover:scale-105"
             >
-              <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
+              <span className="relative drop-shadow-sm">{isCartOpen ? "Garantir Minha Vaga Agora" : "Entrar na Lista de Espera"}</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             {/* Payment Info Near CTA */}
             <div className="mt-4 space-y-2">
               <p className="text-gray-300 text-sm sm:text-base">
-                Vagas esgotadas — inscreva-se na lista para próxima turma
+                {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Lista de espera • Vagas em breve"}
               </p>
               
               {/* Compact Payment Methods */}
@@ -226,7 +264,7 @@ export const FinalCTASection: React.FC = () => {
               </div>
               
               <p className="text-gray-400 text-sm">
-                ✓ Vagas limitadas • ✓ Garantia de 7 dias • Pagamento processado pela Hotmart
+                ✓ Vagas limitadas • ✓ Garantia de 7 dias • Pagamento processado pelo PagBank
               </p>
             </div>
           </motion.div>
@@ -239,23 +277,24 @@ export const FinalCTASection: React.FC = () => {
             <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8 max-w-3xl mx-auto backdrop-blur-sm">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-red-400 mr-3" />
+                  <Clock className="w-6 h-6 text-yellow-400 mr-3" />
                   <h3 className="text-2xl font-bold text-white">
-                    Vagas Esgotadas
+                    Lista de Espera
                   </h3>
                 </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  A promoção da 1ª turma (Black Friday Antecipada) foi encerrada. 
-                  Entre na lista de espera para ser avisado das próximas turmas.
+                  {isCartOpen 
+                    ? "Vagas abertas! Garanta sua vaga na Escuderia Pódium agora."
+                    : "As vagas serão abertas em breve. Entre na lista de espera para ser avisado quando o carrinho abrir."}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-gray-400">
                   <span className="flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-yellow-400 mr-2" />
-                    Apenas para Pilotos da Comunidade Pódium
+                    Turma limitada (5-10 pilotos)
                   </span>
                   <span className="flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-yellow-400 mr-2" />
-                    Promoção Black Friday Antecipada Encerrada
+                    Garantia de 7 dias
                   </span>
                 </div>
               </div>

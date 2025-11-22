@@ -8,6 +8,8 @@ import { trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const PricingStrategicSection: React.FC = () => {
   const [progressWidth, setProgressWidth] = useState(0);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isPromoActive, setIsPromoActive] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
   const hasTrackedView = useRef(false);
 
@@ -18,6 +20,31 @@ export const PricingStrategicSection: React.FC = () => {
     }, 100);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Verificar se já passou 26/11/2025 às 13h (horário de Brasília) e 28/11 para promoção
+  useEffect(() => {
+    const checkDates = () => {
+      const now = new Date();
+      
+      // Data alvo: 26 de novembro de 2025, 13:00 (horário de Brasília) - abertura do carrinho
+      const cartOpenDate = new Date('2025-11-26T13:00:00-03:00');
+      
+      // Data alvo: 28 de novembro de 2025 - fim da promoção (valor volta a R$ 10.000)
+      const promoEndDate = new Date('2025-11-28T00:00:00-03:00');
+      
+      // Verificar se já passou a data/hora de abertura do carrinho
+      setIsCartOpen(now >= cartOpenDate);
+      
+      // Verificar se a promoção ainda está ativa (antes de 28/11)
+      setIsPromoActive(now < promoEndDate);
+    };
+
+    checkDates();
+    // Verificar a cada minuto para atualizar quando chegar a hora
+    const interval = setInterval(checkDates, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   // Track section view
@@ -106,9 +133,9 @@ export const PricingStrategicSection: React.FC = () => {
       >
         {/* Header com Urgência */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-6 backdrop-blur-sm shadow-lg animate-pulse">
-            <AlertTriangle className="w-4 h-4 text-red-400 mr-2" />
-            <span className="text-red-400 font-semibold text-xs tracking-wide">Vagas Esgotadas — Promo BF 1ª Turma Encerrada</span>
+          <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-6 backdrop-blur-sm shadow-lg">
+            <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+            <span className="text-yellow-400 font-semibold text-xs tracking-wide">Lista de Espera — Vagas em Breve</span>
           </div>
           
           <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -123,19 +150,7 @@ export const PricingStrategicSection: React.FC = () => {
             {' '}+ 4 encontros mensais
           </p>
 
-          {/* Progress Bar */}
-          <div className="max-w-md mx-auto mb-8">
-            <div className="flex items-center justify-between text-[11px] sm:text-sm mb-2">
-              <span className="text-gray-300">Vagas esgotadas</span>
-              <span className="text-red-400 font-semibold animate-pulse">110%</span>
-            </div>
-            <div className="w-full h-[6px] sm:h-2 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
-              {/* Filled portion */}
-              <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
-              {/* Continuous flow animation across entire bar */}
-              <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
-            </div>
-          </div>
+          {/* Progress Bar - Removido pois não há vagas abertas */}
         </motion.div>
 
         {/* Card Principal de Preço */}
@@ -151,20 +166,29 @@ export const PricingStrategicSection: React.FC = () => {
               <div className="text-center mb-8">
                 {/* Ancoragem */}
                 <div className="flex justify-center items-center gap-4 mb-6">
-                  <div className="text-center">
-                    <p className="text-gray-400 text-sm">Elite Pódium Individual</p>
-                    <p className="text-xl md:text-2xl font-bold text-gray-500 line-through">R$ 10.000</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-yellow-400 text-sm font-semibold">Escuderia Pódium (Grupo)</p>
-                    <p className="text-3xl sm:text-5xl font-black text-yellow-400">R$ 1.850</p>
-                  </div>
+                  {isPromoActive ? (
+                    <>
+                      <div className="text-center">
+                        <p className="text-gray-400 text-sm">Mentoria em Grupo</p>
+                        <p className="text-xl md:text-2xl font-bold text-gray-500 line-through">R$ 10.000</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-yellow-400 text-sm font-semibold">Promoção Especial</p>
+                        <p className="text-3xl sm:text-5xl font-black text-yellow-400">R$ 8.400</p>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="text-center">
+                      <p className="text-yellow-400 text-sm font-semibold">Mentoria em Grupo</p>
+                      <p className="text-3xl sm:text-5xl font-black text-yellow-400">R$ 10.000</p>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Payment Information */}
                 <div className="mb-6 space-y-3">
                   <p className="text-gray-300 text-xl font-semibold">
-                    ou 12x de <span className="text-yellow-400">R$ 154,17</span> no cartão de crédito
+                    ou <span className="text-yellow-400">até 18x</span> no cartão de crédito <span className="text-gray-400 text-sm">(com juros)</span>
                   </p>
                   
                   {/* Payment Methods */}
@@ -188,13 +212,15 @@ export const PricingStrategicSection: React.FC = () => {
                   </div>
                   
                   <p className="text-gray-400 text-sm">
-                    Pagamento processado pela Hotmart
+                    Pagamento processado pelo PagBank
                   </p>
                 </div>
                 
-                <div className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
-                  <span className="text-green-400 font-bold text-sm">Economize R$ 8.150 (81% OFF)</span>
-                </div>
+                {isPromoActive && (
+                  <div className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
+                    <span className="text-green-400 font-bold text-sm">Economize R$ 1.600 (16% OFF)</span>
+                  </div>
+                )}
                 
                 <p className="text-gray-300 text-lg mb-2">
                   <span className="text-yellow-400 font-semibold">Mesmo método</span>, formato em grupo
@@ -225,29 +251,22 @@ export const PricingStrategicSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Total de Bônus */}
-              <div className="text-center mb-8 p-4 bg-yellow-400/10 border border-yellow-400/30 rounded-xl">
-                <p className="text-gray-300 mb-1">Valor Total dos Bônus:</p>
-                <p className="text-3xl font-bold text-yellow-400">R$ 5.000</p>
-                <p className="text-gray-400 text-sm">Inclusos gratuitamente</p>
-              </div>
-
-              {/* CTA Principal - Lista de Espera */}
+              {/* CTA Principal - Condicional: Lista de Espera ou PagBank */}
               <div className="text-center mb-8">
                 <a 
-                  href="https://forms.gle/G3uCBJChkXk65K8i9"
+                  href={isCartOpen ? "https://pag.ae/81eYf7osM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-red-500 to-red-600 text-white font-black text-base sm:text-xl rounded-full hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-red-500/40 hover:scale-105"
                 >
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-                  <span>Entrar na Lista de Espera</span>
+                  <span>{isCartOpen ? "Garantir Minha Vaga Agora" : "Entrar na Lista de Espera"}</span>
                 </a>
                 
                 {/* Payment Info Near CTA */}
                 <div className="mt-4 space-y-2">
                   <p className="text-gray-400 text-xs sm:text-base">
-                    Promoção da 1ª turma encerrada • Preço exibido para referência
+                    {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Lista de espera • Vagas em breve"}
                   </p>
                   
                   {/* Compact Payment Methods */}
@@ -271,7 +290,7 @@ export const PricingStrategicSection: React.FC = () => {
                   </div>
                   
                   <p className="text-gray-400 text-xs sm:text-sm">
-                    ✓ Vagas limitadas • ✓ Garantia de 7 dias • Pagamento processado pela Hotmart
+                    ✓ Vagas limitadas • ✓ Garantia de 7 dias • Pagamento processado pelo PagBank
                   </p>
                 </div>
               </div>
@@ -315,7 +334,7 @@ export const PricingStrategicSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
                 <p className="text-gray-300 mb-2">Investimento:</p>
-                <p className="text-3xl font-bold text-yellow-400">R$ 1.850</p>
+                <p className="text-3xl font-bold text-yellow-400">{isPromoActive ? 'R$ 8.400' : 'R$ 10.000'}</p>
                 <p className="text-gray-400 text-sm">Escuderia Pódium</p>
               </div>
               <div className="text-center">
@@ -326,12 +345,12 @@ export const PricingStrategicSection: React.FC = () => {
             </div>
             
             <div className="mt-6 text-center">
-              <p className="text-gray-300 mb-2">Se você fechar 1 contrato de R$ 5.000:</p>
+              <p className="text-gray-300 mb-2">Se você fechar 1 contrato de R$ 10.000:</p>
               <div className="inline-flex items-center px-6 py-3 bg-green-500/10 border border-green-500/30 rounded-full">
                 <TrendingUp className="w-6 h-6 text-green-400 mr-2" />
-                <span className="text-green-400 font-bold text-xl">ROI de 170%</span>
+                <span className="text-green-400 font-bold text-xl">ROI de {isPromoActive ? '19%' : '0%'}</span>
               </div>
-              <p className="text-gray-400 text-xs mt-2">Lucro líquido de R$ 3.150</p>
+              <p className="text-gray-400 text-xs mt-2">Lucro líquido de {isPromoActive ? 'R$ 1.600' : 'R$ 0'}</p>
             </div>
           </div>
         </motion.div>
