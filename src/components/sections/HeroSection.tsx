@@ -35,19 +35,6 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative overflow-hidden flex flex-col bg-gray-900 min-h-[85vh] lg:min-h-[calc(100vh-64px)] pt-10 lg:pt-0">
-      {/* Desktop Background with blur */}
-      <div className="hidden lg:block absolute inset-0 z-0">
-            <ProtectedImage 
-              src="/background-podium-hero.jpg"
-              alt="Background"
-              fill
-              className="object-cover opacity-100 block"
-              priority
-              quality={75}
-            />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-gray-900/50 to-gray-900/40"></div>
-      </div>
-
       {/* Header */}
       <div className="relative z-10 border-b border-gray-800">
         <div className="relative z-30 container-custom py-3 sm:py-4">
@@ -89,18 +76,6 @@ export const HeroSection: React.FC = () => {
         {/* Mobile Image Section with Top Padding */}
         <div className="mobile-hero-vignette flex-1 relative pt-8" style={{flexBasis: '70%'}}>
           <div className="relative w-full h-full">
-            {/* Background Image */}
-            <ProtectedImage 
-              src="/background-podium-hero.jpg"
-              alt="Background"
-              fill
-              className="object-cover"
-              priority
-              quality={75}
-            />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-transparent"></div>
-            
             {/* Mentor Image */}
             <div className="absolute inset-0 flex items-start justify-center" style={{top: '-10px', transform: 'translateX(100px) scale(1.1)'}}>
               <div className="relative">
