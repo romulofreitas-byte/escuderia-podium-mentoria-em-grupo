@@ -9,22 +9,16 @@ import { CheckCircle, Clock, Users, Shield, AlertTriangle, MessageCircle, Mail, 
 import { trackCTAClick, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const FinalCTASection: React.FC = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isPromoActive, setIsPromoActive] = useState(true);
+  const isCartOpen = true;
 
   // Verificar se já passou 26/11/2025 às 13h (horário de Brasília) e 28/11 para promoção
   useEffect(() => {
     const checkDates = () => {
       const now = new Date();
       
-      // Data alvo: 26 de novembro de 2025, 13:00 (horário de Brasília) - abertura do carrinho
-      const cartOpenDate = new Date('2025-11-26T13:00:00-03:00');
-      
       // Data alvo: 28 de novembro de 2025 - fim da promoção (valor volta a R$ 10.000)
       const promoEndDate = new Date('2025-11-28T00:00:00-03:00');
-      
-      // Verificar se já passou a data/hora de abertura do carrinho
-      setIsCartOpen(now >= cartOpenDate);
       
       // Verificar se a promoção ainda está ativa (antes de 28/11)
       setIsPromoActive(now < promoEndDate);
@@ -85,7 +79,7 @@ export const FinalCTASection: React.FC = () => {
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-8">
             <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full backdrop-blur-sm shadow-lg transition-all duration-300">
-              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Lista de Espera</span>
+              <span className="text-yellow-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Abertas • Turma Limitada</span>
             </div>
           </motion.div>
 
@@ -142,7 +136,7 @@ export const FinalCTASection: React.FC = () => {
             <div className="bg-gray-800/30 border border-yellow-400/50 rounded-3xl p-12 max-w-2xl mx-auto shadow-2xl backdrop-blur-sm hover:shadow-yellow-400/20 transition-all duration-300">
               <div className="text-center">
                 <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-6">
-                  <span className="text-yellow-400 font-semibold text-sm">Lista de Espera — Vagas em Breve</span>
+                  <span className="text-yellow-400 font-semibold text-sm">Vagas Abertas — Garanta Sua Vaga</span>
                 </div>
                 
                 <div className="mb-6">
@@ -233,14 +227,14 @@ export const FinalCTASection: React.FC = () => {
               onClick={handleMainCTAClick}
               className="group relative inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-red-500 text-white font-bold text-lg sm:text-xl rounded-full transition-all duration-300 hover:bg-red-600 shadow-lg sm:shadow-2xl hover:shadow-red-500/30 hover:scale-105"
             >
-              <span className="relative drop-shadow-sm">{isCartOpen ? "Garantir Minha Vaga Agora" : "Entrar na Lista de Espera"}</span>
+              <span className="relative drop-shadow-sm">{isCartOpen ? "Garantir Minha Vaga Agora" : "Quero Ser Avisado"}</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             {/* Payment Info Near CTA */}
             <div className="mt-4 space-y-2">
               <p className="text-gray-300 text-sm sm:text-base">
-                {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Lista de espera • Vagas em breve"}
+                {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Inscrições em breve • Deixe seu contato"}
               </p>
               
               {/* Compact Payment Methods */}
@@ -279,13 +273,13 @@ export const FinalCTASection: React.FC = () => {
                 <div className="flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-yellow-400 mr-3" />
                   <h3 className="text-2xl font-bold text-white">
-                    Lista de Espera
+                    Garanta Sua Vaga
                   </h3>
                 </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   {isCartOpen 
                     ? "Vagas abertas! Garanta sua vaga na Escuderia Pódium agora."
-                    : "As vagas serão abertas em breve. Entre na lista de espera para ser avisado quando o carrinho abrir."}
+                    : "As vagas serão abertas em breve. Deixe seu contato para ser avisado quando o carrinho abrir."}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-gray-400">
                   <span className="flex items-center justify-center">

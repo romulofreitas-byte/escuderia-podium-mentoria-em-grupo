@@ -291,17 +291,17 @@ export const ColdCallSection: React.FC = () => {
             className="mb-12"
           >
             <a 
-              href="https://forms.gle/G3uCBJChkXk65K8i9"
+              href="https://pag.ae/81eYf7osM/button"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-lg md:shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"
             >
-              <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
+              <span className="relative drop-shadow-sm">Garantir Minha Vaga Agora</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             <p className="text-gray-400 mt-4 text-sm">
-              Vagas esgotadas — entre na lista e seja avisado da próxima
+              Vagas abertas — garanta sua vaga na Escuderia Pódium
             </p>
           </motion.div>
         </div>

@@ -95,9 +95,9 @@ export const CommunitySection: React.FC = () => {
             Conecte-se com outros pilotos e receba conteúdos exclusivos gratuitamente no WhatsApp
           </p>
 
-          {/* Sold-out notice */}
-          <p className="text-sm text-red-300 mt-3 animate-fade-in-up" style={{animationDelay: '0.35s'}}>
-            Perdeu a Promo BF da 1ª turma? Entre na comunidade para ser avisado das próximas.
+          {/* Aviso de novidades */}
+          <p className="text-sm text-yellow-300 mt-3 animate-fade-in-up" style={{animationDelay: '0.35s'}}>
+            Entre na comunidade para receber novidades, conteúdos exclusivos e avisos sobre novas turmas da Escuderia Pódium.
           </p>
         </div>
 
@@ -160,17 +160,6 @@ export const CommunitySection: React.FC = () => {
                 </a>
                 <p className="text-gray-400 text-sm mt-3 sm:mt-4">
                   100% gratuito • 100% exclusivo
-                </p>
-                <p className="text-gray-400 text-[11px] sm:text-xs mt-2">
-                  Preferir lista de espera?{' '}
-                  <a
-                    href="https://forms.gle/G3uCBJChkXk65K8i9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-red-400 underline hover:text-red-300"
-                  >
-                    Entrar na Lista de Espera
-                  </a>
                 </p>
               </div>
             </div>

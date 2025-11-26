@@ -2,7 +2,6 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { BenefitsMarquee } from '@/components/sections/BenefitsMarquee';
-import { SoldOutBanner } from '@/components/sections/SoldOutBanner';
 
 // Lazy load below-fold sections
 const WhoIsItForSection = dynamic(() => import('@/components/sections/WhoIsItForSection').then(mod => ({ default: mod.WhoIsItForSection })), { ssr: false });
@@ -12,6 +11,7 @@ const ColdCallSection = dynamic(() => import('@/components/sections/ColdCallSect
 const ProgramStructureSection = dynamic(() => import('@/components/sections/ProgramStructureSection').then(mod => ({ default: mod.ProgramStructureSection })), { ssr: false });
 const MethodSection = dynamic(() => import('@/components/sections/MethodSection').then(mod => ({ default: mod.MethodSection })), { ssr: false });
 const TechnologyToolsSection = dynamic(() => import('@/components/sections/TechnologyToolsSection').then(mod => ({ default: mod.TechnologyToolsSection })), { ssr: false });
+const TestimonialsScrollSection = dynamic(() => import('@/components/sections/TestimonialsScrollSection').then(mod => ({ default: mod.TestimonialsScrollSection })), { ssr: false });
 const ComparisonSection = dynamic(() => import('@/components/sections/ComparisonSection').then(mod => ({ default: mod.ComparisonSection })), { ssr: false });
 const BonusesSection = dynamic(() => import('@/components/sections/BonusesSection').then(mod => ({ default: mod.BonusesSection })), { ssr: false });
 const PricingStrategicSection = dynamic(() => import('@/components/sections/PricingStrategicSection').then(mod => ({ default: mod.PricingStrategicSection })), { ssr: false });
@@ -25,7 +25,6 @@ const Footer = dynamic(() => import('@/components/sections/Footer').then(mod => 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-900">
-      <SoldOutBanner />
       <HeroSection />
       <BenefitsMarquee />
       <WhoIsItForSection />
@@ -35,6 +34,7 @@ export default function HomePage() {
       <ProgramStructureSection />
       <MethodSection />
       <TechnologyToolsSection />
+      <TestimonialsScrollSection />
       <ComparisonSection />
       <BonusesSection />
       <PricingStrategicSection />

@@ -8,8 +8,8 @@ import { trackViewContent, trackWhatsAppClick } from '@/lib/metaPixel';
 
 export const PricingStrategicSection: React.FC = () => {
   const [progressWidth, setProgressWidth] = useState(0);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isPromoActive, setIsPromoActive] = useState(true);
+  const isCartOpen = true;
   const sectionRef = useRef<HTMLElement>(null);
   const hasTrackedView = useRef(false);
 
@@ -22,19 +22,13 @@ export const PricingStrategicSection: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Verificar se já passou 26/11/2025 às 13h (horário de Brasília) e 28/11 para promoção
+  // Verificar se já passou 28/11 para promoção
   useEffect(() => {
     const checkDates = () => {
       const now = new Date();
       
-      // Data alvo: 26 de novembro de 2025, 13:00 (horário de Brasília) - abertura do carrinho
-      const cartOpenDate = new Date('2025-11-26T13:00:00-03:00');
-      
       // Data alvo: 28 de novembro de 2025 - fim da promoção (valor volta a R$ 10.000)
       const promoEndDate = new Date('2025-11-28T00:00:00-03:00');
-      
-      // Verificar se já passou a data/hora de abertura do carrinho
-      setIsCartOpen(now >= cartOpenDate);
       
       // Verificar se a promoção ainda está ativa (antes de 28/11)
       setIsPromoActive(now < promoEndDate);
@@ -135,7 +129,7 @@ export const PricingStrategicSection: React.FC = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-6 backdrop-blur-sm shadow-lg">
             <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-            <span className="text-yellow-400 font-semibold text-xs tracking-wide">Lista de Espera — Vagas em Breve</span>
+            <span className="text-yellow-400 font-semibold text-xs tracking-wide">Vagas Abertas — Turma Limitada</span>
           </div>
           
           <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -251,7 +245,7 @@ export const PricingStrategicSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* CTA Principal - Condicional: Lista de Espera ou PagBank */}
+              {/* CTA Principal - Condicional: Checkout aberto ou aviso futuro */}
               <div className="text-center mb-8">
                 <a 
                   href={isCartOpen ? "https://pag.ae/81eYf7osM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
@@ -260,13 +254,13 @@ export const PricingStrategicSection: React.FC = () => {
                   className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-red-500 to-red-600 text-white font-black text-base sm:text-xl rounded-full hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-red-500/40 hover:scale-105"
                 >
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-                  <span>{isCartOpen ? "Garantir Minha Vaga Agora" : "Entrar na Lista de Espera"}</span>
+                  <span>{isCartOpen ? "Garantir Minha Vaga Agora" : "Quero Ser Avisado"}</span>
                 </a>
                 
                 {/* Payment Info Near CTA */}
                 <div className="mt-4 space-y-2">
                   <p className="text-gray-400 text-xs sm:text-base">
-                    {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Lista de espera • Vagas em breve"}
+                    {isCartOpen ? "Vagas abertas • Garanta sua vaga agora" : "Inscrições em breve • Deixe seu contato"}
                   </p>
                   
                   {/* Compact Payment Methods */}

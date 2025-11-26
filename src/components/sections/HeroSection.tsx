@@ -101,7 +101,7 @@ export const HeroSection: React.FC = () => {
           <div className="max-w-md mx-auto text-center space-y-4">
             {/* Badge */}
             <div className="inline-flex items-center px-2 py-1 bg-red-500/10 border border-red-500/30 rounded-full backdrop-blur-sm shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-red-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">Vagas Esgotadas • Promo BF 1ª Turma Encerrada</span>
+              <span className="text-red-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
             </div>
 
             {/* Main Headline */}
@@ -122,19 +122,19 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center space-y-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="https://forms.gle/G3uCBJChkXk65K8i9"
+                href="https://pag.ae/81eYf7osM/button"
                 onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
               >
-                <span className="relative drop-shadow-sm">Entrar na Lista de Espera</span>
+                <span className="relative drop-shadow-sm">Garantir Minha Vaga Agora</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[10px] sm:text-xs">
-                  <span className="text-gray-300 drop-shadow-sm">Vagas esgotadas</span>
-                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">110%</span>
+                  <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
+                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
@@ -155,7 +155,7 @@ export const HeroSection: React.FC = () => {
           <div className="max-w-2xl text-left relative z-30">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-red-500/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Esgotadas • Promo BF 1ª Turma Encerrada</span>
+              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
             </div>
 
             {/* Main Headline */}
@@ -174,19 +174,19 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="https://forms.gle/G3uCBJChkXk65K8i9"
+                href="https://pag.ae/81eYf7osM/button"
                 onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle"
               >
-                <span className="relative drop-shadow-sm text-xs sm:text-base">Entrar na Lista de Espera</span>
+                <span className="relative drop-shadow-sm text-xs sm:text-base">Garantir Minha Vaga Agora</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[11px] sm:text-sm">
-                  <span className="text-gray-300 drop-shadow-sm">Vagas esgotadas</span>
-                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">110%</span>
+                  <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
+                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
