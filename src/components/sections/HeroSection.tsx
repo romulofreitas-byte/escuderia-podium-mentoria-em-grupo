@@ -100,8 +100,8 @@ export const HeroSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 lg:hidden" style={{zIndex: 20, bottom: '30px'}}>
           <div className="max-w-md mx-auto text-center space-y-4">
             {/* Badge */}
-            <div className="inline-flex items-center px-2 py-1 bg-red-500/10 border border-red-500/30 rounded-full backdrop-blur-sm shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-red-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
+            <div className="inline-flex items-center px-2 py-1 bg-orange-500/10 border border-orange-500/30 rounded-full backdrop-blur-sm shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <span className="text-orange-400 font-semibold text-[10px] leading-tight tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
             </div>
 
             {/* Main Headline */}
@@ -124,23 +124,23 @@ export const HeroSection: React.FC = () => {
               <a 
                 href="https://pag.ae/81eYf7osM/button"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
+                className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold rounded-full transition-all duration-300 hover:bg-orange-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-orange-500/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
               >
                 <span className="relative drop-shadow-sm">Garantir Minha Vaga Agora</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[10px] sm:text-xs">
                   <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
-                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
+                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
-                  <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+                  <div className="h-full bg-gradient-to-r from-orange-500 to-orange-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
                   {/* Continuous flow animation across entire bar */}
-                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
+                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-orange-300/40 to-transparent animate-progress-flow"></div>
                 </div>
               </div>
             </div>
@@ -154,8 +154,8 @@ export const HeroSection: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl text-left relative z-30">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-red-500/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="text-red-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full mb-4 backdrop-blur-sm shadow-lg hover:shadow-orange-500/20 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <span className="text-orange-400 font-semibold text-xs tracking-wide drop-shadow-sm">Vagas Abertas • Primeira Turma Escuderia Pódium</span>
             </div>
 
             {/* Main Headline */}
@@ -176,23 +176,23 @@ export const HeroSection: React.FC = () => {
               <a 
                 href="https://pag.ae/81eYf7osM/button"
                 onClick={handleCTAClick}
-                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-red-500/30 hover:scale-[1.01] animate-bounce-subtle"
+                className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold rounded-full transition-all duration-300 hover:bg-orange-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-orange-500/30 hover:scale-[1.01] animate-bounce-subtle"
               >
                 <span className="relative drop-shadow-sm text-xs sm:text-base">Garantir Minha Vaga Agora</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               {/* Progress Bar */}
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[11px] sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
-                  <span className="text-red-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
+                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
-                  <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
+                  <div className="h-full bg-gradient-to-r from-orange-500 to-orange-600 rounded-full shadow-lg transition-all duration-1000" style={{width: `${progressWidth}%`}}></div>
                   {/* Continuous flow animation across entire bar */}
-                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-red-300/40 to-transparent animate-progress-flow"></div>
+                  <div className="absolute inset-0 w-full bg-gradient-to-r from-transparent via-orange-300/40 to-transparent animate-progress-flow"></div>
                 </div>
               </div>
             </div>

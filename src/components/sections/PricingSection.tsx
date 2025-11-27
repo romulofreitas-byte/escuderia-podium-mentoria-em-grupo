@@ -18,7 +18,7 @@ export const PricingSection: React.FC = () => {
               href="https://pag.ae/81eYf7osM/button"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3 bg-red-600 hover:bg-red-700"
+              className="btn-primary text-lg px-16 py-6 inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700"
             >
               Garantir Minha Vaga Agora
               <ArrowRight className="w-5 h-5" />

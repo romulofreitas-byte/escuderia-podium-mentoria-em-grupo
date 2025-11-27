@@ -9,6 +9,7 @@ import { trackVideoOpen } from '@/lib/metaPixel';
 export const SocialProofSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   const openModal = (url: string, title: string) => {
     setSelectedVideo({ url, title });
@@ -117,16 +118,26 @@ export const SocialProofSection: React.FC = () => {
                   {/* Video Thumbnail */}
                   <div className="relative flex-shrink-0">
                     <div className="relative w-full lg:w-48 h-32 sm:h-48 bg-gray-700/50 rounded-xl overflow-hidden border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:shadow-yellow-400/30">
-                      <ProtectedImage 
-                        src={video.thumbnail}
-                        alt={video.title}
-                        width={192}
-                        height={192}
-                        className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                        loading="lazy"
-                        quality={75}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
+                      {imageErrors[video.id] ? (
+                        <div className="w-full h-full bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 flex items-center justify-center">
+                          <div className="text-center">
+                            <IconComponent className="w-12 h-12 text-yellow-400 mx-auto mb-2" />
+                            <span className="text-yellow-400 text-xs font-semibold">{video.title}</span>
+                          </div>
+                        </div>
+                      ) : (
+                        <ProtectedImage 
+                          src={video.thumbnail}
+                          alt={video.title}
+                          width={192}
+                          height={192}
+                          className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                          loading="lazy"
+                          quality={75}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          onError={() => setImageErrors(prev => ({ ...prev, [video.id]: true }))}
+                        />
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-300"></div>
                       
                       {/* Play button with enhanced effect - 60% opacity */}

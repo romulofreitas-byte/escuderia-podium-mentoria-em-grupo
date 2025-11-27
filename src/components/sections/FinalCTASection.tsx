@@ -225,10 +225,10 @@ export const FinalCTASection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleMainCTAClick}
-              className="group relative inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-red-500 text-white font-bold text-lg sm:text-xl rounded-full transition-all duration-300 hover:bg-red-600 shadow-lg sm:shadow-2xl hover:shadow-red-500/30 hover:scale-105"
+              className="group relative inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-orange-500 text-white font-bold text-lg sm:text-xl rounded-full transition-all duration-300 hover:bg-orange-600 shadow-lg sm:shadow-2xl hover:shadow-orange-500/30 hover:scale-105"
             >
               <span className="relative drop-shadow-sm">{isCartOpen ? "Garantir Minha Vaga Agora" : "Quero Ser Avisado"}</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             
             {/* Payment Info Near CTA */}

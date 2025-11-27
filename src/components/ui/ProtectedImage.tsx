@@ -12,6 +12,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
   className = '', 
   alt,
   fill,
+  onError,
   ...props 
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -74,6 +75,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
           draggable={false}
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
+          onError={onError}
           style={imageStyle}
           referrerPolicy="no-referrer"
         />
@@ -96,6 +98,7 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
+        onError={onError}
         style={imageStyle}
         referrerPolicy="no-referrer"
       />

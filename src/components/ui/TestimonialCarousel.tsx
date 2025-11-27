@@ -23,6 +23,7 @@ interface TestimonialCarouselProps {
 export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
 
   const testimonials: Testimonial[] = [
     {
@@ -142,13 +143,22 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ isOpen
               {/* Profile */}
               <div className="flex items-center space-x-6 mb-8">
                 <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-yellow-400/30">
-                  <Image 
-                    src={currentTestimonial.avatar}
-                    alt={currentTestimonial.name}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover object-center"
-                  />
+                  {imageErrors[currentIndex] ? (
+                    <div className="w-full h-full bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 flex items-center justify-center">
+                      <span className="text-yellow-400 font-bold text-2xl">
+                        {currentTestimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                  ) : (
+                    <Image 
+                      src={currentTestimonial.avatar}
+                      alt={currentTestimonial.name}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover object-center"
+                      onError={() => setImageErrors(prev => ({ ...prev, [currentIndex]: true }))}
+                    />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">{currentTestimonial.name}</h3>
