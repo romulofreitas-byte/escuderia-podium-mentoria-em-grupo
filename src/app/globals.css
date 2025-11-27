@@ -322,3 +322,17 @@ img {
   animation: mentor-image-fade 1.2s ease-out forwards;
   opacity: 0;
 }
+
+/* Float Animation for Testimonials */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
