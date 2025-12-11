@@ -50,6 +50,7 @@ const testimonials = [
 
 export const TestimonialsScrollSection: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Duplicar array para criar loop infinito sem "pulo"
@@ -141,17 +142,22 @@ export const TestimonialsScrollSection: React.FC = () => {
                         style={{ transform: 'translateZ(0)' }}
                       >
                         <div className="relative w-full flex justify-center sm:justify-start md:justify-center">
-                          <ProtectedImage
-                            src={testimonial}
-                            alt={`Depoimento ${index + 1}`}
-                            width={250}
-                            height={375}
-                            className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
-                            loading={index < 10 ? 'eager' : 'lazy'}
-                            priority={index < 3}
-                            quality={65}
-                            sizes="(max-width: 640px) 250px, (max-width: 1024px) 350px, 400px"
-                          />
+                          {imageErrors[`col1-${index}`] ? (
+                            <div className="w-full h-[375px] bg-gray-800/50 border border-gray-700/30 rounded-lg flex items-center justify-center">
+                              <MessageSquare className="w-8 h-8 text-gray-600" />
+                            </div>
+                          ) : (
+                            <ProtectedImage
+                              src={testimonial}
+                              alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
+                              className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
+                              loading={index < 10 ? 'eager' : 'lazy'}
+                              unoptimized={true}
+                              onError={() => setImageErrors(prev => ({ ...prev, [`col1-${index}`]: true }))}
+                            />
+                          )}
                         </div>
                       </div>
                     ))}
@@ -173,17 +179,22 @@ export const TestimonialsScrollSection: React.FC = () => {
                         style={{ transform: 'translateZ(0)' }}
                       >
                         <div className="relative w-full flex justify-center sm:justify-start md:justify-center">
-                          <ProtectedImage
-                            src={testimonial}
-                            alt={`Depoimento ${index + 1}`}
-                            width={250}
-                            height={375}
-                            className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
-                            loading={index < 10 ? 'eager' : 'lazy'}
-                            priority={index < 3}
-                            quality={65}
-                            sizes="(max-width: 640px) 250px, (max-width: 1024px) 350px, 400px"
-                          />
+                          {imageErrors[`col2-${index}`] ? (
+                            <div className="w-full h-[375px] bg-gray-800/50 border border-gray-700/30 rounded-lg flex items-center justify-center">
+                              <MessageSquare className="w-8 h-8 text-gray-600" />
+                            </div>
+                          ) : (
+                            <ProtectedImage
+                              src={testimonial}
+                              alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
+                              className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
+                              loading={index < 10 ? 'eager' : 'lazy'}
+                              unoptimized={true}
+                              onError={() => setImageErrors(prev => ({ ...prev, [`col2-${index}`]: true }))}
+                            />
+                          )}
                         </div>
                       </div>
                     ))}
@@ -205,17 +216,22 @@ export const TestimonialsScrollSection: React.FC = () => {
                         style={{ transform: 'translateZ(0)' }}
                       >
                         <div className="relative w-full flex justify-center sm:justify-start md:justify-center">
-                          <ProtectedImage
-                            src={testimonial}
-                            alt={`Depoimento ${index + 1}`}
-                            width={250}
-                            height={375}
-                            className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
-                            loading={index < 10 ? 'eager' : 'lazy'}
-                            priority={index < 3}
-                            quality={65}
-                            sizes="(max-width: 640px) 250px, (max-width: 1024px) 350px, 400px"
-                          />
+                          {imageErrors[`col3-${index}`] ? (
+                            <div className="w-full h-[375px] bg-gray-800/50 border border-gray-700/30 rounded-lg flex items-center justify-center">
+                              <MessageSquare className="w-8 h-8 text-gray-600" />
+                            </div>
+                          ) : (
+                            <ProtectedImage
+                              src={testimonial}
+                              alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
+                              className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0"
+                              loading={index < 10 ? 'eager' : 'lazy'}
+                              unoptimized={true}
+                              onError={() => setImageErrors(prev => ({ ...prev, [`col3-${index}`]: true }))}
+                            />
+                          )}
                         </div>
                       </div>
                     ))}
