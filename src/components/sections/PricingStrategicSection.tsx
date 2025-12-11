@@ -248,7 +248,7 @@ export const PricingStrategicSection: React.FC = () => {
               {/* CTA Principal - Condicional: Checkout aberto ou aviso futuro */}
               <div className="text-center mb-8">
                 <a 
-                  href={isCartOpen ? "https://pag.ae/81eYf7osM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
+                  href={isCartOpen ? "https://pag.ae/81iuacKHM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-red-500 to-red-600 text-white font-black text-base sm:text-xl rounded-full hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-red-500/40 hover:scale-105"

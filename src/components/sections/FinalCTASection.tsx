@@ -221,7 +221,7 @@ export const FinalCTASection: React.FC = () => {
             className="mb-16"
           >
             <a 
-              href={isCartOpen ? "https://pag.ae/81eYf7osM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
+              href={isCartOpen ? "https://pag.ae/81iuacKHM/button" : "https://forms.gle/G3uCBJChkXk65K8i9"}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleMainCTAClick}

@@ -291,7 +291,7 @@ export const ColdCallSection: React.FC = () => {
             className="mb-12"
           >
             <a 
-              href="https://pag.ae/81eYf7osM/button"
+              href="https://pag.ae/81iuacKHM/button"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-6 md:px-12 py-3 md:py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-xl rounded-full transition-all duration-300 hover:from-purple-600 hover:to-blue-600 shadow-lg md:shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 backdrop-blur-sm border border-yellow-400/20"

@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center space-y-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="https://pag.ae/81eYf7osM/button"
+                href="https://pag.ae/81iuacKHM/button"
                 onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-3 py-1.5 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold rounded-full transition-all duration-300 hover:bg-orange-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-orange-500/30 hover:scale-[1.01] animate-bounce-subtle text-xs"
               >
@@ -174,7 +174,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Button with Progress */}
             <div className="flex flex-col items-center lg:items-start space-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <a 
-                href="https://pag.ae/81eYf7osM/button"
+                href="https://pag.ae/81iuacKHM/button"
                 onClick={handleCTAClick}
                 className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold rounded-full transition-all duration-300 hover:bg-orange-500 hover:text-white backdrop-blur-sm shadow-lg hover:shadow-orange-500/30 hover:scale-[1.01] animate-bounce-subtle"
               >
