@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useMemo } from 'react';
 import { MessageSquare } from 'lucide-react';
+import Image from 'next/image';
 
 // Lista de todos os depoimentos da pasta Testimonials Pódium
 const testimonials = [
@@ -46,6 +47,7 @@ const testimonials = [
   '/Testimonials Pódium/IMG_9755.PNG',
   '/Testimonials Pódium/IMG_9874.PNG',
 ];
+
 
 export const TestimonialsScrollSection: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -94,7 +96,7 @@ export const TestimonialsScrollSection: React.FC = () => {
           </h2>
 
           <p className="text-sm text-gray-300 font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-            Depoimentos reais de pilotos, mentorados e audiência do YouTube que transformaram suas ligações
+            Depoimentos reais de pilotos, mentorados e audiência do YouTube que transformaram suas vendas
           </p>
         </div>
 
@@ -146,10 +148,13 @@ export const TestimonialsScrollSection: React.FC = () => {
                               <MessageSquare className="w-8 h-8 text-gray-600" />
                             </div>
                           ) : (
-                            <img
+                            <Image
                               src={testimonial}
                               alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
+                              unoptimized={true}
                               loading={index < 10 ? 'eager' : 'lazy'}
                               onError={() => setImageErrors(prev => ({ ...prev, [`col1-${index}`]: true }))}
                               draggable={false}
@@ -184,10 +189,13 @@ export const TestimonialsScrollSection: React.FC = () => {
                               <MessageSquare className="w-8 h-8 text-gray-600" />
                             </div>
                           ) : (
-                            <img
+                            <Image
                               src={testimonial}
                               alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
+                              unoptimized={true}
                               loading={index < 10 ? 'eager' : 'lazy'}
                               onError={() => setImageErrors(prev => ({ ...prev, [`col2-${index}`]: true }))}
                               draggable={false}
@@ -222,10 +230,13 @@ export const TestimonialsScrollSection: React.FC = () => {
                               <MessageSquare className="w-8 h-8 text-gray-600" />
                             </div>
                           ) : (
-                            <img
+                            <Image
                               src={testimonial}
                               alt={`Depoimento ${index + 1}`}
+                              width={250}
+                              height={375}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
+                              unoptimized={true}
                               loading={index < 10 ? 'eager' : 'lazy'}
                               onError={() => setImageErrors(prev => ({ ...prev, [`col3-${index}`]: true }))}
                               draggable={false}
