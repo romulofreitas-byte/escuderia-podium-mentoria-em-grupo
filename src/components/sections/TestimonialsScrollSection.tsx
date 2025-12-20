@@ -4,67 +4,65 @@ import React, { useState, useRef, useMemo } from 'react';
 import { MessageSquare } from 'lucide-react';
 
 // Lista de todos os depoimentos da pasta Testimonials Pódium
-// Usando caminhos codificados para garantir compatibilidade com servidores
-const encodeImagePath = (path: string): string => {
-  // Codificar apenas a parte do caminho que precisa, mantendo a estrutura
-  const parts = path.split('/');
-  const encodedParts = parts.map(part => {
-    if (part.includes(' ') || part.includes('ó') || part.includes('(') || part.includes(')')) {
-      return encodeURIComponent(part);
-    }
-    return part;
-  });
-  return encodedParts.join('/');
-};
-
+// Usando caminhos diretos - Next.js serve arquivos de public/ automaticamente
 const testimonials = [
-  encodeImagePath('/Testimonials Pódium/IMG_0336.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0337.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0339.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0417.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0450.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0464.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0549.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0576.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0609.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_0932.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_1241.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_1742.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_1743.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_1867.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2323.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2526.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2695.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2865.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2867.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2868.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2869.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2870.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_2872.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_3486.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_6039.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_6301.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_7911.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_8052.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_8264.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_8264(1).PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_8291.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_8735.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9469.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9470.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9510.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9582.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9583.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9584.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9755.PNG'),
-  encodeImagePath('/Testimonials Pódium/IMG_9874.PNG'),
-];
+  '/Testimonials Pódium/IMG_0336.PNG',
+  '/Testimonials Pódium/IMG_0337.PNG',
+  '/Testimonials Pódium/IMG_0339.PNG',
+  '/Testimonials Pódium/IMG_0417.PNG',
+  '/Testimonials Pódium/IMG_0450.PNG',
+  '/Testimonials Pódium/IMG_0464.PNG',
+  '/Testimonials Pódium/IMG_0549.PNG',
+  '/Testimonials Pódium/IMG_0576.PNG',
+  '/Testimonials Pódium/IMG_0609.PNG',
+  '/Testimonials Pódium/IMG_0932.PNG',
+  '/Testimonials Pódium/IMG_1241.PNG',
+  '/Testimonials Pódium/IMG_1742.PNG',
+  '/Testimonials Pódium/IMG_1743.PNG',
+  '/Testimonials Pódium/IMG_1867.PNG',
+  '/Testimonials Pódium/IMG_2323.PNG',
+  '/Testimonials Pódium/IMG_2526.PNG',
+  '/Testimonials Pódium/IMG_2695.PNG',
+  '/Testimonials Pódium/IMG_2865.PNG',
+  '/Testimonials Pódium/IMG_2867.PNG',
+  '/Testimonials Pódium/IMG_2868.PNG',
+  '/Testimonials Pódium/IMG_2869.PNG',
+  '/Testimonials Pódium/IMG_2870.PNG',
+  '/Testimonials Pódium/IMG_2872.PNG',
+  '/Testimonials Pódium/IMG_3486.PNG',
+  '/Testimonials Pódium/IMG_6039.PNG',
+  '/Testimonials Pódium/IMG_6301.PNG',
+  '/Testimonials Pódium/IMG_7911.PNG',
+  '/Testimonials Pódium/IMG_8052.PNG',
+  '/Testimonials Pódium/IMG_8264.PNG',
+  '/Testimonials Pódium/IMG_8264(1).PNG',
+  '/Testimonials Pódium/IMG_8291.PNG',
+  '/Testimonials Pódium/IMG_8735.PNG',
+  '/Testimonials Pódium/IMG_9469.PNG',
+  '/Testimonials Pódium/IMG_9470.PNG',
+  '/Testimonials Pódium/IMG_9510.PNG',
+  '/Testimonials Pódium/IMG_9582.PNG',
+  '/Testimonials Pódium/IMG_9583.PNG',
+  '/Testimonials Pódium/IMG_9584.PNG',
+  '/Testimonials Pódium/IMG_9755.PNG',
+  '/Testimonials Pódium/IMG_9874.PNG',
+].map(path => {
+  // Codificar o caminho completo para garantir compatibilidade com servidores
+  // Isso trata espaços, caracteres especiais e parênteses corretamente
+  return encodeURI(path);
+});
 
 
 export const TestimonialsScrollSection: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Função para tratar erros de carregamento de imagem
+  const handleImageError = (key: string, src: string) => {
+    console.error(`Erro ao carregar imagem: ${src}`);
+    setImageErrors(prev => ({ ...prev, [key]: true }));
+  };
 
   // Duplicar array para criar loop infinito sem "pulo"
   const duplicatedTestimonials = [...testimonials, ...testimonials];
@@ -165,7 +163,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               alt={`Depoimento ${index + 1}`}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
                               loading={index < 10 ? 'eager' : 'lazy'}
-                              onError={() => setImageErrors(prev => ({ ...prev, [`col1-${index}`]: true }))}
+                              onError={() => handleImageError(`col2-${index}`, testimonial)}
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
@@ -203,7 +201,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               alt={`Depoimento ${index + 1}`}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
                               loading={index < 10 ? 'eager' : 'lazy'}
-                              onError={() => setImageErrors(prev => ({ ...prev, [`col2-${index}`]: true }))}
+                              onError={() => handleImageError(`col2-${index}`, testimonial)}
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
@@ -241,7 +239,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               alt={`Depoimento ${index + 1}`}
                               className="w-full h-auto rounded-lg object-contain max-w-[250px] sm:max-w-[350px] md:max-w-[400px] mx-auto sm:mx-0 select-none"
                               loading={index < 10 ? 'eager' : 'lazy'}
-                              onError={() => setImageErrors(prev => ({ ...prev, [`col3-${index}`]: true }))}
+                              onError={() => handleImageError(`col3-${index}`, testimonial)}
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
