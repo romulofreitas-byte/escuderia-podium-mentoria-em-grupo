@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     // Small delay to ensure animation is visible
     const timer = setTimeout(() => {
-      setProgressWidth(110);
+      setProgressWidth(18);
     }, 100);
 
     return () => clearTimeout(timer);
@@ -63,8 +63,8 @@ export const HeroSection: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span className="text-xs sm:text-sm font-bold" style={{fontFamily: 'var(--font-ubuntu), sans-serif'}}>
-                <span className="hidden sm:inline">1º encontro 01/12</span>
-                <span className="sm:hidden">01/12</span>
+                <span className="hidden sm:inline">1º encontro 14/01</span>
+                <span className="sm:hidden">14/01</span>
               </span>
             </div>
           </div>
@@ -116,7 +116,7 @@ export const HeroSection: React.FC = () => {
             <p className="text-[11px] text-gray-300 font-light leading-relaxed drop-shadow-md animate-fade-in-up mb-6" style={{animationDelay: '0.3s'}}>
               6 semanas em grupo + 4 sessões individuais
               <br />
-              para fechar seu primeiro contrato antes do fim do ano!
+              para estruturar seu processo comercial e fechar contratos!
             </p>
 
             {/* CTA Button with Progress */}
@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[10px] sm:text-xs">
                   <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
-                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
+                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">18%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
@@ -168,7 +168,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-[13px] sm:text-base text-gray-300 font-light leading-relaxed mb-6 drop-shadow-md animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              6 semanas em grupo + 4 sessões individuais para fechar seu primeiro contrato antes do fim do ano e começar a vender como empresário.
+              6 semanas em grupo + 4 sessões individuais para estruturar seu processo comercial completo e fechar contratos de forma consistente.
             </p>
 
             {/* CTA Button with Progress */}
@@ -186,7 +186,7 @@ export const HeroSection: React.FC = () => {
               <div className="space-y-1 w-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center justify-between text-[11px] sm:text-sm">
                   <span className="text-gray-300 drop-shadow-sm">Vagas limitadas</span>
-                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">80%</span>
+                  <span className="text-orange-400 font-semibold drop-shadow-sm animate-pulse">18%</span>
                 </div>
                 <div className="w-full h-[2px] sm:h-0.5 bg-gray-800 rounded-full overflow-hidden relative shadow-inner">
                   {/* Filled portion */}
