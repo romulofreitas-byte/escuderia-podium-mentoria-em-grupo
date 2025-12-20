@@ -3,49 +3,58 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { MessageSquare } from 'lucide-react';
 
-// Lista de todos os depoimentos da pasta testimonials-podium
-// Pasta renomeada de "Testimonials Pódium" para "testimonials-podium" para evitar problemas com espaços e acentos
+// Lista de todos os depoimentos da pasta Testimonials Pódium
+// SOLUÇÃO DEFINITIVA: Usar caminhos codificados corretamente para garantir compatibilidade
+const getImagePath = (filename: string): string => {
+  // Codificar apenas o nome da pasta, mantendo o nome do arquivo sem encoding
+  const folderName = encodeURIComponent('Testimonials Pódium');
+  const fileName = filename.includes('(') || filename.includes(')') 
+    ? encodeURIComponent(filename) 
+    : filename;
+  return `/${folderName}/${fileName}`;
+};
+
 const testimonials = [
-  '/testimonials-podium/IMG_0336.PNG',
-  '/testimonials-podium/IMG_0337.PNG',
-  '/testimonials-podium/IMG_0339.PNG',
-  '/testimonials-podium/IMG_0417.PNG',
-  '/testimonials-podium/IMG_0450.PNG',
-  '/testimonials-podium/IMG_0464.PNG',
-  '/testimonials-podium/IMG_0549.PNG',
-  '/testimonials-podium/IMG_0576.PNG',
-  '/testimonials-podium/IMG_0609.PNG',
-  '/testimonials-podium/IMG_0932.PNG',
-  '/testimonials-podium/IMG_1241.PNG',
-  '/testimonials-podium/IMG_1742.PNG',
-  '/testimonials-podium/IMG_1743.PNG',
-  '/testimonials-podium/IMG_1867.PNG',
-  '/testimonials-podium/IMG_2323.PNG',
-  '/testimonials-podium/IMG_2526.PNG',
-  '/testimonials-podium/IMG_2695.PNG',
-  '/testimonials-podium/IMG_2865.PNG',
-  '/testimonials-podium/IMG_2867.PNG',
-  '/testimonials-podium/IMG_2868.PNG',
-  '/testimonials-podium/IMG_2869.PNG',
-  '/testimonials-podium/IMG_2870.PNG',
-  '/testimonials-podium/IMG_2872.PNG',
-  '/testimonials-podium/IMG_3486.PNG',
-  '/testimonials-podium/IMG_6039.PNG',
-  '/testimonials-podium/IMG_6301.PNG',
-  '/testimonials-podium/IMG_7911.PNG',
-  '/testimonials-podium/IMG_8052.PNG',
-  '/testimonials-podium/IMG_8264.PNG',
-  '/testimonials-podium/IMG_8264(1).PNG',
-  '/testimonials-podium/IMG_8291.PNG',
-  '/testimonials-podium/IMG_8735.PNG',
-  '/testimonials-podium/IMG_9469.PNG',
-  '/testimonials-podium/IMG_9470.PNG',
-  '/testimonials-podium/IMG_9510.PNG',
-  '/testimonials-podium/IMG_9582.PNG',
-  '/testimonials-podium/IMG_9583.PNG',
-  '/testimonials-podium/IMG_9584.PNG',
-  '/testimonials-podium/IMG_9755.PNG',
-  '/testimonials-podium/IMG_9874.PNG',
+  getImagePath('IMG_0336.PNG'),
+  getImagePath('IMG_0337.PNG'),
+  getImagePath('IMG_0339.PNG'),
+  getImagePath('IMG_0417.PNG'),
+  getImagePath('IMG_0450.PNG'),
+  getImagePath('IMG_0464.PNG'),
+  getImagePath('IMG_0549.PNG'),
+  getImagePath('IMG_0576.PNG'),
+  getImagePath('IMG_0609.PNG'),
+  getImagePath('IMG_0932.PNG'),
+  getImagePath('IMG_1241.PNG'),
+  getImagePath('IMG_1742.PNG'),
+  getImagePath('IMG_1743.PNG'),
+  getImagePath('IMG_1867.PNG'),
+  getImagePath('IMG_2323.PNG'),
+  getImagePath('IMG_2526.PNG'),
+  getImagePath('IMG_2695.PNG'),
+  getImagePath('IMG_2865.PNG'),
+  getImagePath('IMG_2867.PNG'),
+  getImagePath('IMG_2868.PNG'),
+  getImagePath('IMG_2869.PNG'),
+  getImagePath('IMG_2870.PNG'),
+  getImagePath('IMG_2872.PNG'),
+  getImagePath('IMG_3486.PNG'),
+  getImagePath('IMG_6039.PNG'),
+  getImagePath('IMG_6301.PNG'),
+  getImagePath('IMG_7911.PNG'),
+  getImagePath('IMG_8052.PNG'),
+  getImagePath('IMG_8264.PNG'),
+  getImagePath('IMG_8264(1).PNG'),
+  getImagePath('IMG_8291.PNG'),
+  getImagePath('IMG_8735.PNG'),
+  getImagePath('IMG_9469.PNG'),
+  getImagePath('IMG_9470.PNG'),
+  getImagePath('IMG_9510.PNG'),
+  getImagePath('IMG_9582.PNG'),
+  getImagePath('IMG_9583.PNG'),
+  getImagePath('IMG_9584.PNG'),
+  getImagePath('IMG_9755.PNG'),
+  getImagePath('IMG_9874.PNG'),
 ];
 
 
