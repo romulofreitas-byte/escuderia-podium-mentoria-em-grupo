@@ -155,7 +155,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
-                              style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
+                              style={{ userSelect: 'none' }}
                             />
                           )}
                         </div>
@@ -193,7 +193,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
-                              style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
+                              style={{ userSelect: 'none' }}
                             />
                           )}
                         </div>
@@ -231,7 +231,7 @@ export const TestimonialsScrollSection: React.FC = () => {
                               draggable={false}
                               onContextMenu={(e) => e.preventDefault()}
                               onDragStart={(e) => e.preventDefault()}
-                              style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
+                              style={{ userSelect: 'none' }}
                             />
                           )}
                         </div>
